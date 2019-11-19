@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,12 +9,24 @@ import {
 } from 'react-native';
 
 const Footer = () => {
-    return(
-        <View>
-            <Text>Penis</Text>
-        </View>
-    );
+  return (
+    <View style={styles.footer}>
+      <Text style={styles.button}>Penis</Text>
+      <Text style={styles.button}>Penis</Text>
+      <Text style={styles.button}>Penis</Text>
+      <Text style={styles.button}>Penis</Text>
+      <Text style={styles.button}>Penis</Text>
+    </View>
+  );
 };
 
-export default Footer;
+const styles = StyleSheet.create({
+  button: { flex: 1 },
+  footer: {
+    height: 20,
+    flex: 1,
+    flexDirection: 'row',
+  },
+});
 
+export default Footer;

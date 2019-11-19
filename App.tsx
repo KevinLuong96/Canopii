@@ -7,7 +7,7 @@
  *
  * @format
  */
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -31,12 +31,22 @@ const App = () => {
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.view}>
-        <ScrollView style={styles.scrollView}>
-            <View>
-                <Text>Hello world</Text>
-            </View>
-        </ScrollView>
-        <Footer/>
+        <View style={styles.innerView}>
+          <ScrollView style={styles.scrollView}>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+            <Text>Hello world</Text>
+          </ScrollView>
+        </View>
+
+        <Footer />
       </SafeAreaView>
     </Fragment>
   );
@@ -44,43 +54,12 @@ const App = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-      backgroundColor: Colors.lighter,
+    backgroundColor: Colors.lighter,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-    view: {
-
-    },
-    highlight: {
+  innerView: { flex: 1 },
+  view: { flex: 1 },
+  highlight: {
     fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
   },
 });
 
