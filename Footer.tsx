@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   button: { flex: 1 },
   footer: {
     height: 20,
-    flex: 1,
+    display: 'flex',
     flexDirection: 'row',
   },
 });
