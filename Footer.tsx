@@ -1,32 +1,25 @@
 import React, { Fragment } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { Button, StyleSheet, View, Text } from 'react-native';
 
 const Footer = () => {
   return (
     <View style={styles.footer}>
-      <Text style={styles.button}>Penis</Text>
-      <Text style={styles.button}>Penis</Text>
-      <Text style={styles.button}>Penis</Text>
-      <Text style={styles.button}>Penis</Text>
-      <Text style={styles.button}>Penis</Text>
+      <Button style={styles.button} title="penis" />
+      <Button style={styles.button} title="penis" />
+      <Button style={styles.button} title="penis" />
+      <Button style={styles.button} title="penis" />
+      <Button style={styles.button} title="penis" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  button: { flex: 1 },
+  button: { display: 'flex', flex: 1 },
   footer: {
-    height: 20,
+    height: 30,
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
-
 export default Footer;
