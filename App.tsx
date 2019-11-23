@@ -25,6 +25,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Footer from './Footer';
+import Camera from './Camera';
 
 enum navTypes {
   Home,
@@ -39,22 +40,24 @@ const App = () => {
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.view}>
-        <View style={styles.innerView}>
-          <ScrollView style={styles.scrollView}>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-            <Text>Hello world</Text>
-
-            <Text>{navState}</Text>
-          </ScrollView>
-        </View>
+        {navState == navTypes.Home ? (
+          <Camera />
+        ) : (
+          <View style={styles.innerView}>
+            <ScrollView style={styles.scrollView}>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+              <Text>Hello world</Text>
+            </ScrollView>
+          </View>
+        )}
         <View style={styles.footer}>
           <Button
             onPress={() => setNavState(navTypes.Home)}
@@ -66,6 +69,7 @@ const App = () => {
           >
             Home
           </Button>
+
           <Button
             onPress={() => setNavState(navTypes.Profile)}
             style={
