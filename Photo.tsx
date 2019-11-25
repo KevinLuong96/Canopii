@@ -29,10 +29,10 @@ const Photo = ({ path, clear }: PhotoProps) => {
 
 const styles = StyleSheet.create({
   image: {
-      flex: 1,
-      width: null,
-      height: null,
-      flexShrink: 1,
+    flex: 1,
+    width: null,
+    height: null,
+    flexShrink: 1,
   },
   container: {
     display: 'flex',
@@ -50,13 +50,4 @@ const styles = StyleSheet.create({
   test: { color: '#fff' },
 });
 
-export default Photo;
-
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
 export default Photo;

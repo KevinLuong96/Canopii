@@ -26,7 +26,6 @@ const PendingView = () => (
 
 const Camera = () => {
   const [photo, setPhoto] = useState(null);
-  console.log('photo' + photo);
   return (
     <View style={styles.container}>
       {photo === null ? (
@@ -86,7 +85,7 @@ const Camera = () => {
                       response.customButton,
                     );
                   } else {
-                                        setPhoto(response.uri);
+                    setPhoto(response.uri);
                   }
                 },
               )
@@ -139,7 +138,5 @@ const styles = StyleSheet.create({
   },
   test: { color: '#fff' },
 });
-
-export default Camera;
 
 export default Camera;
