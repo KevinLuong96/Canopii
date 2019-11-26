@@ -26,14 +26,12 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Footer from './Footer';
 import Camera from './Camera';
-
 enum navTypes {
   Home,
   Profile,
   Settings,
   Map,
 }
-
 const App = () => {
   const [navState, setNavState]: [navTypes, Function] = useState(navTypes.Home);
   return (
@@ -44,18 +42,7 @@ const App = () => {
           <Camera />
         ) : (
           <View style={styles.innerView}>
-            <ScrollView style={styles.scrollView}>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-              <Text>Hello world</Text>
-            </ScrollView>
+            <ScrollView style={styles.scrollView} />
           </View>
         )}
         <View style={styles.footer}>
@@ -124,4 +111,5 @@ const styles = StyleSheet.create({
   },
   selected: { backgroundColor: '#add8e6', color: '#000' },
 });
+export default App;
 export default App;
