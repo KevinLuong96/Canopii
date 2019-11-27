@@ -17,7 +17,7 @@ const Photo = ({ photo, clear }: PhotoProps) => {
   async function fetchData() {
     const formData = new FormData();
     formData.append('Upload', {
-      type: photo.type ? photo.type : `image/${photo.uri.split('.')[-1]}`,
+      type: photo.type ? photo.type : `image/${photo.uri.split('.').pop()}`,
       name: photo.name ? photo.name : 'UNCLASSIFIED_IMAGE',
       uri:
         Platform.OS === 'android'
@@ -29,9 +29,7 @@ const Photo = ({ photo, clear }: PhotoProps) => {
       headers: { 'Content-Type': 'multipart/form-data' },
       body: formData,
     };
-    console.log(options);
     const res = await fetch('http://b5e69bb8.ngrok.io/uploadleaf', options);
-    console.log(res);
     if (res.ok) {
       const resJson = await res.json();
       setData(resJson);
