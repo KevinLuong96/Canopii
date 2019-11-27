@@ -25,7 +25,7 @@ const PendingView = () => (
 );
 
 const Camera = () => {
-  const [photo, setPhoto] = useState(null);
+    const [photo, setPhoto]= useState(null);
   return (
     <View style={styles.container}>
       {photo === null ? (
@@ -85,7 +85,7 @@ const Camera = () => {
                       response.customButton,
                     );
                   } else {
-                    setPhoto(response.uri);
+                    setPhoto(response);
                   }
                 },
               )
@@ -96,7 +96,7 @@ const Camera = () => {
           </TouchableOpacity>
         </>
       ) : (
-        <Photo clear={() => setPhoto(null)} path={photo} />
+        <Photo clear={() => setPhoto(null)} photo={photo} />
       )}
     </View>
   );
@@ -105,8 +105,7 @@ const Camera = () => {
     if (camera) {
       const options = { quality: 0.5, base64: true };
       const data = await camera.takePictureAsync(options);
-      console.log(data.uri);
-      setPhoto(data.uri);
+      setPhoto(data);
     }
   }
 };
@@ -141,4 +140,5 @@ const styles = StyleSheet.create({
 
 export default Camera;
 
+export default Camera;
 export default Camera;

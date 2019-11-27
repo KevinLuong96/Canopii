@@ -6,23 +6,40 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Button, Image, Text, View } from 'react-native';
 
 type PhotoProps = {
-  path: string;
+  photo: any;
   clear: Function;
 };
 
-const Photo = ({ path, clear }: PhotoProps) => {
+const Photo = ({ photo, clear }: PhotoProps) => {
   const [isPending, setPending]: [boolean, Function] = useState(false);
   const [data, setData] = useState(null);
+  console.log(photo);
   async function fetchData() {
-    console.log('fetching');
-    const res = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
-    const resJson = await res.json();
+    const formData = new FormData();
+    formData.append('Upload', {
+      type: photo.type ? photo.type : `image/${photo.uri.split('.')[-1]}`,
+      name: photo.name ? photo.name : 'UNCLASSIFIED_IMAGE',
+      uri:
+        Platform.OS === 'android'
+          ? photo.uri
+          : photo.uri.replace('file://', ''),
+    });
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'multipart/form-data' },
+      body: formData,
+    };
+    console.log(options);
+    const res = await fetch('http://b5e69bb8.ngrok.io/uploadleaf', options);
+    console.log(res);
+    if (res.ok) {
+      const resJson = await res.json();
+      setData(resJson);
+    }
     setPending(false);
-    setData(resJson);
   }
 
   useEffect(() => {
-    console.log('ispending', isPending);
     if (isPending) {
       fetchData();
     }
@@ -30,27 +47,25 @@ const Photo = ({ path, clear }: PhotoProps) => {
 
   return (
     <>
-      {isPending&& (
+      {isPending && (
         <View style={styles.pending}>
-          {true && console.log('hello')}
           <Text>PENDING</Text>
         </View>
-      )} 
-        <View style={styles.container}>
-          <Image
-            resizeMode="contain"
-            source={{ uri: path }}
-            style={styles.image}
-          />
-        </View>
-      
+      )}
+      <View style={styles.container}>
+        <Image
+          resizeMode="contain"
+          source={{ uri: photo.uri }}
+          style={styles.image}
+        />
+      </View>
+
       <View style={styles.clear}>
         <Button onPress={() => clear()} title="Delete" style={styles.clear} />
       </View>
       <View style={styles.verify}>
         <Button
           onPress={() => {
-            console.log(isPending);
             setPending(true);
           }}
           title="Verify"
@@ -100,6 +115,20 @@ const styles = StyleSheet.create({
   test: { color: '#fff' },
 });
 
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
+export default Photo;
 export default Photo;
 export default Photo;
 export default Photo;
