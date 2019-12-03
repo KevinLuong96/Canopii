@@ -13,7 +13,6 @@ type PhotoProps = {
 const Photo = ({ photo, clear }: PhotoProps) => {
   const [isPending, setPending]: [boolean, Function] = useState(false);
   const [data, setData] = useState(null);
-  console.log(photo);
   async function fetchData() {
     const formData = new FormData();
     formData.append('Upload', {
@@ -29,7 +28,8 @@ const Photo = ({ photo, clear }: PhotoProps) => {
       headers: { 'Content-Type': 'multipart/form-data' },
       body: formData,
     };
-    const res = await fetch('http://b5e69bb8.ngrok.io/uploadleaf', options);
+    const res = await fetch('http://387ace07.ngrok.io/uploadleaf', options);
+    console.log('res', res);
     if (res.ok) {
       const resJson = await res.json();
       setData(resJson);
@@ -57,7 +57,11 @@ const Photo = ({ photo, clear }: PhotoProps) => {
           style={styles.image}
         />
       </View>
-
+      {data && data.species && data.species[0] && (
+        <View style={styles.data}>
+          <Text>{data.species[0]}</Text>
+        </View>
+      )}
       <View style={styles.clear}>
         <Button onPress={() => clear()} title="Delete" style={styles.clear} />
       </View>
@@ -90,6 +94,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     zIndex: 2,
   },
+  data: {
+    width: '100%',
+    backgroundColor: '#fff',
+    position: 'absolute',
+    top: 50,
+    display: 'flex',
+    alignItems: 'center',
+  },
   verify: {
     backgroundColor: '#fff',
     position: 'absolute',
@@ -113,36 +125,5 @@ const styles = StyleSheet.create({
   test: { color: '#fff' },
 });
 
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
-export default Photo;
 export default Photo;
 export default Photo;

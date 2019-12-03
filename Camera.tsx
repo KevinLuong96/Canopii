@@ -25,7 +25,7 @@ const PendingView = () => (
 );
 
 const Camera = () => {
-    const [photo, setPhoto]= useState(null);
+  const [photo, setPhoto] = useState(null);
   return (
     <View style={styles.container}>
       {photo === null ? (
@@ -33,7 +33,7 @@ const Camera = () => {
           <RNCamera
             style={styles.preview}
             type={RNCamera.Constants.Type.back}
-            flashMode={RNCamera.Constants.FlashMode.on}
+            flashMode={RNCamera.Constants.FlashMode.off}
             androidCameraPermissionOptions={{
               title: 'Permission to use camera',
               message: 'We need your permission to use your camera',
