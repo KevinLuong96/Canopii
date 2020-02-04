@@ -91614,7 +91614,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         lineNumber: 44
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
-      style: appStyles.view,
+      style: [_styles.default.flexColumn],
       __source: {
         fileName: _jsxFileName,
         lineNumber: 45
@@ -91693,11 +91693,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     scrollView: {
       backgroundColor: _NewAppScreen.Colors.lighter
     },
-    innerView: {
-      flex: 1
-    },
     view: {
-      flex: 1
+      alignItems: "center"
     },
     highlight: {
       fontWeight: "700"
@@ -95154,7 +95151,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = exports.default = void 0;
+  exports.default = void 0;
 
   var _regenerator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/regenerator"));
 
@@ -95163,6 +95160,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
+
+  var _reactNativeButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "react-native-button"));
 
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/photo.tsx";
 
@@ -95187,24 +95186,24 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           switch (_context.prev = _context.next) {
             case 0:
               formData = new FormData();
-              formData.append('Upload', {
-                type: photo.type ? photo.type : "image/" + photo.uri.split('.').pop(),
-                name: photo.name ? photo.name : 'UNCLASSIFIED_IMAGE',
-                uri: "ios" === 'android' ? photo.uri : photo.uri.replace('file://', '')
+              formData.append("Upload", {
+                type: photo.type ? photo.type : "image/" + photo.uri.split(".").pop(),
+                name: photo.name ? photo.name : "UNCLASSIFIED_IMAGE",
+                uri: _reactNative.Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", "")
               });
               options = {
-                method: 'POST',
+                method: "POST",
                 headers: {
-                  'Content-Type': 'multipart/form-data'
+                  "Content-Type": "multipart/form-data"
                 },
                 body: formData
               };
               _context.next = 5;
-              return _regenerator.default.awrap(fetch('http://387ace07.ngrok.io/uploadleaf', options));
+              return _regenerator.default.awrap(fetch("http://387ace07.ngrok.io/uploadleaf", options));
 
             case 5:
               res = _context.sent;
-              console.log('res', res);
+              console.log("res", res);
 
               if (!res.ok) {
                 _context.next = 12;
@@ -95238,18 +95237,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: styles.pending,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 48
       }
     }, _react.default.createElement(_reactNative.Text, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 49
       }
     }, "PENDING")), _react.default.createElement(_reactNative.View, {
       style: styles.container,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 52
       }
     }, _react.default.createElement(_reactNative.Image, {
       resizeMode: "contain",
@@ -95259,26 +95258,26 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: styles.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 53
       }
     })), data && data.species && data.species[0] && _react.default.createElement(_reactNative.View, {
       style: styles.data,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 60
       }
     }, _react.default.createElement(_reactNative.Text, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 61
       }
     }, data.species[0])), _react.default.createElement(_reactNative.View, {
       style: styles.clear,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 64
       }
-    }, _react.default.createElement(_reactNative.Button, {
+    }, _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
         return clear();
       },
@@ -95286,15 +95285,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: styles.clear,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 65
       }
     })), _react.default.createElement(_reactNative.View, {
       style: styles.verify,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 67
       }
-    }, _react.default.createElement(_reactNative.Button, {
+    }, _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
         setPending(true);
       },
@@ -95302,7 +95301,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: styles.clear,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 68
       }
     })));
   };
@@ -95315,52 +95314,50 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexShrink: 1
     },
     pending: {
-      position: 'absolute',
+      position: "absolute",
       left: 0,
       right: 0,
       top: 0,
       bottom: 0,
-      backgroundColor: '#fff',
+      backgroundColor: "#fff",
       zIndex: 2
     },
     data: {
-      width: '100%',
-      backgroundColor: '#fff',
-      position: 'absolute',
+      width: "100%",
+      backgroundColor: "#fff",
+      position: "absolute",
       top: 50,
-      display: 'flex',
-      alignItems: 'center'
+      display: "flex",
+      alignItems: "center"
     },
     verify: {
-      backgroundColor: '#fff',
-      position: 'absolute',
-      color: '#fff',
+      backgroundColor: "#fff",
+      position: "absolute",
+      color: "#fff",
       bottom: 25,
       right: 25
     },
     container: {
-      display: 'flex',
-      flexDirection: 'row',
-      height: '100%',
-      backgroundColor: '#fff'
+      display: "flex",
+      flexDirection: "row",
+      height: "100%",
+      backgroundColor: "#fff"
     },
     clear: {
-      backgroundColor: '#fff',
-      position: 'absolute',
-      color: '#fff',
+      backgroundColor: "#fff",
+      position: "absolute",
+      color: "#fff",
       bottom: 25,
       left: 25
     },
     test: {
-      color: '#fff'
+      color: "#fff"
     }
   });
 
   var _default = Photo;
   exports.default = _default;
-  var _default2 = Photo;
-  exports.default = _default2;
-},581,[1,155,105,12,52,2],"photo.tsx");
+},581,[1,155,105,12,52,2,551],"photo.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -95493,6 +95490,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
 
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./styles"));
+
+  var _choice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./choice"));
+
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
   var Choices = function Choices() {
@@ -95502,25 +95503,36 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         setChoices = _useState2[1];
 
     return _react.default.createElement(_reactNative.View, {
-      style: styles.container,
+      style: _styles.default.centered,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 17
       }
-    });
+    }, _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.container, choiceStyles.container],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }, _react.default.createElement(_choice.default, {
+      message: "test",
+      onClick: function onClick() {},
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      }
+    })));
   };
 
-  var styles = _reactNative.StyleSheet.create({
+  var choiceStyles = _reactNative.StyleSheet.create({
     container: {
-      flex: 1,
-      flexDirection: "column",
-      backgroundColor: "white"
+      backgroundColor: "red"
     }
   });
 
   var _default = Choices;
   exports.default = _default;
-},585,[1,155,12,52,2],"choices.tsx");
+},585,[1,155,12,52,2,587,588],"choices.tsx");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Canopii",
@@ -95538,13 +95550,60 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native-extended-stylesheet"));
 
   var _default = _reactNativeExtendedStylesheet.default.create({
+    container: {
+      width: "90%",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column"
+    },
+    centered: {
+      alignItems: "center"
+    },
     flex: {
-      display: "flex"
+      display: "flex",
+      flex: 1
+    },
+    flexColumn: {
+      display: "flex",
+      flex: 1,
+      flexDirection: "column"
     }
   });
 
   exports.default = _default;
 },587,[1,553],"styles.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choice.tsx";
+
+  var Choice = function Choice(props) {
+    return _react.default.createElement(_reactNative.Button, {
+      onPress: function onPress() {
+        return props.onClick;
+      },
+      title: props.message,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      }
+    });
+  };
+
+  var _default = Choice;
+  exports.default = _default;
+},588,[1,52,2],"choice.tsx");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map

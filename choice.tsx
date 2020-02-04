@@ -15,12 +15,5 @@ const Choice = props => {
   // return <View style={styles.container}></View>;
   return <Button onPress={() => props.onClick} title={props.message}></Button>;
 };
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     flexDirection: "column",
-//     backgroundColor: "black"
-//   }
-// });
 
 export default Choice;

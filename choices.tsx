@@ -7,21 +7,23 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import styles from "./styles";
 import Choice from "./choice";
+import { decision, descriptions } from "./trees";
 
 const Choices = () => {
   const [choices, setChoices] = useState([]);
   return (
-    <View style={styles.container}>
-      {/* <Choice message={"test"} onClick={() => {}}></Choice> */}
+    <View style={styles.centered}>
+      <View style={[styles.container, choiceStyles.container]}>
+        <Choice message={"test"} onClick={() => {}}></Choice>
+      </View>
     </View>
   );
 };
-const styles = StyleSheet.create({
+const choiceStyles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: "white"
+    backgroundColor: "red"
   }
 });
 

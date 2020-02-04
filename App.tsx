@@ -42,7 +42,7 @@ const App = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={appStyles.view}>
+      <SafeAreaView style={[styles.flexColumn]}>
         {navState == navTypes.Home && <Camera />}
         {navState == navTypes.Test && <Choices />}
         {/* {<View style={styles.flex}>
@@ -116,8 +116,7 @@ const appStyles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter
   },
-  innerView: { flex: 1 },
-  view: { flex: 1 },
+  view: { alignItems: "center" },
   highlight: {
     fontWeight: "700"
   },
