@@ -1004,7 +1004,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,550,569],"index.js");
+},0,[1,2,550,586],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -91569,17 +91569,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./styles"));
 
-  var _reactNativeButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "react-native-button"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
 
-  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "react-native-extended-stylesheet"));
+  var _reactNativeButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "react-native-button"));
 
-  var _NewAppScreen = _$$_REQUIRE(_dependencyMap[7], "react-native/Libraries/NewAppScreen");
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "react-native-extended-stylesheet"));
 
-  var _camera = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./camera"));
+  var _NewAppScreen = _$$_REQUIRE(_dependencyMap[8], "react-native/Libraries/NewAppScreen");
 
-  var _choices = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./choices"));
+  var _camera = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./camera"));
+
+  var _choices = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./choices"));
 
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/App.tsx";
   var navTypes;
@@ -91603,89 +91605,85 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return _react.default.createElement(_react.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 43
       }
     }, _react.default.createElement(_reactNative.StatusBar, {
       barStyle: "dark-content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
-      }
-    }), _react.default.createElement(_reactNative.SafeAreaView, {
-      style: styles.view,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 44
       }
-    }, navState == navTypes.Home && _react.default.createElement(_camera.default, {
+    }), _react.default.createElement(_reactNative.SafeAreaView, {
+      style: appStyles.view,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 45
       }
-    }), navState == navTypes.Test && _react.default.createElement(_choices.default, {
+    }, navState == navTypes.Home && _react.default.createElement(_camera.default, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 46
       }
-    }), _react.default.createElement(_reactNative.View, {
-      style: styles.footer,
+    }), navState == navTypes.Test && _react.default.createElement(_choices.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 47
+      }
+    }), _react.default.createElement(_reactNative.View, {
+      style: appStyles.footer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
       }
     }, _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
         return setNavState(navTypes.Home);
       },
-      style: navState == navTypes.Home ? [styles.button, styles.selected] : styles.button,
+      style: navState == navTypes.Home ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 52
       }
     }, "Home"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
         return setNavState(navTypes.Profile);
       },
-      style: navState == navTypes.Profile ? [styles.button, styles.selected] : styles.button,
+      style: navState == navTypes.Profile ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 63
       }
     }, "Profile"), _react.default.createElement(_reactNativeButton.default, {
-      style: navState == navTypes.Settings ? [styles.button, styles.selected] : styles.button,
+      style: navState == navTypes.Settings ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       onPress: function onPress() {
         return setNavState(navTypes.Settings);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 73
       }
     }, "Settings"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
         return setNavState(navTypes.Map);
       },
-      style: navState == navTypes.Map ? [styles.button, styles.selected] : styles.button,
+      style: navState == navTypes.Map ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 83
       }
     }, "Map"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
         return setNavState(navTypes.Test);
       },
-      style: navState == navTypes.Test ? [styles.button, styles.selected] : styles.button,
+      style: navState == navTypes.Test ? [_styles.default.button, appStyles.selected] : _styles.default.button,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 93
       }
     }, "Test"))));
   };
 
-  var styles = _reactNative.StyleSheet.create({
-    button: {
-      display: "flex",
-      flex: 1
-    },
+  var appStyles = _reactNative.StyleSheet.create({
     footer: {
       height: 30,
       display: "flex",
@@ -91712,7 +91710,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = App;
   exports.default = _default;
-},550,[1,155,12,52,2,551,572,553,561,571],"App.tsx");
+},550,[1,155,12,52,587,2,551,553,569,577,585],"App.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -91929,6 +91927,1556 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }
 },552,[155,52],"node_modules/react-native-button/coalesceNonElementChildren.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _api = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./api"));
+
+  var _default = new _api.default();
+
+  exports.default = _default;
+},553,[1,554],"node_modules/react-native-extended-stylesheet/src/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+
+  var _sheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./sheet"));
+
+  var _style = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./style"));
+
+  var _value = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./value"));
+
+  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./replacers/vars"));
+
+  var _mediaQueries = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./replacers/media-queries"));
+
+  var _child = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./child"));
+
+  var BUILD_EVENT = 'build';
+
+  var EStyleSheet = function () {
+    function EStyleSheet() {
+      (0, _classCallCheck2.default)(this, EStyleSheet);
+      this.child = _child.default;
+      this.builded = false;
+      this.sheets = [];
+      this.globalVars = null;
+      this.listeners = {};
+
+      this._proxyToOriginal();
+    }
+
+    (0, _createClass2.default)(EStyleSheet, [{
+      key: "create",
+      value: function create(obj) {
+        var sheet = new _sheet.default(obj);
+        this.sheets.push(sheet);
+
+        if (this.builded) {
+          sheet.calc(this.globalVars);
+        }
+
+        return sheet.getResult();
+      }
+    }, {
+      key: "build",
+      value: function build(rawGlobalVars) {
+        this.builded = true;
+
+        this._calcGlobalVars(rawGlobalVars);
+
+        this._calcSheets();
+
+        this._callListeners(BUILD_EVENT);
+      }
+    }, {
+      key: "value",
+      value: function value(expr, prop) {
+        var varsArr = this.globalVars ? [this.globalVars] : [];
+        return new _value.default(expr, prop, varsArr).calc();
+      }
+    }, {
+      key: "subscribe",
+      value: function subscribe(event, listener) {
+        this._assertSubscriptionParams(event, listener);
+
+        this.listeners[BUILD_EVENT] = this.listeners[BUILD_EVENT] || [];
+        this.listeners[BUILD_EVENT].push(listener);
+
+        if (this.builded) {
+          listener();
+        }
+      }
+    }, {
+      key: "unsubscribe",
+      value: function unsubscribe(event, listener) {
+        this._assertSubscriptionParams(event, listener);
+
+        if (this.listeners[BUILD_EVENT]) {
+          this.listeners[BUILD_EVENT] = this.listeners[BUILD_EVENT].filter(function (item) {
+            return item !== listener;
+          });
+        }
+      }
+    }, {
+      key: "clearCache",
+      value: function clearCache() {
+        this.sheets.forEach(function (sheet) {
+          return sheet.clearCache();
+        });
+      }
+    }, {
+      key: "_calcGlobalVars",
+      value: function _calcGlobalVars(rawGlobalVars) {
+        if (rawGlobalVars) {
+          this._checkGlobalVars(rawGlobalVars);
+
+          rawGlobalVars.$theme = rawGlobalVars.$theme || 'default';
+          this.globalVars = new _style.default(rawGlobalVars, [rawGlobalVars]).calc().calculatedVars;
+        }
+      }
+    }, {
+      key: "_calcSheets",
+      value: function _calcSheets() {
+        var _this = this;
+
+        this.sheets.forEach(function (sheet) {
+          return sheet.calc(_this.globalVars);
+        });
+      }
+    }, {
+      key: "_callListeners",
+      value: function _callListeners(event) {
+        if (Array.isArray(this.listeners[event])) {
+          this.listeners[event].forEach(function (listener) {
+            return listener();
+          });
+        }
+      }
+    }, {
+      key: "_proxyToOriginal",
+      value: function _proxyToOriginal() {
+        var _this2 = this;
+
+        var props = ['setStyleAttributePreprocessor', 'hairlineWidth', 'absoluteFill', 'absoluteFillObject', 'flatten'];
+        props.forEach(function (prop) {
+          Object.defineProperty(_this2, prop, {
+            get: function get() {
+              return _reactNative.StyleSheet[prop];
+            },
+            enumerable: true
+          });
+        });
+      }
+    }, {
+      key: "_checkGlobalVars",
+      value: function _checkGlobalVars(rawGlobalVars) {
+        Object.keys(rawGlobalVars).forEach(function (key) {
+          if (!_vars.default.isVar(key) && !_mediaQueries.default.isMediaQuery(key)) {
+            throw new Error("EStyleSheet.build() params should contain global variables (start with $) " + ("or media queries (start with @media). Got '" + key + "'."));
+          }
+        });
+      }
+    }, {
+      key: "_assertSubscriptionParams",
+      value: function _assertSubscriptionParams(event, listener) {
+        if (event !== BUILD_EVENT) {
+          throw new Error("Only '" + BUILD_EVENT + "' event is currently supported.");
+        }
+
+        if (typeof listener !== 'function') {
+          throw new Error('Listener should be a function.');
+        }
+      }
+    }]);
+    return EStyleSheet;
+  }();
+
+  exports.default = EStyleSheet;
+},554,[1,22,23,2,555,556,563,557,560,568],"node_modules/react-native-extended-stylesheet/src/api.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+
+  var _style = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./style"));
+
+  var _utils = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./utils"));
+
+  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./replacers/vars"));
+
+  var _mediaQueries = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./replacers/media-queries"));
+
+  var _default = function () {
+    function _default(source) {
+      (0, _classCallCheck2.default)(this, _default);
+      this.source = source;
+      this.result = {};
+      this.cache = new Map();
+      this.nativeSheet = {};
+      this.globalVars = null;
+      this.localVars = null;
+      this.allVars = null;
+      this.processedSource = null;
+    }
+
+    (0, _createClass2.default)(_default, [{
+      key: "calc",
+      value: function calc(globalVars) {
+        this.globalVars = globalVars;
+        this.clearResult();
+
+        if (this.hasCache()) {
+          this.applyCache();
+        } else {
+          this.processMediaQueries();
+          this.calcVars();
+          this.calcStyles();
+          this.calcNative();
+          this.storeCache();
+        }
+
+        return this.getResult();
+      }
+    }, {
+      key: "processMediaQueries",
+      value: function processMediaQueries() {
+        this.processedSource = _mediaQueries.default.process(this.source);
+      }
+    }, {
+      key: "calcVars",
+      value: function calcVars() {
+        var rawLocalVars = _vars.default.extract(this.processedSource);
+
+        if (rawLocalVars) {
+          this.localVars = new _style.default(rawLocalVars, [rawLocalVars, this.globalVars]).calc().calculatedVars;
+          (0, _extends2.default)(this.result, this.localVars);
+        } else {
+          this.localVars = null;
+        }
+
+        this.allVars = [this.localVars, this.globalVars].filter(Boolean);
+      }
+    }, {
+      key: "calcStyles",
+      value: function calcStyles() {
+        var _this = this;
+
+        var extractedStyles = _utils.default.excludeKeys(this.processedSource, this.localVars);
+
+        Object.keys(extractedStyles).forEach(function (key) {
+          var styles = extractedStyles[key];
+
+          if (typeof styles === 'function') {
+            styles = styles();
+          }
+
+          if (styles && typeof styles === 'object') {
+            _this.calcStyle(key, styles);
+          } else {
+            _this.result[key] = styles;
+          }
+        });
+      }
+    }, {
+      key: "calcStyle",
+      value: function calcStyle(key, styleProps) {
+        var style = new _style.default(styleProps, this.allVars);
+
+        var _style$calc = style.calc(),
+            calculatedProps = _style$calc.calculatedProps,
+            calculatedVars = _style$calc.calculatedVars;
+
+        var merged = (0, _extends2.default)({}, calculatedVars, calculatedProps);
+
+        if (key.charAt(0) === '_') {
+          this.result[key] = merged;
+        } else {
+          this.result['_' + key] = merged;
+          this.nativeSheet[key] = calculatedProps;
+        }
+      }
+    }, {
+      key: "calcNative",
+      value: function calcNative() {
+        if (Object.keys(this.nativeSheet).length) {
+          var rnStyleSheet = _reactNative.StyleSheet.create(this.nativeSheet);
+
+          (0, _extends2.default)(this.result, rnStyleSheet);
+        }
+      }
+    }, {
+      key: "getResult",
+      value: function getResult() {
+        return this.result;
+      }
+    }, {
+      key: "clearResult",
+      value: function clearResult() {
+        var _this2 = this;
+
+        Object.keys(this.result).forEach(function (key) {
+          return delete _this2.result[key];
+        });
+      }
+    }, {
+      key: "hasCache",
+      value: function hasCache() {
+        var key = this.getCacheKey();
+        return key && this.cache.has(key);
+      }
+    }, {
+      key: "applyCache",
+      value: function applyCache() {
+        var cachedResult = this.cache.get(this.getCacheKey());
+        (0, _extends2.default)(this.result, cachedResult);
+      }
+    }, {
+      key: "storeCache",
+      value: function storeCache() {
+        var key = this.getCacheKey();
+
+        if (key) {
+          this.cache.set(key, (0, _extends2.default)({}, this.result));
+        }
+      }
+    }, {
+      key: "clearCache",
+      value: function clearCache() {
+        this.cache.clear();
+      }
+    }, {
+      key: "getCacheKey",
+      value: function getCacheKey() {
+        return this.globalVars && this.globalVars.$theme;
+      }
+    }]);
+    return _default;
+  }();
+
+  exports.default = _default;
+},555,[1,11,22,23,2,556,562,557,560],"node_modules/react-native-extended-stylesheet/src/sheet.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+
+  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./replacers/vars"));
+
+  var _mediaQueries = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./replacers/media-queries"));
+
+  var _value = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./value"));
+
+  var _utils = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./utils"));
+
+  var _default = function () {
+    function _default(source) {
+      var varsArr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+      (0, _classCallCheck2.default)(this, _default);
+      this.source = source;
+      this.varsArr = varsArr;
+      this.processedSource = null;
+      this.extractedVars = null;
+      this.extractedProps = null;
+      this.calculatedVars = null;
+      this.calculatedProps = null;
+    }
+
+    (0, _createClass2.default)(_default, [{
+      key: "calc",
+      value: function calc() {
+        this.processSource();
+        this.calcVars();
+        this.calcProps();
+        this.tryOutline();
+        return {
+          calculatedVars: this.calculatedVars,
+          calculatedProps: this.calculatedProps
+        };
+      }
+    }, {
+      key: "processSource",
+      value: function processSource() {
+        this.processedSource = _mediaQueries.default.process(this.source);
+      }
+    }, {
+      key: "calcVars",
+      value: function calcVars() {
+        this.extractedVars = _vars.default.extract(this.processedSource);
+
+        if (this.extractedVars) {
+          var varsArrForVars = [this.extractedVars].concat(this.varsArr);
+          this.calculatedVars = calcPlainObject(this.extractedVars, varsArrForVars);
+          this.varsArr = [this.calculatedVars].concat(this.varsArr);
+        }
+      }
+    }, {
+      key: "calcProps",
+      value: function calcProps() {
+        this.extractedProps = _utils.default.excludeKeys(this.processedSource, this.extractedVars);
+        this.calculatedProps = calcPlainObject(this.extractedProps, this.varsArr);
+      }
+    }, {
+      key: "tryOutline",
+      value: function tryOutline() {
+        var outline = _vars.default.get('$outline', this.varsArr);
+
+        if (outline) {
+          this.calculatedProps.borderWidth = typeof outline === 'number' ? outline : 1;
+          this.calculatedProps.borderColor = getRandomColor();
+        }
+      }
+    }]);
+    return _default;
+  }();
+
+  exports.default = _default;
+
+  function calcPlainObject(obj, varsArr) {
+    return Object.keys(obj).reduce(function (res, prop) {
+      res[prop] = calcStyleValue(prop, obj[prop], varsArr);
+      return res;
+    }, {});
+  }
+
+  function calcStyleValue(prop, value, varsArr) {
+    var isNestedValue = value && typeof value === 'object' && !Array.isArray(value);
+    return isNestedValue ? calcPlainObject(value, varsArr) : new _value.default(value, prop, varsArr).calc();
+  }
+
+  function getRandomColor() {
+    var colors = ['black', 'red', 'green', 'blue'];
+    var index = Math.round(Math.random() * (colors.length - 1));
+    return colors[index];
+  }
+},556,[1,22,23,557,560,563,562],"node_modules/react-native-extended-stylesheet/src/style.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
+
+  var _objectResolvePath = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "object-resolve-path"));
+
+  var PREFIX = '$';
+  var _default = {
+    isVar: isVar,
+    calc: calc,
+    extract: extract,
+    get: get
+  };
+  exports.default = _default;
+
+  function isVar(str) {
+    return typeof str === 'string' && str.charAt(0) === PREFIX;
+  }
+
+  function calc(str, varsArr) {
+    var realValue = get(str, varsArr);
+
+    if (realValue === undefined) {
+      throw new Error("Unresolved variable: " + str);
+    }
+
+    return realValue;
+  }
+
+  function extract(obj) {
+    return Object.keys(obj).reduce(function (res, key) {
+      if (isVar(key)) {
+        res = res || {};
+        res[key] = obj[key];
+      }
+
+      return res;
+    }, null);
+  }
+
+  function get(name, varsArr) {
+    if (!Array.isArray(varsArr)) {
+      throw new Error('You should pass vars array to vars.get()');
+    }
+
+    var rootVar = name.match(/[^.[]*/)[0];
+    var isSimpleVar = rootVar === name;
+
+    for (var i = 0; i < varsArr.length; i++) {
+      var vars = varsArr[i];
+
+      if (!vars || vars[rootVar] === undefined) {
+        continue;
+      }
+
+      if (isSimpleVar) {
+        return vars[name];
+      }
+
+      try {
+        return (0, _objectResolvePath.default)((0, _defineProperty2.default)({}, rootVar, vars[rootVar]), name);
+      } catch (error) {
+        return undefined;
+      }
+    }
+  }
+},557,[1,50,558],"node_modules/react-native-extended-stylesheet/src/replacers/vars.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var Path = _$$_REQUIRE(_dependencyMap[0], "./path");
+
+  module.exports = function (o, path) {
+    if (typeof path !== 'string') {
+      throw new TypeError('path must be a string');
+    }
+
+    if (typeof o !== 'object') {
+      throw new TypeError('object must be passed');
+    }
+
+    var pathObj = Path.get(path);
+
+    if (!pathObj.valid) {
+      throw new Error('path is not a valid object path');
+    }
+
+    return pathObj.getValueFrom(o);
+  };
+},558,[559],"node_modules/object-resolve-path/object-resolve-path.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  function noop() {}
+
+  function detectEval() {
+    if (typeof chrome !== 'undefined' && chrome.app && chrome.app.runtime) {
+      return false;
+    }
+
+    if (typeof navigator != 'undefined' && navigator.getDeviceStorage) {
+      return false;
+    }
+
+    try {
+      var f = new Function('', 'return true;');
+      return f();
+    } catch (ex) {
+      return false;
+    }
+  }
+
+  var hasEval = detectEval();
+
+  function isIndex(s) {
+    return +s === s >>> 0 && s !== '';
+  }
+
+  function isObject(obj) {
+    return obj === Object(obj);
+  }
+
+  var createObject = '__proto__' in {} ? function (obj) {
+    return obj;
+  } : function (obj) {
+    var proto = obj.__proto__;
+    if (!proto) return obj;
+    var newObject = Object.create(proto);
+    Object.getOwnPropertyNames(obj).forEach(function (name) {
+      Object.defineProperty(newObject, name, Object.getOwnPropertyDescriptor(obj, name));
+    });
+    return newObject;
+  };
+
+  function parsePath(path) {
+    var keys = [];
+    var index = -1;
+    var c,
+        newChar,
+        key,
+        type,
+        transition,
+        action,
+        typeMap,
+        mode = 'beforePath';
+    var actions = {
+      push: function push() {
+        if (key === undefined) return;
+        keys.push(key);
+        key = undefined;
+      },
+      append: function append() {
+        if (key === undefined) key = newChar;else key += newChar;
+      }
+    };
+
+    function maybeUnescapeQuote() {
+      if (index >= path.length) return;
+      var nextChar = path[index + 1];
+
+      if (mode == 'inSingleQuote' && nextChar == "'" || mode == 'inDoubleQuote' && nextChar == '"') {
+        index++;
+        newChar = nextChar;
+        actions.append();
+        return true;
+      }
+    }
+
+    while (mode) {
+      index++;
+      c = path[index];
+      if (c == '\\' && maybeUnescapeQuote(mode)) continue;
+      type = getPathCharType(c);
+      typeMap = pathStateMachine[mode];
+      transition = typeMap[type] || typeMap['else'] || 'error';
+      if (transition == 'error') return;
+      mode = transition[0];
+      action = actions[transition[1]] || noop;
+      newChar = transition[2] === undefined ? c : transition[2];
+      action();
+
+      if (mode === 'afterPath') {
+        return keys;
+      }
+    }
+
+    return;
+  }
+
+  var identStart = '[\$_a-zA-Z]';
+  var identPart = '[\$_a-zA-Z0-9]';
+  var identRegExp = new RegExp('^' + identStart + '+' + identPart + '*' + '$');
+
+  function isIdent(s) {
+    return identRegExp.test(s);
+  }
+
+  var constructorIsPrivate = {};
+
+  function Path(parts, privateToken) {
+    if (privateToken !== constructorIsPrivate) throw Error('Use Path.get to retrieve path objects');
+
+    for (var i = 0; i < parts.length; i++) {
+      this.push(String(parts[i]));
+    }
+
+    if (hasEval && this.length) {
+      this.getValueFrom = this.compiledGetValueFromFn();
+    }
+  }
+
+  var pathCache = {};
+
+  function getPath(pathString) {
+    if (pathString instanceof Path) return pathString;
+    if (pathString == null || pathString.length == 0) pathString = '';
+
+    if (typeof pathString != 'string') {
+      if (isIndex(pathString.length)) {
+        return new Path(pathString, constructorIsPrivate);
+      }
+
+      pathString = String(pathString);
+    }
+
+    var path = pathCache[pathString];
+    if (path) return path;
+    var parts = parsePath(pathString);
+    if (!parts) return invalidPath;
+    var path = new Path(parts, constructorIsPrivate);
+    pathCache[pathString] = path;
+    return path;
+  }
+
+  Path.get = getPath;
+
+  function formatAccessor(key) {
+    if (isIndex(key)) {
+      return '[' + key + ']';
+    } else {
+      return '["' + key.replace(/"/g, '\\"') + '"]';
+    }
+  }
+
+  Path.prototype = createObject({
+    __proto__: [],
+    valid: true,
+    toString: function toString() {
+      var pathString = '';
+
+      for (var i = 0; i < this.length; i++) {
+        var key = this[i];
+
+        if (isIdent(key)) {
+          pathString += i ? '.' + key : key;
+        } else {
+          pathString += formatAccessor(key);
+        }
+      }
+
+      return pathString;
+    },
+    getValueFrom: function getValueFrom(obj, directObserver) {
+      for (var i = 0; i < this.length; i++) {
+        if (obj == null) return;
+        obj = obj[this[i]];
+      }
+
+      return obj;
+    },
+    iterateObjects: function iterateObjects(obj, observe) {
+      for (var i = 0; i < this.length; i++) {
+        if (i) obj = obj[this[i - 1]];
+        if (!isObject(obj)) return;
+        observe(obj, this[i]);
+      }
+    },
+    compiledGetValueFromFn: function compiledGetValueFromFn() {
+      var str = '';
+      var pathString = 'obj';
+      str += 'if (obj != null';
+      var i = 0;
+      var key;
+
+      for (; i < this.length - 1; i++) {
+        key = this[i];
+        pathString += isIdent(key) ? '.' + key : formatAccessor(key);
+        str += ' &&\n     ' + pathString + ' != null';
+      }
+
+      str += ')\n';
+      var key = this[i];
+      pathString += isIdent(key) ? '.' + key : formatAccessor(key);
+      str += '  return ' + pathString + ';\nelse\n  return undefined;';
+      return new Function('obj', str);
+    },
+    setValueFrom: function setValueFrom(obj, value) {
+      if (!this.length) return false;
+
+      for (var i = 0; i < this.length - 1; i++) {
+        if (!isObject(obj)) return false;
+        obj = obj[this[i]];
+      }
+
+      if (!isObject(obj)) return false;
+      obj[this[i]] = value;
+      return true;
+    }
+  });
+
+  function getPathCharType(char) {
+    if (char === undefined) return 'eof';
+    var code = char.charCodeAt(0);
+
+    switch (code) {
+      case 0x5B:
+      case 0x5D:
+      case 0x2E:
+      case 0x22:
+      case 0x27:
+      case 0x30:
+        return char;
+
+      case 0x5F:
+      case 0x24:
+        return 'ident';
+
+      case 0x20:
+      case 0x09:
+      case 0x0A:
+      case 0x0D:
+      case 0xA0:
+      case 0xFEFF:
+      case 0x2028:
+      case 0x2029:
+        return 'ws';
+    }
+
+    if (0x61 <= code && code <= 0x7A || 0x41 <= code && code <= 0x5A) return 'ident';
+    if (0x31 <= code && code <= 0x39) return 'number';
+    return 'else';
+  }
+
+  var pathStateMachine = {
+    'beforePath': {
+      'ws': ['beforePath'],
+      'ident': ['inIdent', 'append'],
+      '[': ['beforeElement'],
+      'eof': ['afterPath']
+    },
+    'inPath': {
+      'ws': ['inPath'],
+      '.': ['beforeIdent'],
+      '[': ['beforeElement'],
+      'eof': ['afterPath']
+    },
+    'beforeIdent': {
+      'ws': ['beforeIdent'],
+      'ident': ['inIdent', 'append']
+    },
+    'inIdent': {
+      'ident': ['inIdent', 'append'],
+      '0': ['inIdent', 'append'],
+      'number': ['inIdent', 'append'],
+      'ws': ['inPath', 'push'],
+      '.': ['beforeIdent', 'push'],
+      '[': ['beforeElement', 'push'],
+      'eof': ['afterPath', 'push']
+    },
+    'beforeElement': {
+      'ws': ['beforeElement'],
+      '0': ['afterZero', 'append'],
+      'number': ['inIndex', 'append'],
+      "'": ['inSingleQuote', 'append', ''],
+      '"': ['inDoubleQuote', 'append', '']
+    },
+    'afterZero': {
+      'ws': ['afterElement', 'push'],
+      ']': ['inPath', 'push']
+    },
+    'inIndex': {
+      '0': ['inIndex', 'append'],
+      'number': ['inIndex', 'append'],
+      'ws': ['afterElement'],
+      ']': ['inPath', 'push']
+    },
+    'inSingleQuote': {
+      "'": ['afterElement'],
+      'eof': ['error'],
+      'else': ['inSingleQuote', 'append']
+    },
+    'inDoubleQuote': {
+      '"': ['afterElement'],
+      'eof': ['error'],
+      'else': ['inDoubleQuote', 'append']
+    },
+    'afterElement': {
+      'ws': ['afterElement'],
+      ']': ['inPath', 'push']
+    }
+  };
+  var invalidPath = new Path('', constructorIsPrivate);
+  invalidPath.valid = false;
+
+  invalidPath.getValueFrom = invalidPath.setValueFrom = function () {};
+
+  module.exports = Path;
+},559,[],"node_modules/object-resolve-path/path.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _cssMediaquery = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "css-mediaquery"));
+
+  var _utils = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "../utils"));
+
+  var PREFIX = '@media';
+  var _default = {
+    isMediaQuery: isMediaQuery,
+    process: process
+  };
+  exports.default = _default;
+
+  function isMediaQuery(str) {
+    return typeof str === 'string' && str.indexOf(PREFIX) === 0;
+  }
+
+  function process(obj) {
+    var mqKeys = [];
+    var res = Object.keys(obj).reduce(function (res, key) {
+      if (!isMediaQuery(key)) {
+        res[key] = obj[key];
+      } else {
+        mqKeys.push(key);
+      }
+
+      return res;
+    }, {});
+
+    if (mqKeys.length) {
+      var matchObject = getMatchObject();
+      mqKeys.forEach(function (key) {
+        var mqStr = key.replace(PREFIX, '');
+
+        var isMatch = _cssMediaquery.default.match(mqStr, matchObject);
+
+        if (isMatch) {
+          merge(res, obj[key]);
+        }
+      });
+    }
+
+    return res;
+  }
+
+  function getMatchObject() {
+    var win = _reactNative.Dimensions.get('window');
+
+    var isRTL = _reactNative.I18nManager.isRTL;
+    return {
+      width: win.width,
+      height: win.height,
+      orientation: win.width > win.height ? 'landscape' : 'portrait',
+      'aspect-ratio': win.width / win.height,
+      type: _reactNative.Platform.OS,
+      direction: isRTL ? 'rtl' : 'ltr'
+    };
+  }
+
+  function merge(obj, mqObj) {
+    Object.keys(mqObj).forEach(function (key) {
+      if (_utils.default.isObject(obj[key]) && _utils.default.isObject(mqObj[key])) {
+        (0, _extends2.default)(obj[key], mqObj[key]);
+      } else {
+        obj[key] = mqObj[key];
+      }
+    });
+  }
+},560,[1,11,2,561,562],"node_modules/react-native-extended-stylesheet/src/replacers/media-queries.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  exports.match = matchQuery;
+  exports.parse = parseQuery;
+  var RE_MEDIA_QUERY = /(?:(only|not)?\s*([^\s\(\)]+)(?:\s*and)?\s*)?(.+)?/i,
+      RE_MQ_EXPRESSION = /\(\s*([^\s\:\)]+)\s*(?:\:\s*([^\s\)]+))?\s*\)/,
+      RE_MQ_FEATURE = /^(?:(min|max)-)?(.+)/,
+      RE_LENGTH_UNIT = /(em|rem|px|cm|mm|in|pt|pc)?$/,
+      RE_RESOLUTION_UNIT = /(dpi|dpcm|dppx)?$/;
+
+  function matchQuery(mediaQuery, values) {
+    return parseQuery(mediaQuery).some(function (query) {
+      var inverse = query.inverse;
+      var typeMatch = query.type === 'all' || values.type === query.type;
+
+      if (typeMatch && inverse || !(typeMatch || inverse)) {
+        return false;
+      }
+
+      var expressionsMatch = query.expressions.every(function (expression) {
+        var feature = expression.feature,
+            modifier = expression.modifier,
+            expValue = expression.value,
+            value = values[feature];
+
+        if (!value) {
+          return false;
+        }
+
+        switch (feature) {
+          case 'orientation':
+          case 'scan':
+            return value.toLowerCase() === expValue.toLowerCase();
+
+          case 'width':
+          case 'height':
+          case 'device-width':
+          case 'device-height':
+            expValue = toPx(expValue);
+            value = toPx(value);
+            break;
+
+          case 'resolution':
+            expValue = toDpi(expValue);
+            value = toDpi(value);
+            break;
+
+          case 'aspect-ratio':
+          case 'device-aspect-ratio':
+          case 'device-pixel-ratio':
+            expValue = toDecimal(expValue);
+            value = toDecimal(value);
+            break;
+
+          case 'grid':
+          case 'color':
+          case 'color-index':
+          case 'monochrome':
+            expValue = parseInt(expValue, 10) || 1;
+            value = parseInt(value, 10) || 0;
+            break;
+        }
+
+        switch (modifier) {
+          case 'min':
+            return value >= expValue;
+
+          case 'max':
+            return value <= expValue;
+
+          default:
+            return value === expValue;
+        }
+      });
+      return expressionsMatch && !inverse || !expressionsMatch && inverse;
+    });
+  }
+
+  function parseQuery(mediaQuery) {
+    return mediaQuery.split(',').map(function (query) {
+      query = query.trim();
+      var captures = query.match(RE_MEDIA_QUERY),
+          modifier = captures[1],
+          type = captures[2],
+          expressions = captures[3] || '',
+          parsed = {};
+      parsed.inverse = !!modifier && modifier.toLowerCase() === 'not';
+      parsed.type = type ? type.toLowerCase() : 'all';
+      expressions = expressions.match(/\([^\)]+\)/g) || [];
+      parsed.expressions = expressions.map(function (expression) {
+        var captures = expression.match(RE_MQ_EXPRESSION),
+            feature = captures[1].toLowerCase().match(RE_MQ_FEATURE);
+        return {
+          modifier: feature[1],
+          feature: feature[2],
+          value: captures[2]
+        };
+      });
+      return parsed;
+    });
+  }
+
+  function toDecimal(ratio) {
+    var decimal = Number(ratio),
+        numbers;
+
+    if (!decimal) {
+      numbers = ratio.match(/^(\d+)\s*\/\s*(\d+)$/);
+      decimal = numbers[1] / numbers[2];
+    }
+
+    return decimal;
+  }
+
+  function toDpi(resolution) {
+    var value = parseFloat(resolution),
+        units = String(resolution).match(RE_RESOLUTION_UNIT)[1];
+
+    switch (units) {
+      case 'dpcm':
+        return value / 2.54;
+
+      case 'dppx':
+        return value * 96;
+
+      default:
+        return value;
+    }
+  }
+
+  function toPx(length) {
+    var value = parseFloat(length),
+        units = String(length).match(RE_LENGTH_UNIT)[1];
+
+    switch (units) {
+      case 'em':
+        return value * 16;
+
+      case 'rem':
+        return value * 16;
+
+      case 'cm':
+        return value * 96 / 2.54;
+
+      case 'mm':
+        return value * 96 / 2.54 / 10;
+
+      case 'in':
+        return value * 96;
+
+      case 'pt':
+        return value * 72;
+
+      case 'pc':
+        return value * 72 / 12;
+
+      default:
+        return value;
+    }
+  }
+},561,[],"node_modules/css-mediaquery/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _default = {
+    excludeKeys: excludeKeys,
+    isObject: isObject
+  };
+  exports.default = _default;
+
+  function excludeKeys(obj, keys) {
+    keys = Array.isArray(keys) ? keys : keys ? Object.keys(keys) : [];
+    return Object.keys(obj).reduce(function (res, key) {
+      if (keys.indexOf(key) === -1) {
+        res[key] = obj[key];
+      }
+
+      return res;
+    }, {});
+  }
+
+  function isObject(obj) {
+    return typeof obj === 'object' && obj !== null;
+  }
+},562,[],"node_modules/react-native-extended-stylesheet/src/utils.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+
+  var _rem = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./replacers/rem"));
+
+  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./replacers/vars"));
+
+  var _percent = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./replacers/percent"));
+
+  var _operation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./replacers/operation"));
+
+  var _scale = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./replacers/scale"));
+
+  var Value = function () {
+    function Value(value, prop) {
+      var varsArr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+      var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+      (0, _classCallCheck2.default)(this, Value);
+      this.value = value;
+      this.outValue = null;
+      this.prop = prop;
+      this.varsArr = varsArr;
+      this.stack = options.stack || [];
+      this.isOperation = options.isOperation !== undefined ? options.isOperation : false;
+    }
+
+    (0, _createClass2.default)(Value, [{
+      key: "calc",
+      value: function calc() {
+        if (typeof this.value === 'function') {
+          this.value = this.value();
+        }
+
+        if (typeof this.value === 'string') {
+          this.calcString();
+        } else {
+          this.proxyValue();
+        }
+
+        if (this.isFinal()) {
+          this.applyScale();
+        }
+
+        return this.outValue;
+      }
+    }, {
+      key: "calcString",
+      value: function calcString() {
+        var actions = [this.tryCalcOperation, this.isOperation ? this.tryCalcPercent : null, this.tryCalcVar, this.tryCalcRem].filter(Boolean);
+        var value = this.tryActions(actions, this.value);
+
+        if (value !== null) {
+          this.outValue = value;
+        } else {
+          this.proxyValue();
+        }
+      }
+    }, {
+      key: "tryActions",
+      value: function tryActions(actions, str) {
+        for (var i = 0; i < actions.length; i++) {
+          var val = actions[i].call(this, str);
+
+          if (val !== null) {
+            return val;
+          }
+        }
+
+        return null;
+      }
+    }, {
+      key: "tryCalcOperation",
+      value: function tryCalcOperation(str) {
+        var opInfo = _operation.default.isOperation(str);
+
+        if (!opInfo) {
+          return null;
+        }
+
+        this.isOperation = true;
+        var operands = ['v1', 'v2'];
+
+        for (var i = 0; i < operands.length; i++) {
+          var operand = operands[i];
+          var operandValue = this.calcOperandValue(opInfo[operand]);
+
+          if (operandValue !== null) {
+            opInfo[operand] = operandValue;
+          } else {
+            return null;
+          }
+        }
+
+        return _operation.default.exec(opInfo);
+      }
+    }, {
+      key: "calcOperandValue",
+      value: function calcOperandValue(str) {
+        var actions = [this.tryCalcVar, this.tryCalcPercent, this.tryCalcRem, this.tryCalcFloat];
+        return this.tryActions(actions, str);
+      }
+    }, {
+      key: "tryCalcVar",
+      value: function tryCalcVar(str) {
+        if (_vars.default.isVar(str)) {
+          var val = _vars.default.calc(str, this.varsArr);
+
+          if (this.stack.indexOf(str) >= 0) {
+            throw new Error('Cyclic reference: ' + this.stack.concat([str]).join(' -> '));
+          }
+
+          var options = {
+            stack: this.stack.concat([str]),
+            isOperation: this.isOperation
+          };
+          return new Value(val, str, this.varsArr, options).calc();
+        } else {
+          return null;
+        }
+      }
+    }, {
+      key: "tryCalcPercent",
+      value: function tryCalcPercent(str) {
+        if (_percent.default.isPercent(str)) {
+          return _percent.default.calc(str, this.prop);
+        }
+
+        return null;
+      }
+    }, {
+      key: "tryCalcRem",
+      value: function tryCalcRem(str) {
+        if (_rem.default.isRem(str)) {
+          var remValue = _vars.default.get('$rem', this.varsArr);
+
+          return _rem.default.calc(str, remValue);
+        } else {
+          return null;
+        }
+      }
+    }, {
+      key: "tryCalcFloat",
+      value: function tryCalcFloat(str) {
+        var val = parseFloat(str);
+        return !isNaN(val) ? val : null;
+      }
+    }, {
+      key: "isFinal",
+      value: function isFinal() {
+        return !this.stack.length;
+      }
+    }, {
+      key: "proxyValue",
+      value: function proxyValue() {
+        this.outValue = this.value;
+      }
+    }, {
+      key: "applyScale",
+      value: function applyScale() {
+        if (_vars.default.isVar(this.prop)) {
+          return;
+        }
+
+        var scaleFactor = _vars.default.get('$scale', this.varsArr) || 1;
+
+        if (scaleFactor === 1) {
+          return;
+        }
+
+        if (_scale.default.isScalable(this.outValue, this.prop)) {
+          this.outValue = _scale.default.calc(this.outValue, scaleFactor);
+        }
+      }
+    }]);
+    return Value;
+  }();
+
+  exports.default = Value;
+},563,[1,22,23,564,557,565,566,567],"node_modules/react-native-extended-stylesheet/src/value.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var SUFFIX = 'rem';
+  var DEFAULT_REM = 16;
+  var _default = {
+    isRem: isRem,
+    calc: calc
+  };
+  exports.default = _default;
+
+  function isRem(str) {
+    return str.substr(-SUFFIX.length) === SUFFIX;
+  }
+
+  function calc(str) {
+    var rem = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_REM;
+    var koefStr = str.substr(0, str.length - SUFFIX.length);
+    var koef = koefStr === '' ? 1 : parseFloat(koefStr);
+
+    if (isNaN(koef)) {
+      throw new Error('Invalid rem value: ' + str);
+    }
+
+    return rem * koef;
+  }
+},564,[],"node_modules/react-native-extended-stylesheet/src/replacers/rem.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      width = _Dimensions$get.width,
+      height = _Dimensions$get.height;
+
+  var V_PROPS = ['height', 'top', 'bottom', 'vertical'];
+  var H_PROPS = ['width', 'left', 'right', 'horizontal'];
+  var SUFFIX = '%';
+  var invalidPropMsg = ["Name of variable or property with percent value should contain ", "(" + V_PROPS.concat(H_PROPS).join() + ") to define base for percent calculation"].join('');
+  var _default = {
+    isPercent: isPercent,
+    calc: calc
+  };
+  exports.default = _default;
+
+  function isPercent(str) {
+    return str.charAt(str.length - 1) === SUFFIX;
+  }
+
+  function calc(str, prop) {
+    var percent = parseInt(str.substring(0, str.length - 1), 10);
+    var base = isVertical(prop) ? height : width;
+    return base * percent / 100;
+  }
+
+  function isVertical(prop) {
+    prop = prop.toLowerCase();
+
+    if (V_PROPS.some(function (p) {
+      return prop.indexOf(p) >= 0;
+    })) {
+      return true;
+    }
+
+    if (H_PROPS.some(function (p) {
+      return prop.indexOf(p) >= 0;
+    })) {
+      return false;
+    }
+
+    throw new Error(invalidPropMsg);
+  }
+},565,[2],"node_modules/react-native-extended-stylesheet/src/replacers/percent.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var operators = {
+    '*': function _(v1, v2) {
+      return v1 * v2;
+    },
+    '+': function _(v1, v2) {
+      return v1 + v2;
+    },
+    '-': function _(v1, v2) {
+      return v1 - v2;
+    },
+    '/': function _(v1, v2) {
+      return v1 / v2;
+    }
+  };
+  var _default = {
+    isOperation: isOperation,
+    exec: exec
+  };
+  exports.default = _default;
+
+  function isOperation(str) {
+    var opInfo = findOperator(str);
+
+    if (opInfo) {
+      opInfo.v1 = str.substr(0, opInfo.pos).trim();
+      opInfo.v2 = str.substr(opInfo.pos + 1).trim();
+      delete opInfo.pos;
+      return opInfo;
+    } else {
+      return false;
+    }
+  }
+
+  function exec(opInfo) {
+    assertOperator(opInfo.operator);
+    assertValue(opInfo.v1);
+    assertValue(opInfo.v2);
+
+    if (opInfo.operator === '/') {
+      assertDivisor(opInfo.v2);
+    }
+
+    var fn = operators[opInfo.operator];
+    return fn(opInfo.v1, opInfo.v2);
+  }
+
+  function findOperator(str) {
+    for (var operator in operators) {
+      var pos = str.indexOf(operator);
+
+      if (pos >= 0) {
+        return {
+          operator: operator,
+          pos: pos
+        };
+      }
+    }
+  }
+
+  function assertOperator(operator) {
+    if (!operators[operator]) {
+      throw new Error('Unknown operator: ' + operator);
+    }
+  }
+
+  function assertValue(value) {
+    if (typeof value !== 'number') {
+      throw new Error('Operation value should be number, you try: ' + String(value));
+    }
+  }
+
+  function assertDivisor(divisor) {
+    if (divisor === 0) {
+      throw new Error('Operation divisor should not be zero');
+    }
+  }
+},566,[],"node_modules/react-native-extended-stylesheet/src/replacers/operation.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var SCALABLE_PROPS = ['width', 'height', 'margin', 'padding', 'fontsize', 'radius'];
+  var _default = {
+    isScalable: isScalable,
+    calc: calc
+  };
+  exports.default = _default;
+
+  function isScalable(value, prop) {
+    return typeof value === 'number' && isScalableProp(prop);
+  }
+
+  function calc(value, scaleFactor) {
+    if (typeof value !== 'number') {
+      throw new Error('Invalid value for scale: ' + value);
+    }
+
+    if (typeof scaleFactor !== 'number') {
+      throw new Error('Invalid scaleFactor for scale: ' + scaleFactor);
+    }
+
+    return value * scaleFactor;
+  }
+
+  function isScalableProp(prop) {
+    if (typeof prop !== 'string') {
+      return false;
+    }
+
+    prop = prop.toLowerCase();
+    return SCALABLE_PROPS.some(function (p) {
+      return prop.indexOf(p) >= 0;
+    });
+  }
+},567,[],"node_modules/react-native-extended-stylesheet/src/replacers/scale.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _default;
+
+  function _default(styles, styleName, index, count) {
+    if (!isNumber(index) || !isNumber(count)) {
+      return styles[styleName];
+    }
+
+    var result = [styles[styleName]];
+    addStyle(result, styles, styleName + ':first-child', index === 0);
+    addStyle(result, styles, styleName + ':nth-child-even', index < count && index % 2 === 0);
+    addStyle(result, styles, styleName + ':nth-child-odd', index < count && index % 2 === 1);
+    addStyle(result, styles, styleName + ':last-child', index === count - 1);
+    return result.length > 1 ? result : result[0];
+  }
+
+  function addStyle(result, styles, styleName, condition) {
+    if (styles[styleName] && condition) {
+      result.push(styles[styleName]);
+    }
+  }
+
+  function isNumber(value) {
+    return typeof value === 'number';
+  }
+},568,[],"node_modules/react-native-extended-stylesheet/src/child.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
@@ -91976,7 +93524,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _DebugInstructions = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./components/DebugInstructions"));
 
   var _ReloadInstructions = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./components/ReloadInstructions"));
-},553,[1,554,557,555,559,560],"node_modules/react-native/Libraries/NewAppScreen/index.js");
+},569,[1,570,573,571,575,576],"node_modules/react-native/Libraries/NewAppScreen/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -92038,7 +93586,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Header;
   exports.default = _default;
-},554,[1,52,2,555,556],"node_modules/react-native/Libraries/NewAppScreen/components/Header.js");
+},570,[1,52,2,571,572],"node_modules/react-native/Libraries/NewAppScreen/components/Header.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -92055,7 +93603,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     black: '#000'
   };
   exports.default = _default;
-},555,[],"node_modules/react-native/Libraries/NewAppScreen/components/Colors.js");
+},571,[],"node_modules/react-native/Libraries/NewAppScreen/components/Colors.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -92067,7 +93615,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "logo",
     "type": "png"
   });
-},556,[187],"node_modules/react-native/Libraries/NewAppScreen/components/logo.png");
+},572,[187],"node_modules/react-native/Libraries/NewAppScreen/components/logo.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -92200,7 +93748,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = LinkList;
   exports.default = _default;
-},557,[1,52,2,558,555],"node_modules/react-native/Libraries/NewAppScreen/components/LearnMoreLinks.js");
+},573,[1,52,2,574,571],"node_modules/react-native/Libraries/NewAppScreen/components/LearnMoreLinks.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -92216,7 +93764,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }
 
   module.exports = openURLInBrowser;
-},558,[107],"node_modules/react-native/Libraries/Core/Devtools/openURLInBrowser.js");
+},574,[107],"node_modules/react-native/Libraries/Core/Devtools/openURLInBrowser.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92282,7 +93830,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = DebugInstructions;
   exports.default = _default2;
-},559,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/DebugInstructions.js");
+},575,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/DebugInstructions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92336,7 +93884,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = ReloadInstructions;
   exports.default = _default2;
-},560,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/ReloadInstructions.js");
+},576,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/ReloadInstructions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -92347,7 +93895,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = exports.default = exports.default = void 0;
+  exports.default = void 0;
 
   var _regenerator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/regenerator"));
 
@@ -92559,11 +94107,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Camera;
   exports.default = _default;
-  var _default2 = Camera;
-  exports.default = _default2;
-  var _default3 = Camera;
-  exports.default = _default3;
-},561,[1,155,105,12,52,2,562,570,566],"camera.tsx");
+},577,[1,155,105,12,52,2,578,581,582],"camera.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92586,7 +94130,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _RNCamera = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./RNCamera"));
 
   var _FaceDetector = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./FaceDetector"));
-},562,[1,563,564],"node_modules/react-native-camera/src/index.js");
+},578,[1,579,580],"node_modules/react-native-camera/src/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93543,7 +95087,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       testID: true
     }
   });
-},563,[1,11,9,50,22,23,37,40,39,43,12,105,52,193,67,2],"node_modules/react-native-camera/src/RNCamera.js");
+},579,[1,11,9,50,22,23,37,40,39,43,12,105,52,193,67,2],"node_modules/react-native-camera/src/RNCamera.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93601,127 +95145,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   var Constants = FaceDetector.Constants;
   exports.Constants = Constants;
-},564,[1,50,22,23,2],"node_modules/react-native-camera/src/FaceDetector.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  var _exportNames = {};
-  exports.default = void 0;
-
-  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _nativeInterface = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./internal/nativeInterface"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
-
-  var _types = _$$_REQUIRE(_dependencyMap[6], "./internal/types");
-
-  Object.keys(_types).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-    Object.defineProperty(exports, key, {
-      enumerable: true,
-      get: function get() {
-        return _types[key];
-      }
-    });
-  });
-
-  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-  var DEFAULT_OPTIONS = {
-    title: 'Select a Photo',
-    cancelButtonTitle: 'Cancel',
-    takePhotoButtonTitle: 'Take Photo…',
-    chooseFromLibraryButtonTitle: 'Choose from Library…',
-    quality: 1.0,
-    allowsEditing: false,
-    permissionDenied: {
-      title: 'Permission denied',
-      text: 'To be able to take pictures with your camera and choose images from your library.',
-      reTryTitle: 're-try',
-      okTitle: "I'm sure"
-    },
-    tintColor: 'blue'
-  };
-
-  var ImagePicker = function () {
-    function ImagePicker() {
-      (0, _classCallCheck2.default)(this, ImagePicker);
-    }
-
-    (0, _createClass2.default)(ImagePicker, [{
-      key: "showImagePicker",
-      value: function showImagePicker(optionsOrCallback, callback) {
-        if (typeof optionsOrCallback === 'function') {
-          return _nativeInterface.default.showImagePicker(_objectSpread({}, DEFAULT_OPTIONS, {
-            tintColor: (0, _reactNative.processColor)(DEFAULT_OPTIONS.tintColor)
-          }), optionsOrCallback);
-        }
-
-        if (callback == null) {
-          throw new Error('callback cannot be undefined');
-        }
-
-        return _nativeInterface.default.showImagePicker(_objectSpread({}, DEFAULT_OPTIONS, {}, optionsOrCallback, {
-          tintColor: (0, _reactNative.processColor)(optionsOrCallback.tintColor || DEFAULT_OPTIONS.tintColor)
-        }), callback);
-      }
-    }, {
-      key: "launchCamera",
-      value: function launchCamera(options, callback) {
-        return _nativeInterface.default.launchCamera(_objectSpread({}, DEFAULT_OPTIONS, {}, options, {
-          tintColor: (0, _reactNative.processColor)(options.tintColor || DEFAULT_OPTIONS.tintColor)
-        }), callback);
-      }
-    }, {
-      key: "launchImageLibrary",
-      value: function launchImageLibrary(options, callback) {
-        return _nativeInterface.default.launchImageLibrary(_objectSpread({}, DEFAULT_OPTIONS, {}, options, {
-          tintColor: (0, _reactNative.processColor)(options.tintColor || DEFAULT_OPTIONS.tintColor)
-        }), callback);
-      }
-    }]);
-    return ImagePicker;
-  }();
-
-  var _default = new ImagePicker();
-
-  exports.default = _default;
-},566,[1,50,22,23,567,2,568],"node_modules/react-native-image-picker/src/index.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-
-  var ImagePickerManager = _reactNative.NativeModules.ImagePickerManager;
-
-  if (!ImagePickerManager) {
-    throw new Error("react-native-image-picker: NativeModule.ImagePickerManager is null. To fix this issue try these steps:\n\u2022 Run `react-native link react-native-image-picker` in the project root.\n\u2022 Rebuild and re-run the app.\n\u2022 If you are using CocoaPods on iOS, run `pod install` in the `ios` directory and then rebuild and re-run the app. You may also need to re-open Xcode to get the new pods.\n\u2022 Check that the library was linked correctly when you used the link command by running through the manual installation instructions in the README.\n* If you are getting this error while unit testing you need to mock the native module. Follow the guide in the README.\nIf none of these fix the issue, please open an issue on the Github repository: https://github.com/react-native-community/react-native-image-picker");
-  }
-
-  var _default = ImagePickerManager;
-  exports.default = _default;
-},567,[2],"node_modules/react-native-image-picker/src/internal/nativeInterface.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},568,[],"node_modules/react-native-image-picker/src/internal/types.ts");
-__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
-  module.exports = {
-  "name": "Canopii",
-  "displayName": "Canopii"
-};
-},569,[],"app.json");
+},580,[1,50,22,23,2],"node_modules/react-native-camera/src/FaceDetector.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93936,7 +95360,121 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.default = _default;
   var _default2 = Photo;
   exports.default = _default2;
-},570,[1,155,105,12,52,2],"photo.tsx");
+},581,[1,155,105,12,52,2],"photo.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _exportNames = {};
+  exports.default = void 0;
+
+  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _nativeInterface = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./internal/nativeInterface"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
+
+  var _types = _$$_REQUIRE(_dependencyMap[6], "./internal/types");
+
+  Object.keys(_types).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _types[key];
+      }
+    });
+  });
+
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+  var DEFAULT_OPTIONS = {
+    title: 'Select a Photo',
+    cancelButtonTitle: 'Cancel',
+    takePhotoButtonTitle: 'Take Photo…',
+    chooseFromLibraryButtonTitle: 'Choose from Library…',
+    quality: 1.0,
+    allowsEditing: false,
+    permissionDenied: {
+      title: 'Permission denied',
+      text: 'To be able to take pictures with your camera and choose images from your library.',
+      reTryTitle: 're-try',
+      okTitle: "I'm sure"
+    },
+    tintColor: 'blue'
+  };
+
+  var ImagePicker = function () {
+    function ImagePicker() {
+      (0, _classCallCheck2.default)(this, ImagePicker);
+    }
+
+    (0, _createClass2.default)(ImagePicker, [{
+      key: "showImagePicker",
+      value: function showImagePicker(optionsOrCallback, callback) {
+        if (typeof optionsOrCallback === 'function') {
+          return _nativeInterface.default.showImagePicker(_objectSpread({}, DEFAULT_OPTIONS, {
+            tintColor: (0, _reactNative.processColor)(DEFAULT_OPTIONS.tintColor)
+          }), optionsOrCallback);
+        }
+
+        if (callback == null) {
+          throw new Error('callback cannot be undefined');
+        }
+
+        return _nativeInterface.default.showImagePicker(_objectSpread({}, DEFAULT_OPTIONS, {}, optionsOrCallback, {
+          tintColor: (0, _reactNative.processColor)(optionsOrCallback.tintColor || DEFAULT_OPTIONS.tintColor)
+        }), callback);
+      }
+    }, {
+      key: "launchCamera",
+      value: function launchCamera(options, callback) {
+        return _nativeInterface.default.launchCamera(_objectSpread({}, DEFAULT_OPTIONS, {}, options, {
+          tintColor: (0, _reactNative.processColor)(options.tintColor || DEFAULT_OPTIONS.tintColor)
+        }), callback);
+      }
+    }, {
+      key: "launchImageLibrary",
+      value: function launchImageLibrary(options, callback) {
+        return _nativeInterface.default.launchImageLibrary(_objectSpread({}, DEFAULT_OPTIONS, {}, options, {
+          tintColor: (0, _reactNative.processColor)(options.tintColor || DEFAULT_OPTIONS.tintColor)
+        }), callback);
+      }
+    }]);
+    return ImagePicker;
+  }();
+
+  var _default = new ImagePicker();
+
+  exports.default = _default;
+},582,[1,50,22,23,583,2,584],"node_modules/react-native-image-picker/src/index.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var ImagePickerManager = _reactNative.NativeModules.ImagePickerManager;
+
+  if (!ImagePickerManager) {
+    throw new Error("react-native-image-picker: NativeModule.ImagePickerManager is null. To fix this issue try these steps:\n\u2022 Run `react-native link react-native-image-picker` in the project root.\n\u2022 Rebuild and re-run the app.\n\u2022 If you are using CocoaPods on iOS, run `pod install` in the `ios` directory and then rebuild and re-run the app. You may also need to re-open Xcode to get the new pods.\n\u2022 Check that the library was linked correctly when you used the link command by running through the manual installation instructions in the README.\n* If you are getting this error while unit testing you need to mock the native module. Follow the guide in the README.\nIf none of these fix the issue, please open an issue on the Github repository: https://github.com/react-native-community/react-native-image-picker");
+  }
+
+  var _default = ImagePickerManager;
+  exports.default = _default;
+},583,[2],"node_modules/react-native-image-picker/src/internal/nativeInterface.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},584,[],"node_modules/react-native-image-picker/src/internal/types.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -93982,7 +95520,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Choices;
   exports.default = _default;
-},571,[1,155,12,52,2],"choices.tsx");
+},585,[1,155,12,52,2],"choices.tsx");
+__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
+  module.exports = {
+  "name": "Canopii",
+  "displayName": "Canopii"
+};
+},586,[],"app.json");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93991,1548 +95535,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
 
-  var _api = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./api"));
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native-extended-stylesheet"));
 
-  var _default = new _api.default();
+  var _default = _reactNativeExtendedStylesheet.default.create({
+    flex: {
+      display: "flex"
+    }
+  });
 
   exports.default = _default;
-},572,[1,573],"node_modules/react-native-extended-stylesheet/src/index.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
-
-  var _sheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./sheet"));
-
-  var _style = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./style"));
-
-  var _value = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./value"));
-
-  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./replacers/vars"));
-
-  var _mediaQueries = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./replacers/media-queries"));
-
-  var _child = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./child"));
-
-  var BUILD_EVENT = 'build';
-
-  var EStyleSheet = function () {
-    function EStyleSheet() {
-      (0, _classCallCheck2.default)(this, EStyleSheet);
-      this.child = _child.default;
-      this.builded = false;
-      this.sheets = [];
-      this.globalVars = null;
-      this.listeners = {};
-
-      this._proxyToOriginal();
-    }
-
-    (0, _createClass2.default)(EStyleSheet, [{
-      key: "create",
-      value: function create(obj) {
-        var sheet = new _sheet.default(obj);
-        this.sheets.push(sheet);
-
-        if (this.builded) {
-          sheet.calc(this.globalVars);
-        }
-
-        return sheet.getResult();
-      }
-    }, {
-      key: "build",
-      value: function build(rawGlobalVars) {
-        this.builded = true;
-
-        this._calcGlobalVars(rawGlobalVars);
-
-        this._calcSheets();
-
-        this._callListeners(BUILD_EVENT);
-      }
-    }, {
-      key: "value",
-      value: function value(expr, prop) {
-        var varsArr = this.globalVars ? [this.globalVars] : [];
-        return new _value.default(expr, prop, varsArr).calc();
-      }
-    }, {
-      key: "subscribe",
-      value: function subscribe(event, listener) {
-        this._assertSubscriptionParams(event, listener);
-
-        this.listeners[BUILD_EVENT] = this.listeners[BUILD_EVENT] || [];
-        this.listeners[BUILD_EVENT].push(listener);
-
-        if (this.builded) {
-          listener();
-        }
-      }
-    }, {
-      key: "unsubscribe",
-      value: function unsubscribe(event, listener) {
-        this._assertSubscriptionParams(event, listener);
-
-        if (this.listeners[BUILD_EVENT]) {
-          this.listeners[BUILD_EVENT] = this.listeners[BUILD_EVENT].filter(function (item) {
-            return item !== listener;
-          });
-        }
-      }
-    }, {
-      key: "clearCache",
-      value: function clearCache() {
-        this.sheets.forEach(function (sheet) {
-          return sheet.clearCache();
-        });
-      }
-    }, {
-      key: "_calcGlobalVars",
-      value: function _calcGlobalVars(rawGlobalVars) {
-        if (rawGlobalVars) {
-          this._checkGlobalVars(rawGlobalVars);
-
-          rawGlobalVars.$theme = rawGlobalVars.$theme || 'default';
-          this.globalVars = new _style.default(rawGlobalVars, [rawGlobalVars]).calc().calculatedVars;
-        }
-      }
-    }, {
-      key: "_calcSheets",
-      value: function _calcSheets() {
-        var _this = this;
-
-        this.sheets.forEach(function (sheet) {
-          return sheet.calc(_this.globalVars);
-        });
-      }
-    }, {
-      key: "_callListeners",
-      value: function _callListeners(event) {
-        if (Array.isArray(this.listeners[event])) {
-          this.listeners[event].forEach(function (listener) {
-            return listener();
-          });
-        }
-      }
-    }, {
-      key: "_proxyToOriginal",
-      value: function _proxyToOriginal() {
-        var _this2 = this;
-
-        var props = ['setStyleAttributePreprocessor', 'hairlineWidth', 'absoluteFill', 'absoluteFillObject', 'flatten'];
-        props.forEach(function (prop) {
-          Object.defineProperty(_this2, prop, {
-            get: function get() {
-              return _reactNative.StyleSheet[prop];
-            },
-            enumerable: true
-          });
-        });
-      }
-    }, {
-      key: "_checkGlobalVars",
-      value: function _checkGlobalVars(rawGlobalVars) {
-        Object.keys(rawGlobalVars).forEach(function (key) {
-          if (!_vars.default.isVar(key) && !_mediaQueries.default.isMediaQuery(key)) {
-            throw new Error("EStyleSheet.build() params should contain global variables (start with $) " + ("or media queries (start with @media). Got '" + key + "'."));
-          }
-        });
-      }
-    }, {
-      key: "_assertSubscriptionParams",
-      value: function _assertSubscriptionParams(event, listener) {
-        if (event !== BUILD_EVENT) {
-          throw new Error("Only '" + BUILD_EVENT + "' event is currently supported.");
-        }
-
-        if (typeof listener !== 'function') {
-          throw new Error('Listener should be a function.');
-        }
-      }
-    }]);
-    return EStyleSheet;
-  }();
-
-  exports.default = EStyleSheet;
-},573,[1,22,23,2,574,575,576,577,578,579],"node_modules/react-native-extended-stylesheet/src/api.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
-
-  var _style = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./style"));
-
-  var _utils = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./utils"));
-
-  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./replacers/vars"));
-
-  var _mediaQueries = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./replacers/media-queries"));
-
-  var _default = function () {
-    function _default(source) {
-      (0, _classCallCheck2.default)(this, _default);
-      this.source = source;
-      this.result = {};
-      this.cache = new Map();
-      this.nativeSheet = {};
-      this.globalVars = null;
-      this.localVars = null;
-      this.allVars = null;
-      this.processedSource = null;
-    }
-
-    (0, _createClass2.default)(_default, [{
-      key: "calc",
-      value: function calc(globalVars) {
-        this.globalVars = globalVars;
-        this.clearResult();
-
-        if (this.hasCache()) {
-          this.applyCache();
-        } else {
-          this.processMediaQueries();
-          this.calcVars();
-          this.calcStyles();
-          this.calcNative();
-          this.storeCache();
-        }
-
-        return this.getResult();
-      }
-    }, {
-      key: "processMediaQueries",
-      value: function processMediaQueries() {
-        this.processedSource = _mediaQueries.default.process(this.source);
-      }
-    }, {
-      key: "calcVars",
-      value: function calcVars() {
-        var rawLocalVars = _vars.default.extract(this.processedSource);
-
-        if (rawLocalVars) {
-          this.localVars = new _style.default(rawLocalVars, [rawLocalVars, this.globalVars]).calc().calculatedVars;
-          (0, _extends2.default)(this.result, this.localVars);
-        } else {
-          this.localVars = null;
-        }
-
-        this.allVars = [this.localVars, this.globalVars].filter(Boolean);
-      }
-    }, {
-      key: "calcStyles",
-      value: function calcStyles() {
-        var _this = this;
-
-        var extractedStyles = _utils.default.excludeKeys(this.processedSource, this.localVars);
-
-        Object.keys(extractedStyles).forEach(function (key) {
-          var styles = extractedStyles[key];
-
-          if (typeof styles === 'function') {
-            styles = styles();
-          }
-
-          if (styles && typeof styles === 'object') {
-            _this.calcStyle(key, styles);
-          } else {
-            _this.result[key] = styles;
-          }
-        });
-      }
-    }, {
-      key: "calcStyle",
-      value: function calcStyle(key, styleProps) {
-        var style = new _style.default(styleProps, this.allVars);
-
-        var _style$calc = style.calc(),
-            calculatedProps = _style$calc.calculatedProps,
-            calculatedVars = _style$calc.calculatedVars;
-
-        var merged = (0, _extends2.default)({}, calculatedVars, calculatedProps);
-
-        if (key.charAt(0) === '_') {
-          this.result[key] = merged;
-        } else {
-          this.result['_' + key] = merged;
-          this.nativeSheet[key] = calculatedProps;
-        }
-      }
-    }, {
-      key: "calcNative",
-      value: function calcNative() {
-        if (Object.keys(this.nativeSheet).length) {
-          var rnStyleSheet = _reactNative.StyleSheet.create(this.nativeSheet);
-
-          (0, _extends2.default)(this.result, rnStyleSheet);
-        }
-      }
-    }, {
-      key: "getResult",
-      value: function getResult() {
-        return this.result;
-      }
-    }, {
-      key: "clearResult",
-      value: function clearResult() {
-        var _this2 = this;
-
-        Object.keys(this.result).forEach(function (key) {
-          return delete _this2.result[key];
-        });
-      }
-    }, {
-      key: "hasCache",
-      value: function hasCache() {
-        var key = this.getCacheKey();
-        return key && this.cache.has(key);
-      }
-    }, {
-      key: "applyCache",
-      value: function applyCache() {
-        var cachedResult = this.cache.get(this.getCacheKey());
-        (0, _extends2.default)(this.result, cachedResult);
-      }
-    }, {
-      key: "storeCache",
-      value: function storeCache() {
-        var key = this.getCacheKey();
-
-        if (key) {
-          this.cache.set(key, (0, _extends2.default)({}, this.result));
-        }
-      }
-    }, {
-      key: "clearCache",
-      value: function clearCache() {
-        this.cache.clear();
-      }
-    }, {
-      key: "getCacheKey",
-      value: function getCacheKey() {
-        return this.globalVars && this.globalVars.$theme;
-      }
-    }]);
-    return _default;
-  }();
-
-  exports.default = _default;
-},574,[1,11,22,23,2,575,580,577,578],"node_modules/react-native-extended-stylesheet/src/sheet.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-
-  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./replacers/vars"));
-
-  var _mediaQueries = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./replacers/media-queries"));
-
-  var _value = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./value"));
-
-  var _utils = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./utils"));
-
-  var _default = function () {
-    function _default(source) {
-      var varsArr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-      (0, _classCallCheck2.default)(this, _default);
-      this.source = source;
-      this.varsArr = varsArr;
-      this.processedSource = null;
-      this.extractedVars = null;
-      this.extractedProps = null;
-      this.calculatedVars = null;
-      this.calculatedProps = null;
-    }
-
-    (0, _createClass2.default)(_default, [{
-      key: "calc",
-      value: function calc() {
-        this.processSource();
-        this.calcVars();
-        this.calcProps();
-        this.tryOutline();
-        return {
-          calculatedVars: this.calculatedVars,
-          calculatedProps: this.calculatedProps
-        };
-      }
-    }, {
-      key: "processSource",
-      value: function processSource() {
-        this.processedSource = _mediaQueries.default.process(this.source);
-      }
-    }, {
-      key: "calcVars",
-      value: function calcVars() {
-        this.extractedVars = _vars.default.extract(this.processedSource);
-
-        if (this.extractedVars) {
-          var varsArrForVars = [this.extractedVars].concat(this.varsArr);
-          this.calculatedVars = calcPlainObject(this.extractedVars, varsArrForVars);
-          this.varsArr = [this.calculatedVars].concat(this.varsArr);
-        }
-      }
-    }, {
-      key: "calcProps",
-      value: function calcProps() {
-        this.extractedProps = _utils.default.excludeKeys(this.processedSource, this.extractedVars);
-        this.calculatedProps = calcPlainObject(this.extractedProps, this.varsArr);
-      }
-    }, {
-      key: "tryOutline",
-      value: function tryOutline() {
-        var outline = _vars.default.get('$outline', this.varsArr);
-
-        if (outline) {
-          this.calculatedProps.borderWidth = typeof outline === 'number' ? outline : 1;
-          this.calculatedProps.borderColor = getRandomColor();
-        }
-      }
-    }]);
-    return _default;
-  }();
-
-  exports.default = _default;
-
-  function calcPlainObject(obj, varsArr) {
-    return Object.keys(obj).reduce(function (res, prop) {
-      res[prop] = calcStyleValue(prop, obj[prop], varsArr);
-      return res;
-    }, {});
-  }
-
-  function calcStyleValue(prop, value, varsArr) {
-    var isNestedValue = value && typeof value === 'object' && !Array.isArray(value);
-    return isNestedValue ? calcPlainObject(value, varsArr) : new _value.default(value, prop, varsArr).calc();
-  }
-
-  function getRandomColor() {
-    var colors = ['black', 'red', 'green', 'blue'];
-    var index = Math.round(Math.random() * (colors.length - 1));
-    return colors[index];
-  }
-},575,[1,22,23,577,578,576,580],"node_modules/react-native-extended-stylesheet/src/style.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-
-  var _rem = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./replacers/rem"));
-
-  var _vars = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./replacers/vars"));
-
-  var _percent = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./replacers/percent"));
-
-  var _operation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./replacers/operation"));
-
-  var _scale = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./replacers/scale"));
-
-  var Value = function () {
-    function Value(value, prop) {
-      var varsArr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-      var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
-      (0, _classCallCheck2.default)(this, Value);
-      this.value = value;
-      this.outValue = null;
-      this.prop = prop;
-      this.varsArr = varsArr;
-      this.stack = options.stack || [];
-      this.isOperation = options.isOperation !== undefined ? options.isOperation : false;
-    }
-
-    (0, _createClass2.default)(Value, [{
-      key: "calc",
-      value: function calc() {
-        if (typeof this.value === 'function') {
-          this.value = this.value();
-        }
-
-        if (typeof this.value === 'string') {
-          this.calcString();
-        } else {
-          this.proxyValue();
-        }
-
-        if (this.isFinal()) {
-          this.applyScale();
-        }
-
-        return this.outValue;
-      }
-    }, {
-      key: "calcString",
-      value: function calcString() {
-        var actions = [this.tryCalcOperation, this.isOperation ? this.tryCalcPercent : null, this.tryCalcVar, this.tryCalcRem].filter(Boolean);
-        var value = this.tryActions(actions, this.value);
-
-        if (value !== null) {
-          this.outValue = value;
-        } else {
-          this.proxyValue();
-        }
-      }
-    }, {
-      key: "tryActions",
-      value: function tryActions(actions, str) {
-        for (var i = 0; i < actions.length; i++) {
-          var val = actions[i].call(this, str);
-
-          if (val !== null) {
-            return val;
-          }
-        }
-
-        return null;
-      }
-    }, {
-      key: "tryCalcOperation",
-      value: function tryCalcOperation(str) {
-        var opInfo = _operation.default.isOperation(str);
-
-        if (!opInfo) {
-          return null;
-        }
-
-        this.isOperation = true;
-        var operands = ['v1', 'v2'];
-
-        for (var i = 0; i < operands.length; i++) {
-          var operand = operands[i];
-          var operandValue = this.calcOperandValue(opInfo[operand]);
-
-          if (operandValue !== null) {
-            opInfo[operand] = operandValue;
-          } else {
-            return null;
-          }
-        }
-
-        return _operation.default.exec(opInfo);
-      }
-    }, {
-      key: "calcOperandValue",
-      value: function calcOperandValue(str) {
-        var actions = [this.tryCalcVar, this.tryCalcPercent, this.tryCalcRem, this.tryCalcFloat];
-        return this.tryActions(actions, str);
-      }
-    }, {
-      key: "tryCalcVar",
-      value: function tryCalcVar(str) {
-        if (_vars.default.isVar(str)) {
-          var val = _vars.default.calc(str, this.varsArr);
-
-          if (this.stack.indexOf(str) >= 0) {
-            throw new Error('Cyclic reference: ' + this.stack.concat([str]).join(' -> '));
-          }
-
-          var options = {
-            stack: this.stack.concat([str]),
-            isOperation: this.isOperation
-          };
-          return new Value(val, str, this.varsArr, options).calc();
-        } else {
-          return null;
-        }
-      }
-    }, {
-      key: "tryCalcPercent",
-      value: function tryCalcPercent(str) {
-        if (_percent.default.isPercent(str)) {
-          return _percent.default.calc(str, this.prop);
-        }
-
-        return null;
-      }
-    }, {
-      key: "tryCalcRem",
-      value: function tryCalcRem(str) {
-        if (_rem.default.isRem(str)) {
-          var remValue = _vars.default.get('$rem', this.varsArr);
-
-          return _rem.default.calc(str, remValue);
-        } else {
-          return null;
-        }
-      }
-    }, {
-      key: "tryCalcFloat",
-      value: function tryCalcFloat(str) {
-        var val = parseFloat(str);
-        return !isNaN(val) ? val : null;
-      }
-    }, {
-      key: "isFinal",
-      value: function isFinal() {
-        return !this.stack.length;
-      }
-    }, {
-      key: "proxyValue",
-      value: function proxyValue() {
-        this.outValue = this.value;
-      }
-    }, {
-      key: "applyScale",
-      value: function applyScale() {
-        if (_vars.default.isVar(this.prop)) {
-          return;
-        }
-
-        var scaleFactor = _vars.default.get('$scale', this.varsArr) || 1;
-
-        if (scaleFactor === 1) {
-          return;
-        }
-
-        if (_scale.default.isScalable(this.outValue, this.prop)) {
-          this.outValue = _scale.default.calc(this.outValue, scaleFactor);
-        }
-      }
-    }]);
-    return Value;
-  }();
-
-  exports.default = Value;
-},576,[1,22,23,581,577,582,583,584],"node_modules/react-native-extended-stylesheet/src/value.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
-
-  var _objectResolvePath = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "object-resolve-path"));
-
-  var PREFIX = '$';
-  var _default = {
-    isVar: isVar,
-    calc: calc,
-    extract: extract,
-    get: get
-  };
-  exports.default = _default;
-
-  function isVar(str) {
-    return typeof str === 'string' && str.charAt(0) === PREFIX;
-  }
-
-  function calc(str, varsArr) {
-    var realValue = get(str, varsArr);
-
-    if (realValue === undefined) {
-      throw new Error("Unresolved variable: " + str);
-    }
-
-    return realValue;
-  }
-
-  function extract(obj) {
-    return Object.keys(obj).reduce(function (res, key) {
-      if (isVar(key)) {
-        res = res || {};
-        res[key] = obj[key];
-      }
-
-      return res;
-    }, null);
-  }
-
-  function get(name, varsArr) {
-    if (!Array.isArray(varsArr)) {
-      throw new Error('You should pass vars array to vars.get()');
-    }
-
-    var rootVar = name.match(/[^.[]*/)[0];
-    var isSimpleVar = rootVar === name;
-
-    for (var i = 0; i < varsArr.length; i++) {
-      var vars = varsArr[i];
-
-      if (!vars || vars[rootVar] === undefined) {
-        continue;
-      }
-
-      if (isSimpleVar) {
-        return vars[name];
-      }
-
-      try {
-        return (0, _objectResolvePath.default)((0, _defineProperty2.default)({}, rootVar, vars[rootVar]), name);
-      } catch (error) {
-        return undefined;
-      }
-    }
-  }
-},577,[1,50,585],"node_modules/react-native-extended-stylesheet/src/replacers/vars.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var _cssMediaquery = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "css-mediaquery"));
-
-  var _utils = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "../utils"));
-
-  var PREFIX = '@media';
-  var _default = {
-    isMediaQuery: isMediaQuery,
-    process: process
-  };
-  exports.default = _default;
-
-  function isMediaQuery(str) {
-    return typeof str === 'string' && str.indexOf(PREFIX) === 0;
-  }
-
-  function process(obj) {
-    var mqKeys = [];
-    var res = Object.keys(obj).reduce(function (res, key) {
-      if (!isMediaQuery(key)) {
-        res[key] = obj[key];
-      } else {
-        mqKeys.push(key);
-      }
-
-      return res;
-    }, {});
-
-    if (mqKeys.length) {
-      var matchObject = getMatchObject();
-      mqKeys.forEach(function (key) {
-        var mqStr = key.replace(PREFIX, '');
-
-        var isMatch = _cssMediaquery.default.match(mqStr, matchObject);
-
-        if (isMatch) {
-          merge(res, obj[key]);
-        }
-      });
-    }
-
-    return res;
-  }
-
-  function getMatchObject() {
-    var win = _reactNative.Dimensions.get('window');
-
-    var isRTL = _reactNative.I18nManager.isRTL;
-    return {
-      width: win.width,
-      height: win.height,
-      orientation: win.width > win.height ? 'landscape' : 'portrait',
-      'aspect-ratio': win.width / win.height,
-      type: _reactNative.Platform.OS,
-      direction: isRTL ? 'rtl' : 'ltr'
-    };
-  }
-
-  function merge(obj, mqObj) {
-    Object.keys(mqObj).forEach(function (key) {
-      if (_utils.default.isObject(obj[key]) && _utils.default.isObject(mqObj[key])) {
-        (0, _extends2.default)(obj[key], mqObj[key]);
-      } else {
-        obj[key] = mqObj[key];
-      }
-    });
-  }
-},578,[1,11,2,586,580],"node_modules/react-native-extended-stylesheet/src/replacers/media-queries.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = _default;
-
-  function _default(styles, styleName, index, count) {
-    if (!isNumber(index) || !isNumber(count)) {
-      return styles[styleName];
-    }
-
-    var result = [styles[styleName]];
-    addStyle(result, styles, styleName + ':first-child', index === 0);
-    addStyle(result, styles, styleName + ':nth-child-even', index < count && index % 2 === 0);
-    addStyle(result, styles, styleName + ':nth-child-odd', index < count && index % 2 === 1);
-    addStyle(result, styles, styleName + ':last-child', index === count - 1);
-    return result.length > 1 ? result : result[0];
-  }
-
-  function addStyle(result, styles, styleName, condition) {
-    if (styles[styleName] && condition) {
-      result.push(styles[styleName]);
-    }
-  }
-
-  function isNumber(value) {
-    return typeof value === 'number';
-  }
-},579,[],"node_modules/react-native-extended-stylesheet/src/child.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _default = {
-    excludeKeys: excludeKeys,
-    isObject: isObject
-  };
-  exports.default = _default;
-
-  function excludeKeys(obj, keys) {
-    keys = Array.isArray(keys) ? keys : keys ? Object.keys(keys) : [];
-    return Object.keys(obj).reduce(function (res, key) {
-      if (keys.indexOf(key) === -1) {
-        res[key] = obj[key];
-      }
-
-      return res;
-    }, {});
-  }
-
-  function isObject(obj) {
-    return typeof obj === 'object' && obj !== null;
-  }
-},580,[],"node_modules/react-native-extended-stylesheet/src/utils.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var SUFFIX = 'rem';
-  var DEFAULT_REM = 16;
-  var _default = {
-    isRem: isRem,
-    calc: calc
-  };
-  exports.default = _default;
-
-  function isRem(str) {
-    return str.substr(-SUFFIX.length) === SUFFIX;
-  }
-
-  function calc(str) {
-    var rem = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_REM;
-    var koefStr = str.substr(0, str.length - SUFFIX.length);
-    var koef = koefStr === '' ? 1 : parseFloat(koefStr);
-
-    if (isNaN(koef)) {
-      throw new Error('Invalid rem value: ' + str);
-    }
-
-    return rem * koef;
-  }
-},581,[],"node_modules/react-native-extended-stylesheet/src/replacers/rem.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-
-  var _Dimensions$get = _reactNative.Dimensions.get('window'),
-      width = _Dimensions$get.width,
-      height = _Dimensions$get.height;
-
-  var V_PROPS = ['height', 'top', 'bottom', 'vertical'];
-  var H_PROPS = ['width', 'left', 'right', 'horizontal'];
-  var SUFFIX = '%';
-  var invalidPropMsg = ["Name of variable or property with percent value should contain ", "(" + V_PROPS.concat(H_PROPS).join() + ") to define base for percent calculation"].join('');
-  var _default = {
-    isPercent: isPercent,
-    calc: calc
-  };
-  exports.default = _default;
-
-  function isPercent(str) {
-    return str.charAt(str.length - 1) === SUFFIX;
-  }
-
-  function calc(str, prop) {
-    var percent = parseInt(str.substring(0, str.length - 1), 10);
-    var base = isVertical(prop) ? height : width;
-    return base * percent / 100;
-  }
-
-  function isVertical(prop) {
-    prop = prop.toLowerCase();
-
-    if (V_PROPS.some(function (p) {
-      return prop.indexOf(p) >= 0;
-    })) {
-      return true;
-    }
-
-    if (H_PROPS.some(function (p) {
-      return prop.indexOf(p) >= 0;
-    })) {
-      return false;
-    }
-
-    throw new Error(invalidPropMsg);
-  }
-},582,[2],"node_modules/react-native-extended-stylesheet/src/replacers/percent.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var operators = {
-    '*': function _(v1, v2) {
-      return v1 * v2;
-    },
-    '+': function _(v1, v2) {
-      return v1 + v2;
-    },
-    '-': function _(v1, v2) {
-      return v1 - v2;
-    },
-    '/': function _(v1, v2) {
-      return v1 / v2;
-    }
-  };
-  var _default = {
-    isOperation: isOperation,
-    exec: exec
-  };
-  exports.default = _default;
-
-  function isOperation(str) {
-    var opInfo = findOperator(str);
-
-    if (opInfo) {
-      opInfo.v1 = str.substr(0, opInfo.pos).trim();
-      opInfo.v2 = str.substr(opInfo.pos + 1).trim();
-      delete opInfo.pos;
-      return opInfo;
-    } else {
-      return false;
-    }
-  }
-
-  function exec(opInfo) {
-    assertOperator(opInfo.operator);
-    assertValue(opInfo.v1);
-    assertValue(opInfo.v2);
-
-    if (opInfo.operator === '/') {
-      assertDivisor(opInfo.v2);
-    }
-
-    var fn = operators[opInfo.operator];
-    return fn(opInfo.v1, opInfo.v2);
-  }
-
-  function findOperator(str) {
-    for (var operator in operators) {
-      var pos = str.indexOf(operator);
-
-      if (pos >= 0) {
-        return {
-          operator: operator,
-          pos: pos
-        };
-      }
-    }
-  }
-
-  function assertOperator(operator) {
-    if (!operators[operator]) {
-      throw new Error('Unknown operator: ' + operator);
-    }
-  }
-
-  function assertValue(value) {
-    if (typeof value !== 'number') {
-      throw new Error('Operation value should be number, you try: ' + String(value));
-    }
-  }
-
-  function assertDivisor(divisor) {
-    if (divisor === 0) {
-      throw new Error('Operation divisor should not be zero');
-    }
-  }
-},583,[],"node_modules/react-native-extended-stylesheet/src/replacers/operation.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var SCALABLE_PROPS = ['width', 'height', 'margin', 'padding', 'fontsize', 'radius'];
-  var _default = {
-    isScalable: isScalable,
-    calc: calc
-  };
-  exports.default = _default;
-
-  function isScalable(value, prop) {
-    return typeof value === 'number' && isScalableProp(prop);
-  }
-
-  function calc(value, scaleFactor) {
-    if (typeof value !== 'number') {
-      throw new Error('Invalid value for scale: ' + value);
-    }
-
-    if (typeof scaleFactor !== 'number') {
-      throw new Error('Invalid scaleFactor for scale: ' + scaleFactor);
-    }
-
-    return value * scaleFactor;
-  }
-
-  function isScalableProp(prop) {
-    if (typeof prop !== 'string') {
-      return false;
-    }
-
-    prop = prop.toLowerCase();
-    return SCALABLE_PROPS.some(function (p) {
-      return prop.indexOf(p) >= 0;
-    });
-  }
-},584,[],"node_modules/react-native-extended-stylesheet/src/replacers/scale.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var Path = _$$_REQUIRE(_dependencyMap[0], "./path");
-
-  module.exports = function (o, path) {
-    if (typeof path !== 'string') {
-      throw new TypeError('path must be a string');
-    }
-
-    if (typeof o !== 'object') {
-      throw new TypeError('object must be passed');
-    }
-
-    var pathObj = Path.get(path);
-
-    if (!pathObj.valid) {
-      throw new Error('path is not a valid object path');
-    }
-
-    return pathObj.getValueFrom(o);
-  };
-},585,[587],"node_modules/object-resolve-path/object-resolve-path.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  exports.match = matchQuery;
-  exports.parse = parseQuery;
-  var RE_MEDIA_QUERY = /(?:(only|not)?\s*([^\s\(\)]+)(?:\s*and)?\s*)?(.+)?/i,
-      RE_MQ_EXPRESSION = /\(\s*([^\s\:\)]+)\s*(?:\:\s*([^\s\)]+))?\s*\)/,
-      RE_MQ_FEATURE = /^(?:(min|max)-)?(.+)/,
-      RE_LENGTH_UNIT = /(em|rem|px|cm|mm|in|pt|pc)?$/,
-      RE_RESOLUTION_UNIT = /(dpi|dpcm|dppx)?$/;
-
-  function matchQuery(mediaQuery, values) {
-    return parseQuery(mediaQuery).some(function (query) {
-      var inverse = query.inverse;
-      var typeMatch = query.type === 'all' || values.type === query.type;
-
-      if (typeMatch && inverse || !(typeMatch || inverse)) {
-        return false;
-      }
-
-      var expressionsMatch = query.expressions.every(function (expression) {
-        var feature = expression.feature,
-            modifier = expression.modifier,
-            expValue = expression.value,
-            value = values[feature];
-
-        if (!value) {
-          return false;
-        }
-
-        switch (feature) {
-          case 'orientation':
-          case 'scan':
-            return value.toLowerCase() === expValue.toLowerCase();
-
-          case 'width':
-          case 'height':
-          case 'device-width':
-          case 'device-height':
-            expValue = toPx(expValue);
-            value = toPx(value);
-            break;
-
-          case 'resolution':
-            expValue = toDpi(expValue);
-            value = toDpi(value);
-            break;
-
-          case 'aspect-ratio':
-          case 'device-aspect-ratio':
-          case 'device-pixel-ratio':
-            expValue = toDecimal(expValue);
-            value = toDecimal(value);
-            break;
-
-          case 'grid':
-          case 'color':
-          case 'color-index':
-          case 'monochrome':
-            expValue = parseInt(expValue, 10) || 1;
-            value = parseInt(value, 10) || 0;
-            break;
-        }
-
-        switch (modifier) {
-          case 'min':
-            return value >= expValue;
-
-          case 'max':
-            return value <= expValue;
-
-          default:
-            return value === expValue;
-        }
-      });
-      return expressionsMatch && !inverse || !expressionsMatch && inverse;
-    });
-  }
-
-  function parseQuery(mediaQuery) {
-    return mediaQuery.split(',').map(function (query) {
-      query = query.trim();
-      var captures = query.match(RE_MEDIA_QUERY),
-          modifier = captures[1],
-          type = captures[2],
-          expressions = captures[3] || '',
-          parsed = {};
-      parsed.inverse = !!modifier && modifier.toLowerCase() === 'not';
-      parsed.type = type ? type.toLowerCase() : 'all';
-      expressions = expressions.match(/\([^\)]+\)/g) || [];
-      parsed.expressions = expressions.map(function (expression) {
-        var captures = expression.match(RE_MQ_EXPRESSION),
-            feature = captures[1].toLowerCase().match(RE_MQ_FEATURE);
-        return {
-          modifier: feature[1],
-          feature: feature[2],
-          value: captures[2]
-        };
-      });
-      return parsed;
-    });
-  }
-
-  function toDecimal(ratio) {
-    var decimal = Number(ratio),
-        numbers;
-
-    if (!decimal) {
-      numbers = ratio.match(/^(\d+)\s*\/\s*(\d+)$/);
-      decimal = numbers[1] / numbers[2];
-    }
-
-    return decimal;
-  }
-
-  function toDpi(resolution) {
-    var value = parseFloat(resolution),
-        units = String(resolution).match(RE_RESOLUTION_UNIT)[1];
-
-    switch (units) {
-      case 'dpcm':
-        return value / 2.54;
-
-      case 'dppx':
-        return value * 96;
-
-      default:
-        return value;
-    }
-  }
-
-  function toPx(length) {
-    var value = parseFloat(length),
-        units = String(length).match(RE_LENGTH_UNIT)[1];
-
-    switch (units) {
-      case 'em':
-        return value * 16;
-
-      case 'rem':
-        return value * 16;
-
-      case 'cm':
-        return value * 96 / 2.54;
-
-      case 'mm':
-        return value * 96 / 2.54 / 10;
-
-      case 'in':
-        return value * 96;
-
-      case 'pt':
-        return value * 72;
-
-      case 'pc':
-        return value * 72 / 12;
-
-      default:
-        return value;
-    }
-  }
-},586,[],"node_modules/css-mediaquery/index.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  function noop() {}
-
-  function detectEval() {
-    if (typeof chrome !== 'undefined' && chrome.app && chrome.app.runtime) {
-      return false;
-    }
-
-    if (typeof navigator != 'undefined' && navigator.getDeviceStorage) {
-      return false;
-    }
-
-    try {
-      var f = new Function('', 'return true;');
-      return f();
-    } catch (ex) {
-      return false;
-    }
-  }
-
-  var hasEval = detectEval();
-
-  function isIndex(s) {
-    return +s === s >>> 0 && s !== '';
-  }
-
-  function isObject(obj) {
-    return obj === Object(obj);
-  }
-
-  var createObject = '__proto__' in {} ? function (obj) {
-    return obj;
-  } : function (obj) {
-    var proto = obj.__proto__;
-    if (!proto) return obj;
-    var newObject = Object.create(proto);
-    Object.getOwnPropertyNames(obj).forEach(function (name) {
-      Object.defineProperty(newObject, name, Object.getOwnPropertyDescriptor(obj, name));
-    });
-    return newObject;
-  };
-
-  function parsePath(path) {
-    var keys = [];
-    var index = -1;
-    var c,
-        newChar,
-        key,
-        type,
-        transition,
-        action,
-        typeMap,
-        mode = 'beforePath';
-    var actions = {
-      push: function push() {
-        if (key === undefined) return;
-        keys.push(key);
-        key = undefined;
-      },
-      append: function append() {
-        if (key === undefined) key = newChar;else key += newChar;
-      }
-    };
-
-    function maybeUnescapeQuote() {
-      if (index >= path.length) return;
-      var nextChar = path[index + 1];
-
-      if (mode == 'inSingleQuote' && nextChar == "'" || mode == 'inDoubleQuote' && nextChar == '"') {
-        index++;
-        newChar = nextChar;
-        actions.append();
-        return true;
-      }
-    }
-
-    while (mode) {
-      index++;
-      c = path[index];
-      if (c == '\\' && maybeUnescapeQuote(mode)) continue;
-      type = getPathCharType(c);
-      typeMap = pathStateMachine[mode];
-      transition = typeMap[type] || typeMap['else'] || 'error';
-      if (transition == 'error') return;
-      mode = transition[0];
-      action = actions[transition[1]] || noop;
-      newChar = transition[2] === undefined ? c : transition[2];
-      action();
-
-      if (mode === 'afterPath') {
-        return keys;
-      }
-    }
-
-    return;
-  }
-
-  var identStart = '[\$_a-zA-Z]';
-  var identPart = '[\$_a-zA-Z0-9]';
-  var identRegExp = new RegExp('^' + identStart + '+' + identPart + '*' + '$');
-
-  function isIdent(s) {
-    return identRegExp.test(s);
-  }
-
-  var constructorIsPrivate = {};
-
-  function Path(parts, privateToken) {
-    if (privateToken !== constructorIsPrivate) throw Error('Use Path.get to retrieve path objects');
-
-    for (var i = 0; i < parts.length; i++) {
-      this.push(String(parts[i]));
-    }
-
-    if (hasEval && this.length) {
-      this.getValueFrom = this.compiledGetValueFromFn();
-    }
-  }
-
-  var pathCache = {};
-
-  function getPath(pathString) {
-    if (pathString instanceof Path) return pathString;
-    if (pathString == null || pathString.length == 0) pathString = '';
-
-    if (typeof pathString != 'string') {
-      if (isIndex(pathString.length)) {
-        return new Path(pathString, constructorIsPrivate);
-      }
-
-      pathString = String(pathString);
-    }
-
-    var path = pathCache[pathString];
-    if (path) return path;
-    var parts = parsePath(pathString);
-    if (!parts) return invalidPath;
-    var path = new Path(parts, constructorIsPrivate);
-    pathCache[pathString] = path;
-    return path;
-  }
-
-  Path.get = getPath;
-
-  function formatAccessor(key) {
-    if (isIndex(key)) {
-      return '[' + key + ']';
-    } else {
-      return '["' + key.replace(/"/g, '\\"') + '"]';
-    }
-  }
-
-  Path.prototype = createObject({
-    __proto__: [],
-    valid: true,
-    toString: function toString() {
-      var pathString = '';
-
-      for (var i = 0; i < this.length; i++) {
-        var key = this[i];
-
-        if (isIdent(key)) {
-          pathString += i ? '.' + key : key;
-        } else {
-          pathString += formatAccessor(key);
-        }
-      }
-
-      return pathString;
-    },
-    getValueFrom: function getValueFrom(obj, directObserver) {
-      for (var i = 0; i < this.length; i++) {
-        if (obj == null) return;
-        obj = obj[this[i]];
-      }
-
-      return obj;
-    },
-    iterateObjects: function iterateObjects(obj, observe) {
-      for (var i = 0; i < this.length; i++) {
-        if (i) obj = obj[this[i - 1]];
-        if (!isObject(obj)) return;
-        observe(obj, this[i]);
-      }
-    },
-    compiledGetValueFromFn: function compiledGetValueFromFn() {
-      var str = '';
-      var pathString = 'obj';
-      str += 'if (obj != null';
-      var i = 0;
-      var key;
-
-      for (; i < this.length - 1; i++) {
-        key = this[i];
-        pathString += isIdent(key) ? '.' + key : formatAccessor(key);
-        str += ' &&\n     ' + pathString + ' != null';
-      }
-
-      str += ')\n';
-      var key = this[i];
-      pathString += isIdent(key) ? '.' + key : formatAccessor(key);
-      str += '  return ' + pathString + ';\nelse\n  return undefined;';
-      return new Function('obj', str);
-    },
-    setValueFrom: function setValueFrom(obj, value) {
-      if (!this.length) return false;
-
-      for (var i = 0; i < this.length - 1; i++) {
-        if (!isObject(obj)) return false;
-        obj = obj[this[i]];
-      }
-
-      if (!isObject(obj)) return false;
-      obj[this[i]] = value;
-      return true;
-    }
-  });
-
-  function getPathCharType(char) {
-    if (char === undefined) return 'eof';
-    var code = char.charCodeAt(0);
-
-    switch (code) {
-      case 0x5B:
-      case 0x5D:
-      case 0x2E:
-      case 0x22:
-      case 0x27:
-      case 0x30:
-        return char;
-
-      case 0x5F:
-      case 0x24:
-        return 'ident';
-
-      case 0x20:
-      case 0x09:
-      case 0x0A:
-      case 0x0D:
-      case 0xA0:
-      case 0xFEFF:
-      case 0x2028:
-      case 0x2029:
-        return 'ws';
-    }
-
-    if (0x61 <= code && code <= 0x7A || 0x41 <= code && code <= 0x5A) return 'ident';
-    if (0x31 <= code && code <= 0x39) return 'number';
-    return 'else';
-  }
-
-  var pathStateMachine = {
-    'beforePath': {
-      'ws': ['beforePath'],
-      'ident': ['inIdent', 'append'],
-      '[': ['beforeElement'],
-      'eof': ['afterPath']
-    },
-    'inPath': {
-      'ws': ['inPath'],
-      '.': ['beforeIdent'],
-      '[': ['beforeElement'],
-      'eof': ['afterPath']
-    },
-    'beforeIdent': {
-      'ws': ['beforeIdent'],
-      'ident': ['inIdent', 'append']
-    },
-    'inIdent': {
-      'ident': ['inIdent', 'append'],
-      '0': ['inIdent', 'append'],
-      'number': ['inIdent', 'append'],
-      'ws': ['inPath', 'push'],
-      '.': ['beforeIdent', 'push'],
-      '[': ['beforeElement', 'push'],
-      'eof': ['afterPath', 'push']
-    },
-    'beforeElement': {
-      'ws': ['beforeElement'],
-      '0': ['afterZero', 'append'],
-      'number': ['inIndex', 'append'],
-      "'": ['inSingleQuote', 'append', ''],
-      '"': ['inDoubleQuote', 'append', '']
-    },
-    'afterZero': {
-      'ws': ['afterElement', 'push'],
-      ']': ['inPath', 'push']
-    },
-    'inIndex': {
-      '0': ['inIndex', 'append'],
-      'number': ['inIndex', 'append'],
-      'ws': ['afterElement'],
-      ']': ['inPath', 'push']
-    },
-    'inSingleQuote': {
-      "'": ['afterElement'],
-      'eof': ['error'],
-      'else': ['inSingleQuote', 'append']
-    },
-    'inDoubleQuote': {
-      '"': ['afterElement'],
-      'eof': ['error'],
-      'else': ['inDoubleQuote', 'append']
-    },
-    'afterElement': {
-      'ws': ['afterElement'],
-      ']': ['inPath', 'push']
-    }
-  };
-  var invalidPath = new Path('', constructorIsPrivate);
-  invalidPath.valid = false;
-
-  invalidPath.getValueFrom = invalidPath.setValueFrom = function () {};
-
-  module.exports = Path;
-},587,[],"node_modules/object-resolve-path/path.js");
+},587,[1,553],"styles.ts");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map

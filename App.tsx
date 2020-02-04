@@ -8,6 +8,7 @@
  * @format
  */
 import React, { Fragment, useState } from "react";
+import styles from "./styles";
 import {
   SafeAreaView,
   StyleSheet,
@@ -41,19 +42,19 @@ const App = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.view}>
+      <SafeAreaView style={appStyles.view}>
         {navState == navTypes.Home && <Camera />}
         {navState == navTypes.Test && <Choices />}
-        {/* {<View style={styles.innerView}>
+        {/* {<View style={styles.flex}>
           <ScrollView style={styles.scrollView} />
         </View>} */}
-        <View style={styles.footer}>
+        <View style={appStyles.footer}>
           <Button
             onPress={() => setNavState(navTypes.Home)}
             style={
               navState == navTypes.Home
-                ? [styles.button, styles.selected]
-                : styles.button
+                ? [styles.flex, appStyles.selected]
+                : styles.flex
             }
           >
             Home
@@ -63,8 +64,8 @@ const App = () => {
             onPress={() => setNavState(navTypes.Profile)}
             style={
               navState == navTypes.Profile
-                ? [styles.button, styles.selected]
-                : styles.button
+                ? [styles.flex, appStyles.selected]
+                : styles.flex
             }
           >
             Profile
@@ -72,8 +73,8 @@ const App = () => {
           <Button
             style={
               navState == navTypes.Settings
-                ? [styles.button, styles.selected]
-                : styles.button
+                ? [styles.flex, appStyles.selected]
+                : styles.flex
             }
             onPress={() => setNavState(navTypes.Settings)}
           >
@@ -83,8 +84,8 @@ const App = () => {
             onPress={() => setNavState(navTypes.Map)}
             style={
               navState == navTypes.Map
-                ? [styles.button, styles.selected]
-                : styles.button
+                ? [styles.flex, appStyles.selected]
+                : styles.flex
             }
           >
             Map
@@ -93,7 +94,7 @@ const App = () => {
             onPress={() => setNavState(navTypes.Test)}
             style={
               navState == navTypes.Test
-                ? [styles.button, styles.selected]
+                ? [styles.button, appStyles.selected]
                 : styles.button
             }
           >
@@ -105,8 +106,7 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  button: { display: "flex", flex: 1 },
+const appStyles = StyleSheet.create({
   footer: {
     height: 30,
     display: "flex",
