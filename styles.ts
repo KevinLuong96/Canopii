@@ -26,6 +26,10 @@ export default EStyleSheet.create({
     flex: 1,
     flexDirection: "column",
   },
+  title: {
+    fontFamily: "OpenSans-Bold",
+    fontSize: 20,
+  },
   heading: {
     fontSize: 20,
   },
