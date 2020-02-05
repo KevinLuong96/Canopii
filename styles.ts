@@ -26,4 +26,10 @@ export default EStyleSheet.create({
     flex: 1,
     flexDirection: "column",
   },
+  heading: {
+    fontSize: 20,
+  },
+  body: {
+    fontSize: 14,
+  },
 });

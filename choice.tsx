@@ -12,8 +12,6 @@ import styles from "./styles";
 import Card from "./card";
 
 const Choice = props => {
-  // const [choices, setChoices] = useState([]);
-  console.log(props.image);
   return (
     <Card>
       <TouchableHighlight
@@ -23,8 +21,10 @@ const Choice = props => {
         <View style={choiceStyles.container}>
           <Image source={props.image} style={choiceStyles.image}></Image>
           <View style={choiceStyles.textContainer}>
-            <Text style={choiceStyles.title}>{props.choice}</Text>
-            <Text style={choiceStyles.text}>{props.text}</Text>
+            <Text style={[styles.heading, choiceStyles.title]}>
+              {props.choice}
+            </Text>
+            <Text style={styles.body}>{props.text}</Text>
           </View>
         </View>
       </TouchableHighlight>
@@ -34,7 +34,6 @@ const Choice = props => {
 
 const choiceStyles = {
   title: {
-    fontSize: 20,
     marginBottom: 15,
   },
   image: {
@@ -47,9 +46,6 @@ const choiceStyles = {
     flexDirection: "row",
     height: "100%",
   } as ViewStyle,
-  text: {
-    fontSize: 14,
-  },
   textContainer: {
     width: "70%",
     marginLeft: 10,

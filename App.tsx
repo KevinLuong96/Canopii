@@ -9,24 +9,10 @@
  */
 import React, { Fragment, useState } from "react";
 import styles from "./styles";
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from "react-native";
+import { SafeAreaView, StyleSheet, View, StatusBar, Text } from "react-native";
 import Button from "react-native-button";
 import EStyleSheet from "react-native-extended-stylesheet";
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from "react-native/Libraries/NewAppScreen";
-import Footer from "./Footer";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 import Camera from "./camera";
 import Choices from "./choices";
 enum navTypes {
@@ -37,11 +23,20 @@ enum navTypes {
   Test,
 }
 const App = () => {
-  EStyleSheet.build({});
+  EStyleSheet.build({
+    $dgreen6: "#4BA55D",
+  });
   const [navState, setNavState] = useState(navTypes.Home);
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" />
+      {/* <StatusBar barStyle="light-content" hidden={false} translucent={false} /> */}
+      <View style={appStyles.statusBar}>
+        {navState == navTypes.Test && (
+          <Text style={[styles.heading, appStyles.statusBarText]}>
+            Identify Tree Species
+          </Text>
+        )}
+      </View>
       <SafeAreaView style={[styles.all, styles.container, appStyles.container]}>
         {navState == navTypes.Home && <Camera />}
         {navState == navTypes.Test && <Choices />}
@@ -106,13 +101,12 @@ const App = () => {
   );
 };
 
-const appStyles = StyleSheet.create({
+const appStyles = EStyleSheet.create({
   container: {
     alignItems: "center",
   },
   footer: {
     height: 20,
-    // display: "flex",
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
@@ -125,5 +119,17 @@ const appStyles = StyleSheet.create({
     fontWeight: "700",
   },
   selected: { backgroundColor: "#add8e6", color: "#000" },
+  statusBar: {
+    backgroundColor: "$dgreen6",
+    height: 100,
+    display: "flex",
+    justifyContent: "center",
+    color: "white",
+  },
+  statusBarText: {
+    textAlign: "center",
+    marginTop: 30,
+    color: "#fff",
+  },
 });
 export default App;

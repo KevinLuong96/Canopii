@@ -58,6 +58,7 @@ export const decision = {
   },
 };
 export const descriptions = {
+  // TODO: add rough bottom
   "Simple Leaf": {
     text: "The leaf stem is the same as the main vein for that leaf.",
     image: require("./images/SimpleLeaf.png"),

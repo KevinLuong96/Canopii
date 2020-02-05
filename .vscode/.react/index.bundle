@@ -1004,7 +1004,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,550,586],"index.js");
+},0,[1,2,550,600],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -91595,7 +91595,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   })(navTypes || (navTypes = {}));
 
   var App = function App() {
-    _reactNativeExtendedStylesheet.default.build({});
+    _reactNativeExtendedStylesheet.default.build({
+      $dgreen6: "#4BA55D"
+    });
 
     var _useState = (0, _react.useState)(navTypes.Home),
         _useState2 = (0, _slicedToArray2.default)(_useState, 2),
@@ -91605,35 +91607,41 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return _react.default.createElement(_react.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 31
       }
-    }, _react.default.createElement(_reactNative.StatusBar, {
-      barStyle: "dark-content",
+    }, _react.default.createElement(_reactNative.View, {
+      style: appStyles.statusBar,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 33
       }
-    }), _react.default.createElement(_reactNative.SafeAreaView, {
-      style: [_styles.default.all, _styles.default.flexColumn],
+    }, navState == navTypes.Test && _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.heading, appStyles.statusBarText],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 35
+      }
+    }, "Identify Tree Species")), _react.default.createElement(_reactNative.SafeAreaView, {
+      style: [_styles.default.all, _styles.default.container, appStyles.container],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
       }
     }, navState == navTypes.Home && _react.default.createElement(_camera.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 41
       }
     }), navState == navTypes.Test && _react.default.createElement(_choices.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 42
       }
     }), _react.default.createElement(_reactNative.View, {
       style: appStyles.footer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 46
       }
     }, _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91642,7 +91650,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Home ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 47
       }
     }, "Home"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91651,7 +91659,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Profile ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 58
       }
     }, "Profile"), _react.default.createElement(_reactNativeButton.default, {
       style: navState == navTypes.Settings ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
@@ -91660,7 +91668,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 68
       }
     }, "Settings"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91669,7 +91677,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Map ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 78
       }
     }, "Map"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91678,15 +91686,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Test ? [_styles.default.button, appStyles.selected] : _styles.default.button,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 88
       }
     }, "Test"))));
   };
 
-  var appStyles = _reactNative.StyleSheet.create({
+  var appStyles = _reactNativeExtendedStylesheet.default.create({
+    container: {
+      alignItems: "center"
+    },
     footer: {
-      height: 30,
-      display: "flex",
+      height: 20,
+      width: "100%",
       flexDirection: "row",
       justifyContent: "space-around"
     },
@@ -91702,227 +91713,70 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     selected: {
       backgroundColor: "#add8e6",
       color: "#000"
+    },
+    statusBar: {
+      backgroundColor: "$dgreen6",
+      height: 100,
+      display: "flex",
+      justifyContent: "center",
+      color: "white"
+    },
+    statusBarText: {
+      textAlign: "center",
+      marginTop: 30,
+      color: "#fff"
     }
   });
 
   var _default = App;
   exports.default = _default;
-},550,[1,155,12,52,587,2,551,553,569,577,585],"App.tsx");
+},550,[1,155,12,52,551,2,568,552,570,578,586],"App.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
 
-  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/defineProperty"));
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native-extended-stylesheet"));
 
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./../react-transform-hmr/lib/index.js"));
-
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[12], "react-native");
-
-  var _coalesceNonElementChildren = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./coalesceNonElementChildren"));
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native-button/Button.js";
-
-  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-  var _components = {
-    Button: {
-      displayName: "Button"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "node_modules/react-native-button/Button.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var systemButtonOpacity = 0.2;
-
-  var Button = _wrapComponent("Button")((_temp = _class = function (_Component) {
-    (0, _inherits2.default)(Button, _Component);
-
-    function Button() {
-      (0, _classCallCheck2.default)(this, Button);
-      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Button).apply(this, arguments));
-    }
-
-    (0, _createClass2.default)(Button, [{
-      key: "render",
-      value: function render() {
-        var touchableProps = {
-          activeOpacity: this._computeActiveOpacity()
-        };
-        var containerStyle = [this.props.containerStyle, this.props.disabled ? this.props.disabledContainerStyle : null];
-
-        if (!this.props.disabled) {
-          touchableProps.onPress = this.props.onPress;
-          touchableProps.onPressIn = this.props.onPressIn;
-          touchableProps.onPressOut = this.props.onPressOut;
-          touchableProps.onLongPress = this.props.onLongPress;
-          touchableProps.delayPressIn = this.props.delayPressIn;
-          touchableProps.delayPressOut = this.props.delayPressOut;
-          touchableProps.delayLongPress = this.props.delayLongPress;
-        }
-
-        return _react.default.createElement(_reactNative.TouchableOpacity, (0, _extends2.default)({}, touchableProps, {
-          testID: this.props.testID,
-          style: containerStyle,
-          accessibilityLabel: this.props.accessibilityLabel,
-          accessibilityRole: "button",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 48
-          }
-        }), this._renderGroupedChildren());
-      }
-    }, {
-      key: "_renderGroupedChildren",
-      value: function _renderGroupedChildren() {
-        var _this = this;
-
-        var disabled = this.props.disabled;
-        var style = [styles.text, disabled ? styles.disabledText : null, this.props.style, disabled ? this.props.styleDisabled : null];
-        var childGroupStyle = [styles.group, this.props.childGroupStyle];
-        var children = (0, _coalesceNonElementChildren.default)(this.props.children, function (children, index) {
-          return _react.default.createElement(_reactNative.Text, {
-            key: index,
-            style: style,
-            allowFontScaling: _this.props.allowFontScaling,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 74
-            }
-          }, children);
-        });
-
-        switch (children.length) {
-          case 0:
-            return null;
-
-          case 1:
-            return children[0];
-
-          default:
-            return _react.default.createElement(_reactNative.View, {
-              style: childGroupStyle,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 86
-              }
-            }, children);
-        }
-      }
-    }, {
-      key: "_computeActiveOpacity",
-      value: function _computeActiveOpacity() {
-        if (this.props.disabled) {
-          return 1;
-        }
-
-        return this.props.activeOpacity != null ? this.props.activeOpacity : systemButtonOpacity;
-      }
-    }]);
-    return Button;
-  }(_react.Component), _class.propTypes = _objectSpread({}, _reactNative.TouchableOpacity.propTypes, {
-    accessibilityLabel: _propTypes.default.string,
-    allowFontScaling: _reactNative.Text.propTypes.allowFontScaling,
-    containerStyle: _reactNative.ViewPropTypes.style,
-    disabledContainerStyle: _reactNative.ViewPropTypes.style,
-    disabled: _propTypes.default.bool,
-    style: _reactNative.Text.propTypes.style,
-    styleDisabled: _reactNative.Text.propTypes.style,
-    childGroupStyle: _reactNative.ViewPropTypes.style
-  }), _temp));
-
-  var _default2 = Button;
-  exports.default = _default2;
-  ;
-
-  var styles = _reactNative.StyleSheet.create({
-    text: {
-      color: '#007aff',
-      fontSize: 17,
-      fontWeight: '500',
-      textAlign: 'center'
+  var _default = _reactNativeExtendedStylesheet.default.create({
+    all: {
+      fontFamily: "OpenSans"
     },
-    disabledText: {
-      color: '#dcdcdc'
+    container: {
+      width: "100%",
+      display: "flex",
+      flex: 1,
+      flexDirection: "column"
     },
-    group: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center'
+    centered: {
+      width: "90%",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    },
+    flex: {
+      display: "flex",
+      flex: 1
+    },
+    flexColumn: {
+      display: "flex",
+      flex: 1,
+      flexDirection: "column"
+    },
+    heading: {
+      fontSize: 20
+    },
+    body: {
+      fontSize: 14
     }
   });
-},551,[1,155,50,11,22,23,37,40,43,52,193,67,2,552],"node_modules/react-native-button/Button.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = coalesceNonElementChildren;
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[1], "react"));
-
-  function coalesceNonElementChildren(children, coalesceNodes) {
-    var coalescedChildren = [];
-    var contiguousNonElements = [];
-
-    _react.Children.forEach(children, function (child) {
-      if (!_react.default.isValidElement(child)) {
-        contiguousNonElements.push(child);
-        return;
-      }
-
-      if (contiguousNonElements.length) {
-        coalescedChildren.push(coalesceNodes(contiguousNonElements, coalescedChildren.length));
-        contiguousNonElements = [];
-      }
-
-      coalescedChildren.push(child);
-    });
-
-    if (contiguousNonElements.length) {
-      coalescedChildren.push(coalesceNodes(contiguousNonElements, coalescedChildren.length));
-    }
-
-    return coalescedChildren;
-  }
-},552,[155,52],"node_modules/react-native-button/coalesceNonElementChildren.js");
+  exports.default = _default;
+},551,[1,552],"styles.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -91936,7 +91790,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = new _api.default();
 
   exports.default = _default;
-},553,[1,554],"node_modules/react-native-extended-stylesheet/src/index.js");
+},552,[1,553],"node_modules/react-native-extended-stylesheet/src/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92104,7 +91958,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }();
 
   exports.default = EStyleSheet;
-},554,[1,22,23,2,555,556,563,557,560,568],"node_modules/react-native-extended-stylesheet/src/api.js");
+},553,[1,22,23,2,554,555,562,556,559,567],"node_modules/react-native-extended-stylesheet/src/api.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92277,7 +92131,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }();
 
   exports.default = _default;
-},555,[1,11,22,23,2,556,562,557,560],"node_modules/react-native-extended-stylesheet/src/sheet.js");
+},554,[1,11,22,23,2,555,561,556,559],"node_modules/react-native-extended-stylesheet/src/sheet.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92378,7 +92232,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     var index = Math.round(Math.random() * (colors.length - 1));
     return colors[index];
   }
-},556,[1,22,23,557,560,563,562],"node_modules/react-native-extended-stylesheet/src/style.js");
+},555,[1,22,23,556,559,562,561],"node_modules/react-native-extended-stylesheet/src/style.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92451,7 +92305,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }
   }
-},557,[1,50,558],"node_modules/react-native-extended-stylesheet/src/replacers/vars.js");
+},556,[1,50,557],"node_modules/react-native-extended-stylesheet/src/replacers/vars.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var Path = _$$_REQUIRE(_dependencyMap[0], "./path");
 
@@ -92472,7 +92326,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     return pathObj.getValueFrom(o);
   };
-},558,[559],"node_modules/object-resolve-path/object-resolve-path.js");
+},557,[558],"node_modules/object-resolve-path/object-resolve-path.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function noop() {}
 
@@ -92788,7 +92642,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   invalidPath.getValueFrom = invalidPath.setValueFrom = function () {};
 
   module.exports = Path;
-},559,[],"node_modules/object-resolve-path/path.js");
+},558,[],"node_modules/object-resolve-path/path.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -92867,7 +92721,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   }
-},560,[1,11,2,561,562],"node_modules/react-native-extended-stylesheet/src/replacers/media-queries.js");
+},559,[1,11,2,560,561],"node_modules/react-native-extended-stylesheet/src/replacers/media-queries.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -93029,7 +92883,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return value;
     }
   }
-},561,[],"node_modules/css-mediaquery/index.js");
+},560,[],"node_modules/css-mediaquery/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93055,7 +92909,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function isObject(obj) {
     return typeof obj === 'object' && obj !== null;
   }
-},562,[],"node_modules/react-native-extended-stylesheet/src/utils.js");
+},561,[],"node_modules/react-native-extended-stylesheet/src/utils.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93243,7 +93097,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }();
 
   exports.default = Value;
-},563,[1,22,23,564,557,565,566,567],"node_modules/react-native-extended-stylesheet/src/value.js");
+},562,[1,22,23,563,556,564,565,566],"node_modules/react-native-extended-stylesheet/src/value.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93272,7 +93126,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     return rem * koef;
   }
-},564,[],"node_modules/react-native-extended-stylesheet/src/replacers/rem.js");
+},563,[],"node_modules/react-native-extended-stylesheet/src/replacers/rem.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93322,7 +93176,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     throw new Error(invalidPropMsg);
   }
-},565,[2],"node_modules/react-native-extended-stylesheet/src/replacers/percent.js");
+},564,[2],"node_modules/react-native-extended-stylesheet/src/replacers/percent.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93404,7 +93258,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       throw new Error('Operation divisor should not be zero');
     }
   }
-},566,[],"node_modules/react-native-extended-stylesheet/src/replacers/operation.js");
+},565,[],"node_modules/react-native-extended-stylesheet/src/replacers/operation.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93443,7 +93297,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return prop.indexOf(p) >= 0;
     });
   }
-},567,[],"node_modules/react-native-extended-stylesheet/src/replacers/scale.js");
+},566,[],"node_modules/react-native-extended-stylesheet/src/replacers/scale.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93472,7 +93326,222 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function isNumber(value) {
     return typeof value === 'number';
   }
-},568,[],"node_modules/react-native-extended-stylesheet/src/child.js");
+},567,[],"node_modules/react-native-extended-stylesheet/src/child.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/defineProperty"));
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./../react-transform-hmr/lib/index.js"));
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[12], "react-native");
+
+  var _coalesceNonElementChildren = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./coalesceNonElementChildren"));
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native-button/Button.js";
+
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+  var _components = {
+    Button: {
+      displayName: "Button"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "node_modules/react-native-button/Button.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var systemButtonOpacity = 0.2;
+
+  var Button = _wrapComponent("Button")((_temp = _class = function (_Component) {
+    (0, _inherits2.default)(Button, _Component);
+
+    function Button() {
+      (0, _classCallCheck2.default)(this, Button);
+      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Button).apply(this, arguments));
+    }
+
+    (0, _createClass2.default)(Button, [{
+      key: "render",
+      value: function render() {
+        var touchableProps = {
+          activeOpacity: this._computeActiveOpacity()
+        };
+        var containerStyle = [this.props.containerStyle, this.props.disabled ? this.props.disabledContainerStyle : null];
+
+        if (!this.props.disabled) {
+          touchableProps.onPress = this.props.onPress;
+          touchableProps.onPressIn = this.props.onPressIn;
+          touchableProps.onPressOut = this.props.onPressOut;
+          touchableProps.onLongPress = this.props.onLongPress;
+          touchableProps.delayPressIn = this.props.delayPressIn;
+          touchableProps.delayPressOut = this.props.delayPressOut;
+          touchableProps.delayLongPress = this.props.delayLongPress;
+        }
+
+        return _react.default.createElement(_reactNative.TouchableOpacity, (0, _extends2.default)({}, touchableProps, {
+          testID: this.props.testID,
+          style: containerStyle,
+          accessibilityLabel: this.props.accessibilityLabel,
+          accessibilityRole: "button",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          }
+        }), this._renderGroupedChildren());
+      }
+    }, {
+      key: "_renderGroupedChildren",
+      value: function _renderGroupedChildren() {
+        var _this = this;
+
+        var disabled = this.props.disabled;
+        var style = [styles.text, disabled ? styles.disabledText : null, this.props.style, disabled ? this.props.styleDisabled : null];
+        var childGroupStyle = [styles.group, this.props.childGroupStyle];
+        var children = (0, _coalesceNonElementChildren.default)(this.props.children, function (children, index) {
+          return _react.default.createElement(_reactNative.Text, {
+            key: index,
+            style: style,
+            allowFontScaling: _this.props.allowFontScaling,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 74
+            }
+          }, children);
+        });
+
+        switch (children.length) {
+          case 0:
+            return null;
+
+          case 1:
+            return children[0];
+
+          default:
+            return _react.default.createElement(_reactNative.View, {
+              style: childGroupStyle,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 86
+              }
+            }, children);
+        }
+      }
+    }, {
+      key: "_computeActiveOpacity",
+      value: function _computeActiveOpacity() {
+        if (this.props.disabled) {
+          return 1;
+        }
+
+        return this.props.activeOpacity != null ? this.props.activeOpacity : systemButtonOpacity;
+      }
+    }]);
+    return Button;
+  }(_react.Component), _class.propTypes = _objectSpread({}, _reactNative.TouchableOpacity.propTypes, {
+    accessibilityLabel: _propTypes.default.string,
+    allowFontScaling: _reactNative.Text.propTypes.allowFontScaling,
+    containerStyle: _reactNative.ViewPropTypes.style,
+    disabledContainerStyle: _reactNative.ViewPropTypes.style,
+    disabled: _propTypes.default.bool,
+    style: _reactNative.Text.propTypes.style,
+    styleDisabled: _reactNative.Text.propTypes.style,
+    childGroupStyle: _reactNative.ViewPropTypes.style
+  }), _temp));
+
+  var _default2 = Button;
+  exports.default = _default2;
+  ;
+
+  var styles = _reactNative.StyleSheet.create({
+    text: {
+      color: '#007aff',
+      fontSize: 17,
+      fontWeight: '500',
+      textAlign: 'center'
+    },
+    disabledText: {
+      color: '#dcdcdc'
+    },
+    group: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    }
+  });
+},568,[1,155,50,11,22,23,37,40,43,52,193,67,2,569],"node_modules/react-native-button/Button.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = coalesceNonElementChildren;
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  function coalesceNonElementChildren(children, coalesceNodes) {
+    var coalescedChildren = [];
+    var contiguousNonElements = [];
+
+    _react.Children.forEach(children, function (child) {
+      if (!_react.default.isValidElement(child)) {
+        contiguousNonElements.push(child);
+        return;
+      }
+
+      if (contiguousNonElements.length) {
+        coalescedChildren.push(coalesceNodes(contiguousNonElements, coalescedChildren.length));
+        contiguousNonElements = [];
+      }
+
+      coalescedChildren.push(child);
+    });
+
+    if (contiguousNonElements.length) {
+      coalescedChildren.push(coalesceNodes(contiguousNonElements, coalescedChildren.length));
+    }
+
+    return coalescedChildren;
+  }
+},569,[155,52],"node_modules/react-native-button/coalesceNonElementChildren.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -93521,7 +93590,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _DebugInstructions = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./components/DebugInstructions"));
 
   var _ReloadInstructions = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./components/ReloadInstructions"));
-},569,[1,570,573,571,575,576],"node_modules/react-native/Libraries/NewAppScreen/index.js");
+},570,[1,571,574,572,576,577],"node_modules/react-native/Libraries/NewAppScreen/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -93583,7 +93652,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Header;
   exports.default = _default;
-},570,[1,52,2,571,572],"node_modules/react-native/Libraries/NewAppScreen/components/Header.js");
+},571,[1,52,2,572,573],"node_modules/react-native/Libraries/NewAppScreen/components/Header.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -93600,7 +93669,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     black: '#000'
   };
   exports.default = _default;
-},571,[],"node_modules/react-native/Libraries/NewAppScreen/components/Colors.js");
+},572,[],"node_modules/react-native/Libraries/NewAppScreen/components/Colors.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -93612,7 +93681,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "logo",
     "type": "png"
   });
-},572,[187],"node_modules/react-native/Libraries/NewAppScreen/components/logo.png");
+},573,[187],"node_modules/react-native/Libraries/NewAppScreen/components/logo.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -93745,7 +93814,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = LinkList;
   exports.default = _default;
-},573,[1,52,2,574,571],"node_modules/react-native/Libraries/NewAppScreen/components/LearnMoreLinks.js");
+},574,[1,52,2,575,572],"node_modules/react-native/Libraries/NewAppScreen/components/LearnMoreLinks.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -93761,7 +93830,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }
 
   module.exports = openURLInBrowser;
-},574,[107],"node_modules/react-native/Libraries/Core/Devtools/openURLInBrowser.js");
+},575,[107],"node_modules/react-native/Libraries/Core/Devtools/openURLInBrowser.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93827,7 +93896,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = DebugInstructions;
   exports.default = _default2;
-},575,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/DebugInstructions.js");
+},576,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/DebugInstructions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -93881,7 +93950,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = ReloadInstructions;
   exports.default = _default2;
-},576,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/ReloadInstructions.js");
+},577,[1,52,2],"node_modules/react-native/Libraries/NewAppScreen/components/ReloadInstructions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -93908,6 +93977,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNativeImagePicker = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react-native-image-picker"));
 
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./styles"));
+
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/camera.tsx";
 
   var PendingView = function PendingView() {
@@ -93920,12 +93991,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 10
       }
     }, _react.default.createElement(_reactNative.Text, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 18
       }
     }, "Waiting"));
   };
@@ -93937,13 +94008,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         setPhoto = _useState2[1];
 
     return _react.default.createElement(_reactNative.View, {
-      style: styles.container,
+      style: [_styles.default.container, cameraStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 25
       }
     }, photo === null ? _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNativeCamera.RNCamera, {
-      style: styles.preview,
+      style: cameraStyles.preview,
       type: _reactNativeCamera.RNCamera.Constants.Type.back,
       flashMode: _reactNativeCamera.RNCamera.Constants.FlashMode.off,
       androidCameraPermissionOptions: {
@@ -93961,7 +94032,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       captureAudio: false,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 28
       }
     }, function (_ref) {
       var camera = _ref.camera,
@@ -93970,7 +94041,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       if (status !== "READY") return _react.default.createElement(PendingView, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 47
         }
       });
       return _react.default.createElement(_reactNative.View, {
@@ -93981,16 +94052,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 49
         }
       }, _react.default.createElement(_reactNative.TouchableOpacity, {
         onPress: function onPress() {
           return takePicture(camera);
         },
-        style: styles.capture,
+        style: cameraStyles.capture,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 56
         }
       }, _react.default.createElement(_reactNative.Text, {
         style: {
@@ -93998,7 +94069,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 60
         }
       }, " SNAP ")));
     }), _react.default.createElement(_reactNative.TouchableOpacity, {
@@ -94019,15 +94090,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           }
         });
       },
-      style: styles.imagePicker,
+      style: cameraStyles.imagePicker,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 66
       }
     }, _react.default.createElement(_reactNative.Text, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 90
       }
     }, "Pick Image"))) : _react.default.createElement(_photo.default, {
       clear: function clear() {
@@ -94036,7 +94107,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       photo: photo,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 94
       }
     }));
 
@@ -94071,12 +94142,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   };
 
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: "column",
-      backgroundColor: "black"
-    },
+  var cameraStyles = _reactNative.StyleSheet.create({
     imagePicker: {
       backgroundColor: "#fff",
       position: "absolute",
@@ -94097,14 +94163,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       alignSelf: "center",
       margin: 20
     },
-    test: {
-      color: "#fff"
+    container: {
+      width: "100%"
     }
   });
 
   var _default = Camera;
   exports.default = _default;
-},577,[1,155,105,12,52,2,578,581,582],"camera.tsx");
+},578,[1,155,105,12,52,2,579,582,583,551],"camera.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -94127,7 +94193,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _RNCamera = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./RNCamera"));
 
   var _FaceDetector = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./FaceDetector"));
-},578,[1,579,580],"node_modules/react-native-camera/src/index.js");
+},579,[1,580,581],"node_modules/react-native-camera/src/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -95084,7 +95150,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       testID: true
     }
   });
-},579,[1,11,9,50,22,23,37,40,39,43,12,105,52,193,67,2],"node_modules/react-native-camera/src/RNCamera.js");
+},580,[1,11,9,50,22,23,37,40,39,43,12,105,52,193,67,2],"node_modules/react-native-camera/src/RNCamera.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -95142,7 +95208,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   var Constants = FaceDetector.Constants;
   exports.Constants = Constants;
-},580,[1,50,22,23,2],"node_modules/react-native-camera/src/FaceDetector.js");
+},581,[1,50,22,23,2],"node_modules/react-native-camera/src/FaceDetector.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -95357,7 +95423,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Photo;
   exports.default = _default;
-},581,[1,155,105,12,52,2,551],"photo.tsx");
+},582,[1,155,105,12,52,2,568],"photo.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -95453,7 +95519,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = new ImagePicker();
 
   exports.default = _default;
-},582,[1,50,22,23,583,2,584],"node_modules/react-native-image-picker/src/index.ts");
+},583,[1,50,22,23,584,2,585],"node_modules/react-native-image-picker/src/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -95470,8 +95536,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = ImagePickerManager;
   exports.default = _default;
-},583,[2],"node_modules/react-native-image-picker/src/internal/nativeInterface.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},584,[],"node_modules/react-native-image-picker/src/internal/types.ts");
+},584,[2],"node_modules/react-native-image-picker/src/internal/nativeInterface.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},585,[],"node_modules/react-native-image-picker/src/internal/types.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -95497,6 +95563,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _choice2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./choice"));
 
   var _trees = _$$_REQUIRE(_dependencyMap[8], "./trees");
+
+  var _breadcrumb = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./breadcrumb"));
 
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
@@ -95531,90 +95599,88 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         temp = temp[_choice];
       }
 
-      if (temp.hasOwnProperty("trees")) {} else {
+      if (temp.hasOwnProperty("trees")) {
+        return _react.default.createElement(_reactNative.View, {
+          style: [_styles.default.container, choiceStyles.container],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: choiceStyles.heading,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          }
+        }, "Which picture best fits your leaf?"), temp["trees"].map(function (tree) {
+          return _react.default.createElement(_reactNative.Text, {
+            key: tree,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 32
+            }
+          }, tree);
+        }));
+      } else {
         for (var _key in temp) {
           choicesToRender.push(_key);
         }
       }
     }
 
+    console.log(_trees.descriptions["Opposite Branching"].image);
     return _react.default.createElement(_reactNative.View, {
-      style: _styles.default.centered,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      }
-    }, _react.default.createElement(_reactNative.View, {
       style: [_styles.default.container, choiceStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 45
       }
-    }, choicesToRender.map(function (choice) {
+    }, _react.default.createElement(_breadcrumb.default, {
+      crumb: choices,
+      onPress: setChoices,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      }
+    }), _react.default.createElement(_reactNative.Text, {
+      style: choiceStyles.heading,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      }
+    }, "Which of the following best describes your tree?"), choicesToRender.map(function (choice) {
       return _react.default.createElement(_choice2.default, {
         key: choice,
         choice: choice,
+        image: _trees.descriptions[choice].image,
         text: _trees.descriptions[choice].text,
         onPress: function onPress() {
           setChoices([].concat((0, _toConsumableArray2.default)(choices), [choice]));
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 51
         }
       });
-    })));
+    }));
   };
 
   var choiceStyles = _reactNative.StyleSheet.create({
-    container: {}
+    container: {
+      width: "90%",
+      alignItems: "center"
+    },
+    heading: {
+      width: "70%",
+      textAlign: "center",
+      fontSize: 20,
+      marginVertical: 20
+    }
   });
 
   var _default = Choices;
   exports.default = _default;
-},585,[1,155,18,12,52,2,587,588,589],"choices.tsx");
-__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
-  module.exports = {
-  "name": "Canopii",
-  "displayName": "Canopii"
-};
-},586,[],"app.json");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native-extended-stylesheet"));
-
-  var _default = _reactNativeExtendedStylesheet.default.create({
-    all: {
-      fontFamily: "OpenSans"
-    },
-    container: {
-      width: "90%",
-      height: "100%",
-      display: "flex",
-      flexDirection: "column"
-    },
-    centered: {
-      alignItems: "center"
-    },
-    flex: {
-      display: "flex",
-      flex: 1
-    },
-    flexColumn: {
-      display: "flex",
-      flex: 1,
-      flexDirection: "column"
-    }
-  });
-
-  exports.default = _default;
-},587,[1,553],"styles.ts");
+},586,[1,155,18,12,52,2,551,587,589,599],"choices.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -95629,44 +95695,114 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./styles"));
+
+  var _card = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./card"));
+
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choice.tsx";
 
   var Choice = function Choice(props) {
-    return _react.default.createElement(_reactNative.View, {
-      style: choiceStyles.choice,
+    return _react.default.createElement(_card.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      }
+    }, _react.default.createElement(_reactNative.TouchableHighlight, {
+      onPress: props.onPress,
+      style: choiceStyles.touchableStyles,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
       }
-    }, _react.default.createElement(_reactNative.TouchableHighlight, {
-      onPress: props.onPress,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      }
     }, _react.default.createElement(_reactNative.View, {
-      style: choiceStyles.textContainer,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      style: choiceStyles.title,
+      style: choiceStyles.container,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       }
-    }, props.choice), _react.default.createElement(_reactNative.Text, {
-      style: choiceStyles.text,
+    }, _react.default.createElement(_reactNative.Image, {
+      source: props.image,
+      style: choiceStyles.image,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22
       }
-    }, props.text))));
+    }), _react.default.createElement(_reactNative.View, {
+      style: choiceStyles.textContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.heading, choiceStyles.title],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      }
+    }, props.choice), _react.default.createElement(_reactNative.Text, {
+      style: _styles.default.body,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      }
+    }, props.text)))));
   };
 
   var choiceStyles = {
-    choice: {
+    title: {
+      marginBottom: 15
+    },
+    image: {
+      width: "30%",
+      height: "100%",
+      resizeMode: "cover"
+    },
+    container: {
+      display: "flex",
+      flexDirection: "row",
+      height: "100%"
+    },
+    textContainer: {
+      width: "70%",
+      marginLeft: 10
+    },
+    touchableStyles: {
+      height: "100%",
+      width: "100%",
+      paddingVertical: 20
+    }
+  };
+  var _default = Choice;
+  exports.default = _default;
+},587,[1,52,2,551,588],"choice.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/card.tsx";
+
+  var Card = function Card(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: [props.style, cardStyles.card],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }, props.children);
+  };
+
+  var cardStyles = {
+    card: {
       height: "20%",
       backgroundColor: "white",
       borderRadius: 5,
@@ -95678,30 +95814,20 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       shadowRadius: 8,
       shadowColor: "black",
       marginVertical: 10,
-      padding: 10
-    },
-    title: {
-      fontSize: 20,
-      marginBottom: 10
-    },
-    text: {
-      fontSize: 14
-    },
-    textContainer: {
-      paddingVertical: 10
+      width: "100%"
     }
   };
-  var _default = Choice;
+  var _default = Card;
   exports.default = _default;
-},588,[1,52,2],"choice.tsx");
+},588,[1,52,2],"card.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.descriptions = exports.decision = void 0;
   var decision = {
-    Deciduous: {},
-    Coniferous: {
+    Coniferous: {},
+    Deciduous: {
       "Simple Leaf": {
         "Opposite Branching": {
           "Rough, Non-rounded Bottom": {
@@ -95741,41 +95867,253 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.decision = decision;
   var descriptions = {
     "Simple Leaf": {
-      text: "The leaf stem is the same as the main vein for that leaf."
+      text: "The leaf stem is the same as the main vein for that leaf.",
+      image: _$$_REQUIRE(_dependencyMap[0], "./images/SimpleLeaf.png")
     },
     "Compound Leaf": {
-      text: "A single leaf with numerous leaflets."
+      text: "A single leaf with numerous leaflets.",
+      image: _$$_REQUIRE(_dependencyMap[1], "./images/CompoundLeaf.png")
     },
     "Opposite Branching": {
-      text: "Leaves grow directly across from each other."
+      text: "Leaves grow directly across from each other.",
+      image: _$$_REQUIRE(_dependencyMap[2], "./images/OppositeBranching.png")
     },
     "Alternate Branching": {
-      text: "Leaves do not grow directly across from each other."
+      text: "Leaves do not grow directly across from each other.",
+      image: _$$_REQUIRE(_dependencyMap[3], "./images/AlternateBranching.png")
     },
     "Lobed Leaf": {
-      text: "Leaf has distinct protrusions which make it irregular shaped."
+      text: "Leaf has distinct protrusions which make it irregular shaped.",
+      image: _$$_REQUIRE(_dependencyMap[4], "./images/LobedLeaf1.png")
     },
     "Entire Leaf": {
-      text: "The leaf does not have division"
+      text: "The leaf does not have division",
+      image: _$$_REQUIRE(_dependencyMap[5], "./images/EntireLeaf.png")
     },
     "Rounded Base": {
-      text: "Leaf base is rounded towards the stem."
+      text: "Leaf base is rounded towards the stem.",
+      image: _$$_REQUIRE(_dependencyMap[6], "./images/RoundBase.png")
     },
     "Pointed Base": {
-      text: "Leaf base is sharp towards the stem."
+      text: "Leaf base is sharp towards the stem.",
+      image: _$$_REQUIRE(_dependencyMap[7], "./images/SharpBase.png")
     },
     "Heart Base": {
-      text: "Leaf base is shaped as an inverted heart towards the stem."
+      text: "Leaf base is shaped as an inverted heart towards the stem.",
+      image: _$$_REQUIRE(_dependencyMap[8], "./images/HeartBase.png")
     },
     Deciduous: {
-      text: "Leafy trees which shed their leaves anually."
+      text: "Leafy trees which shed their leaves anually.",
+      image: _$$_REQUIRE(_dependencyMap[0], "./images/SimpleLeaf.png")
     },
     Coniferous: {
-      text: "Trees with needle=like or scale-like leaves which do not shed their leaves."
+      text: "Trees with needle=like or scale-like leaves which do not shed their leaves.",
+      image: _$$_REQUIRE(_dependencyMap[1], "./images/CompoundLeaf.png")
     }
   };
   exports.descriptions = descriptions;
-},589,[],"trees.ts");
+},589,[590,591,592,593,594,595,596,597,598],"trees.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "cf8a1e44c8d447fc73aa626a0806e348",
+    "name": "SimpleLeaf",
+    "type": "png"
+  });
+},590,[187],"images/SimpleLeaf.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "2977c05ec531a26e0745a7876745326c",
+    "name": "CompoundLeaf",
+    "type": "png"
+  });
+},591,[187],"images/CompoundLeaf.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "2ef2c8a496cf5e318b4a6e34eeeb7c2f",
+    "name": "OppositeBranching",
+    "type": "png"
+  });
+},592,[187],"images/OppositeBranching.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 760,
+    "scales": [1],
+    "hash": "4c9a2106e9ad039d489140a03ca59e10",
+    "name": "AlternateBranching",
+    "type": "png"
+  });
+},593,[187],"images/AlternateBranching.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "bc69b4ad35871855b6c66965f52c165b",
+    "name": "LobedLeaf1",
+    "type": "png"
+  });
+},594,[187],"images/LobedLeaf1.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "cf8a1e44c8d447fc73aa626a0806e348",
+    "name": "EntireLeaf",
+    "type": "png"
+  });
+},595,[187],"images/EntireLeaf.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "3873e96d5d7480869303c7d2cfe0e937",
+    "name": "RoundBase",
+    "type": "png"
+  });
+},596,[187],"images/RoundBase.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "99600b28752f7c05e078a479d793af1d",
+    "name": "SharpBase",
+    "type": "png"
+  });
+},597,[187],"images/SharpBase.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 750,
+    "height": 750,
+    "scales": [1],
+    "hash": "33721a6abba19a995520fb204ed4a7b5",
+    "name": "HeartBase",
+    "type": "png"
+  });
+},598,[187],"images/HeartBase.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/breadcrumb.tsx";
+
+  var Breadcrumb = function Breadcrumb(props) {
+    var elementsToRender = [];
+
+    if (props.crumb.length === 0) {
+      elementsToRender.push(_react.default.createElement(_reactNative.Text, {
+        style: breadcrumbStyles.container,
+        key: 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        }
+      }, "All Southern Ontario Trees"));
+    } else {
+      var _loop = function _loop(i) {
+        console.log(i);
+
+        if (+i !== 0) {
+          elementsToRender.push(_react.default.createElement(_reactNative.Text, {
+            key: i + "arrow",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 19
+            }
+          }, " > "));
+        }
+
+        elementsToRender.push(_react.default.createElement(_reactNative.Text, {
+          onPress: function onPress() {
+            props.onPress(props.crumb.slice(0, i));
+          },
+          key: i,
+          style: {
+            color: "blue",
+            textAlign: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          }
+        }, props.crumb[i]));
+      };
+
+      for (var i in props.crumb) {
+        _loop(i);
+      }
+    }
+
+    return _react.default.createElement(_reactNative.Text, {
+      style: breadcrumbStyles.container,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      }
+    }, elementsToRender.map(function (element) {
+      return element;
+    }));
+  };
+
+  var breadcrumbStyles = {
+    touchableStyles: {
+      height: "100%",
+      width: "100%",
+      paddingVertical: 20
+    },
+    container: {
+      marginTop: 15
+    }
+  };
+  var _default = Breadcrumb;
+  exports.default = _default;
+},599,[1,52,2],"breadcrumb.tsx");
+__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
+  module.exports = {
+  "name": "Canopii",
+  "displayName": "Canopii"
+};
+},600,[],"app.json");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map
