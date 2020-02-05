@@ -97,11 +97,11 @@ export const descriptions = {
   },
   Deciduous: {
     text: "Leafy trees which shed their leaves anually.",
-    image: require("./images/SimpleLeaf.png"),
+    image: require("./images/Deciduous.png"),
   },
   Coniferous: {
     text:
       "Trees with needle=like or scale-like leaves which do not shed their leaves.",
-    image: require("./images/CompoundLeaf.png"),
+    image: require("./images/Coniferous.png"),
   },
 };

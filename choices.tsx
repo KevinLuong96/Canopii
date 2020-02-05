@@ -1,6 +1,6 @@
 "use strict";
-import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, View, Text, Animated } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
@@ -8,6 +8,16 @@ import Breadcrumb from "./breadcrumb";
 
 const Choices = () => {
   const [choices, setChoices] = useState([]);
+
+  let slideValue;
+  slideValue = new Animated.Value(choices.length === 0 ? 0 : 1000);
+
+  useEffect(() => {
+    Animated.timing(slideValue, {
+      toValue: 0,
+      duration: 200,
+    }).start();
+  }, [choices]);
 
   const choicesToRender = [];
   if (choices == []) {
@@ -39,7 +49,15 @@ const Choices = () => {
       }
     }
   }
-  console.log(descriptions["Opposite Branching"].image);
+
+  const animate = choice => {
+    Animated.timing(slideValue, {
+      toValue: -1000,
+      duration: 25,
+    }).start(() => {
+      setChoices([...choices, choice]);
+    });
+  };
 
   return (
     <View style={[styles.container, choiceStyles.container]}>
@@ -47,17 +65,22 @@ const Choices = () => {
       <Text style={choiceStyles.heading}>
         Which of the following best describes your tree?
       </Text>
-      {choicesToRender.map(choice => (
-        <Choice
-          key={choice}
-          choice={choice}
-          image={descriptions[choice].image}
-          text={descriptions[choice].text}
-          onPress={() => {
-            setChoices([...choices, choice]);
-          }}
-        ></Choice>
-      ))}
+      <Animated.View
+        style={{
+          height: "100%",
+          transform: [{ translateX: slideValue }],
+        }}
+      >
+        {choicesToRender.map(choice => (
+          <Choice
+            key={choice}
+            choice={choice}
+            image={descriptions[choice].image}
+            text={descriptions[choice].text}
+            onPress={() => animate(choice)}
+          ></Choice>
+        ))}
+      </Animated.View>
     </View>
   );
 };

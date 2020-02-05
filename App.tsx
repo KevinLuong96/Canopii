@@ -25,6 +25,7 @@ enum navTypes {
 const App = () => {
   EStyleSheet.build({
     $dgreen6: "#4BA55D",
+    $gray7: "#8C8C8C",
   });
   const [navState, setNavState] = useState(navTypes.Home);
   return (

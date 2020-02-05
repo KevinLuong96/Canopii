@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 import Card from "./card";
+import EStyleSheet from "react-native-extended-stylesheet";
 
 const Choice = props => {
   return (
@@ -17,6 +18,7 @@ const Choice = props => {
       <TouchableHighlight
         onPress={props.onPress}
         style={choiceStyles.touchableStyles}
+        underlayColor={"rgba(140, 140, 140, 0.25)"}
       >
         <View style={choiceStyles.container}>
           <Image source={props.image} style={choiceStyles.image}></Image>
@@ -32,7 +34,7 @@ const Choice = props => {
   );
 };
 
-const choiceStyles = {
+const choiceStyles = EStyleSheet.create({
   title: {
     marginBottom: 15,
   },
@@ -47,14 +49,17 @@ const choiceStyles = {
     height: "100%",
   } as ViewStyle,
   textContainer: {
+    display: "flex",
+    flexShrink: 1,
     width: "70%",
     marginLeft: 10,
-  },
+  } as ViewStyle,
   touchableStyles: {
     height: "100%",
     width: "100%",
     paddingVertical: 20,
+    paddingHorizontal: 10,
   },
-};
+});
 
 export default Choice;

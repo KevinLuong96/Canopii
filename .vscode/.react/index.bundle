@@ -91596,7 +91596,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var App = function App() {
     _reactNativeExtendedStylesheet.default.build({
-      $dgreen6: "#4BA55D"
+      $dgreen6: "#4BA55D",
+      $gray7: "#8C8C8C"
     });
 
     var _useState = (0, _react.useState)(navTypes.Home),
@@ -91607,41 +91608,41 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return _react.default.createElement(_react.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 32
       }
     }, _react.default.createElement(_reactNative.View, {
       style: appStyles.statusBar,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 34
       }
     }, navState == navTypes.Test && _react.default.createElement(_reactNative.Text, {
       style: [_styles.default.heading, appStyles.statusBarText],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 36
       }
     }, "Identify Tree Species")), _react.default.createElement(_reactNative.SafeAreaView, {
       style: [_styles.default.all, _styles.default.container, appStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 41
       }
     }, navState == navTypes.Home && _react.default.createElement(_camera.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 42
       }
     }), navState == navTypes.Test && _react.default.createElement(_choices.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 43
       }
     }), _react.default.createElement(_reactNative.View, {
       style: appStyles.footer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 47
       }
     }, _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91650,7 +91651,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Home ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 48
       }
     }, "Home"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91659,7 +91660,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Profile ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 59
       }
     }, "Profile"), _react.default.createElement(_reactNativeButton.default, {
       style: navState == navTypes.Settings ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
@@ -91668,7 +91669,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 69
       }
     }, "Settings"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91677,7 +91678,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Map ? [_styles.default.flex, appStyles.selected] : _styles.default.flex,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 79
       }
     }, "Map"), _react.default.createElement(_reactNativeButton.default, {
       onPress: function onPress() {
@@ -91686,7 +91687,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: navState == navTypes.Test ? [_styles.default.button, appStyles.selected] : _styles.default.button,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 89
       }
     }, "Test"))));
   };
@@ -95574,6 +95575,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         choices = _useState2[0],
         setChoices = _useState2[1];
 
+    var slideValue;
+    slideValue = new _reactNative.Animated.Value(choices.length === 0 ? 0 : 1000);
+    (0, _react.useEffect)(function () {
+      _reactNative.Animated.timing(slideValue, {
+        toValue: 0,
+        duration: 200
+      }).start();
+    }, [choices]);
     var choicesToRender = [];
 
     if (choices == []) {
@@ -95604,20 +95613,20 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: [_styles.default.container, choiceStyles.container],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 37
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: choiceStyles.heading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 38
           }
         }, "Which picture best fits your leaf?"), temp["trees"].map(function (tree) {
           return _react.default.createElement(_reactNative.Text, {
             key: tree,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 42
             }
           }, tree);
         }));
@@ -95628,41 +95637,60 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }
 
-    console.log(_trees.descriptions["Opposite Branching"].image);
+    var animate = function animate(choice) {
+      _reactNative.Animated.timing(slideValue, {
+        toValue: -1000,
+        duration: 25
+      }).start(function () {
+        setChoices([].concat((0, _toConsumableArray2.default)(choices), [choice]));
+      });
+    };
+
     return _react.default.createElement(_reactNative.View, {
       style: [_styles.default.container, choiceStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 63
       }
     }, _react.default.createElement(_breadcrumb.default, {
       crumb: choices,
       onPress: setChoices,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 64
       }
     }), _react.default.createElement(_reactNative.Text, {
       style: choiceStyles.heading,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 65
       }
-    }, "Which of the following best describes your tree?"), choicesToRender.map(function (choice) {
+    }, "Which of the following best describes your tree?"), _react.default.createElement(_reactNative.Animated.View, {
+      style: {
+        height: "100%",
+        transform: [{
+          translateX: slideValue
+        }]
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      }
+    }, choicesToRender.map(function (choice) {
       return _react.default.createElement(_choice2.default, {
         key: choice,
         choice: choice,
         image: _trees.descriptions[choice].image,
         text: _trees.descriptions[choice].text,
         onPress: function onPress() {
-          setChoices([].concat((0, _toConsumableArray2.default)(choices), [choice]));
+          return animate(choice);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 75
         }
       });
-    }));
+    })));
   };
 
   var choiceStyles = _reactNative.StyleSheet.create({
@@ -95699,56 +95727,59 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _card = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./card"));
 
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "react-native-extended-stylesheet"));
+
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choice.tsx";
 
   var Choice = function Choice(props) {
     return _react.default.createElement(_card.default, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 17
       }
     }, _react.default.createElement(_reactNative.TouchableHighlight, {
       onPress: props.onPress,
       style: choiceStyles.touchableStyles,
+      underlayColor: "rgba(140, 140, 140, 0.25)",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       }
     }, _react.default.createElement(_reactNative.View, {
       style: choiceStyles.container,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 23
       }
     }, _react.default.createElement(_reactNative.Image, {
       source: props.image,
       style: choiceStyles.image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       }
     }), _react.default.createElement(_reactNative.View, {
       style: choiceStyles.textContainer,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 25
       }
     }, _react.default.createElement(_reactNative.Text, {
       style: [_styles.default.heading, choiceStyles.title],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 26
       }
     }, props.choice), _react.default.createElement(_reactNative.Text, {
       style: _styles.default.body,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 29
       }
     }, props.text)))));
   };
 
-  var choiceStyles = {
+  var choiceStyles = _reactNativeExtendedStylesheet.default.create({
     title: {
       marginBottom: 15
     },
@@ -95763,18 +95794,22 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       height: "100%"
     },
     textContainer: {
+      display: "flex",
+      flexShrink: 1,
       width: "70%",
       marginLeft: 10
     },
     touchableStyles: {
       height: "100%",
       width: "100%",
-      paddingVertical: 20
+      paddingVertical: 20,
+      paddingHorizontal: 10
     }
-  };
+  });
+
   var _default = Choice;
   exports.default = _default;
-},587,[1,52,2,551,588],"choice.tsx");
+},587,[1,52,2,551,588,552],"choice.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -95904,15 +95939,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     Deciduous: {
       text: "Leafy trees which shed their leaves anually.",
-      image: _$$_REQUIRE(_dependencyMap[0], "./images/SimpleLeaf.png")
+      image: _$$_REQUIRE(_dependencyMap[9], "./images/Deciduous.png")
     },
     Coniferous: {
       text: "Trees with needle=like or scale-like leaves which do not shed their leaves.",
-      image: _$$_REQUIRE(_dependencyMap[1], "./images/CompoundLeaf.png")
+      image: _$$_REQUIRE(_dependencyMap[10], "./images/Coniferous.png")
     }
   };
   exports.descriptions = descriptions;
-},589,[590,591,592,593,594,595,596,597,598],"trees.ts");
+},589,[590,591,592,593,594,595,596,597,598,601,602],"trees.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -95954,9 +95989,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "__packager_asset": true,
     "httpServerLocation": "/assets/images",
     "width": 750,
-    "height": 760,
+    "height": 750,
     "scales": [1],
-    "hash": "4c9a2106e9ad039d489140a03ca59e10",
+    "hash": "3ade4fc7352f5fecf3de34573c01d8c2",
     "name": "AlternateBranching",
     "type": "png"
   });
@@ -95968,7 +96003,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "width": 750,
     "height": 750,
     "scales": [1],
-    "hash": "bc69b4ad35871855b6c66965f52c165b",
+    "hash": "318afcc972e0cf76266ab2348f317e4a",
     "name": "LobedLeaf1",
     "type": "png"
   });
@@ -96016,7 +96051,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "width": 750,
     "height": 750,
     "scales": [1],
-    "hash": "33721a6abba19a995520fb204ed4a7b5",
+    "hash": "a2d85c3950116133147c83556dbe1ed1",
     "name": "HeartBase",
     "type": "png"
   });
@@ -96051,14 +96086,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }, "All Southern Ontario Trees"));
     } else {
       var _loop = function _loop(i) {
-        console.log(i);
-
         if (+i !== 0) {
           elementsToRender.push(_react.default.createElement(_reactNative.Text, {
             key: i + "arrow",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 19
+              lineNumber: 18
             }
           }, " > "));
         }
@@ -96074,7 +96107,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22
+            lineNumber: 21
           }
         }, props.crumb[i]));
       };
@@ -96088,7 +96121,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: breadcrumbStyles.container,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 34
       }
     }, elementsToRender.map(function (element) {
       return element;
@@ -96114,6 +96147,30 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "displayName": "Canopii"
 };
 },600,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 800,
+    "height": 800,
+    "scales": [1],
+    "hash": "22fc29bf7a1fb7725d71ed919c17b8be",
+    "name": "Deciduous",
+    "type": "png"
+  });
+},601,[187],"images/Deciduous.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/images",
+    "width": 800,
+    "height": 800,
+    "scales": [1],
+    "hash": "94177930f899bd269d978a3011d2ca0c",
+    "name": "Coniferous",
+    "type": "png"
+  });
+},602,[187],"images/Coniferous.png");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map
