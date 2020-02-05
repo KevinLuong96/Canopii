@@ -21,13 +21,16 @@ const Choices = () => {
     }
   } else {
     let temp: Object = decision;
-    for (let choice in choices) {
+
+    for (let choice of choices) {
+      console.log(temp);
       temp = temp[choice];
     }
 
     // reached the leaves
     if (temp.hasOwnProperty("trees")) {
       // do something
+      console.log("hi");
     } else {
       for (let key in temp) {
         choicesToRender.push(key);
@@ -36,24 +39,23 @@ const Choices = () => {
   }
 
   return (
-    <View style={styles.centered}>
-      <View style={[styles.container, choiceStyles.container]}>
-        {choicesToRender.map(choice => (
-          <Choice
-            key={choice}
-            choice={choice}
-            text={descriptions[choice].text}
-            onClick={() => setChoices([...choices, choice])}
-          ></Choice>
-        ))}
-      </View>
+    <View style={[styles.container, choiceStyles.container]}>
+      {choicesToRender.map(choice => (
+        <Choice
+          key={choice}
+          choice={choice}
+          text={descriptions[choice].text}
+          onPress={() => {
+            setChoices([...choices, choice]);
+          }}
+        ></Choice>
+      ))}
     </View>
   );
 };
 const choiceStyles = StyleSheet.create({
   container: {
-    // justifyContent: "space-evenly"
-    // backgroundColor: "red"
+    width: "90%",
   },
 });
 

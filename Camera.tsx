@@ -5,11 +5,12 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import { RNCamera } from "react-native-camera";
 import Photo from "./photo";
 import ImagePicker from "react-native-image-picker";
+import styles from "./styles";
 
 const PendingView = () => (
   <View
@@ -17,7 +18,7 @@ const PendingView = () => (
       flex: 1,
       backgroundColor: "lightgreen",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     }}
   >
     <Text>Waiting</Text>
@@ -27,24 +28,24 @@ const PendingView = () => (
 const Camera = () => {
   const [photo, setPhoto] = useState(null);
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, cameraStyles.container]}>
       {photo === null ? (
         <>
           <RNCamera
-            style={styles.preview}
+            style={cameraStyles.preview}
             type={RNCamera.Constants.Type.back}
             flashMode={RNCamera.Constants.FlashMode.off}
             androidCameraPermissionOptions={{
               title: "Permission to use camera",
               message: "We need your permission to use your camera",
               buttonPositive: "Ok",
-              buttonNegative: "Cancel"
+              buttonNegative: "Cancel",
             }}
             androidRecordAudioPermissionOptions={{
               title: "Permission to use audio recording",
               message: "We need your permission to use your audio",
               buttonPositive: "Ok",
-              buttonNegative: "Cancel"
+              buttonNegative: "Cancel",
             }}
             captureAudio={false}
           >
@@ -55,12 +56,12 @@ const Camera = () => {
                   style={{
                     flex: 0,
                     flexDirection: "row",
-                    justifyContent: "center"
+                    justifyContent: "center",
                   }}
                 >
                   <TouchableOpacity
                     onPress={() => takePicture(camera)}
-                    style={styles.capture}
+                    style={cameraStyles.capture}
                   >
                     <Text style={{ fontSize: 14 }}> SNAP </Text>
                   </TouchableOpacity>
@@ -90,7 +91,7 @@ const Camera = () => {
                 }
               )
             }
-            style={styles.imagePicker}
+            style={cameraStyles.imagePicker}
           >
             <Text>Pick Image</Text>
           </TouchableOpacity>
@@ -109,22 +110,17 @@ const Camera = () => {
     }
   }
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: "black"
-  },
+const cameraStyles = StyleSheet.create({
   imagePicker: {
     backgroundColor: "#fff",
     position: "absolute",
     left: 25,
-    bottom: 25
+    bottom: 25,
   },
   preview: {
     flex: 1,
     justifyContent: "flex-end",
-    alignItems: "center"
+    alignItems: "center",
   },
   capture: {
     flex: 0,
@@ -133,9 +129,11 @@ const styles = StyleSheet.create({
     padding: 15,
     paddingHorizontal: 20,
     alignSelf: "center",
-    margin: 20
+    margin: 20,
   },
-  test: { color: "#fff" }
+  container: {
+    width: "100%",
+  },
 });
 
 export default Camera;

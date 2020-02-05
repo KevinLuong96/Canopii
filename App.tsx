@@ -42,7 +42,7 @@ const App = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={[styles.all, styles.flexColumn]}>
+      <SafeAreaView style={[styles.all, styles.container, appStyles.container]}>
         {navState == navTypes.Home && <Camera />}
         {navState == navTypes.Test && <Choices />}
         {/* {<View style={styles.flex}>
@@ -107,9 +107,13 @@ const App = () => {
 };
 
 const appStyles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+  },
   footer: {
-    height: 30,
-    display: "flex",
+    height: 20,
+    // display: "flex",
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
   },

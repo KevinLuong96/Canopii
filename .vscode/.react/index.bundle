@@ -95494,7 +95494,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./styles"));
 
-  var _choice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./choice"));
+  var _choice2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./choice"));
 
   var _trees = _$$_REQUIRE(_dependencyMap[8], "./trees");
 
@@ -95515,8 +95515,20 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     } else {
       var temp = _trees.decision;
 
-      for (var choice in choices) {
-        temp = temp[choice];
+      for (var _iterator = choices, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"]();;) {
+        var _ref;
+
+        if (_isArray) {
+          if (_i >= _iterator.length) break;
+          _ref = _iterator[_i++];
+        } else {
+          _i = _iterator.next();
+          if (_i.done) break;
+          _ref = _i.value;
+        }
+
+        var _choice = _ref;
+        temp = temp[_choice];
       }
 
       if (temp.hasOwnProperty("trees")) {} else {
@@ -95530,25 +95542,25 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: _styles.default.centered,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 40
       }
     }, _react.default.createElement(_reactNative.View, {
       style: [_styles.default.container, choiceStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 41
       }
     }, choicesToRender.map(function (choice) {
-      return _react.default.createElement(_choice.default, {
+      return _react.default.createElement(_choice2.default, {
         key: choice,
         choice: choice,
         text: _trees.descriptions[choice].text,
-        onClick: function onClick() {
-          return setChoices([].concat((0, _toConsumableArray2.default)(choices), [choice]));
+        onPress: function onPress() {
+          setChoices([].concat((0, _toConsumableArray2.default)(choices), [choice]));
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 43
         }
       });
     })));
@@ -95620,9 +95632,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choice.tsx";
 
   var Choice = function Choice(props) {
-    console.log(props.text);
     return _react.default.createElement(_reactNative.View, {
       style: choiceStyles.choice,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      }
+    }, _react.default.createElement(_reactNative.TouchableHighlight, {
+      onPress: props.onPress,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
@@ -95645,7 +95662,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         fileName: _jsxFileName,
         lineNumber: 22
       }
-    }, props.text)));
+    }, props.text))));
   };
 
   var choiceStyles = {

@@ -7,36 +7,30 @@ import {
   TouchableOpacity,
   View,
   Button,
+  TouchableHighlight,
 } from "react-native";
 import styles from "./styles";
+import Card from "./card";
 
 const Choice = props => {
   // const [choices, setChoices] = useState([]);
-  console.log(props.text);
-
   return (
-    <View style={choiceStyles.choice}>
-      {/* <img src="./images/"></img> */}
-      <View style={choiceStyles.textContainer}>
-        <Text style={choiceStyles.title}>{props.choice}</Text>
-        <Text style={choiceStyles.text}>{props.text}</Text>
-      </View>
-    </View>
+    <Card>
+      <TouchableHighlight
+        onPress={props.onPress}
+        style={choiceStyles.touchableStyles}
+      >
+        {/* <img src="./images/"></img> */}
+        <View style={choiceStyles.textContainer}>
+          <Text style={choiceStyles.title}>{props.choice}</Text>
+          <Text style={choiceStyles.text}>{props.text}</Text>
+        </View>
+      </TouchableHighlight>
+    </Card>
   );
 };
 
 const choiceStyles = {
-  choice: {
-    height: "20%",
-    backgroundColor: "white",
-    borderRadius: 5,
-    shadowOffset: { height: 3, width: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    shadowColor: "black",
-    marginVertical: 10,
-    padding: 10,
-  },
   title: {
     fontSize: 20,
     marginBottom: 10,
@@ -46,6 +40,11 @@ const choiceStyles = {
   },
   textContainer: {
     paddingVertical: 10,
+  },
+  touchableStyles: {
+    height: "100%",
+    width: "100%",
+    padding: 10,
   },
 };
 
