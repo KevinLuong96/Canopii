@@ -15,7 +15,7 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar
+  StatusBar,
 } from "react-native";
 import Button from "react-native-button";
 import EStyleSheet from "react-native-extended-stylesheet";
@@ -24,7 +24,7 @@ import {
   LearnMoreLinks,
   Colors,
   DebugInstructions,
-  ReloadInstructions
+  ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
 import Footer from "./Footer";
 import Camera from "./camera";
@@ -34,7 +34,7 @@ enum navTypes {
   Profile,
   Settings,
   Map,
-  Test
+  Test,
 }
 const App = () => {
   EStyleSheet.build({});
@@ -42,7 +42,7 @@ const App = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={[styles.flexColumn]}>
+      <SafeAreaView style={[styles.all, styles.flexColumn]}>
         {navState == navTypes.Home && <Camera />}
         {navState == navTypes.Test && <Choices />}
         {/* {<View style={styles.flex}>
@@ -111,15 +111,15 @@ const appStyles = StyleSheet.create({
     height: 30,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
   },
   scrollView: {
-    backgroundColor: Colors.lighter
+    backgroundColor: Colors.lighter,
   },
   view: { alignItems: "center" },
   highlight: {
-    fontWeight: "700"
+    fontWeight: "700",
   },
-  selected: { backgroundColor: "#add8e6", color: "#000" }
+  selected: { backgroundColor: "#add8e6", color: "#000" },
 });
 export default App;

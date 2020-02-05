@@ -91614,7 +91614,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         lineNumber: 44
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
-      style: [_styles.default.flexColumn],
+      style: [_styles.default.all, _styles.default.flexColumn],
       __source: {
         fileName: _jsxFileName,
         lineNumber: 45
@@ -95484,15 +95484,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
 
-  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/slicedToArray"));
+  var _toConsumableArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
 
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
+  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/slicedToArray"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
 
-  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./styles"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
 
-  var _choice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./choice"));
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./styles"));
+
+  var _choice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./choice"));
+
+  var _trees = _$$_REQUIRE(_dependencyMap[8], "./trees");
 
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
@@ -95502,37 +95506,61 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         choices = _useState2[0],
         setChoices = _useState2[1];
 
+    var choicesToRender = [];
+
+    if (choices == []) {
+      for (var key in choices) {
+        choicesToRender.push(key);
+      }
+    } else {
+      var temp = _trees.decision;
+
+      for (var choice in choices) {
+        temp = temp[choice];
+      }
+
+      if (temp.hasOwnProperty("trees")) {} else {
+        for (var _key in temp) {
+          choicesToRender.push(_key);
+        }
+      }
+    }
+
     return _react.default.createElement(_reactNative.View, {
       style: _styles.default.centered,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 39
       }
     }, _react.default.createElement(_reactNative.View, {
       style: [_styles.default.container, choiceStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 40
       }
-    }, _react.default.createElement(_choice.default, {
-      message: "test",
-      onClick: function onClick() {},
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      }
+    }, choicesToRender.map(function (choice) {
+      return _react.default.createElement(_choice.default, {
+        key: choice,
+        choice: choice,
+        text: _trees.descriptions[choice].text,
+        onClick: function onClick() {
+          return setChoices([].concat((0, _toConsumableArray2.default)(choices), [choice]));
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        }
+      });
     })));
   };
 
   var choiceStyles = _reactNative.StyleSheet.create({
-    container: {
-      backgroundColor: "red"
-    }
+    container: {}
   });
 
   var _default = Choices;
   exports.default = _default;
-},585,[1,155,12,52,2,587,588],"choices.tsx");
+},585,[1,155,18,12,52,2,587,588,589],"choices.tsx");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Canopii",
@@ -95550,6 +95578,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native-extended-stylesheet"));
 
   var _default = _reactNativeExtendedStylesheet.default.create({
+    all: {
+      fontFamily: "OpenSans"
+    },
     container: {
       width: "90%",
       height: "100%",
@@ -95589,21 +95620,145 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choice.tsx";
 
   var Choice = function Choice(props) {
-    return _react.default.createElement(_reactNative.Button, {
-      onPress: function onPress() {
-        return props.onClick;
-      },
-      title: props.message,
+    console.log(props.text);
+    return _react.default.createElement(_reactNative.View, {
+      style: choiceStyles.choice,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 18
       }
-    });
+    }, _react.default.createElement(_reactNative.View, {
+      style: choiceStyles.textContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: choiceStyles.title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      }
+    }, props.choice), _react.default.createElement(_reactNative.Text, {
+      style: choiceStyles.text,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      }
+    }, props.text)));
   };
 
+  var choiceStyles = {
+    choice: {
+      height: "20%",
+      backgroundColor: "white",
+      borderRadius: 5,
+      shadowOffset: {
+        height: 3,
+        width: 0
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 8,
+      shadowColor: "black",
+      marginVertical: 10,
+      padding: 10
+    },
+    title: {
+      fontSize: 20,
+      marginBottom: 10
+    },
+    text: {
+      fontSize: 14
+    },
+    textContainer: {
+      paddingVertical: 10
+    }
+  };
   var _default = Choice;
   exports.default = _default;
 },588,[1,52,2],"choice.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.descriptions = exports.decision = void 0;
+  var decision = {
+    Deciduous: {},
+    Coniferous: {
+      "Simple Leaf": {
+        "Opposite Branching": {
+          "Rough, Non-rounded Bottom": {
+            trees: ["Acer Saccharinum, Acer Platanoides/Acer Saccharum", "Acer Rubrum", "Quercus Rubra"]
+          },
+          "Smooth, Rounded Bottom": {
+            trees: ["Acer Rubrum", "Syringa Reticulata", "Acer Ginnala"]
+          }
+        },
+        "Alternate Branching": {
+          "Lobed Leaf": {
+            trees: ["Ginkgo Biloba", "Quercus Robur", "Quercus Macrocarpa", "Malus Coronaria"]
+          },
+          "Entire Leaf": {
+            "Rounded Base": {
+              trees: ["Amelanchier canadensis", "Pyrus calleryana"]
+            },
+            "Pointed Base": {
+              trees: ["Betula pendula", "Elaeagnus angustifolia", "Salix nigra", "Salix amygdaloides", "Ulmus pumila"]
+            },
+            "Heart Base": {
+              trees: ["Celtis occidentalis", "Tilia americana", "Tilia cordata"]
+            }
+          }
+        }
+      },
+      "Compound Leaf": {
+        "Opposite Branching": {
+          trees: ["Acer Negundo", "Fraxinus Americana", "Fraxinus Pennsylvanica"]
+        },
+        "Alternate Branching": {
+          trees: ["Gleditsia triacanthos", "Juglans nigra", "Sorbus aucuparia", "Sorbus x hybrida"]
+        }
+      }
+    }
+  };
+  exports.decision = decision;
+  var descriptions = {
+    "Simple Leaf": {
+      text: "The leaf stem is the same as the main vein for that leaf."
+    },
+    "Compound Leaf": {
+      text: "A single leaf with numerous leaflets."
+    },
+    "Opposite Branching": {
+      text: "Leaves grow directly across from each other."
+    },
+    "Alternate Branching": {
+      text: "Leaves do not grow directly across from each other."
+    },
+    "Lobed Leaf": {
+      text: "Leaf has distinct protrusions which make it irregular shaped."
+    },
+    "Entire Leaf": {
+      text: "The leaf does not have division"
+    },
+    "Rounded Base": {
+      text: "Leaf base is rounded towards the stem."
+    },
+    "Pointed Base": {
+      text: "Leaf base is sharp towards the stem."
+    },
+    "Heart Base": {
+      text: "Leaf base is shaped as an inverted heart towards the stem."
+    },
+    Deciduous: {
+      text: "Leafy trees which shed their leaves anually."
+    },
+    Coniferous: {
+      text: "Trees with needle=like or scale-like leaves which do not shed their leaves."
+    }
+  };
+  exports.descriptions = descriptions;
+},589,[],"trees.ts");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map
