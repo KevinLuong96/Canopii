@@ -1,14 +1,6 @@
 "use strict";
-import React, { useState } from "react";
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Button,
-  TouchableHighlight,
-} from "react-native";
+import React from "react";
+import { View } from "react-native";
 
 const Card = props => {
   return <View style={[props.style, cardStyles.card]}>{props.children}</View>;

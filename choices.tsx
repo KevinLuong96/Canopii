@@ -1,12 +1,6 @@
 "use strict";
 import React, { useState } from "react";
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
@@ -44,6 +38,7 @@ const Choices = () => {
         <Choice
           key={choice}
           choice={choice}
+          image={descriptions[choice].image}
           text={descriptions[choice].text}
           onPress={() => {
             setChoices([...choices, choice]);

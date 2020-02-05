@@ -1,29 +1,31 @@
 "use strict";
-import React, { useState } from "react";
+import React from "react";
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
-  TouchableOpacity,
   View,
-  Button,
   TouchableHighlight,
+  Image,
+  ImageStyle,
+  ViewStyle,
 } from "react-native";
 import styles from "./styles";
 import Card from "./card";
 
 const Choice = props => {
   // const [choices, setChoices] = useState([]);
+  console.log(props.image);
   return (
     <Card>
       <TouchableHighlight
         onPress={props.onPress}
         style={choiceStyles.touchableStyles}
       >
-        {/* <img src="./images/"></img> */}
-        <View style={choiceStyles.textContainer}>
-          <Text style={choiceStyles.title}>{props.choice}</Text>
-          <Text style={choiceStyles.text}>{props.text}</Text>
+        <View style={choiceStyles.container}>
+          <Image source={props.image} style={choiceStyles.image}></Image>
+          <View style={choiceStyles.textContainer}>
+            <Text style={choiceStyles.title}>{props.choice}</Text>
+            <Text style={choiceStyles.text}>{props.text}</Text>
+          </View>
         </View>
       </TouchableHighlight>
     </Card>
@@ -33,18 +35,29 @@ const Choice = props => {
 const choiceStyles = {
   title: {
     fontSize: 20,
-    marginBottom: 10,
+    marginBottom: 15,
   },
+  image: {
+    width: "30%",
+    height: "100%",
+    resizeMode: "cover",
+  } as ImageStyle,
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    height: "100%",
+  } as ViewStyle,
   text: {
     fontSize: 14,
   },
   textContainer: {
-    paddingVertical: 10,
+    width: "70%",
+    marginLeft: 10,
   },
   touchableStyles: {
     height: "100%",
     width: "100%",
-    padding: 10,
+    paddingVertical: 20,
   },
 };
 

@@ -60,36 +60,47 @@ export const decision = {
 export const descriptions = {
   "Simple Leaf": {
     text: "The leaf stem is the same as the main vein for that leaf.",
+    image: require("./images/SimpleLeaf.png"),
   },
   "Compound Leaf": {
     text: "A single leaf with numerous leaflets.",
+    image: require("./images/CompoundLeaf.png"),
   },
   "Opposite Branching": {
     text: "Leaves grow directly across from each other.",
+    image: require("./images/OppositeBranching.png"),
   },
   "Alternate Branching": {
     text: "Leaves do not grow directly across from each other.",
+    image: require("./images/AlternateBranching.png"),
   },
   "Lobed Leaf": {
     text: "Leaf has distinct protrusions which make it irregular shaped.",
+    image: require("./images/LobedLeaf1.png"),
   },
   "Entire Leaf": {
     text: "The leaf does not have division",
+    image: require("./images/EntireLeaf.png"),
   },
   "Rounded Base": {
     text: "Leaf base is rounded towards the stem.",
+    image: require("./images/RoundBase.png"),
   },
   "Pointed Base": {
     text: "Leaf base is sharp towards the stem.",
+    image: require("./images/SharpBase.png"),
   },
   "Heart Base": {
     text: "Leaf base is shaped as an inverted heart towards the stem.",
+    image: require("./images/HeartBase.png"),
   },
   Deciduous: {
     text: "Leafy trees which shed their leaves anually.",
+    image: require("./images/SimpleLeaf.png"),
   },
   Coniferous: {
     text:
       "Trees with needle=like or scale-like leaves which do not shed their leaves.",
+    image: require("./images/CompoundLeaf.png"),
   },
 };

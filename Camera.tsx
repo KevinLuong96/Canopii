@@ -1,12 +1,6 @@
 "use strict";
-import React, { PureComponent, useState } from "react";
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { RNCamera } from "react-native-camera";
 import Photo from "./photo";
 import ImagePicker from "react-native-image-picker";
