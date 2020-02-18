@@ -5,6 +5,7 @@ import { RNCamera } from "react-native-camera";
 import Photo from "./photo";
 import ImagePicker from "react-native-image-picker";
 import styles from "./styles";
+import Icon from "react-native-vector-icons/Entypo";
 
 const PendingView = () => (
   <View
@@ -46,20 +47,30 @@ const Camera = ({ navigation }) => {
             {({ camera, status, recordAudioPermissionStatus }) => {
               if (status !== "READY") return <PendingView />;
               return (
-                <View
-                  style={{
-                    flex: 0,
-                    flexDirection: "row",
-                    justifyContent: "center",
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={() => takePicture(camera)}
-                    style={cameraStyles.capture}
-                  >
-                    <Text style={{ fontSize: 14 }}> SNAP </Text>
-                  </TouchableOpacity>
-                </View>
+                // <View
+                // style={{
+                // flex: 0,
+                // flexDirection: "row",
+                // justifyContent: "center",
+                // }}
+                // >
+                <Icon.Button
+                  name="circle"
+                  size={60}
+                  color="#000"
+                  backgroundColor="#fff"
+                  borderRadius={25}
+                  padding={0}
+                  margin={0}
+                />
+                // <TouchableOpacity
+                //   onPress={() => takePicture(camera)}
+                //   style={cameraStyles.capture}
+                // >
+                //   <Icon name="circle" size={48}></Icon>
+                //   {/* <Text style={{ fontSize: 14 }}> SNAP </Text> */}
+                // </TouchableOpacity>
+                // </View>
               );
             }}
           </RNCamera>
@@ -115,15 +126,6 @@ const cameraStyles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-  },
-  capture: {
-    flex: 0,
-    backgroundColor: "#fff",
-    borderRadius: 5,
-    padding: 15,
-    paddingHorizontal: 20,
-    alignSelf: "center",
-    margin: 20,
   },
   container: {
     height: "100%",

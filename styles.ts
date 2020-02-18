@@ -2,17 +2,15 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 export default EStyleSheet.create({
   all: {
-    fontFamily: "OpenSans",
+    fontFamily: "OpenSans-Regular",
   },
   container: {
     width: "100%",
     display: "flex",
-    // flex: 1,
     flexDirection: "column",
   },
   centered: {
     width: "100%",
-    // height: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -21,19 +19,16 @@ export default EStyleSheet.create({
     display: "flex",
     flex: 1,
   },
-  flexColumn: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "column",
-  },
   title: {
     fontFamily: "OpenSans-Bold",
-    fontSize: 20,
+    fontSize: 30,
   },
   heading: {
+    fontFamily: "OpenSans",
     fontSize: 20,
   },
   body: {
+    fontFamily: "OpenSans",
     fontSize: 14,
   },
 });

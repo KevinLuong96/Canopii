@@ -41,7 +41,7 @@ const choiceStyles = EStyleSheet.create({
   image: {
     width: "30%",
     height: "100%",
-    resizeMode: "cover",
+    resizeMode: "contain",
   } as ImageStyle,
   container: {
     display: "flex",
