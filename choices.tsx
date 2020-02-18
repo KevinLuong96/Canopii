@@ -5,9 +5,33 @@ import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
 import Breadcrumb from "./breadcrumb";
+import Icon from "react-native-vector-icons/AntDesign";
 
-const Choices = ({ navigation }) => {
-  const [choices, setChoices] = useState([]);
+const Choices = ({ route, navigation }) => {
+  const { treeType } = route.params;
+  const [choices, setChoices] = useState([treeType]);
+
+  navigation.setOptions({
+    headerLeft: navigation => {
+      return (
+        navigation.canGoBack && (
+          <Icon.Button
+            name="arrowleft"
+            size={24}
+            onPress={() => {
+              console.log(choices);
+              choices.length === 1
+                ? navigation.onPress()
+                : setChoices(choices.slice(0, choices.length - 1));
+            }}
+          />
+        )
+      );
+    },
+    headerLeftContainerStyle: {
+      backgroundColor: "none",
+    },
+  });
 
   let slideValue;
   slideValue = new Animated.Value(choices.length === 0 ? 0 : 1000);
@@ -20,35 +44,29 @@ const Choices = ({ navigation }) => {
   }, [choices]);
 
   const choicesToRender = [];
-  if (choices == []) {
-    for (let key in choices) {
-      choicesToRender.push(key);
-    }
+  let temp: Object = decision;
+
+  for (let choice of choices) {
+    temp = temp[choice];
+  }
+
+  // reached the leaves
+  if (temp.hasOwnProperty("trees")) {
+    return (
+      <SafeAreaView style={[styles.all, styles.centered]}>
+        <View style={[styles.container, choiceStyles.container]}>
+          <Text style={choiceStyles.heading}>
+            Which picture best fits your leaf?
+          </Text>
+          {temp["trees"].map(tree => (
+            <Text key={tree}>{tree}</Text>
+          ))}
+        </View>
+      </SafeAreaView>
+    );
   } else {
-    let temp: Object = decision;
-
-    for (let choice of choices) {
-      temp = temp[choice];
-    }
-
-    // reached the leaves
-    if (temp.hasOwnProperty("trees")) {
-      return (
-        <SafeAreaView style={[styles.all, styles.centered]}>
-          <View style={[styles.container, choiceStyles.container]}>
-            <Text style={choiceStyles.heading}>
-              Which picture best fits your leaf?
-            </Text>
-            {temp["trees"].map(tree => (
-              <Text key={tree}>{tree}</Text>
-            ))}
-          </View>
-        </SafeAreaView>
-      );
-    } else {
-      for (let key in temp) {
-        choicesToRender.push(key);
-      }
+    for (let key in temp) {
+      choicesToRender.push(key);
     }
   }
 
