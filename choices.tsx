@@ -1,17 +1,19 @@
 "use strict";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, Animated, SafeAreaView } from "react-native";
+import { View, Text, Animated, SafeAreaView } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
 import Breadcrumb from "./breadcrumb";
 import Icon from "react-native-vector-icons/AntDesign";
+import EStyleSheet from "react-native-extended-stylesheet";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
   const [choices, setChoices] = useState([treeType]);
 
   navigation.setOptions({
+    headerTransparent: true,
     headerLeft: navigation => {
       return (
         navigation.canGoBack && (
@@ -81,12 +83,16 @@ const Choices = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={[styles.all, styles.centered]}>
-      <View style={[styles.container, choiceStyles.container]}>
-        {/* <View style={choiceStyles.container}> */}
-        <Breadcrumb crumb={choices} onPress={setChoices} />
+      <View style={choiceStyles.header}>
+        <Text style={styles.title}>Identify Tree Species</Text>
         <Text style={choiceStyles.heading}>
           Which of the following best describes your tree?
         </Text>
+      </View>
+      <View style={[styles.container, choiceStyles.container]}>
+        {/* <View style={choiceStyles.container}> */}
+        <Breadcrumb crumb={choices} onPress={setChoices} />
+
         <Animated.View
           style={{
             height: "100%",
@@ -107,7 +113,7 @@ const Choices = ({ route, navigation }) => {
     </SafeAreaView>
   );
 };
-const choiceStyles = StyleSheet.create({
+const choiceStyles = EStyleSheet.create({
   container: {
     width: "90%",
     height: "100%",
@@ -118,6 +124,11 @@ const choiceStyles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     marginVertical: 20,
+  },
+  header: {
+    height: 250,
+    backgroundColor: "$dgreen6",
+    // marginBottom: -50,
   },
 });
 

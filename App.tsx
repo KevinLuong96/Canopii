@@ -10,9 +10,9 @@
 import "react-native-gesture-handler";
 import React from "react";
 import EStyleSheet from "react-native-extended-stylesheet";
-import TagTree from "./tagTree";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import addTreeTab from "./addTreeTab";
 
 enum navTypes {
   Home,
@@ -33,7 +33,7 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator>
         {/* <Tab.Screen name="Camera" component={Camera}></Tab.Screen> */}
-        <Tab.Screen name="Add" component={TagTree}></Tab.Screen>
+        <Tab.Screen name="Add" component={addTreeTab}></Tab.Screen>
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -91569,11 +91569,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-extended-stylesheet"));
 
-  var _tagTree = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./tagTree"));
+  var _native = _$$_REQUIRE(_dependencyMap[4], "@react-navigation/native");
 
-  var _native = _$$_REQUIRE(_dependencyMap[5], "@react-navigation/native");
+  var _bottomTabs = _$$_REQUIRE(_dependencyMap[5], "@react-navigation/bottom-tabs");
 
-  var _bottomTabs = _$$_REQUIRE(_dependencyMap[6], "@react-navigation/bottom-tabs");
+  var _addTreeTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./addTreeTab"));
 
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/App.tsx";
   var navTypes;
@@ -91606,7 +91606,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }, _react.default.createElement(Tab.Screen, {
       name: "Add",
-      component: _tagTree.default,
+      component: _addTreeTab.default,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 36
@@ -91616,7 +91616,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = App;
   exports.default = _default;
-},550,[1,551,52,577,604,605,676],"App.tsx");
+},550,[1,551,52,577,605,676,808],"App.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -97772,7 +97772,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         fileName: _jsxFileName,
         lineNumber: 52
       }
-    }), _react.default.createElement(_AntDesign.default.Button, {
+    })), _react.default.createElement(_reactNative.View, {
+      style: styles.next,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      }
+    }, _react.default.createElement(_AntDesign.default.Button, {
       name: "arrowright",
       size: 48,
       onPress: function onPress() {
@@ -97780,7 +97786,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 59
       }
     })));
   };
@@ -97829,8 +97835,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       bottom: 25,
       left: 25
     },
-    test: {
-      color: "#fff"
+    next: {
+      position: "absolute",
+      right: 50,
+      bottom: 50
     }
   });
 
@@ -98018,50 +98026,39 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _trees = _$$_REQUIRE(_dependencyMap[6], "./trees");
 
-  var _stack = _$$_REQUIRE(_dependencyMap[7], "@react-navigation/stack");
-
-  var _camera = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./camera"));
-
-  var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "react-native-vector-icons/AntDesign"));
-
-  var _photo = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./photo"));
-
-  var _choices = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./choices"));
-
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/tagTree.tsx";
-  var Stack = (0, _stack.createStackNavigator)();
 
-  var TagTreeScreen = function TagTreeScreen(_ref) {
+  var TagTree = function TagTree(_ref) {
     var navigation = _ref.navigation;
     return _react.default.createElement(_reactNative.View, {
       style: [_styles.default.centered, treeStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 12
       }
     }, _react.default.createElement(_reactNative.StatusBar, {
       barStyle: "light-content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 13
       }
     }, " "), _react.default.createElement(_reactNative.View, {
       style: treeStyles.content,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 14
       }
     }, _react.default.createElement(_reactNative.Text, {
       style: [_styles.default.title, treeStyles.title],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 15
       }
     }, "Tag a Tree"), _react.default.createElement(_reactNative.Text, {
       style: [_styles.default.heading, treeStyles.heading],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 16
       }
     }, "What type of tree are you tagging?"), _react.default.createElement(_choice.default, {
       choice: "Coniferous",
@@ -98074,7 +98071,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 19
       }
     }), _react.default.createElement(_choice.default, {
       choice: "Deciduous",
@@ -98087,66 +98084,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 25
       }
     })));
-  };
-
-  var TagTree = function TagTree() {
-    return _react.default.createElement(Stack.Navigator, {
-      screenOptions: {
-        headerTransparent: true,
-        headerTitle: null,
-        headerLeft: function headerLeft(navigation) {
-          return navigation.canGoBack && _react.default.createElement(_AntDesign.default.Button, {
-            name: "arrowleft",
-            size: 24,
-            onPress: function onPress() {
-              return navigation.onPress();
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 52
-            }
-          });
-        },
-        headerLeftContainerStyle: {
-          backgroundColor: "none"
-        }
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      }
-    }, _react.default.createElement(Stack.Screen, {
-      name: "TagTree",
-      component: TagTreeScreen,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      }
-    }), _react.default.createElement(Stack.Screen, {
-      name: "Camera",
-      component: _camera.default,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      }
-    }), _react.default.createElement(Stack.Screen, {
-      name: "Photo",
-      component: _photo.default,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 68
-      }
-    }), _react.default.createElement(Stack.Screen, {
-      name: "Choices",
-      component: _choices.default,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      }
-    }));
   };
 
   var treeStyles = _reactNativeExtendedStylesheet.default.create({
@@ -98172,7 +98112,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = TagTree;
   exports.default = _default;
-},604,[1,2,603,577,52,700,702,714,593,802,597,806],"tagTree.tsx");
+},604,[1,2,603,577,52,700,702],"tagTree.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -114261,6 +114201,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "react-native-vector-icons/AntDesign"));
 
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "react-native-extended-stylesheet"));
+
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
   var Choices = function Choices(_ref) {
@@ -114274,6 +114216,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         setChoices = _useState2[1];
 
     navigation.setOptions({
+      headerTransparent: true,
       headerLeft: function headerLeft(navigation) {
         return navigation.canGoBack && _react.default.createElement(_AntDesign.default.Button, {
           name: "arrowleft",
@@ -114284,7 +114227,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 20
           }
         });
       },
@@ -114324,26 +114267,26 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         style: [_styles.default.all, _styles.default.centered],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 58
         }
       }, _react.default.createElement(_reactNative.View, {
         style: [_styles.default.container, choiceStyles.container],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 59
         }
       }, _react.default.createElement(_reactNative.Text, {
         style: choiceStyles.heading,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 60
         }
       }, "Which picture best fits your leaf?"), temp["trees"].map(function (tree) {
         return _react.default.createElement(_reactNative.Text, {
           key: tree,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 64
           }
         }, tree);
       })));
@@ -114366,28 +114309,40 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: [_styles.default.all, _styles.default.centered],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 85
       }
     }, _react.default.createElement(_reactNative.View, {
+      style: choiceStyles.header,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 86
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: _styles.default.title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87
+      }
+    }, "Identify Tree Species"), _react.default.createElement(_reactNative.Text, {
+      style: choiceStyles.heading,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      }
+    }, "Which of the following best describes your tree?")), _react.default.createElement(_reactNative.View, {
       style: [_styles.default.container, choiceStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 92
       }
     }, _react.default.createElement(_breadcrumb.default, {
       crumb: choices,
       onPress: setChoices,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 94
       }
-    }), _react.default.createElement(_reactNative.Text, {
-      style: choiceStyles.heading,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87
-      }
-    }, "Which of the following best describes your tree?"), _react.default.createElement(_reactNative.Animated.View, {
+    }), _react.default.createElement(_reactNative.Animated.View, {
       style: {
         height: "100%",
         transform: [{
@@ -114396,7 +114351,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 96
       }
     }, choicesToRender.map(function (choice) {
       return _react.default.createElement(_choice2.default, {
@@ -114409,13 +114364,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 103
         }
       });
     }))));
   };
 
-  var choiceStyles = _reactNative.StyleSheet.create({
+  var choiceStyles = _reactNativeExtendedStylesheet.default.create({
     container: {
       width: "90%",
       height: "100%",
@@ -114426,12 +114381,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       textAlign: "center",
       fontSize: 20,
       marginVertical: 20
+    },
+    header: {
+      height: 250,
+      backgroundColor: "$dgreen6"
     }
   });
 
   var _default = Choices;
   exports.default = _default;
-},806,[1,155,18,12,52,2,603,700,702,807,802],"choices.tsx");
+},806,[1,155,18,12,52,2,603,700,702,807,802,577],"choices.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114517,6 +114476,91 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = Breadcrumb;
   exports.default = _default;
 },807,[1,52,2],"breadcrumb.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _stack = _$$_REQUIRE(_dependencyMap[1], "@react-navigation/stack");
+
+  var _camera = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./camera"));
+
+  var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-vector-icons/AntDesign"));
+
+  var _photo = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./photo"));
+
+  var _choices = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./choices"));
+
+  var _tagTree = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./tagTree"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/addTreeTab.tsx";
+  var Stack = (0, _stack.createStackNavigator)();
+
+  var addTreeTab = function addTreeTab() {
+    return _react.default.createElement(Stack.Navigator, {
+      screenOptions: {
+        headerTransparent: true,
+        headerTitle: null,
+        headerLeft: function headerLeft(navigation) {
+          return navigation.canGoBack && _react.default.createElement(_AntDesign.default.Button, {
+            name: "arrowleft",
+            size: 24,
+            onPress: function onPress() {
+              return navigation.onPress();
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 21
+            }
+          });
+        },
+        headerLeftContainerStyle: {
+          backgroundColor: "none"
+        }
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
+    }, _react.default.createElement(Stack.Screen, {
+      name: "TagTree",
+      component: _tagTree.default,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      }
+    }), _react.default.createElement(Stack.Screen, {
+      name: "Camera",
+      component: _camera.default,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      }
+    }), _react.default.createElement(Stack.Screen, {
+      name: "Photo",
+      component: _photo.default,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      }
+    }), _react.default.createElement(Stack.Screen, {
+      name: "Choices",
+      component: _choices.default,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      }
+    }));
+  };
+
+  var _default = addTreeTab;
+  exports.default = _default;
+},808,[1,714,593,802,597,806,604,52],"addTreeTab.tsx");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map

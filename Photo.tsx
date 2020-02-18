@@ -54,6 +54,8 @@ const Photo = ({ route, navigation }) => {
           source={{ uri: photo.uri }}
           style={styles.image}
         />
+      </View>
+      <View style={styles.next}>
         <Icon.Button
           name="arrowright"
           size={48}
@@ -125,7 +127,11 @@ const styles = StyleSheet.create({
     bottom: 25,
     left: 25,
   },
-  test: { color: "#fff" },
+  next: {
+    position: "absolute",
+    right: 50,
+    bottom: 50,
+  },
 });
 
 export default Photo;
