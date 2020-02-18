@@ -1,13 +1,6 @@
 "use strict";
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Animated,
-  SafeAreaView,
-  StatusBar,
-} from "react-native";
+import { StyleSheet, View, Text, Animated, SafeAreaView } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
@@ -41,13 +34,15 @@ const Choices = ({ navigation }) => {
     // reached the leaves
     if (temp.hasOwnProperty("trees")) {
       return (
-        <SafeAreaView style={[styles.container, choiceStyles.container]}>
-          <Text style={choiceStyles.heading}>
-            Which picture best fits your leaf?
-          </Text>
-          {temp["trees"].map(tree => (
-            <Text key={tree}>{tree}</Text>
-          ))}
+        <SafeAreaView style={[styles.all, styles.centered]}>
+          <View style={[styles.container, choiceStyles.container]}>
+            <Text style={choiceStyles.heading}>
+              Which picture best fits your leaf?
+            </Text>
+            {temp["trees"].map(tree => (
+              <Text key={tree}>{tree}</Text>
+            ))}
+          </View>
         </SafeAreaView>
       );
     } else {

@@ -22,7 +22,7 @@ const PendingView = () => (
 const Camera = ({ navigation }) => {
   const [photo, setPhoto] = useState(null);
   return (
-    <View style={[styles.container, cameraStyles.container]}>
+    <View style={[styles.all, styles.container, cameraStyles.container]}>
       {photo === null ? (
         <>
           <RNCamera
@@ -126,7 +126,7 @@ const cameraStyles = StyleSheet.create({
     margin: 20,
   },
   container: {
-    width: "100%",
+    height: "100%",
   },
 });
 

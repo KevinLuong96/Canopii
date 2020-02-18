@@ -93976,7 +93976,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         setPhoto = _useState2[1];
 
     return _react.default.createElement(_reactNative.View, {
-      style: [_styles.default.container, cameraStyles.container],
+      style: [_styles.default.all, _styles.default.container, cameraStyles.container],
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
@@ -94132,7 +94132,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       margin: 20
     },
     container: {
-      width: "100%"
+      height: "100%"
     }
   });
 
@@ -95579,26 +95579,32 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       if (temp.hasOwnProperty("trees")) {
         return _react.default.createElement(_reactNative.SafeAreaView, {
+          style: [_styles.default.all, _styles.default.centered],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          }
+        }, _react.default.createElement(_reactNative.View, {
           style: [_styles.default.container, choiceStyles.container],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 38
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: choiceStyles.heading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 39
           }
         }, "Which picture best fits your leaf?"), temp["trees"].map(function (tree) {
           return _react.default.createElement(_reactNative.Text, {
             key: tree,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 49
+              lineNumber: 43
             }
           }, tree);
-        }));
+        })));
       } else {
         for (var _key in temp) {
           choicesToRender.push(_key);
@@ -95619,26 +95625,26 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: [_styles.default.all, _styles.default.centered],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 65
       }
     }, _react.default.createElement(_reactNative.View, {
       style: [_styles.default.container, choiceStyles.container],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 66
       }
     }, _react.default.createElement(_breadcrumb.default, {
       crumb: choices,
       onPress: setChoices,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 68
       }
     }), _react.default.createElement(_reactNative.Text, {
       style: choiceStyles.heading,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 69
       }
     }, "Which of the following best describes your tree?"), _react.default.createElement(_reactNative.Animated.View, {
       style: {
@@ -95649,7 +95655,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 72
       }
     }, choicesToRender.map(function (choice) {
       return _react.default.createElement(_choice2.default, {
@@ -95662,7 +95668,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 79
         }
       });
     }))));
