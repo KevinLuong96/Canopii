@@ -7,12 +7,12 @@ export default EStyleSheet.create({
   container: {
     width: "100%",
     display: "flex",
-    flex: 1,
+    // flex: 1,
     flexDirection: "column",
   },
   centered: {
-    width: "90%",
-    height: "100%",
+    width: "100%",
+    // height: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

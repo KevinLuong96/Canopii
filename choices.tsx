@@ -1,12 +1,19 @@
 "use strict";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, Animated } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Animated,
+  SafeAreaView,
+  StatusBar,
+} from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
 import Breadcrumb from "./breadcrumb";
 
-const Choices = () => {
+const Choices = ({ navigation }) => {
   const [choices, setChoices] = useState([]);
 
   let slideValue;
@@ -34,14 +41,14 @@ const Choices = () => {
     // reached the leaves
     if (temp.hasOwnProperty("trees")) {
       return (
-        <View style={[styles.container, choiceStyles.container]}>
+        <SafeAreaView style={[styles.container, choiceStyles.container]}>
           <Text style={choiceStyles.heading}>
             Which picture best fits your leaf?
           </Text>
           {temp["trees"].map(tree => (
             <Text key={tree}>{tree}</Text>
           ))}
-        </View>
+        </SafeAreaView>
       );
     } else {
       for (let key in temp) {
@@ -60,33 +67,37 @@ const Choices = () => {
   };
 
   return (
-    <View style={[styles.container, choiceStyles.container]}>
-      <Breadcrumb crumb={choices} onPress={setChoices} />
-      <Text style={choiceStyles.heading}>
-        Which of the following best describes your tree?
-      </Text>
-      <Animated.View
-        style={{
-          height: "100%",
-          transform: [{ translateX: slideValue }],
-        }}
-      >
-        {choicesToRender.map(choice => (
-          <Choice
-            key={choice}
-            choice={choice}
-            image={descriptions[choice].image}
-            text={descriptions[choice].text}
-            onPress={() => animate(choice)}
-          ></Choice>
-        ))}
-      </Animated.View>
-    </View>
+    <SafeAreaView style={[styles.all, styles.centered]}>
+      <View style={[styles.container, choiceStyles.container]}>
+        {/* <View style={choiceStyles.container}> */}
+        <Breadcrumb crumb={choices} onPress={setChoices} />
+        <Text style={choiceStyles.heading}>
+          Which of the following best describes your tree?
+        </Text>
+        <Animated.View
+          style={{
+            height: "100%",
+            transform: [{ translateX: slideValue }],
+          }}
+        >
+          {choicesToRender.map(choice => (
+            <Choice
+              key={choice}
+              choice={choice}
+              image={descriptions[choice].image}
+              text={descriptions[choice].text}
+              onPress={() => animate(choice)}
+            ></Choice>
+          ))}
+        </Animated.View>
+      </View>
+    </SafeAreaView>
   );
 };
 const choiceStyles = StyleSheet.create({
   container: {
     width: "90%",
+    height: "100%",
     alignItems: "center",
   },
   heading: {

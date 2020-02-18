@@ -19,7 +19,7 @@ const PendingView = () => (
   </View>
 );
 
-const Camera = () => {
+const Camera = ({ navigation }) => {
   const [photo, setPhoto] = useState(null);
   return (
     <View style={[styles.container, cameraStyles.container]}>
