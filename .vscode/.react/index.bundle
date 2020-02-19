@@ -114222,6 +114222,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "react-native-extended-stylesheet"));
 
+  var _card = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./card"));
+
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
   var Choices = function Choices(_ref) {
@@ -114234,8 +114236,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         choices = _useState2[0],
         setChoices = _useState2[1];
 
+    var reachedLeaves = false;
     navigation.setOptions({
-      headerTransparent: true,
+      headerStyle: {
+        backgroundColor: "#65B876"
+      },
       headerLeft: function headerLeft(navigation) {
         return navigation.canGoBack && _react.default.createElement(_AntDesign.default.Button, {
           name: "arrowleft",
@@ -114248,7 +114253,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 25
           }
         });
       }
@@ -114281,33 +114286,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
 
     if (temp.hasOwnProperty("trees")) {
-      return _react.default.createElement(_reactNative.SafeAreaView, {
-        style: [_styles.default.all, _styles.default.centered],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57
-        }
-      }, _react.default.createElement(_reactNative.View, {
-        style: [_styles.default.container, choiceStyles.container],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        }
-      }, _react.default.createElement(_reactNative.Text, {
-        style: choiceStyles.heading,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59
-        }
-      }, "Which picture best fits your leaf?"), temp["trees"].map(function (tree) {
-        return _react.default.createElement(_reactNative.Text, {
-          key: tree,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 63
-          }
-        }, tree);
-      })));
+      choicesToRender = temp["trees"];
+      reachedLeaves = true;
     } else {
       for (var key in temp) {
         choicesToRender.push(key);
@@ -114324,43 +114304,49 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
 
     return _react.default.createElement(_reactNative.SafeAreaView, {
-      style: [_styles.default.all, _styles.default.centered],
+      style: [_styles.default.centered, choiceStyles.root],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 79
       }
     }, _react.default.createElement(_reactNative.View, {
       style: choiceStyles.header,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      style: _styles.default.title,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86
-      }
-    }, "Identify Tree Species"), _react.default.createElement(_reactNative.Text, {
-      style: choiceStyles.heading,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87
-      }
-    }, "Which of the following best describes your tree?")), _react.default.createElement(_reactNative.View, {
-      style: [_styles.default.container, choiceStyles.container],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 80
       }
     }, _react.default.createElement(_breadcrumb.default, {
       crumb: choices,
       onPress: setChoices,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 81
       }
-    }), _react.default.createElement(_reactNative.Animated.View, {
+    }), _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.title, choiceStyles.title],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82
+      }
+    }, "Identify Species"), _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.heading, choiceStyles.heading],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      }
+    }, reachedLeaves ? "Select the correct species" : "sWhich feature best describes your tree?")), _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.centered, choiceStyles.body],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.container, choiceStyles.container],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90
+      }
+    }, _react.default.createElement(_reactNative.Animated.View, {
       style: {
         height: "100%",
         transform: [{
@@ -114369,9 +114355,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 93
       }
-    }, choicesToRender.map(function (choice) {
+    }, !reachedLeaves && choicesToRender.map(function (choice) {
       return _react.default.createElement(_choice2.default, {
         key: choice,
         choice: choice,
@@ -114382,33 +114368,56 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 101
         }
       });
-    }))));
+    }), reachedLeaves && choicesToRender.map(function (leaf) {
+      return _react.default.createElement(_card.default, {
+        key: leaf,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        }
+      }, _react.default.createElement(_reactNative.Text, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        }
+      }, leaf));
+    })))));
   };
 
   var choiceStyles = _reactNativeExtendedStylesheet.default.create({
+    root: {
+      height: "100%",
+      backgroundColor: "$dgreen6"
+    },
+    body: {
+      backgroundColor: "#fff"
+    },
     container: {
       width: "90%",
       height: "100%",
+      marginTop: -35,
       alignItems: "center"
     },
     heading: {
-      width: "70%",
-      textAlign: "center",
-      fontSize: 20,
-      marginVertical: 20
+      color: "#fff"
+    },
+    title: {
+      color: "#fff",
+      marginBottom: 10
     },
     header: {
-      height: 250,
-      backgroundColor: "$dgreen6"
+      width: "90%",
+      marginTop: 40,
+      paddingBottom: 50
     }
   });
 
   var _default = Choices;
   exports.default = _default;
-},806,[1,155,18,12,52,2,603,700,702,807,802,577],"choices.tsx");
+},806,[1,155,18,12,52,2,603,700,702,807,802,577,701],"choices.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114441,10 +114450,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       var _loop = function _loop(i) {
         if (+i !== 0) {
           elementsToRender.push(_react.default.createElement(_reactNative.Text, {
+            style: {
+              color: "#fff"
+            },
             key: i + "arrow",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 18
+              lineNumber: 19
             }
           }, " > "));
         }
@@ -114455,12 +114467,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           key: i,
           style: {
-            color: "blue",
-            textAlign: "center"
+            color: "#fff"
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 21
+            lineNumber: 25
           }
         }, props.crumb[i]));
       };
@@ -114474,7 +114485,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: breadcrumbStyles.container,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 38
       }
     }, elementsToRender.map(function (element) {
       return element;

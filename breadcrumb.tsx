@@ -15,7 +15,11 @@ const Breadcrumb = props => {
   } else {
     for (let i in props.crumb) {
       if (+i !== 0) {
-        elementsToRender.push(<Text key={`${i}arrow`}>{" > "}</Text>);
+        elementsToRender.push(
+          <Text style={{ color: "#fff" }} key={`${i}arrow`}>
+            {" > "}
+          </Text>
+        );
       }
       elementsToRender.push(
         <Text
@@ -23,7 +27,7 @@ const Breadcrumb = props => {
             props.onPress(props.crumb.slice(0, i));
           }}
           key={i}
-          style={{ color: "blue", textAlign: "center" }}
+          style={{ color: "#fff" }}
         >
           {props.crumb[i]}
         </Text>
