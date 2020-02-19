@@ -171,6 +171,14 @@ export const descriptions = {
     text: "Leaves grow directly across from each other.",
     image: require("./images/OppositeBranching.png"),
   },
+  "Rough, Non-rounded Bottom": {
+    text: "TODO: PUT TEXT IN HERE! THIS IS TEMPORARY TEXTss",
+    image: require("./images/OppositeBranching.png"),
+  },
+  "Smooth, Rounded Bottom": {
+    text: "TODO: PUT TEXT IN HERE! THIS IS TEMPORARY TEXTss",
+    image: require("./images/OppositeBranching.png"),
+  },
   "Alternate Branching": {
     text: "Leaves do not grow directly across from each other.",
     image: require("./images/AlternateBranching.png"),

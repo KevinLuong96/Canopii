@@ -19,12 +19,14 @@ const TagTree = ({ navigation }) => {
         <Choice
           choice="Coniferous"
           image={descriptions["Coniferous"].image}
+          height={150}
           text={descriptions["Coniferous"].text}
           onPress={() => navigation.push("Camera", { treeType: "Coniferous" })}
         ></Choice>
         <Choice
           choice="Deciduous"
           image={descriptions["Deciduous"].image}
+          height={150}
           text={descriptions["Deciduous"].text}
           onPress={() => navigation.push("Camera", { treeType: "Deciduous" })}
         ></Choice>

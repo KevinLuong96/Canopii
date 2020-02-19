@@ -14,7 +14,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 const Choice = props => {
   return (
-    <Card>
+    <Card height={props.height}>
       <TouchableHighlight
         onPress={props.onPress}
         style={choiceStyles.touchableStyles}

@@ -113863,8 +113863,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./header"));
 
-  var _leaf = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./leaf"));
-
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
   var Choices = function Choices(_ref) {
@@ -113965,7 +113963,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           lineNumber: 88
         }
       }, reachedLeaves ? "Select the correct species" : "Which feature best describes your tree?")),
-      content: _react.default.createElement(_reactNative.Animated.View, {
+      content: _react.default.createElement(_reactNative.Animated.ScrollView, {
         style: {
           height: "100%",
           transform: [{
@@ -113981,6 +113979,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return _react.default.createElement(_choice2.default, {
           key: choice,
           choice: choice,
+          height: 150,
           image: _trees.descriptions[choice].image,
           text: _trees.descriptions[choice].text,
           onPress: function onPress() {
@@ -113991,13 +113990,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             lineNumber: 105
           }
         });
-      }), reachedLeaves && choicesToRender.map(function (leaf) {
-        return _react.default.createElement(_leaf.default, {
-          key: leaf,
-          leaf: leaf,
+      }), reachedLeaves && console.log(choicesToRender), reachedLeaves && choicesToRender.map(function (leaf) {
+        return _react.default.createElement(_choice2.default, {
+          key: leaf.sciName,
+          choice: leaf.name,
+          text: leaf.sciName,
+          height: 100,
+          image: _trees.descriptions["Heart Base"].image,
+          onPress: function onPress() {
+            console.log("hi");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 117
           }
         });
       })),
@@ -114020,7 +114025,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Choices;
   exports.default = _default;
-},785,[1,155,18,12,52,2,731,786,788,800,782,577,801,806],"choices.tsx");
+},785,[1,155,18,12,52,2,731,786,788,800,782,577,801],"choices.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114045,6 +114050,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var Choice = function Choice(props) {
     return _react.default.createElement(_card.default, {
+      height: props.height,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
@@ -114140,17 +114146,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var Card = function Card(props) {
     return _react.default.createElement(_reactNative.View, {
-      style: [props.style, cardStyles.card],
+      style: [props.style, cardStyles.card, {
+        height: props.height
+      }],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 6
+        lineNumber: 7
       }
     }, props.children);
   };
 
   var cardStyles = {
     card: {
-      height: "20%",
+      height: 150,
       backgroundColor: "white",
       borderRadius: 10,
       shadowOffset: {
@@ -114178,35 +114186,119 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       "Simple Leaf": {
         "Opposite Branching": {
           "Rough, Non-rounded Bottom": {
-            trees: ["Acer Saccharinum, Acer Platanoides/Acer Saccharum", "Acer Rubrum", "Quercus Rubra"]
+            trees: [{
+              sciName: "Acer Saccharinum",
+              name: "Silver Maple"
+            }, {
+              sciName: "Acer Platanoides/Acer Saccharum",
+              name: "Norway or Sugar Maple"
+            }, {
+              sciName: "Acer Rubrum",
+              name: "Red Maple"
+            }, {
+              sciName: "Quercus Rubra",
+              name: "Northern Red Oak"
+            }]
           },
           "Smooth, Rounded Bottom": {
-            trees: ["Acer Rubrum", "Syringa Reticulata", "Acer Ginnala"]
+            trees: [{
+              sciName: "Acer Rubrum",
+              name: "Red Maple"
+            }, {
+              sciName: "Japanese Lilac",
+              name: "Syringa Reticulata"
+            }, {
+              sciName: "Acer Ginnala",
+              name: "Amur Maple"
+            }]
           }
         },
         "Alternate Branching": {
           "Lobed Leaf": {
-            trees: ["Ginkgo Biloba", "Quercus Robur", "Quercus Macrocarpa", "Malus Coronaria"]
+            trees: [{
+              sciName: "Ginkgo Biloba",
+              name: "Maidenhair Tree"
+            }, {
+              sciName: "Quercus Robur",
+              name: "English Oak"
+            }, {
+              sciName: "Bur Oak",
+              name: "Quercus Macrocarpa"
+            }, {
+              sciName: "Sweet Crabapple",
+              name: "Malus Coronaria"
+            }]
           },
           "Entire Leaf": {
             "Rounded Base": {
-              trees: ["Amelanchier canadensis", "Pyrus calleryana"]
+              trees: [{
+                sciName: "Shadblow Serviceberry",
+                name: "Amelanchier canadensis"
+              }, {
+                sciName: "Callery Pear",
+                name: "Pyrus calleryana"
+              }]
             },
             "Pointed Base": {
-              trees: ["Betula pendula", "Elaeagnus angustifolia", "Salix nigra", "Salix amygdaloides", "Ulmus pumila"]
+              trees: [{
+                sciName: "Silver Birch",
+                name: "Betula pendula"
+              }, {
+                sciName: "Russian Olive",
+                name: "Elaeagnus angustifolia"
+              }, {
+                sciName: "Black Willow",
+                name: "Salix nigra"
+              }, {
+                sciName: "Peachleaf Willow",
+                name: "Salix amygdaloides"
+              }, {
+                sciName: "Siberian Elm",
+                name: "Ulmus pumila"
+              }]
             },
             "Heart Base": {
-              trees: ["Celtis occidentalis", "Tilia americana", "Tilia cordata"]
+              trees: [{
+                sciName: "Common Hackberry",
+                name: "Celtis occidentalis"
+              }, {
+                sciName: "American Basswood",
+                name: "Tilia americana"
+              }, {
+                sciName: "Littleleaf Linden",
+                name: "Tilia cordata"
+              }]
             }
           }
         }
       },
       "Compound Leaf": {
         "Opposite Branching": {
-          trees: ["Acer Negundo", "Fraxinus Americana", "Fraxinus Pennsylvanica"]
+          trees: [{
+            sciName: "Boxelder Maple",
+            name: "Acer Negundo"
+          }, {
+            sciName: "White Ash",
+            name: "Fraxinus Americana"
+          }, {
+            sciName: "Green Ash",
+            name: "Fraxinus Pennsylvanica"
+          }]
         },
         "Alternate Branching": {
-          trees: ["Gleditsia triacanthos", "Juglans nigra", "Sorbus aucuparia", "Sorbus x hybrida"]
+          trees: [{
+            sciName: "Honey Locust",
+            name: "Gleditsia triacanthos"
+          }, {
+            sciName: "Black Walnut",
+            name: "Juglans nigra"
+          }, {
+            sciName: "European Mountain Ash",
+            name: "Sorbus aucuparia"
+          }, {
+            sciName: "Oakleaf Mountain Ash",
+            name: "Sorbus x hybrida"
+          }]
         }
       }
     }
@@ -114223,6 +114315,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     "Opposite Branching": {
       text: "Leaves grow directly across from each other.",
+      image: _$$_REQUIRE(_dependencyMap[2], "./images/OppositeBranching.png")
+    },
+    "Rough, Non-rounded Bottom": {
+      text: "TODO: PUT TEXT IN HERE! THIS IS TEMPORARY TEXTss",
+      image: _$$_REQUIRE(_dependencyMap[2], "./images/OppositeBranching.png")
+    },
+    "Smooth, Rounded Bottom": {
+      text: "TODO: PUT TEXT IN HERE! THIS IS TEMPORARY TEXTss",
       image: _$$_REQUIRE(_dependencyMap[2], "./images/OppositeBranching.png")
     },
     "Alternate Branching": {
@@ -114610,6 +114710,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, "What type of tree are you tagging?"), _react.default.createElement(_choice.default, {
       choice: "Coniferous",
       image: _trees.descriptions["Coniferous"].image,
+      height: 150,
       text: _trees.descriptions["Coniferous"].text,
       onPress: function onPress() {
         return navigation.push("Camera", {
@@ -114623,6 +114724,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }), _react.default.createElement(_choice.default, {
       choice: "Deciduous",
       image: _trees.descriptions["Deciduous"].image,
+      height: 150,
       text: _trees.descriptions["Deciduous"].text,
       onPress: function onPress() {
         return navigation.push("Camera", {
@@ -114631,7 +114733,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       }
     })));
   };
@@ -114766,76 +114868,6 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "displayName": "Canopii"
 };
 },805,[],"app.json");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
-
-  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./styles"));
-
-  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-extended-stylesheet"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
-
-  var _card = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./card"));
-
-  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/leaf.tsx";
-
-  var Leaf = function Leaf(props) {
-    return _react.default.createElement(_card.default, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      }
-    }, _react.default.createElement(_reactNative.View, {
-      style: leafStyles.container,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      }
-    }, _react.default.createElement(_reactNative.View, {
-      style: leafStyles.image,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      }
-    }), _react.default.createElement(_reactNative.View, {
-      style: leafStyles.text,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      style: _styles.default.heading,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      }
-    }, props.leaf))));
-  };
-
-  var leafStyles = _reactNativeExtendedStylesheet.default.create({
-    container: {
-      backgroundColor: "#eee",
-      width: "100%",
-      height: "100%",
-      display: "flex"
-    },
-    image: {
-      width: "30%",
-      height: "100%",
-      resizeMode: "contain"
-    }
-  });
-
-  var _default = Leaf;
-  exports.default = _default;
-},806,[1,52,731,577,2,787],"leaf.tsx");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map

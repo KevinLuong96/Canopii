@@ -9,7 +9,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Card from "./card";
 import Header from "./header";
-import Leaf from "./leaf";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
@@ -93,7 +93,7 @@ const Choices = ({ route, navigation }) => {
         </>
       }
       content={
-        <Animated.View
+        <Animated.ScrollView
           style={{
             height: "100%",
             transform: [{ translateX: slideValue }],
@@ -105,14 +105,27 @@ const Choices = ({ route, navigation }) => {
               <Choice
                 key={choice}
                 choice={choice}
+                height={150}
                 image={descriptions[choice].image}
                 text={descriptions[choice].text}
                 onPress={() => animate(choice)}
               ></Choice>
             ))}
+          {reachedLeaves && console.log(choicesToRender)}
           {reachedLeaves &&
-            choicesToRender.map(leaf => <Leaf key={leaf} leaf={leaf}></Leaf>)}
-        </Animated.View>
+            choicesToRender.map(leaf => (
+              <Choice
+                key={leaf.sciName}
+                choice={leaf.name}
+                text={leaf.sciName}
+                height={100}
+                image={descriptions["Heart Base"].image}
+                onPress={() => {
+                  console.log("hi");
+                }}
+              />
+            ))}
+        </Animated.ScrollView>
       }
     />
   );
