@@ -6,24 +6,14 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Image, Text, View, Platform } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import { NavigationContainer } from "@react-navigation/native";
+import HeaderLeftButton from "./headerLeftButton";
 
 const Photo = ({ route, navigation }) => {
   const { photo } = route.params;
   navigation.setOptions({
-    // headerTransparent: true,
-    headerLeft: navigation => {
-      return (
-        navigation.canGoBack && (
-          <Icon.Button
-            name="arrowleft"
-            size={24}
-            color="#000"
-            backgroundColor="transparent"
-            onPress={() => navigation.onPress()}
-          />
-        )
-      );
-    },
+    headerLeft: navigation => (
+      <HeaderLeftButton color="#000" onPress={navigation.onPress} />
+    ),
   });
   // const [isPending, setPending]: [boolean, Function] = useState(false);
   // const [data, setData] = useState(null);

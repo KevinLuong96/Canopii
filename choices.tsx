@@ -5,11 +5,9 @@ import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
 import Breadcrumb from "./breadcrumb";
-import Icon from "react-native-vector-icons/AntDesign";
 import EStyleSheet from "react-native-extended-stylesheet";
-import Card from "./card";
 import Header from "./header";
-import { ScrollView } from "react-native-gesture-handler";
+import HeaderLeftButton from "./headerLeftButton";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
@@ -17,28 +15,19 @@ const Choices = ({ route, navigation }) => {
   let reachedLeaves = false;
 
   navigation.setOptions({
-    // headerTransparent: true,
     headerStyle: {
       backgroundColor: "#65B876",
     },
-    headerLeft: navigation => {
-      return (
-        navigation.canGoBack && (
-          <Icon.Button
-            name="arrowleft"
-            size={24}
-            color="#fff"
-            backgroundColor="transparent"
-            onPress={() => {
-              console.log(choices);
-              choices.length === 1
-                ? navigation.onPress()
-                : setChoices(choices.slice(0, choices.length - 1));
-            }}
-          />
-        )
-      );
-    },
+    headerLeft: navigation => (
+      <HeaderLeftButton
+        color="#fff"
+        onPress={() => {
+          choices.length === 1
+            ? navigation.onPress()
+            : setChoices(choices.slice(0, choices.length - 1));
+        }}
+      />
+    ),
   });
 
   let slideValue;
@@ -111,7 +100,6 @@ const Choices = ({ route, navigation }) => {
                 onPress={() => animate(choice)}
               ></Choice>
             ))}
-          {reachedLeaves && console.log(choicesToRender)}
           {reachedLeaves &&
             choicesToRender.map(leaf => (
               <Choice
@@ -120,9 +108,13 @@ const Choices = ({ route, navigation }) => {
                 text={leaf.sciName}
                 height={100}
                 image={descriptions["Heart Base"].image}
-                onPress={() => {
-                  console.log("hi");
-                }}
+                onPress={() =>
+                  navigation.navigate("Tree", {
+                    name: leaf.name,
+                    sciName: leaf.sciName,
+                    choices: choices,
+                  })
+                }
               />
             ))}
         </Animated.ScrollView>
