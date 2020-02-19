@@ -1,6 +1,6 @@
 "use strict";
 import React, { useState, useEffect } from "react";
-import { View, Text, Animated, SafeAreaView } from "react-native";
+import { Text, Animated } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
@@ -8,6 +8,7 @@ import Breadcrumb from "./breadcrumb";
 import Icon from "react-native-vector-icons/AntDesign";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Card from "./card";
+import Header from "./header";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
@@ -76,80 +77,55 @@ const Choices = ({ route, navigation }) => {
   };
 
   return (
-    <SafeAreaView style={[styles.centered, choiceStyles.root]}>
-      <View style={choiceStyles.header}>
-        <Breadcrumb crumb={choices} onPress={setChoices} />
-        <Text style={[styles.title, choiceStyles.title]}>Identify Species</Text>
-        <Text style={[styles.heading, choiceStyles.heading]}>
-          {reachedLeaves
-            ? "Select the correct species"
-            : "sWhich feature best describes your tree?"}
-        </Text>
-      </View>
-      <View style={[styles.centered, choiceStyles.body]}>
-        <View style={[styles.container, choiceStyles.container]}>
-          {/* <View style={choiceStyles.container}> */}
-
-          <Animated.View
-            style={{
-              height: "100%",
-              transform: [{ translateX: slideValue }],
-            }}
-          >
-            {!reachedLeaves &&
-              choicesToRender.map(choice => (
-                <Choice
-                  key={choice}
-                  choice={choice}
-                  image={descriptions[choice].image}
-                  text={descriptions[choice].text}
-                  onPress={() => animate(choice)}
-                ></Choice>
-              ))}
-            {reachedLeaves &&
-              choicesToRender.map(leaf => (
-                <Card key={leaf}>
-                  <Text>{leaf}</Text>
-                </Card>
-              ))}
-          </Animated.View>
-        </View>
-      </View>
-    </SafeAreaView>
+    <Header
+      header={
+        <>
+          <Breadcrumb crumb={choices} onPress={setChoices} />
+          <Text style={[styles.title, choiceStyles.title]}>
+            Identify Species
+          </Text>
+          <Text style={[styles.heading, choiceStyles.heading]}>
+            {reachedLeaves
+              ? "Select the correct species"
+              : "Which feature best describes your tree?"}
+          </Text>
+        </>
+      }
+      content={
+        <Animated.View
+          style={{
+            height: "100%",
+            transform: [{ translateX: slideValue }],
+          }}
+        >
+          {!reachedLeaves &&
+            choicesToRender.map(choice => (
+              <Choice
+                key={choice}
+                choice={choice}
+                image={descriptions[choice].image}
+                text={descriptions[choice].text}
+                onPress={() => animate(choice)}
+              ></Choice>
+            ))}
+          {reachedLeaves &&
+            choicesToRender.map(leaf => (
+              <Card key={leaf}>
+                <Text>{leaf}</Text>
+              </Card>
+            ))}
+        </Animated.View>
+      }
+    />
   );
 };
 const choiceStyles = EStyleSheet.create({
-  root: {
-    height: "100%",
-    backgroundColor: "$dgreen6",
-  },
-  body: {
-    backgroundColor: "#fff",
-  },
-  container: {
-    width: "90%",
-    height: "100%",
-    marginTop: -35,
-    alignItems: "center",
-  },
   heading: {
-    // width: "70%",
-    // textAlign: "center",
-    // fontSize: 20,
     color: "#fff",
   },
   title: {
     color: "#fff",
     marginBottom: 10,
-  },
-  header: {
-    width: "90%",
-    // height: 250,
-    // backgroundColor: "$dgreen6",
-    marginTop: 40,
-    paddingBottom: 50,
-    // marginBottom: -50,
-    // marginBottom: -50,
   },
 });
 
