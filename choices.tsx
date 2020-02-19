@@ -9,6 +9,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Card from "./card";
 import Header from "./header";
+import Leaf from "./leaf";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
@@ -96,6 +97,7 @@ const Choices = ({ route, navigation }) => {
           style={{
             height: "100%",
             transform: [{ translateX: slideValue }],
+            width: "100%",
           }}
         >
           {!reachedLeaves &&
@@ -109,11 +111,7 @@ const Choices = ({ route, navigation }) => {
               ></Choice>
             ))}
           {reachedLeaves &&
-            choicesToRender.map(leaf => (
-              <Card key={leaf}>
-                <Text>{leaf}</Text>
-              </Card>
-            ))}
+            choicesToRender.map(leaf => <Leaf key={leaf} leaf={leaf}></Leaf>)}
         </Animated.View>
       }
     />

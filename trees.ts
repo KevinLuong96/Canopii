@@ -5,53 +5,153 @@ export const decision = {
       "Opposite Branching": {
         "Rough, Non-rounded Bottom": {
           trees: [
-            "Acer Saccharinum, Acer Platanoides/Acer Saccharum",
-            "Acer Rubrum",
-            "Quercus Rubra",
+            {
+              sciName: "Acer Saccharinum",
+              name: "Silver Maple",
+            },
+            {
+              sciName: "Acer Platanoides/Acer Saccharum",
+              name: "Norway or Sugar Maple",
+            },
+            {
+              sciName: "Acer Rubrum",
+              name: "Red Maple",
+            },
+            {
+              sciName: "Quercus Rubra",
+              name: "Northern Red Oak",
+            },
           ],
         },
         "Smooth, Rounded Bottom": {
-          trees: ["Acer Rubrum", "Syringa Reticulata", "Acer Ginnala"],
+          trees: [
+            {
+              sciName: "Acer Rubrum",
+              name: "Red Maple",
+            },
+            {
+              sciName: "Japanese Lilac",
+              name: "Syringa Reticulata",
+            },
+            {
+              sciName: "Acer Ginnala",
+              name: "Amur Maple",
+            },
+          ],
         },
       },
       "Alternate Branching": {
         "Lobed Leaf": {
           trees: [
-            "Ginkgo Biloba",
-            "Quercus Robur",
-            "Quercus Macrocarpa",
-            "Malus Coronaria",
+            {
+              sciName: "Ginkgo Biloba",
+              name: "Maidenhair Tree",
+            },
+            {
+              sciName: "Quercus Robur",
+              name: "English Oak",
+            },
+            {
+              sciName: "Bur Oak",
+              name: "Quercus Macrocarpa",
+            },
+            {
+              sciName: "Sweet Crabapple",
+              name: "Malus Coronaria",
+            },
           ],
         },
         "Entire Leaf": {
           "Rounded Base": {
-            trees: ["Amelanchier canadensis", "Pyrus calleryana"],
+            trees: [
+              {
+                sciName: "Shadblow Serviceberry",
+                name: "Amelanchier canadensis",
+              },
+              {
+                sciName: "Callery Pear",
+                name: "Pyrus calleryana",
+              },
+            ],
           },
           "Pointed Base": {
             trees: [
-              "Betula pendula",
-              "Elaeagnus angustifolia",
-              "Salix nigra",
-              "Salix amygdaloides",
-              "Ulmus pumila",
+              {
+                sciName: "Silver Birch",
+                name: "Betula pendula",
+              },
+              {
+                sciName: "Russian Olive",
+                name: "Elaeagnus angustifolia",
+              },
+              {
+                sciName: "Black Willow",
+                name: "Salix nigra",
+              },
+              {
+                sciName: "Peachleaf Willow",
+                name: "Salix amygdaloides",
+              },
+              {
+                sciName: "Siberian Elm",
+                name: "Ulmus pumila",
+              },
             ],
           },
           "Heart Base": {
-            trees: ["Celtis occidentalis", "Tilia americana", "Tilia cordata"],
+            trees: [
+              {
+                sciName: "Common Hackberry",
+                name: "Celtis occidentalis",
+              },
+              {
+                sciName: "American Basswood",
+                name: "Tilia americana",
+              },
+              {
+                sciName: "Littleleaf Linden",
+                name: "Tilia cordata",
+              },
+            ],
           },
         },
       },
     },
     "Compound Leaf": {
       "Opposite Branching": {
-        trees: ["Acer Negundo", "Fraxinus Americana", "Fraxinus Pennsylvanica"],
+        trees: [
+          {
+            sciName: "Boxelder Maple",
+            name: "Acer Negundo",
+          },
+          {
+            sciName: "White Ash",
+            name: "Fraxinus Americana",
+          },
+          {
+            sciName: "Green Ash",
+            name: "Fraxinus Pennsylvanica",
+          },
+        ],
       },
       "Alternate Branching": {
         trees: [
-          "Gleditsia triacanthos",
-          "Juglans nigra",
-          "Sorbus aucuparia",
-          "Sorbus x hybrida",
+          {
+            sciName: "Honey Locust",
+            name: "Gleditsia triacanthos",
+          },
+          {
+            sciName: "Black Walnut",
+            name: "Juglans nigra",
+          },
+          {
+            sciName: "European Mountain Ash",
+            name: "Sorbus aucuparia",
+          },
+          {
+            sciName: "Oakleaf Mountain Ash",
+            name: "Sorbus x hybrida",
+          },
         ],
       },
     },

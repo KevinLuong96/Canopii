@@ -10,7 +10,7 @@ const cardStyles = {
   card: {
     height: "20%",
     backgroundColor: "white",
-    borderRadius: 5,
+    borderRadius: 10,
     shadowOffset: { height: 3, width: 0 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

@@ -113861,9 +113861,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "react-native-extended-stylesheet"));
 
-  var _card = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./card"));
+  var _header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./header"));
 
-  var _header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./header"));
+  var _leaf = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./leaf"));
 
   var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/choices.tsx";
 
@@ -113894,7 +113894,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 27
           }
         });
       }
@@ -113950,19 +113950,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         onPress: setChoices,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 84
         }
       }), _react.default.createElement(_reactNative.Text, {
         style: [_styles.default.title, choiceStyles.title],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 85
         }
       }, "Identify Species"), _react.default.createElement(_reactNative.Text, {
         style: [_styles.default.heading, choiceStyles.heading],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 88
         }
       }, reachedLeaves ? "Select the correct species" : "Which feature best describes your tree?")),
       content: _react.default.createElement(_reactNative.Animated.View, {
@@ -113970,11 +113970,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           height: "100%",
           transform: [{
             translateX: slideValue
-          }]
+          }],
+          width: "100%"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 96
         }
       }, !reachedLeaves && choicesToRender.map(function (choice) {
         return _react.default.createElement(_choice2.default, {
@@ -113987,26 +113988,22 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 105
           }
         });
       }), reachedLeaves && choicesToRender.map(function (leaf) {
-        return _react.default.createElement(_card.default, {
+        return _react.default.createElement(_leaf.default, {
           key: leaf,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 113
-          }
-        }, _react.default.createElement(_reactNative.Text, {
+          leaf: leaf,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 114
           }
-        }, leaf));
+        });
       })),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 81
       }
     });
   };
@@ -114023,7 +114020,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Choices;
   exports.default = _default;
-},785,[1,155,18,12,52,2,731,786,788,800,782,577,787,801],"choices.tsx");
+},785,[1,155,18,12,52,2,731,786,788,800,782,577,801,806],"choices.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114155,7 +114152,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     card: {
       height: "20%",
       backgroundColor: "white",
-      borderRadius: 5,
+      borderRadius: 10,
       shadowOffset: {
         height: 3,
         width: 0
@@ -114769,6 +114766,76 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "displayName": "Canopii"
 };
 },805,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./styles"));
+
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-extended-stylesheet"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+
+  var _card = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./card"));
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/leaf.tsx";
+
+  var Leaf = function Leaf(props) {
+    return _react.default.createElement(_card.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: leafStyles.container,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: leafStyles.image,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      }
+    }), _react.default.createElement(_reactNative.View, {
+      style: leafStyles.text,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: _styles.default.heading,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
+    }, props.leaf))));
+  };
+
+  var leafStyles = _reactNativeExtendedStylesheet.default.create({
+    container: {
+      backgroundColor: "#eee",
+      width: "100%",
+      height: "100%",
+      display: "flex"
+    },
+    image: {
+      width: "30%",
+      height: "100%",
+      resizeMode: "contain"
+    }
+  });
+
+  var _default = Leaf;
+  exports.default = _default;
+},806,[1,52,731,577,2,787],"leaf.tsx");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map
