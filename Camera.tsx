@@ -54,8 +54,8 @@ const Camera = ({ route, navigation }) => {
               <Icon.Button
                 name="circle"
                 size={60}
-                color="#000"
-                backgroundColor="#fff"
+                color="#fff"
+                backgroundColor="transparent"
                 borderRadius={25}
                 padding={0}
                 margin={0}

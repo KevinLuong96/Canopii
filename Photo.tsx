@@ -9,6 +9,22 @@ import { NavigationContainer } from "@react-navigation/native";
 
 const Photo = ({ route, navigation }) => {
   const { photo } = route.params;
+  navigation.setOptions({
+    // headerTransparent: true,
+    headerLeft: navigation => {
+      return (
+        navigation.canGoBack && (
+          <Icon.Button
+            name="arrowleft"
+            size={24}
+            color="#000"
+            backgroundColor="transparent"
+            onPress={() => navigation.onPress()}
+          />
+        )
+      );
+    },
+  });
   // const [isPending, setPending]: [boolean, Function] = useState(false);
   // const [data, setData] = useState(null);
   // async function fetchData() {
@@ -59,6 +75,8 @@ const Photo = ({ route, navigation }) => {
         <Icon.Button
           name="arrowright"
           size={48}
+          color="#000"
+          backgroundColor="transparent"
           onPress={() => navigation.navigate("Choices", route.params)}
         ></Icon.Button>
       </View>

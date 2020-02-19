@@ -20,6 +20,8 @@ const Choices = ({ route, navigation }) => {
           <Icon.Button
             name="arrowleft"
             size={24}
+            color="#fff"
+            backgroundColor="transparent"
             onPress={() => {
               console.log(choices);
               choices.length === 1
@@ -29,9 +31,6 @@ const Choices = ({ route, navigation }) => {
           />
         )
       );
-    },
-    headerLeftContainerStyle: {
-      backgroundColor: "none",
     },
   });
 
