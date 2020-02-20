@@ -1004,7 +1004,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,550,805],"index.js");
+},0,[1,2,550,807],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -91655,7 +91655,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = App;
   exports.default = _default;
-},550,[1,551,52,577,593,664,687,803],"App.tsx");
+},550,[1,551,52,577,593,664,687,805],"App.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -105220,7 +105220,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = addTreeTab;
   exports.default = _default;
-},687,[1,688,724,784,785,802,52,806,807],"addTreeTab.tsx");
+},687,[1,688,724,782,786,803,52,804,785],"addTreeTab.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -113381,6 +113381,131 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-vector-icons/AntDesign"));
+
+  var _headerLeftButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./headerLeftButton"));
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/photo.tsx";
+
+  var Photo = function Photo(_ref) {
+    var route = _ref.route,
+        navigation = _ref.navigation;
+    var photo = route.params.photo;
+    navigation.setOptions({
+      headerLeft: function headerLeft(navigation) {
+        return _react.default.createElement(_headerLeftButton.default, {
+          color: "#000",
+          onPress: navigation.onPress,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          }
+        });
+      }
+    });
+    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.View, {
+      style: styles.container,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      }
+    }, _react.default.createElement(_reactNative.Image, {
+      resizeMode: "contain",
+      source: {
+        uri: photo.uri
+      },
+      style: styles.image,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      }
+    })), _react.default.createElement(_reactNative.View, {
+      style: styles.next,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      }
+    }, _react.default.createElement(_AntDesign.default.Button, {
+      name: "arrowright",
+      size: 48,
+      color: "#000",
+      backgroundColor: "transparent",
+      onPress: function onPress() {
+        return navigation.navigate("Choices", route.params);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      }
+    })));
+  };
+
+  var styles = _reactNative.StyleSheet.create({
+    image: {
+      flex: 1,
+      width: null,
+      height: null,
+      flexShrink: 1
+    },
+    pending: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundColor: "#fff",
+      zIndex: 2
+    },
+    data: {
+      width: "100%",
+      backgroundColor: "#fff",
+      position: "absolute",
+      top: 50,
+      display: "flex",
+      alignItems: "center"
+    },
+    verify: {
+      backgroundColor: "#fff",
+      position: "absolute",
+      color: "#fff",
+      bottom: 25,
+      right: 25
+    },
+    container: {
+      display: "flex",
+      flexDirection: "row",
+      height: "100%",
+      backgroundColor: "#fff"
+    },
+    clear: {
+      backgroundColor: "#fff",
+      position: "absolute",
+      color: "#fff",
+      bottom: 25,
+      left: 25
+    },
+    next: {
+      position: "absolute",
+      right: 50,
+      bottom: 50
+    }
+  });
+
+  var _default = Photo;
+  exports.default = _default;
+},782,[1,52,2,783,785],"photo.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
   exports.getImageSource = exports.ToolbarAndroid = exports.TabBarItemIOS = exports.TabBarItem = exports.Button = exports.default = void 0;
 
   var _createIconSet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./lib/create-icon-set"));
@@ -113400,7 +113525,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.ToolbarAndroid = ToolbarAndroid;
   var getImageSource = iconSet.getImageSource;
   exports.getImageSource = getImageSource;
-},782,[1,733,783],"node_modules/react-native-vector-icons/AntDesign.js");
+},783,[1,733,784],"node_modules/react-native-vector-icons/AntDesign.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "stepforward": 58880,
@@ -113702,8 +113827,10 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "slack": 59141,
   "slack-square": 59142
 };
-},783,[],"node_modules/react-native-vector-icons/glyphmaps/AntDesign.json");
+},784,[],"node_modules/react-native-vector-icons/glyphmaps/AntDesign.json");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  "use strict";
+
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
   Object.defineProperty(exports, "__esModule", {
@@ -113713,121 +113840,29 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+  var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "react-native-vector-icons/AntDesign"));
 
-  var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-vector-icons/AntDesign"));
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/headerLeftButton.tsx";
 
-  var _headerLeftButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./headerLeftButton"));
-
-  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/photo.tsx";
-
-  var Photo = function Photo(_ref) {
-    var route = _ref.route,
-        navigation = _ref.navigation;
-    var photo = route.params.photo;
-    navigation.setOptions({
-      headerLeft: function headerLeft(navigation) {
-        return _react.default.createElement(_headerLeftButton.default, {
-          color: "#000",
-          onPress: navigation.onPress,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 15
-          }
-        });
+  var HeaderLeftButton = function HeaderLeftButton(props) {
+    return _react.default.createElement(_AntDesign.default.Button, {
+      name: "arrowleft",
+      size: 24,
+      color: props.color,
+      onPress: function onPress() {
+        return props.onPress();
+      },
+      backgroundColor: "transparent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
       }
     });
-    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.View, {
-      style: styles.container,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      }
-    }, _react.default.createElement(_reactNative.Image, {
-      resizeMode: "contain",
-      source: {
-        uri: photo.uri
-      },
-      style: styles.image,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      }
-    })), _react.default.createElement(_reactNative.View, {
-      style: styles.next,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      }
-    }, _react.default.createElement(_AntDesign.default.Button, {
-      name: "arrowright",
-      size: 48,
-      color: "#000",
-      backgroundColor: "transparent",
-      onPress: function onPress() {
-        return navigation.navigate("Choices", route.params);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      }
-    })));
   };
 
-  var styles = _reactNative.StyleSheet.create({
-    image: {
-      flex: 1,
-      width: null,
-      height: null,
-      flexShrink: 1
-    },
-    pending: {
-      position: "absolute",
-      left: 0,
-      right: 0,
-      top: 0,
-      bottom: 0,
-      backgroundColor: "#fff",
-      zIndex: 2
-    },
-    data: {
-      width: "100%",
-      backgroundColor: "#fff",
-      position: "absolute",
-      top: 50,
-      display: "flex",
-      alignItems: "center"
-    },
-    verify: {
-      backgroundColor: "#fff",
-      position: "absolute",
-      color: "#fff",
-      bottom: 25,
-      right: 25
-    },
-    container: {
-      display: "flex",
-      flexDirection: "row",
-      height: "100%",
-      backgroundColor: "#fff"
-    },
-    clear: {
-      backgroundColor: "#fff",
-      position: "absolute",
-      color: "#fff",
-      bottom: 25,
-      left: 25
-    },
-    next: {
-      position: "absolute",
-      right: 50,
-      bottom: 50
-    }
-  });
-
-  var _default = Photo;
+  var _default = HeaderLeftButton;
   exports.default = _default;
-},784,[1,52,2,782,807],"photo.tsx");
+},785,[1,52,783],"headerLeftButton.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114024,7 +114059,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Choices;
   exports.default = _default;
-},785,[1,155,18,12,52,2,731,786,788,800,577,801,807],"choices.tsx");
+},786,[1,155,18,12,52,2,731,787,789,801,577,802,785],"choices.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114126,7 +114161,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Choice;
   exports.default = _default;
-},786,[1,52,2,731,787,577],"choice.tsx");
+},787,[1,52,2,731,788,577],"choice.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114173,7 +114208,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   var _default = Card;
   exports.default = _default;
-},787,[1,52,2],"card.tsx");
+},788,[1,52,2],"card.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -114358,7 +114393,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   };
   exports.descriptions = descriptions;
-},788,[789,790,791,792,793,794,795,796,797,798,799],"trees.ts");
+},789,[790,791,792,793,794,795,796,797,798,799,800],"trees.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114370,7 +114405,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "SimpleLeaf",
     "type": "png"
   });
-},789,[187],"images/SimpleLeaf.png");
+},790,[187],"images/SimpleLeaf.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114382,7 +114417,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "CompoundLeaf",
     "type": "png"
   });
-},790,[187],"images/CompoundLeaf.png");
+},791,[187],"images/CompoundLeaf.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114394,7 +114429,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "OppositeBranching",
     "type": "png"
   });
-},791,[187],"images/OppositeBranching.png");
+},792,[187],"images/OppositeBranching.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114406,7 +114441,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "AlternateBranching",
     "type": "png"
   });
-},792,[187],"images/AlternateBranching.png");
+},793,[187],"images/AlternateBranching.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114418,7 +114453,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "LobedLeaf1",
     "type": "png"
   });
-},793,[187],"images/LobedLeaf1.png");
+},794,[187],"images/LobedLeaf1.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114430,7 +114465,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "EntireLeaf",
     "type": "png"
   });
-},794,[187],"images/EntireLeaf.png");
+},795,[187],"images/EntireLeaf.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114442,7 +114477,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "RoundBase",
     "type": "png"
   });
-},795,[187],"images/RoundBase.png");
+},796,[187],"images/RoundBase.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114454,7 +114489,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "SharpBase",
     "type": "png"
   });
-},796,[187],"images/SharpBase.png");
+},797,[187],"images/SharpBase.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114466,7 +114501,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "HeartBase",
     "type": "png"
   });
-},797,[187],"images/HeartBase.png");
+},798,[187],"images/HeartBase.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114478,7 +114513,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "Deciduous",
     "type": "png"
   });
-},798,[187],"images/Deciduous.png");
+},799,[187],"images/Deciduous.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/node_modules/react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -114490,7 +114525,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "Coniferous",
     "type": "png"
   });
-},799,[187],"images/Coniferous.png");
+},800,[187],"images/Coniferous.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114577,7 +114612,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   var _default = Breadcrumb;
   exports.default = _default;
-},800,[1,52,2],"breadcrumb.tsx");
+},801,[1,52,2],"breadcrumb.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114649,7 +114684,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = Header;
   exports.default = _default;
-},801,[1,52,2,731,577],"header.tsx");
+},802,[1,52,2,731,577],"header.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -114760,7 +114795,226 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = TagTree;
   exports.default = _default;
-},802,[1,2,731,577,52,786,788],"tagTree.tsx");
+},803,[1,2,731,577,52,787,789],"tagTree.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./styles"));
+
+  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-extended-stylesheet"));
+
+  var _headerLeftButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./headerLeftButton"));
+
+  var _reactNativeGestureHandler = _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler");
+
+  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/tree.tsx";
+
+  var Tree = function Tree(_ref) {
+    var navigation = _ref.navigation,
+        route = _ref.route;
+    var _route$params = route.params,
+        sciName = _route$params.sciName,
+        name = _route$params.name,
+        choices = _route$params.choices;
+    navigation.setOptions({
+      headerLeft: function headerLeft(navigation) {
+        return _react.default.createElement(_headerLeftButton.default, {
+          color: "#000",
+          onPress: navigation.onPress,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          }
+        });
+      }
+    });
+    return _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.centered, treeStyles.root],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      }
+    }, _react.default.createElement(_reactNative.StatusBar, {
+      barStyle: "light-content",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }), _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.centered, {
+        width: "90%"
+      }],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.container, treeStyles.header],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: {
+        width: "30%",
+        backgroundColor: "blue"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      }
+    }), _react.default.createElement(_reactNative.View, {
+      style: treeStyles.headerText,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.heading, treeStyles.name],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      }
+    }, name), _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.body, treeStyles.sciName],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      }
+    }, sciName))), _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.container, treeStyles.container],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      }
+    }, choices.map(function (choice) {
+      return _react.default.createElement(_reactNative.Text, {
+        style: _styles.default.body,
+        key: choice,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        }
+      }, choice);
+    })), _react.default.createElement(_reactNative.View, {
+      style: [_styles.default.container, treeStyles.container],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: {
+        height: 200,
+        width: "100%",
+        backgroundColor: "blue"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      }
+    })), _react.default.createElement(_reactNative.View, {
+      style: treeStyles.button,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      }
+    }, _react.default.createElement(_reactNativeGestureHandler.TouchableHighlight, {
+      style: treeStyles.touchable,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.body, {
+        color: "white",
+        textAlign: "center"
+      }],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      }
+    }, "This is the correct tree"))), _react.default.createElement(_reactNative.View, {
+      style: treeStyles.button,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      }
+    }, _react.default.createElement(_reactNativeGestureHandler.TouchableHighlight, {
+      onPress: navigation.goBack,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: [_styles.default.body, treeStyles.cancel],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      }
+    }, "This is the correct tree")))));
+  };
+
+  var treeStyles = _reactNativeExtendedStylesheet.default.create({
+    container: {
+      flexDirection: "row",
+      marginTop: 15,
+      justifyContent: "space-between"
+    },
+    button: {
+      width: "90%",
+      height: 50,
+      marginTop: 10,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+    },
+    cancel: {
+      color: "$dgreen6",
+      textAlign: "center"
+    },
+    header: {
+      flexDirection: "row"
+    },
+    headerText: {
+      display: "flex",
+      width: "70%",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      paddingLeft: 10
+    },
+    root: {
+      marginTop: 90
+    },
+    name: {
+      marginBottom: 10
+    },
+    sciName: {
+      color: "$gray7"
+    },
+    touchable: {
+      backgroundColor: "$dgreen6",
+      height: "100%",
+      borderRadius: 10,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+    }
+  });
+
+  var _default = Tree;
+  exports.default = _default;
+},804,[1,52,2,731,577,785,551],"tree.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -114786,7 +115040,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.ToolbarAndroid = ToolbarAndroid;
   var getImageSource = iconSet.getImageSource;
   exports.getImageSource = getImageSource;
-},803,[1,733,804],"node_modules/react-native-vector-icons/EvilIcons.js");
+},805,[1,733,806],"node_modules/react-native-vector-icons/EvilIcons.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "archive": 61696,
@@ -114860,122 +115114,13 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "unlock": 61764,
   "user": 61765
 };
-},804,[],"node_modules/react-native-vector-icons/glyphmaps/EvilIcons.json");
+},806,[],"node_modules/react-native-vector-icons/glyphmaps/EvilIcons.json");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Canopii",
   "displayName": "Canopii"
 };
-},805,[],"app.json");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  "use strict";
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var _styles = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./styles"));
-
-  var _reactNativeExtendedStylesheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-extended-stylesheet"));
-
-  var _headerLeftButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./headerLeftButton"));
-
-  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/tree.tsx";
-
-  var Tree = function Tree(_ref) {
-    var navigation = _ref.navigation,
-        route = _ref.route;
-    var _route$params = route.params,
-        sciName = _route$params.sciName,
-        name = _route$params.name;
-    navigation.setOptions({
-      headerLeft: function headerLeft(navigation) {
-        return _react.default.createElement(_headerLeftButton.default, {
-          color: "#000",
-          onPress: navigation.onPress,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          }
-        });
-      }
-    });
-    return _react.default.createElement(_reactNative.View, {
-      style: [_styles.default.centered, treeStyles.root],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      }
-    }, _react.default.createElement(_reactNative.StatusBar, {
-      barStyle: "light-content",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      }
-    }), _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      }
-    }, sciName), _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      }
-    }, name));
-  };
-
-  var treeStyles = _reactNativeExtendedStylesheet.default.create({
-    root: {
-      marginTop: 100
-    }
-  });
-
-  var _default = Tree;
-  exports.default = _default;
-},806,[1,52,2,731,577,807],"tree.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  "use strict";
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
-
-  var _AntDesign = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "react-native-vector-icons/AntDesign"));
-
-  var _jsxFileName = "/Users/Kevin/Documents/SYDE/4A/SYDE461/Canopii/headerLeftButton.tsx";
-
-  var HeaderLeftButton = function HeaderLeftButton(props) {
-    return _react.default.createElement(_AntDesign.default.Button, {
-      name: "arrowleft",
-      size: 24,
-      color: props.color,
-      onPress: function onPress() {
-        return props.onPress();
-      },
-      backgroundColor: "transparent",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      }
-    });
-  };
-
-  var _default = HeaderLeftButton;
-  exports.default = _default;
-},807,[1,52,782],"headerLeftButton.tsx");
+},807,[],"app.json");
 __r(90);
 __r(0);
 //# sourceMappingURL=index.map
