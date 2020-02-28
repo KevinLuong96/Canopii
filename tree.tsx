@@ -8,7 +8,7 @@ import { TouchableHighlight } from "react-native-gesture-handler";
 import { useDispatch, useSelector } from "react-redux";
 import { setTreeName } from "./actions";
 
-const TreeBase = ({ navigation, route }) => {
+const Tree = ({ navigation, route }) => {
   const { sciName, name, choices } = route.params;
   const stateName = useSelector(state => state.treeName);
   const dispatch = useDispatch();
