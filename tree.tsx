@@ -5,13 +5,13 @@ import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import HeaderLeftButton from "./headerLeftButton";
 import { TouchableHighlight } from "react-native-gesture-handler";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setTreeName } from "./actions";
 
 const Tree = ({ navigation, route }) => {
   const { sciName, name, choices } = route.params;
-  const stateName = useSelector(state => state.treeName);
   const dispatch = useDispatch();
+
   navigation.setOptions({
     headerLeft: navigation => (
       <HeaderLeftButton color="#000" onPress={navigation.onPress} />
@@ -28,14 +28,10 @@ const Tree = ({ navigation, route }) => {
           <View style={{ width: "30%", backgroundColor: "blue" }}></View>
           <View style={treeStyles.headerText}>
             <Text style={[styles.heading, treeStyles.name]}>{name}</Text>
-            <Text style={[styles.heading, treeStyles.name]}>
-              THIS IS THE STATE NAME: {stateName}
-            </Text>
             <Text style={[styles.body, treeStyles.sciName]}>{sciName}</Text>
           </View>
         </View>
         <View style={[styles.container, treeStyles.container]}>
-          {/* <Text>{</Text> */}
           {choices.map(choice => (
             <Text style={styles.body} key={choice}>
               {choice}
@@ -68,7 +64,6 @@ const Tree = ({ navigation, route }) => {
         </View>
       </View>
     </View>
-    // </View>
   );
 };
 

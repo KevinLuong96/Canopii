@@ -12,6 +12,7 @@ function rootReducer(state = initialState, action) {
         treeName: action.treeName,
       });
   }
+  return state;
 }
 
 export default rootReducer;

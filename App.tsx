@@ -18,14 +18,6 @@ import addTreeTab from "./addTreeTab";
 import Icon from "react-native-vector-icons/EvilIcons";
 import rootReducer from "./reducer/reducers";
 
-enum navTypes {
-  Home,
-  Profile,
-  Settings,
-  Map,
-  Test,
-}
-
 const Tab = createBottomTabNavigator();
 const $dgreen6 = "#65B876";
 const $gray7 = "#8C8C8C";
@@ -48,8 +40,6 @@ const App = () => {
               } else if (route.name === "Settings") {
                 iconName = focused ? "ios-list-box" : "ios-list";
               }
-
-              // You can return any component that you like here!
               return <Icon name={iconName} size={48} color={color} />;
             },
           })}
@@ -62,7 +52,6 @@ const App = () => {
             },
           }}
         >
-          {/* <Tab.Screen name="Camera" component={Camera}></Tab.Screen> */}
           <Tab.Screen name="Add" component={addTreeTab}></Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
