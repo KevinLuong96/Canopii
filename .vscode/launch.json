@@ -9,8 +9,7 @@
       "cwd": "${workspaceFolder}",
       "type": "reactnative",
       "request": "launch",
-      "platform": "ios",
-      "trace": "verbose"
+      "platform": "ios"
     }
   ]
 }

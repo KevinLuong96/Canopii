@@ -5,7 +5,6 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import React from "react";
 import Choice from "./choice";
 import { descriptions } from "./trees";
-import { createStackNavigator } from "@react-navigation/stack";
 
 const TagTree = ({ navigation }) => {
   return (
