@@ -57,15 +57,19 @@ PODS:
     - React-cxxreact (= 0.60.3)
     - React-jsi (= 0.60.3)
   - React-jsinspector (0.60.3)
-  - react-native-camera (3.19.0):
+  - react-native-camera (3.11.1):
     - React
-    - react-native-camera/RCT (= 3.19.0)
-    - react-native-camera/RN (= 3.19.0)
-  - react-native-camera/RCT (3.19.0):
+    - react-native-camera/RCT (= 3.11.1)
+    - react-native-camera/RN (= 3.11.1)
+  - react-native-camera/RCT (3.11.1):
     - React
-  - react-native-camera/RN (3.19.0):
+  - react-native-camera/RN (3.11.1):
+    - React
+  - react-native-geolocation (2.0.2):
     - React
   - react-native-image-picker (1.1.0):
+    - React
+  - react-native-maps (0.26.1):
     - React
   - react-native-safe-area-context (0.7.3):
     - React
@@ -99,7 +103,7 @@ PODS:
     - React
   - RNReanimated (1.7.0):
     - React
-  - RNScreens (2.2.0):
+  - RNScreens (2.0.0-beta.6):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -118,7 +122,9 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-camera (from `../node_modules/react-native-camera`)
+  - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -166,8 +172,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-camera:
     :path: "../node_modules/react-native-camera"
+  react-native-geolocation:
+    :path: "../node_modules/@react-native-community/geolocation"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-maps:
+    :path: "../node_modules/react-native-maps"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-RCTActionSheet:
@@ -216,9 +226,11 @@ SPEC CHECKSUMS:
   React-jsi: c2b6e57836bcae2677a036384111dc2c58e94369
   React-jsiexecutor: d9023c5c199114d2b6f38ec861a4d923c73d0735
   React-jsinspector: 817b64f3c8a807f09d78620f4f505868d89b26f3
-  react-native-camera: 1a62f163f06c7e54811fc9396cdb80269a665238
-  react-native-image-picker: 3637d63fef7e32a230141ab4660d3ceb773c824f
-  react-native-safe-area-context: 8260e5157617df4b72865f44006797f895b2ada7
+  react-native-camera: 576f6dbb490af4285de1f8002a09dd3daa86c112
+  react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
+  react-native-image-picker: 7a85cf7b0a53845f03ae52fb4592a2748ded069b
+  react-native-maps: 6e499eee4eabf422ba8b6f94e993cc768bf35153
+  react-native-safe-area-context: e200d4433aba6b7e60b52da5f37af11f7a0b0392
   React-RCTActionSheet: 9c42321fd5652515d706dd722c5a10b1970d7ec8
   React-RCTAnimation: fabb087dde8964c9a835a7fabd0e7e5701787913
   React-RCTBlob: 93f34281d9c9c9e216b25824309eed9fe22a5d41
@@ -229,10 +241,10 @@ SPEC CHECKSUMS:
   React-RCTText: b026f8350c2cbe0daeb9880dd9c6e018fce0daf7
   React-RCTVibration: 5d9ed4a968e9d42880ddcc7c29bee3417c745408
   React-RCTWebSocket: 69d8565d66043f244b4129f3d7154c5689fb7d3e
-  RNCMaskedView: e5b99bc191945f157adeede68da9d424462de177
+  RNCMaskedView: a88953beefbd347a29072d9eba90e42945fe291e
   RNGestureHandler: dde546180bf24af0b5f737c8ad04b6f3fa51609a
   RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
-  RNScreens: 812b79d384e2bea7eebc4ec981469160d4948fd5
+  RNScreens: c2c8bdde0146f16eb6bf092dd7485534851f2711
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: 843fe25849b56131275bf3e5da2c468e96f68aff
 

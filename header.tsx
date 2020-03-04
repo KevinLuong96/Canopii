@@ -1,17 +1,23 @@
 "use strict";
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { View, SafeAreaView } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 
-const Header = props => {
+interface HeaderProps {
+  header: Element;
+  content: Element;
+  fullWidth?: boolean;
+}
+const Header = (props: HeaderProps) => {
+  const contentStyles = props.fullWidth
+    ? [styles.container, headerStyles.container, { width: "100%" }]
+    : [styles.container, headerStyles.container];
   return (
     <SafeAreaView style={[styles.centered, headerStyles.root]}>
       <View style={headerStyles.header}>{props.header}</View>
       <View style={[styles.centered, headerStyles.body]}>
-        <View style={[styles.container, headerStyles.container]}>
-          {props.content}
-        </View>
+        <View style={contentStyles}>{props.content}</View>
       </View>
     </SafeAreaView>
   );

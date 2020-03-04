@@ -17,11 +17,16 @@ import { Provider } from "react-redux";
 import addTreeTab from "./addTreeTab";
 import Icon from "react-native-vector-icons/EvilIcons";
 import rootReducer from "./reducer/reducers";
+import Geolocation from "@react-native-community/geolocation";
 
 const Tab = createBottomTabNavigator();
 const $dgreen6 = "#65B876";
 const $gray7 = "#8C8C8C";
 const store = createStore(rootReducer);
+Geolocation.setRNConfiguration({
+  authorizationLevel: "whenInUse",
+  skipPermissionRequests: false,
+});
 const App = () => {
   EStyleSheet.build({
     $dgreen6,

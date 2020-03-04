@@ -5,6 +5,7 @@ import Choices from "./choices";
 import TagTree from "./tagTree";
 import React from "react";
 import Tree from "./tree";
+import Location from "./location";
 import HeaderLeftButton from "./headerLeftButton";
 
 const Stack = createStackNavigator();
@@ -30,6 +31,7 @@ const addTreeTab = () => {
       <Stack.Screen name="Photo" component={Photo}></Stack.Screen>
       <Stack.Screen name="Choices" component={Choices}></Stack.Screen>
       <Stack.Screen name="Tree" component={Tree}></Stack.Screen>
+      <Stack.Screen name="Location" component={Location}></Stack.Screen>
     </Stack.Navigator>
   );
 };
