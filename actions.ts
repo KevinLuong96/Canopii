@@ -1,4 +1,5 @@
 const SET_TREE_NAME = "SET_TREE_NAME";
+const SET_LOCATION = "SET_LOCATION";
 
 function setTreeName(treeName) {
   return {
@@ -6,4 +7,12 @@ function setTreeName(treeName) {
     treeName,
   };
 }
-export { SET_TREE_NAME, setTreeName };
+
+function setLocation(location) {
+  return {
+    type: SET_LOCATION,
+    location,
+  };
+}
+
+export { SET_TREE_NAME, SET_LOCATION, setTreeName, setLocation };

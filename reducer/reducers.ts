@@ -1,8 +1,8 @@
-import { SET_TREE_NAME } from "../actions";
+import { SET_TREE_NAME, SET_LOCATION } from "../actions";
 
 const initialState = {
-  treeName: "",
-  location: "",
+  treeName: {},
+  location: {},
 };
 
 function rootReducer(state = initialState, action) {
@@ -10,6 +10,10 @@ function rootReducer(state = initialState, action) {
     case SET_TREE_NAME:
       return Object.assign({}, state, {
         treeName: action.treeName,
+      });
+    case SET_LOCATION:
+      return Object.assign({}, state, {
+        location: action.location,
       });
   }
   return state;

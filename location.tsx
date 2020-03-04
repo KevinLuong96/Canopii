@@ -2,7 +2,9 @@
 import { Text, View } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setLocation } from "./actions";
 import Header from "./header";
 import Navigation from "@react-native-community/geolocation";
 import MapView, { Marker } from "react-native-maps";
@@ -29,6 +31,8 @@ const Location = ({ navigation }) => {
   });
   const [address, setAddress] = useState("");
   const [editable, setEditable] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     Navigation.getCurrentPosition(location => {
@@ -134,7 +138,13 @@ const Location = ({ navigation }) => {
             <TouchableHighlight
               style={locationStyles.touchable}
               onPress={() => {
-                // dispatch(setTreeName(sciName));
+                dispatch(
+                  setLocation({
+                    latitude: region.latitude,
+                    longitude: region.longitude,
+                    address,
+                  })
+                );
                 // navigation.navigate("Location");
               }}
             >
