@@ -6,7 +6,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Header from "./header";
 import Navigation from "@react-native-community/geolocation";
 import MapView, { Marker } from "react-native-maps";
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput, TouchableHighlight } from "react-native-gesture-handler";
 
 interface Region {
   latitude: number;
@@ -20,14 +20,13 @@ const Location = ({ navigation }) => {
   const [region, setRegion]: [Region, Function] = useState({
     latitude: 0,
     longitude: 0,
-    latitudeDelta: 0,
-    longitudeDelta: 0,
+    latitudeDelta: 0.005,
+    longitudeDelta: 0.005,
   });
   const [markerRegion, setMarkerRegion] = useState({
     latitude: 0,
     longitude: 0,
   });
-  console.log("initialized");
   const [address, setAddress] = useState("");
   const [editable, setEditable] = useState(false);
 
@@ -40,6 +39,10 @@ const Location = ({ navigation }) => {
         longitude: long,
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
+      });
+      setMarkerRegion({
+        latitude: lat,
+        longitude: long,
       });
       setEditable(false);
       getAddress(lat, long);
@@ -57,7 +60,6 @@ const Location = ({ navigation }) => {
         }
       })
       .then(resJson => {
-        console.log(resJson);
         setAddress(`${resJson.stnumber} ${resJson.staddress}`.toUpperCase());
         setEditable(true);
       })
@@ -78,7 +80,6 @@ const Location = ({ navigation }) => {
         }
       })
       .then(resJson => {
-        console.log(resJson);
         setRegion(
           Object.assign({}, region, {
             latitude: +resJson.latt,
@@ -129,13 +130,28 @@ const Location = ({ navigation }) => {
               onEndEditing={_ => getCoordinates(address)}
             ></TextInput>
           </View>
+          <View style={locationStyles.button}>
+            <TouchableHighlight
+              style={locationStyles.touchable}
+              onPress={() => {
+                // dispatch(setTreeName(sciName));
+                // navigation.navigate("Location");
+              }}
+            >
+              <Text
+                style={[styles.body, { color: "white", textAlign: "center" }]}
+              >
+                This is the right location
+              </Text>
+            </TouchableHighlight>
+          </View>
           <View style={locationStyles.map}>
             {region && (
               <MapView
                 style={locationStyles.map}
                 initialRegion={region}
                 region={region}
-                onRegionChange={region => setRegion(region)}
+                onRegionChangeComplete={region => setRegion(region)}
               >
                 <Marker
                   draggable
@@ -173,6 +189,23 @@ const Location = ({ navigation }) => {
 };
 
 const locationStyles = EStyleSheet.create({
+  button: {
+    width: "80%",
+    left: "10%",
+    backgroundColor: "transparent",
+    position: "absolute",
+    bottom: 220,
+    zIndex: 1,
+  },
+  touchable: {
+    backgroundColor: "$dgreen6",
+    width: "100%",
+    height: 50,
+    borderRadius: 10,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
   container: {
     height: "100%",
     backgroundColor: "$dgreen6",
