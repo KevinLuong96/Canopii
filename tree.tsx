@@ -46,7 +46,10 @@ const Tree = ({ navigation, route }) => {
         <View style={treeStyles.button}>
           <TouchableHighlight
             style={treeStyles.touchable}
-            onPress={() => dispatch(setTreeName(sciName))}
+            onPress={() => {
+              dispatch(setTreeName(sciName));
+              navigation.navigate("Location");
+            }}
           >
             <Text
               style={[styles.body, { color: "white", textAlign: "center" }]}
