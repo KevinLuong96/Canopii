@@ -1,6 +1,6 @@
 "use strict";
 import React, { useState } from "react";
-import { View, Text, StatusBar, Image, Dimensions } from "react-native";
+import { View, Text, StatusBar, Image } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import HeaderLeftButton from "./headerLeftButton";
@@ -10,8 +10,7 @@ import { setTreeName } from "./actions";
 import { leaves } from "./leaves";
 import { descriptions } from "./trees";
 import SideSwipe from "react-native-sideswipe";
-
-const { width } = Dimensions.get("window");
+import Icon from "react-native-vector-icons/Entypo";
 
 const Tree = ({ navigation, route }) => {
   const { sciName, name, choices } = route.params;
@@ -24,6 +23,7 @@ const Tree = ({ navigation, route }) => {
     ),
   });
   const leafImagePath = leaves?.[sciName.replace(/\s/g, "_").toLowerCase()];
+  const images = leafImagePath?.pics ?? [];
 
   return (
     <View style={[styles.centered, treeStyles.root]}>
@@ -31,7 +31,6 @@ const Tree = ({ navigation, route }) => {
 
       <View style={[styles.centered, { width: "90%" }]}>
         <View style={[styles.container, treeStyles.header]}>
-          {/*TODO: REPLACE THIS WITH AN IAMGE!!!*/}
           <Image
             source={leafImagePath?.lab ?? descriptions["Heart Base"].image}
             style={treeStyles.headerImage}
@@ -61,7 +60,18 @@ const Tree = ({ navigation, route }) => {
             renderItem={({ itemIndex, currentIndex, item, animatedValue }) => (
               <Image source={item} style={treeStyles.image} />
             )}
+            useVelocityForIndex={false}
           />
+        </View>
+        <View style={[styles.container, treeStyles.carouselDots]}>
+          {images.map((_, idx) => (
+            <Icon
+              name="dot-single"
+              size={20}
+              color={index == idx ? "#8C8C8C" : "#d3d3d3"}
+              key={idx}
+            />
+          ))}
         </View>
         <View style={treeStyles.button}>
           <TouchableHighlight
@@ -78,13 +88,13 @@ const Tree = ({ navigation, route }) => {
             </Text>
           </TouchableHighlight>
         </View>
-        <View style={treeStyles.button}>
+        {/* <View style={treeStyles.button}>
           <TouchableHighlight onPress={navigation.goBack}>
             <Text style={[styles.body, treeStyles.cancel]}>
               This is the correct tree
             </Text>
           </TouchableHighlight>
-        </View>
+        </View> */}
       </View>
     </View>
   );
@@ -103,7 +113,12 @@ const treeStyles = EStyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    // alignItems: "center",
+  },
+  carouselDots: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "100%",
   },
   cancel: {
     color: "$dgreen6",
