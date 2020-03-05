@@ -4,6 +4,7 @@ import { Text, Animated } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
+import { leaves } from "./leaves";
 import Breadcrumb from "./breadcrumb";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Header from "./header";
@@ -104,10 +105,14 @@ const Choices = ({ route, navigation }) => {
             choicesToRender.map(leaf => (
               <Choice
                 key={leaf.sciName}
+                q
                 choice={leaf.name}
                 text={leaf.sciName}
                 height={100}
-                image={descriptions["Heart Base"].image}
+                image={
+                  leaves?.[leaf.sciName.replace(/\s/g, "_").toLowerCase()]
+                    ?.lab ?? descriptions["Heart Base"].image
+                }
                 onPress={() =>
                   navigation.navigate("Tree", {
                     name: leaf.name,

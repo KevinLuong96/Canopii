@@ -50,7 +50,7 @@ const App = () => {
           })}
           tabBarOptions={{
             activeTintColor: $dgreen6,
-            inactiveTintColor: $gray7,
+            inactiveTintColor: "#fff",
             showLabel: false,
             style: {
               paddingTop: 10,

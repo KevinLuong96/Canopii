@@ -1,12 +1,14 @@
 "use strict";
 import React from "react";
-import { View, Text, StatusBar } from "react-native";
+import { View, Text, StatusBar, Image } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import HeaderLeftButton from "./headerLeftButton";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import { useDispatch } from "react-redux";
 import { setTreeName } from "./actions";
+import { leaves } from "./leaves";
+import { descriptions } from "./trees";
 
 const Tree = ({ navigation, route }) => {
   const { sciName, name, choices } = route.params;
@@ -25,18 +27,26 @@ const Tree = ({ navigation, route }) => {
       <View style={[styles.centered, { width: "90%" }]}>
         <View style={[styles.container, treeStyles.header]}>
           {/*TODO: REPLACE THIS WITH AN IAMGE!!!*/}
-          <View style={{ width: "30%", backgroundColor: "blue" }}></View>
+          <Image
+            source={
+              leaves?.[sciName.replace(/\s/g, "_").toLowerCase()]?.lab ??
+              descriptions["Heart Base"].image
+            }
+            style={treeStyles.headerImage}
+          ></Image>
           <View style={treeStyles.headerText}>
             <Text style={[styles.heading, treeStyles.name]}>{name}</Text>
             <Text style={[styles.body, treeStyles.sciName]}>{sciName}</Text>
           </View>
         </View>
         <View style={[styles.container, treeStyles.container]}>
-          {choices.map(choice => (
-            <Text style={styles.body} key={choice}>
-              {choice}
-            </Text>
-          ))}
+          <Text>
+            {choices.map(choice => (
+              <Text style={styles.body} key={choice}>
+                {`${choice}   `}
+              </Text>
+            ))}
+          </Text>
         </View>
         <View style={[styles.container, treeStyles.container]}>
           <View
@@ -90,6 +100,11 @@ const treeStyles = EStyleSheet.create({
     textAlign: "center",
   },
   header: { flexDirection: "row" },
+  headerImage: {
+    width: "30%",
+    height: 60,
+    resizeMode: "contain",
+  },
   headerText: {
     display: "flex",
     width: "70%",
@@ -98,7 +113,9 @@ const treeStyles = EStyleSheet.create({
     paddingLeft: 10,
   },
   root: {
-    marginTop: 90,
+    height: "100%",
+    paddingTop: 90,
+    backgroundColor: "#fff",
   },
   name: {
     marginBottom: 10,

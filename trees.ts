@@ -30,8 +30,8 @@ export const decision = {
               name: "Red Maple",
             },
             {
-              sciName: "Japanese Lilac",
-              name: "Syringa Reticulata",
+              name: "Japanese Lilac",
+              sciName: "Syringa Reticulata",
             },
             {
               sciName: "Acer Ginnala",
@@ -52,12 +52,12 @@ export const decision = {
               name: "English Oak",
             },
             {
-              sciName: "Bur Oak",
-              name: "Quercus Macrocarpa",
+              name: "Bur Oak",
+              sciName: "Quercus Macrocarpa",
             },
             {
-              sciName: "Sweet Crabapple",
-              name: "Malus Coronaria",
+              name: "Sweet Crabapple",
+              sciName: "Malus Coronaria",
             },
           ],
         },
@@ -65,52 +65,52 @@ export const decision = {
           "Rounded Base": {
             trees: [
               {
-                sciName: "Shadblow Serviceberry",
-                name: "Amelanchier canadensis",
+                name: "Shadblow Serviceberry",
+                sciName: "Amelanchier canadensis",
               },
               {
-                sciName: "Callery Pear",
-                name: "Pyrus calleryana",
+                name: "Callery Pear",
+                sciName: "Pyrus calleryana",
               },
             ],
           },
           "Pointed Base": {
             trees: [
               {
-                sciName: "Silver Birch",
-                name: "Betula pendula",
+                name: "Silver Birch",
+                sciName: "Betula pendula",
               },
               {
-                sciName: "Russian Olive",
-                name: "Elaeagnus angustifolia",
+                name: "Russian Olive",
+                sciName: "Elaeagnus angustifolia",
               },
               {
-                sciName: "Black Willow",
-                name: "Salix nigra",
+                name: "Black Willow",
+                sciName: "Salix nigra",
               },
               {
-                sciName: "Peachleaf Willow",
-                name: "Salix amygdaloides",
+                name: "Peachleaf Willow",
+                sciName: "Salix amygdaloides",
               },
               {
-                sciName: "Siberian Elm",
-                name: "Ulmus pumila",
+                name: "Siberian Elm",
+                sciName: "Ulmus pumila",
               },
             ],
           },
           "Heart Base": {
             trees: [
               {
-                sciName: "Common Hackberry",
-                name: "Celtis occidentalis",
+                name: "Common Hackberry",
+                sciName: "Celtis occidentalis",
               },
               {
-                sciName: "American Basswood",
-                name: "Tilia americana",
+                name: "American Basswood",
+                sciName: "Tilia americana",
               },
               {
-                sciName: "Littleleaf Linden",
-                name: "Tilia cordata",
+                name: "Littleleaf Linden",
+                sciName: "Tilia cordata",
               },
             ],
           },
@@ -121,36 +121,32 @@ export const decision = {
       "Opposite Branching": {
         trees: [
           {
-            sciName: "Boxelder Maple",
-            name: "Acer Negundo",
+            name: "Boxelder Maple",
+            sciName: "Acer Negundo",
           },
           {
-            sciName: "White Ash",
-            name: "Fraxinus Americana",
+            name: "White Ash",
+            sciName: "Fraxinus Americana",
           },
           {
-            sciName: "Green Ash",
-            name: "Fraxinus Pennsylvanica",
+            name: "Green Ash",
+            sciName: "Fraxinus Pennsylvanica",
           },
         ],
       },
       "Alternate Branching": {
         trees: [
           {
-            sciName: "Honey Locust",
-            name: "Gleditsia triacanthos",
+            name: "Honey Locust",
+            sciName: "Gleditsia triacanthos",
           },
           {
-            sciName: "Black Walnut",
-            name: "Juglans nigra",
+            name: "Black Walnut",
+            sciName: "Juglans nigra",
           },
           {
-            sciName: "European Mountain Ash",
-            name: "Sorbus aucuparia",
-          },
-          {
-            sciName: "Oakleaf Mountain Ash",
-            name: "Sorbus x hybrida",
+            name: "European Mountain Ash",
+            sciName: "Sorbus aucuparia",
           },
         ],
       },
