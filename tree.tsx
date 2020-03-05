@@ -1,6 +1,6 @@
 "use strict";
-import React from "react";
-import { View, Text, StatusBar, Image } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StatusBar, Image, Dimensions } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import HeaderLeftButton from "./headerLeftButton";
@@ -9,9 +9,13 @@ import { useDispatch } from "react-redux";
 import { setTreeName } from "./actions";
 import { leaves } from "./leaves";
 import { descriptions } from "./trees";
+import SideSwipe from "react-native-sideswipe";
+
+const { width } = Dimensions.get("window");
 
 const Tree = ({ navigation, route }) => {
   const { sciName, name, choices } = route.params;
+  const [index, setIndex] = useState(0);
   const dispatch = useDispatch();
 
   navigation.setOptions({
@@ -19,6 +23,7 @@ const Tree = ({ navigation, route }) => {
       <HeaderLeftButton color="#000" onPress={navigation.onPress} />
     ),
   });
+  const leafImagePath = leaves?.[sciName.replace(/\s/g, "_").toLowerCase()];
 
   return (
     <View style={[styles.centered, treeStyles.root]}>
@@ -28,10 +33,7 @@ const Tree = ({ navigation, route }) => {
         <View style={[styles.container, treeStyles.header]}>
           {/*TODO: REPLACE THIS WITH AN IAMGE!!!*/}
           <Image
-            source={
-              leaves?.[sciName.replace(/\s/g, "_").toLowerCase()]?.lab ??
-              descriptions["Heart Base"].image
-            }
+            source={leafImagePath?.lab ?? descriptions["Heart Base"].image}
             style={treeStyles.headerImage}
           ></Image>
           <View style={treeStyles.headerText}>
@@ -49,9 +51,17 @@ const Tree = ({ navigation, route }) => {
           </Text>
         </View>
         <View style={[styles.container, treeStyles.container]}>
-          <View
-            style={{ height: 200, width: "100%", backgroundColor: "blue" }}
-          ></View>
+          <SideSwipe
+            index={index}
+            itemWidth={350}
+            style={{ width: 350 }}
+            data={leafImagePath?.pics ?? []}
+            contentOffset={0}
+            onIndexChange={index => setIndex(index)}
+            renderItem={({ itemIndex, currentIndex, item, animatedValue }) => (
+              <Image source={item} style={treeStyles.image} />
+            )}
+          />
         </View>
         <View style={treeStyles.button}>
           <TouchableHighlight
@@ -104,6 +114,12 @@ const treeStyles = EStyleSheet.create({
     width: "30%",
     height: 60,
     resizeMode: "contain",
+  },
+  image: {
+    width: 340,
+    resizeMode: "contain",
+    height: 325,
+    marginHorizontal: 5,
   },
   headerText: {
     display: "flex",
