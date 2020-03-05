@@ -25,7 +25,7 @@ export default EStyleSheet.create({
   },
   heading: {
     fontFamily: "OpenSans",
-    fontSize: 20,
+    fontSize: 18,
   },
   body: {
     fontFamily: "OpenSans",

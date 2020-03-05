@@ -145,7 +145,7 @@ const Location = ({ navigation }) => {
                     address,
                   })
                 );
-                // navigation.navigate("Location");
+                navigation.navigate("TreeType");
               }}
             >
               <Text

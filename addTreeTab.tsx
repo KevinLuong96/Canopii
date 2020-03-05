@@ -7,6 +7,7 @@ import React from "react";
 import Tree from "./tree";
 import Location from "./location";
 import HeaderLeftButton from "./headerLeftButton";
+import TreeType from "./treeType";
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,7 @@ const addTreeTab = () => {
       <Stack.Screen name="Choices" component={Choices}></Stack.Screen>
       <Stack.Screen name="Tree" component={Tree}></Stack.Screen>
       <Stack.Screen name="Location" component={Location}></Stack.Screen>
+      <Stack.Screen name="TreeType" component={TreeType}></Stack.Screen>
     </Stack.Navigator>
   );
 };

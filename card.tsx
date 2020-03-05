@@ -17,10 +17,12 @@ const cardStyles = {
     borderRadius: 10,
     shadowOffset: { height: 3, width: 0 },
     shadowOpacity: 0.3,
-    shadowRadius: 8,
+    shadowRadius: 2,
     shadowColor: "black",
-    marginVertical: 10,
-    width: "100%",
+    marginTop: 10,
+    marginLeft: 8,
+    marginRight: 8,
+    width: "95%",
   },
 };
 
