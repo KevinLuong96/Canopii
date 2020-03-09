@@ -111,7 +111,7 @@ const Choices = ({ route, navigation }) => {
                 height={100}
                 image={
                   leaves?.[leaf.sciName.replace(/\s/g, "_").toLowerCase()]
-                    ?.lab ?? descriptions["Heart Base"].image
+                    ?.lab ?? descriptions["Heart Bottom"].image
                 }
                 onPress={() =>
                   navigation.navigate("Tree", {

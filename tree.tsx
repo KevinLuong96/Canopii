@@ -32,7 +32,7 @@ const Tree = ({ navigation, route }) => {
       <View style={[styles.centered, { width: "90%" }]}>
         <View style={[styles.container, treeStyles.header]}>
           <Image
-            source={leafImagePath?.lab ?? descriptions["Heart Base"].image}
+            source={leafImagePath?.lab ?? descriptions["Heart Bottom"].image}
             style={treeStyles.headerImage}
           ></Image>
           <View style={treeStyles.headerText}>

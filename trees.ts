@@ -3,7 +3,7 @@ export const decision = {
   Deciduous: {
     "Simple Leaf": {
       "Opposite Branching": {
-        "Rough, Non-rounded Bottom": {
+        "Angled Bottom": {
           trees: [
             {
               ID: 224,
@@ -27,7 +27,7 @@ export const decision = {
             },
           ],
         },
-        "Smooth, Rounded Bottom": {
+        "Rounded Bottom": {
           trees: [
             {
               ID: 222,
@@ -73,7 +73,7 @@ export const decision = {
           ],
         },
         "Entire Leaf": {
-          "Rounded Base": {
+          "Rounded Bottom": {
             trees: [
               {
                 ID: 1336,
@@ -87,7 +87,7 @@ export const decision = {
               },
             ],
           },
-          "Pointed Base": {
+          "Pointed Bottom": {
             trees: [
               {
                 ID: 414,
@@ -116,7 +116,7 @@ export const decision = {
               },
             ],
           },
-          "Heart Base": {
+          "Heart Bottom": {
             trees: [
               {
                 ID: 501,
@@ -183,56 +183,52 @@ export const decision = {
 export const descriptions = {
   // TODO: add rough bottom
   "Simple Leaf": {
-    text: "The leaf stem is the same as the main vein for that leaf.",
+    text: "Leaves have their own stems and they're directly on the branch.",
     image: require("./images/SimpleLeaf.png"),
   },
   "Compound Leaf": {
-    text: "A single leaf with numerous leaflets.",
+    text: "The leaf shares a stem with multiple other leaves.",
     image: require("./images/CompoundLeaf.png"),
   },
   "Opposite Branching": {
-    text: "Leaves grow directly across from each other.",
+    text: "Branches grow directly across from each other.",
     image: require("./images/OppositeBranching.png"),
   },
-  "Rough, Non-rounded Bottom": {
-    text: "TODO: PUT TEXT IN HERE! THIS IS TEMPORARY TEXTss",
+  "Angled Bottom": {
+    text: "The bottom of the leaf is sharply angled away from the stem.",
+    //TODO: add the illustration for this
     image: require("./images/OppositeBranching.png"),
   },
-  "Smooth, Rounded Bottom": {
-    text: "TODO: PUT TEXT IN HERE! THIS IS TEMPORARY TEXTss",
-    image: require("./images/OppositeBranching.png"),
+  "Rounded Bottom": {
+    text: "The bottom of the leaf is rounded.",
+    image: require("./images/RoundBase.png"),
   },
   "Alternate Branching": {
-    text: "Leaves do not grow directly across from each other.",
+    text: "Branches do not grow directly across from each other.",
     image: require("./images/AlternateBranching.png"),
   },
   "Lobed Leaf": {
-    text: "Leaf has distinct protrusions which make it irregular shaped.",
+    text: "Leaf has distinct protrusions which makes it irregular shaped.",
     image: require("./images/LobedLeaf1.png"),
   },
   "Entire Leaf": {
-    text: "The leaf does not have division",
+    text: "Leaf is one whole shape without major protrusions.",
     image: require("./images/EntireLeaf.png"),
   },
-  "Rounded Base": {
-    text: "Leaf base is rounded towards the stem.",
-    image: require("./images/RoundBase.png"),
-  },
-  "Pointed Base": {
-    text: "Leaf base is sharp towards the stem.",
+  "Pointed Bottom": {
+    text: "The bottom of the leaf is tapered to a point.",
     image: require("./images/SharpBase.png"),
   },
-  "Heart Base": {
-    text: "Leaf base is shaped as an inverted heart towards the stem.",
+  "Heart Bottom": {
+    text: "The bottom of the leaf is shaped like an upside down heart.",
     image: require("./images/HeartBase.png"),
   },
   Deciduous: {
-    text: "Leafy trees which shed their leaves anually.",
+    text: "Your tree has flat broad leaves.",
     image: require("./images/Deciduous.png"),
   },
   Coniferous: {
-    text:
-      "Trees with needle=like or scale-like leaves which do not shed their leaves.",
+    text: "Your tree has needle or scale-like leaves. ",
     image: require("./images/Coniferous.png"),
   },
 };
