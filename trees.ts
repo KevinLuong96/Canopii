@@ -6,18 +6,22 @@ export const decision = {
         "Rough, Non-rounded Bottom": {
           trees: [
             {
+              ID: 224,
               sciName: "Acer Saccharinum",
               name: "Silver Maple",
             },
             {
+              ID: 225,
               sciName: "Acer Platanoides/Acer Saccharum",
               name: "Norway or Sugar Maple",
             },
             {
+              ID: 222,
               sciName: "Acer Rubrum",
               name: "Red Maple",
             },
             {
+              ID: 819,
               sciName: "Quercus Rubra",
               name: "Northern Red Oak",
             },
@@ -26,14 +30,17 @@ export const decision = {
         "Smooth, Rounded Bottom": {
           trees: [
             {
+              ID: 222,
               sciName: "Acer Rubrum",
               name: "Red Maple",
             },
             {
+              ID: 1208,
               name: "Japanese Lilac",
               sciName: "Syringa Reticulata",
             },
             {
+              ID: 190,
               sciName: "Acer Ginnala",
               name: "Amur Maple",
             },
@@ -44,18 +51,22 @@ export const decision = {
         "Lobed Leaf": {
           trees: [
             {
+              ID: 162,
               sciName: "Ginkgo Biloba",
               name: "Maidenhair Tree",
             },
             {
+              ID: 818,
               sciName: "Quercus Robur",
               name: "English Oak",
             },
             {
+              ID: 803,
               name: "Bur Oak",
               sciName: "Quercus Macrocarpa",
             },
             {
+              ID: 1385,
               name: "Sweet Crabapple",
               sciName: "Malus Coronaria",
             },
@@ -65,10 +76,12 @@ export const decision = {
           "Rounded Base": {
             trees: [
               {
+                ID: 1336,
                 name: "Shadblow Serviceberry",
                 sciName: "Amelanchier canadensis",
               },
               {
+                ID: 1447,
                 name: "Callery Pear",
                 sciName: "Pyrus calleryana",
               },
@@ -77,22 +90,27 @@ export const decision = {
           "Pointed Base": {
             trees: [
               {
+                ID: 414,
                 name: "Silver Birch",
                 sciName: "Betula pendula",
               },
               {
+                ID: 580,
                 name: "Russian Olive",
                 sciName: "Elaeagnus angustifolia",
               },
               {
+                ID: 1567,
                 name: "Black Willow",
                 sciName: "Salix nigra",
               },
               {
+                ID: 1547,
                 name: "Peachleaf Willow",
                 sciName: "Salix amygdaloides",
               },
               {
+                ID: 1744,
                 name: "Siberian Elm",
                 sciName: "Ulmus pumila",
               },
@@ -101,14 +119,17 @@ export const decision = {
           "Heart Base": {
             trees: [
               {
+                ID: 501,
                 name: "Common Hackberry",
                 sciName: "Celtis occidentalis",
               },
               {
+                ID: 1706,
                 name: "American Basswood",
                 sciName: "Tilia americana",
               },
               {
+                ID: 1708,
                 name: "Littleleaf Linden",
                 sciName: "Tilia cordata",
               },
@@ -121,14 +142,17 @@ export const decision = {
       "Opposite Branching": {
         trees: [
           {
+            ID: 210,
             name: "Boxelder Maple",
             sciName: "Acer Negundo",
           },
           {
+            ID: 1188,
             name: "White Ash",
             sciName: "Fraxinus Americana",
           },
           {
+            ID: 1195,
             name: "Green Ash",
             sciName: "Fraxinus Pennsylvanica",
           },
@@ -137,14 +161,17 @@ export const decision = {
       "Alternate Branching": {
         trees: [
           {
+            ID: 694,
             name: "Honey Locust",
             sciName: "Gleditsia triacanthos",
           },
           {
+            ID: 881,
             name: "Black Walnut",
             sciName: "Juglans nigra",
           },
           {
+            ID: 1464,
             name: "European Mountain Ash",
             sciName: "Sorbus aucuparia",
           },
