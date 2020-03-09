@@ -183,6 +183,14 @@ export const leaves = {
       require("./images/leaves/salix_amygdaloides/pic3.jpg"),
     ],
   },
+  salix_nigra: {
+    lab: require("./images/leaves/salix_nigra/lab.png"),
+    pics: [
+      require("./images/leaves/salix_nigra/pic1.jpg"),
+      require("./images/leaves/salix_nigra/pic2.jpg"),
+      require("./images/leaves/salix_nigra/pic3.jpg"),
+    ],
+  },
   sorbus_aucuparia: {
     lab: require("./images/leaves/sorbus_aucuparia/lab.png"),
     pics: [

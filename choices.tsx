@@ -85,9 +85,13 @@ const Choices = ({ route, navigation }) => {
       content={
         <Animated.ScrollView
           style={{
-            height: "100%",
+            // height: "100%",
+            display: "flex",
+            flex: 1,
             transform: [{ translateX: slideValue }],
             width: "100%",
+            marginBottom: 145,
+            paddingBottom: 20,
           }}
         >
           {!reachedLeaves &&

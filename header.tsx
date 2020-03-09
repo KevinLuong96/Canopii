@@ -24,7 +24,8 @@ const Header = (props: HeaderProps) => {
 };
 const headerStyles = EStyleSheet.create({
   root: {
-    height: "100%",
+    display: "flex",
+    flex: 1,
     backgroundColor: "$dgreen6",
   },
   body: {

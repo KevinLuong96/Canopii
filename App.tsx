@@ -54,6 +54,8 @@ const App = () => {
             showLabel: false,
             style: {
               paddingTop: 10,
+              height: 70,
+              paddingBottom: 20,
             },
           }}
         >

@@ -1,6 +1,6 @@
 "use strict";
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Text, TouchableOpacity, View } from "react-native";
 import { RNCamera } from "react-native-camera";
 import ImagePicker from "react-native-image-picker";
 import styles from "./styles";
@@ -38,43 +38,48 @@ const Camera = ({ route, navigation }) => {
           </>
         }
         content={
-          <RNCamera
-            style={cameraStyles.preview}
-            type={RNCamera.Constants.Type.back}
-            flashMode={RNCamera.Constants.FlashMode.off}
-            androidCameraPermissionOptions={{
-              title: "Permission to use camera",
-              message: "We need your permission to use your camera",
-              buttonPositive: "Ok",
-              buttonNegative: "Cancel",
-            }}
-            androidRecordAudioPermissionOptions={{
-              title: "Permission to use audio recording",
-              message: "We need your permission to use your audio",
-              buttonPositive: "Ok",
-              buttonNegative: "Cancel",
-            }}
-            captureAudio={false}
-          >
-            {({ camera, status, recordAudioPermissionStatus }) => {
-              if (status !== "READY") return <PendingView />;
-              return (
-                <View style={cameraStyles.buttonContainer}>
-                  <View style={cameraStyles.button}>
-                    <Icon
-                      name="circle-thin"
-                      size={60}
-                      color={"#fff"}
-                      backgroundColor="transparent"
-                      onPress={() => takePicture(camera)}
-                      containerStyle={{ backgroundColor: "red" }}
-                      // style={cameraStyles.button}
-                    />
+          <View style={cameraStyles.camera}>
+            <RNCamera
+              style={[
+                cameraStyles.preview,
+                { width: Dimensions.get("screen").width },
+              ]}
+              type={RNCamera.Constants.Type.back}
+              flashMode={RNCamera.Constants.FlashMode.off}
+              androidCameraPermissionOptions={{
+                title: "Permission to use camera",
+                message: "We need your permission to use your camera",
+                buttonPositive: "Ok",
+                buttonNegative: "Cancel",
+              }}
+              androidRecordAudioPermissionOptions={{
+                title: "Permission to use audio recording",
+                message: "We need your permission to use your audio",
+                buttonPositive: "Ok",
+                buttonNegative: "Cancel",
+              }}
+              captureAudio={false}
+            >
+              {({ camera, status, recordAudioPermissionStatus }) => {
+                if (status !== "READY") return <PendingView />;
+                return (
+                  <View style={cameraStyles.buttonContainer}>
+                    <View style={cameraStyles.button}>
+                      <Icon
+                        name="circle-thin"
+                        size={60}
+                        color={"#fff"}
+                        backgroundColor="transparent"
+                        onPress={() => takePicture(camera)}
+                        containerStyle={{ backgroundColor: "red" }}
+                        // style={cameraStyles.button}
+                      />
+                    </View>
                   </View>
-                </View>
-              );
-            }}
-          </RNCamera>
+                );
+              }}
+            </RNCamera>
+          </View>
         }
         fullWidth={true}
       />
@@ -119,19 +124,16 @@ const cameraStyles = EStyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 5,
     borderRadius: 35,
-    // width: 100,
-    // width: ,
   },
   buttonContainer: {
     width: "100%",
     backgroundColor: "#fff",
-    borderBottomWidth: 1,
-    height: 100,
+    height: 90,
     position: "absolute",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    bottom: 165,
+    bottom: 0,
     zIndex: 2,
   },
   imagePicker: {
@@ -143,11 +145,8 @@ const cameraStyles = EStyleSheet.create({
   preview: {
     display: "flex",
     flex: 1,
-    // flex: 1,
-    // justifyContent: "flex-end",
-    // alignItems: "center",
     width: "100%",
-    // height: "100%",
+    marginBottom: 160,
     position: "relative",
   },
   container: {
@@ -160,6 +159,12 @@ const cameraStyles = EStyleSheet.create({
   heading: {
     color: "white",
     marginBottom: 15,
+  },
+  camera: {
+    width: "100%",
+    display: "flex",
+    flex: 1,
+    height: "100%",
   },
 });
 
