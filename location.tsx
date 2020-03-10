@@ -54,6 +54,7 @@ const Location = ({ navigation }) => {
   }, []);
 
   const getAddress = (latitude, longitude) => {
+    setEditable(false);
     const url = `https://geocode.xyz/${latitude},${longitude}&auth=${authString}?json=1`;
     fetch(url)
       .then(res => {
@@ -74,6 +75,7 @@ const Location = ({ navigation }) => {
   };
 
   const getCoordinates = address => {
+    setEditable(false);
     const url = `https://geocode.xyz/${address}&auth=${authString}?json=1`;
     fetch(url)
       .then(res => {
@@ -164,8 +166,7 @@ const Location = ({ navigation }) => {
             </TouchableHighlight>
           </View>
           <View style={locationStyles.map}>
-            {console.log("REGION:", region)}
-            {region && (
+            {region.latitude != 0 && region.longitude != 0 && (
               <MapView
                 style={locationStyles.map}
                 region={region}

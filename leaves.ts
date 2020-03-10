@@ -38,6 +38,7 @@ export const leaves = {
   },
   acer_rubrum: {
     lab: require("./images/leaves/acer_rubrum/lab.jpg"),
+    lab2: require("./images/leaves/acer_rubrum/lab_rounded.jpg")
     pics: [
       require("./images/leaves/acer_rubrum/pic1.jpg"),
       require("./images/leaves/acer_rubrum/pic2.jpeg"),

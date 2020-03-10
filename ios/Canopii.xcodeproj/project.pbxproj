@@ -5,15 +5,22 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CanopiiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CanopiiTests.m */; };
+		047FD62264FE4FE6B83D01B8 /* pic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3262D7C0FA54772AE94BFB2 /* pic3.jpg */; };
 		04FA62E6274444B38BA99D18 /* LobedLeaf1.png in Resources */ = {isa = PBXBuildFile; fileRef = E8711F45B1744C29ACA1FD03 /* LobedLeaf1.png */; };
 		05BB4583C28D737790FB46C0 /* libPods-Canopii-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B3F48BBF7BDDBB90C36325 /* libPods-Canopii-tvOS.a */; };
+		06003D5533C14AC697209E8E /* pic5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3F12E5C04DD4A5B830C9E59 /* pic5.jpg */; };
 		0ABC6DE22409B0A800E1A5F7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1E6189B7A4A4889B94AFCE2 /* OpenSans-Regular.ttf */; };
 		0ABC6DE32409B0A800E1A5F7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C63A5FB344B4C0EA29593A5 /* OpenSans-Bold.ttf */; };
+		0D13EF2C387B45FEB495719E /* pic4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F91AEF10E8B74AFA82E47D95 /* pic4.jpeg */; };
+		0DCA7D0C104D489299412193 /* lab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26795B7299CA43FA80155638 /* lab.jpg */; };
 		0E43724DA3125EB7CCAC50A9 /* libPods-Canopii.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 845AC69A30F222FDE80D0580 /* libPods-Canopii.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		17223D1E63304562B0B17856 /* pic2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12910858BF31439F8B7C360C /* pic2.jpeg */; };
+		1788087E80394E0B8298BD21 /* pic6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C84964C31874ED682A5AECA /* pic6.jpg */; };
 		1B6B19575B880924BED0C274 /* libPods-Canopii-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58502C401AAC0767D370C172 /* libPods-Canopii-tvOSTests.a */; };
 		28B39E0620F547E386CFF35D /* HeartBase.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC8EC658B584C11A77F9E73 /* HeartBase.png */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -21,32 +28,26 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* CanopiiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CanopiiTests.m */; };
 		38584B1182AD4CB499849F7A /* EntireLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EB8E02278BD4A60B98B9348 /* EntireLeaf.png */; };
+		38D6965D9E8B449EAD205A03 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DA0C976744C3909F58C2 /* pic1.png */; };
+		4B0DB11AD1FF448A922FB73E /* pic4.png in Resources */ = {isa = PBXBuildFile; fileRef = 264C50DA8642466D9B449BBA /* pic4.png */; };
+		68E0B7F43C0D48D59B54F3C3 /* pic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F8A4BD121B84CAC8DE90306 /* pic2.jpg */; };
 		6B0CBA35E613F600C901F2B4 /* libPods-CanopiiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E651C0D6B9F2DCE978A5593 /* libPods-CanopiiTests.a */; };
+		79BE2A18FE974F4FA913D6E7 /* pic4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79F7F3EBF8A44E91A5B7EBAF /* pic4.jpg */; };
 		886364073E484903AB5B1C18 /* OppositeBranching.png in Resources */ = {isa = PBXBuildFile; fileRef = 2968C992B21E4AF3B14D96B8 /* OppositeBranching.png */; };
 		95A008C80ADE444984EFA46A /* Deciduous.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEB1D463FD541619F378B14 /* Deciduous.png */; };
+		97A680BA86C94151AB04C321 /* pic5.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0F1818937401C9FD44844 /* pic5.png */; };
 		9FDACA576C88458B838EB2C7 /* Coniferous.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CD3DEBB2C24388A4F506FA /* Coniferous.png */; };
 		A55332D1772E418493A41B22 /* LobedLeaf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 19418FEB994A44E88E0469B1 /* LobedLeaf2.png */; };
 		A8219AF4955E4564ADD77AD8 /* AlternateBranching.png in Resources */ = {isa = PBXBuildFile; fileRef = 7669C3466EDD434BB18E35A2 /* AlternateBranching.png */; };
 		AF86734480D4445DBB4087EA /* RoundBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FD1A0439C064662A4EAB27B /* RoundBase.png */; };
+		C12D0F0344D242908B9DE947 /* pic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A8D8E2E7E2241319091057E /* pic3.png */; };
+		C632BE64697349EBB94536B6 /* pic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34F1967CBA074945AA2E6B1B /* pic1.jpg */; };
 		CDBF3C4ACFB34C8B98C95D19 /* UnevenBase.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A0A8197E224769B5F37851 /* UnevenBase.png */; };
 		D335A2A4148B44F893503105 /* SimpleLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A627641050541A28BF72115 /* SimpleLeaf.png */; };
 		DAAE055C57824E648B2E1B24 /* SharpBase.png in Resources */ = {isa = PBXBuildFile; fileRef = D25DD2E101E74FC9B634B19D /* SharpBase.png */; };
-		EFAB1AEF77EC4680A27CE359 /* CompoundLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D38097FCD846C2B3D2CA46 /* CompoundLeaf.png */; };
 		E5C6F82D0507481299D6F4AA /* lab.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DC18356A44DD0839AE809 /* lab.png */; };
-		C632BE64697349EBB94536B6 /* pic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34F1967CBA074945AA2E6B1B /* pic1.jpg */; };
-		68E0B7F43C0D48D59B54F3C3 /* pic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F8A4BD121B84CAC8DE90306 /* pic2.jpg */; };
-		C12D0F0344D242908B9DE947 /* pic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A8D8E2E7E2241319091057E /* pic3.png */; };
-		0D13EF2C387B45FEB495719E /* pic4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F91AEF10E8B74AFA82E47D95 /* pic4.jpeg */; };
-		0DCA7D0C104D489299412193 /* lab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26795B7299CA43FA80155638 /* lab.jpg */; };
-		047FD62264FE4FE6B83D01B8 /* pic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3262D7C0FA54772AE94BFB2 /* pic3.jpg */; };
-		79BE2A18FE974F4FA913D6E7 /* pic4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79F7F3EBF8A44E91A5B7EBAF /* pic4.jpg */; };
-		17223D1E63304562B0B17856 /* pic2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 12910858BF31439F8B7C360C /* pic2.jpeg */; };
-		06003D5533C14AC697209E8E /* pic5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3F12E5C04DD4A5B830C9E59 /* pic5.jpg */; };
-		1788087E80394E0B8298BD21 /* pic6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C84964C31874ED682A5AECA /* pic6.jpg */; };
-		38D6965D9E8B449EAD205A03 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DA0C976744C3909F58C2 /* pic1.png */; };
+		EFAB1AEF77EC4680A27CE359 /* CompoundLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D38097FCD846C2B3D2CA46 /* CompoundLeaf.png */; };
 		FE79085CAD4B4218A7A37D63 /* pic2.png in Resources */ = {isa = PBXBuildFile; fileRef = B51142EBAB724FE9BC457BAB /* pic2.png */; };
-		4B0DB11AD1FF448A922FB73E /* pic4.png in Resources */ = {isa = PBXBuildFile; fileRef = 264C50DA8642466D9B449BBA /* pic4.png */; };
-		97A680BA86C94151AB04C321 /* pic5.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0F1818937401C9FD44844 /* pic5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* CanopiiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanopiiTests.m; sourceTree = "<group>"; };
 		0DE7C158252543579E7EAE6F /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		0F8A4BD121B84CAC8DE90306 /* pic2.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic2.jpg; path = ../images/leaves/acer_ginnala/pic2.jpg; sourceTree = "<group>"; };
+		12910858BF31439F8B7C360C /* pic2.jpeg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic2.jpeg; path = ../images/leaves/acer_rubrum/pic2.jpeg; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Canopii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Canopii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Canopii/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Canopii/AppDelegate.m; sourceTree = "<group>"; };
@@ -79,24 +82,32 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Canopii/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Canopii/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Canopii/main.m; sourceTree = "<group>"; };
+		14A9DA0C976744C3909F58C2 /* pic1.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic1.png; path = ../images/leaves/ginkgo_biloba/pic1.png; sourceTree = "<group>"; };
 		18025CA8B6A0C40ECE407B15 /* Pods-Canopii.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canopii.debug.xcconfig"; path = "Target Support Files/Pods-Canopii/Pods-Canopii.debug.xcconfig"; sourceTree = "<group>"; };
 		19418FEB994A44E88E0469B1 /* LobedLeaf2.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LobedLeaf2.png; path = ../images/LobedLeaf2.png; sourceTree = "<group>"; };
 		1A627641050541A28BF72115 /* SimpleLeaf.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLeaf.png; path = ../images/SimpleLeaf.png; sourceTree = "<group>"; };
+		20F0F1818937401C9FD44844 /* pic5.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic5.png; path = ../images/leaves/ginkgo_biloba/pic5.png; sourceTree = "<group>"; };
 		212EBAFE308347D19AFCE44A /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		264C50DA8642466D9B449BBA /* pic4.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic4.png; path = ../images/leaves/ginkgo_biloba/pic4.png; sourceTree = "<group>"; };
+		26795B7299CA43FA80155638 /* lab.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = lab.jpg; path = ../images/leaves/acer_negundo/lab.jpg; sourceTree = "<group>"; };
 		2968C992B21E4AF3B14D96B8 /* OppositeBranching.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OppositeBranching.png; path = ../images/OppositeBranching.png; sourceTree = "<group>"; };
 		2C9160E2728B4573B88931C0 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Canopii-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canopii-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Canopii-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canopii-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F1967CBA074945AA2E6B1B /* pic1.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic1.jpg; path = ../images/leaves/acer_ginnala/pic1.jpg; sourceTree = "<group>"; };
+		3E6DC18356A44DD0839AE809 /* lab.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = lab.png; path = ../images/leaves/acer_ginnala/lab.png; sourceTree = "<group>"; };
 		4EFE41BFD5B64B7FB53536D7 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		578A81D6F1D14244B776528F /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		58502C401AAC0767D370C172 /* libPods-Canopii-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Canopii-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5904B9F5D74F4EA099E18F37 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		5C42B5FB5B6BBC6D0137570F /* Pods-CanopiiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanopiiTests.release.xcconfig"; path = "Target Support Files/Pods-CanopiiTests/Pods-CanopiiTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C84964C31874ED682A5AECA /* pic6.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic6.jpg; path = ../images/leaves/acer_saccharum/pic6.jpg; sourceTree = "<group>"; };
 		6ABB8255E75A1C033E54CC5A /* Pods-Canopii-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canopii-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Canopii-tvOSTests/Pods-Canopii-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F9C82CB4BEF497DAC5348C7 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		6FD1A0439C064662A4EAB27B /* RoundBase.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = RoundBase.png; path = ../images/RoundBase.png; sourceTree = "<group>"; };
 		7669C3466EDD434BB18E35A2 /* AlternateBranching.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AlternateBranching.png; path = ../images/AlternateBranching.png; sourceTree = "<group>"; };
 		78CD3DEBB2C24388A4F506FA /* Coniferous.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Coniferous.png; path = ../images/Coniferous.png; sourceTree = "<group>"; };
+		79F7F3EBF8A44E91A5B7EBAF /* pic4.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic4.jpg; path = ../images/leaves/acer_negundo/pic4.jpg; sourceTree = "<group>"; };
 		7FEB1D463FD541619F378B14 /* Deciduous.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Deciduous.png; path = ../images/Deciduous.png; sourceTree = "<group>"; };
 		845AC69A30F222FDE80D0580 /* libPods-Canopii.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Canopii.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D38097FCD846C2B3D2CA46 /* CompoundLeaf.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CompoundLeaf.png; path = ../images/CompoundLeaf.png; sourceTree = "<group>"; };
@@ -105,14 +116,18 @@
 		8E651C0D6B9F2DCE978A5593 /* libPods-CanopiiTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CanopiiTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB8E02278BD4A60B98B9348 /* EntireLeaf.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EntireLeaf.png; path = ../images/EntireLeaf.png; sourceTree = "<group>"; };
 		90886F9F06581FDBBEAC6D88 /* Pods-Canopii-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canopii-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Canopii-tvOS/Pods-Canopii-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		9A8D8E2E7E2241319091057E /* pic3.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic3.png; path = ../images/leaves/acer_ginnala/pic3.png; sourceTree = "<group>"; };
 		9C63A5FB344B4C0EA29593A5 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		A1E6189B7A4A4889B94AFCE2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		B51142EBAB724FE9BC457BAB /* pic2.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic2.png; path = ../images/leaves/ginkgo_biloba/pic2.png; sourceTree = "<group>"; };
 		BBE81A2F9B574491A4F6CA05 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		BFE4DFEEBB3653D0840CBC3B /* Pods-CanopiiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanopiiTests.debug.xcconfig"; path = "Target Support Files/Pods-CanopiiTests/Pods-CanopiiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C33D748A69E248B4B5DBEA70 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		C60440C8935A456F8EE4521E /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		C6B1B9B247F846B0B4732411 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		D25DD2E101E74FC9B634B19D /* SharpBase.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SharpBase.png; path = ../images/SharpBase.png; sourceTree = "<group>"; };
+		D3262D7C0FA54772AE94BFB2 /* pic3.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic3.jpg; path = ../images/leaves/acer_negundo/pic3.jpg; sourceTree = "<group>"; };
+		D3F12E5C04DD4A5B830C9E59 /* pic5.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic5.jpg; path = ../images/leaves/acer_rubrum/pic5.jpg; sourceTree = "<group>"; };
 		E0388A066EE32FFD450A2DE9 /* Pods-Canopii.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canopii.release.xcconfig"; path = "Target Support Files/Pods-Canopii/Pods-Canopii.release.xcconfig"; sourceTree = "<group>"; };
 		E0771B450EFB49EC84377161 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		E8711F45B1744C29ACA1FD03 /* LobedLeaf1.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LobedLeaf1.png; path = ../images/LobedLeaf1.png; sourceTree = "<group>"; };
@@ -123,23 +138,9 @@
 		F16BC3DE04728E8E899E9C21 /* Pods-Canopii-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canopii-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Canopii-tvOS/Pods-Canopii-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F4B3F48BBF7BDDBB90C36325 /* libPods-Canopii-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Canopii-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A0A8197E224769B5F37851 /* UnevenBase.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = UnevenBase.png; path = ../images/UnevenBase.png; sourceTree = "<group>"; };
+		F91AEF10E8B74AFA82E47D95 /* pic4.jpeg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic4.jpeg; path = ../images/leaves/acer_ginnala/pic4.jpeg; sourceTree = "<group>"; };
 		FC05F4B8A25E49C793F750D9 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		FDC19E1E01B24428BC5E6E2A /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		3E6DC18356A44DD0839AE809 /* lab.png */ = {isa = PBXFileReference; name = "lab.png"; path = "../images/leaves/acer_ginnala/lab.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		34F1967CBA074945AA2E6B1B /* pic1.jpg */ = {isa = PBXFileReference; name = "pic1.jpg"; path = "../images/leaves/acer_ginnala/pic1.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0F8A4BD121B84CAC8DE90306 /* pic2.jpg */ = {isa = PBXFileReference; name = "pic2.jpg"; path = "../images/leaves/acer_ginnala/pic2.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9A8D8E2E7E2241319091057E /* pic3.png */ = {isa = PBXFileReference; name = "pic3.png"; path = "../images/leaves/acer_ginnala/pic3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F91AEF10E8B74AFA82E47D95 /* pic4.jpeg */ = {isa = PBXFileReference; name = "pic4.jpeg"; path = "../images/leaves/acer_ginnala/pic4.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		26795B7299CA43FA80155638 /* lab.jpg */ = {isa = PBXFileReference; name = "lab.jpg"; path = "../images/leaves/acer_negundo/lab.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D3262D7C0FA54772AE94BFB2 /* pic3.jpg */ = {isa = PBXFileReference; name = "pic3.jpg"; path = "../images/leaves/acer_negundo/pic3.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		79F7F3EBF8A44E91A5B7EBAF /* pic4.jpg */ = {isa = PBXFileReference; name = "pic4.jpg"; path = "../images/leaves/acer_negundo/pic4.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		12910858BF31439F8B7C360C /* pic2.jpeg */ = {isa = PBXFileReference; name = "pic2.jpeg"; path = "../images/leaves/acer_rubrum/pic2.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D3F12E5C04DD4A5B830C9E59 /* pic5.jpg */ = {isa = PBXFileReference; name = "pic5.jpg"; path = "../images/leaves/acer_rubrum/pic5.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5C84964C31874ED682A5AECA /* pic6.jpg */ = {isa = PBXFileReference; name = "pic6.jpg"; path = "../images/leaves/acer_saccharum/pic6.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		14A9DA0C976744C3909F58C2 /* pic1.png */ = {isa = PBXFileReference; name = "pic1.png"; path = "../images/leaves/ginkgo_biloba/pic1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B51142EBAB724FE9BC457BAB /* pic2.png */ = {isa = PBXFileReference; name = "pic2.png"; path = "../images/leaves/ginkgo_biloba/pic2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		264C50DA8642466D9B449BBA /* pic4.png */ = {isa = PBXFileReference; name = "pic4.png"; path = "../images/leaves/ginkgo_biloba/pic4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		20F0F1818937401C9FD44844 /* pic5.png */ = {isa = PBXFileReference; name = "pic5.png"; path = "../images/leaves/ginkgo_biloba/pic5.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -859,6 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = U9UDK29MLW;
 				INFOPLIST_FILE = Canopii/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
