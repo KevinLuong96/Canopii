@@ -3,6 +3,7 @@ import {
   SET_LOCATION,
   SET_TREE_TYPE,
   SET_ENTRY_ID,
+  SET_PREDICTED_TREES,
 } from "../actions";
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   location: {},
   treeType: "",
   entryID: 0,
+  predictedTrees: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -31,6 +33,10 @@ function rootReducer(state = initialState, action) {
     case SET_ENTRY_ID:
       return Object.assign({}, state, {
         entryID: action.entryID,
+      });
+    case SET_PREDICTED_TREES:
+      return Object.assign({}, state, {
+        predictedTrees: action.predictedTrees,
       });
   }
   return state;

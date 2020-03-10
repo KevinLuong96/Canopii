@@ -4,7 +4,7 @@
 
 import React from "react";
 import { StyleSheet, Image, View, Platform } from "react-native";
-import { setEntryID } from "./actions";
+import { setEntryID, setPredictedTrees } from "./actions";
 import { useDispatch } from "react-redux";
 import Icon from "react-native-vector-icons/AntDesign";
 import DeviceInfo from "react-native-device-info";
@@ -44,6 +44,7 @@ const Photo = ({ route, navigation }) => {
     if (res.ok) {
       res.json().then(resJson => {
         dispatch(setEntryID(resJson.entry_id));
+        dispatch(setPredictedTrees(resJson.pred_spec_id));
         console.log(resJson);
       });
     }

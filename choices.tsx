@@ -9,10 +9,12 @@ import Breadcrumb from "./breadcrumb";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Header from "./header";
 import HeaderLeftButton from "./headerLeftButton";
+import { useSelector } from "react-redux";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
   const [choices, setChoices] = useState([treeType]);
+  const predictedTrees = useSelector(state => state.predictedTrees);
   let reachedLeaves = false;
 
   navigation.setOptions({
