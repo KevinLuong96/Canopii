@@ -32,8 +32,8 @@ const Camera = ({ route, navigation }) => {
               Take Leaf Photo
             </Text>
             <Text style={[styles.heading, cameraStyles.heading]}>
-              Please capture a single leaf centered in the box below. The leaf
-              should be flat with a natural background
+              Please capture a single leaf centered below. The leaf should be
+              flat, and pointing downward with a natural background
             </Text>
           </>
         }

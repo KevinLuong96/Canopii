@@ -6,14 +6,14 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import HeaderLeftButton from "./headerLeftButton";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import { useDispatch } from "react-redux";
-import { setTreeName } from "./actions";
+import { setTree } from "./actions";
 import { leaves } from "./leaves";
 import { descriptions } from "./trees";
 import SideSwipe from "react-native-sideswipe";
 import Icon from "react-native-vector-icons/Entypo";
 
 const Tree = ({ navigation, route }) => {
-  const { sciName, name, choices } = route.params;
+  const { sciName, name, choices, ID } = route.params;
   const [index, setIndex] = useState(0);
   const dispatch = useDispatch();
 
@@ -77,7 +77,7 @@ const Tree = ({ navigation, route }) => {
           <TouchableHighlight
             style={treeStyles.touchable}
             onPress={() => {
-              dispatch(setTreeName(sciName));
+              dispatch(setTree(sciName, ID));
               navigation.navigate("Location");
             }}
           >

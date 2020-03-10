@@ -109,7 +109,6 @@ const Choices = ({ route, navigation }) => {
             choicesToRender.map(leaf => (
               <Choice
                 key={leaf.sciName}
-                q
                 choice={leaf.name}
                 text={leaf.sciName}
                 height={100}
@@ -117,13 +116,14 @@ const Choices = ({ route, navigation }) => {
                   leaves?.[leaf.sciName.replace(/\s/g, "_").toLowerCase()]
                     ?.lab ?? descriptions["Heart Bottom"].image
                 }
-                onPress={() =>
+                onPress={() => {
                   navigation.navigate("Tree", {
                     name: leaf.name,
                     sciName: leaf.sciName,
                     choices: choices,
-                  })
-                }
+                    ID: leaf.ID,
+                  });
+                }}
               />
             ))}
         </Animated.ScrollView>

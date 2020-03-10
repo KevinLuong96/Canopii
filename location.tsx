@@ -36,6 +36,7 @@ const Location = ({ navigation }) => {
 
   useEffect(() => {
     Navigation.getCurrentPosition(location => {
+      console.log("test");
       const lat = location.coords.latitude;
       const long = location.coords.longitude;
       setRegion({
@@ -136,22 +137,31 @@ const Location = ({ navigation }) => {
           </View>
           <View style={locationStyles.button}>
             <TouchableHighlight
-              style={locationStyles.touchable}
+              style={
+                editable
+                  ? [locationStyles.touchable]
+                  : [locationStyles.touchable, { backgroundColor: "#8C8C8C" }]
+              }
               onPress={() => {
-                dispatch(
-                  setLocation({
-                    latitude: region.latitude,
-                    longitude: region.longitude,
-                    address,
-                  })
-                );
-                navigation.navigate("TreeType");
+                if (editable) {
+                  console.log(region);
+                  dispatch(
+                    setLocation({
+                      latitude: region.latitude,
+                      longitude: region.longitude,
+                      address,
+                    })
+                  );
+                  navigation.navigate("TreeType");
+                }
               }}
             >
               <Text
                 style={[styles.body, { color: "white", textAlign: "center" }]}
               >
-                This is the right location
+                {editable
+                  ? "This is the right location"
+                  : "Loading location..."}
               </Text>
             </TouchableHighlight>
           </View>

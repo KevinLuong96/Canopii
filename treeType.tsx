@@ -114,16 +114,24 @@ const TreeType = ({ navigation }) => {
           </Card>
           <View style={treeTypeStyles.button}>
             <TouchableHighlight
-              style={treeTypeStyles.touchable}
+              style={
+                selected != null
+                  ? [treeTypeStyles.touchable]
+                  : [treeTypeStyles.touchable, { backgroundColor: "#8C8C8C" }]
+              }
               onPress={() => {
-                dispatch(setTreeType(selected));
-                // navigation.navigate("TreeType");
+                if (selected != null) {
+                  dispatch(setTreeType(selected));
+                  navigation.navigate("Review");
+                }
               }}
             >
               <Text
                 style={[styles.body, { color: "white", textAlign: "center" }]}
               >
-                This is the right tree type
+                {selected != null
+                  ? "This is the right tree type"
+                  : "Please select a tree type"}
               </Text>
             </TouchableHighlight>
           </View>

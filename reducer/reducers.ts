@@ -1,5 +1,5 @@
 import {
-  SET_TREE_NAME,
+  SET_TREE,
   SET_LOCATION,
   SET_TREE_TYPE,
   SET_ENTRY_ID,
@@ -7,6 +7,7 @@ import {
 
 const initialState = {
   treeName: "",
+  treeID: 0,
   location: {},
   treeType: "",
   entryID: 0,
@@ -14,9 +15,10 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_TREE_NAME:
+    case SET_TREE:
       return Object.assign({}, state, {
         treeName: action.treeName,
+        treeID: action.ID,
       });
     case SET_LOCATION:
       return Object.assign({}, state, {

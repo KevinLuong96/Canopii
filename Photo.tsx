@@ -4,38 +4,13 @@
 
 import React from "react";
 import { StyleSheet, Image, View, Platform } from "react-native";
-import { setEntryId } from "./actions";
+import { setEntryID } from "./actions";
 import { useDispatch } from "react-redux";
 import Icon from "react-native-vector-icons/AntDesign";
 import DeviceInfo from "react-native-device-info";
 import HeaderLeftButton from "./headerLeftButton";
 
 const deviceId = DeviceInfo.getUniqueId();
-const dispatch = useDispatch();
-
-async function sendPhoto(photo) {
-  const formData = new FormData();
-  formData.append("Upload", {
-    type: photo.type ? photo.type : `image/${photo.uri.split(".").pop()}`,
-    name: photo.name ? photo.name : "UNCLASSIFIED_IMAGE",
-    uri:
-      Platform.OS === "android" ? photo.uri : photo.uri.replace("file://", ""),
-  });
-  formData.append("device_id", deviceId);
-  formData.append("noIP", true);
-  const options = {
-    method: "POST",
-    headers: { "Content-Type": "multipart/form-data" },
-    body: formData,
-  };
-
-  const res = await fetch("http://canopii.net/uploadleaf", options);
-  res.json().then(resJson => {
-    dispatch(setEntryId(resJson.entry_id));
-    console.log(resJson);
-  });
-  console.log(res);
-}
 
 const Photo = ({ route, navigation }) => {
   const { photo } = route.params;
@@ -44,23 +19,34 @@ const Photo = ({ route, navigation }) => {
       <HeaderLeftButton color="#000" onPress={navigation.onPress} />
     ),
   });
-  // const [isPending, setPending]: [boolean, Function] = useState(false);
-  // const [data, setData] = useState(null);
-  // async function fetchData() {
-  //
-  //   console.log("res", res);
-  //   if (res.ok) {
-  //     const resJson = await res.json();
-  //     setData(resJson);
-  //   }
-  //   setPending(false);
-  // }
 
-  // useEffect(() => {
-  //   if (isPending) {
-  //     fetchData();
-  //   }
-  // }, [isPending]);
+  const dispatch = useDispatch();
+
+  async function sendPhoto(photo) {
+    const formData = new FormData();
+    formData.append("Upload", {
+      type: photo.type ? photo.type : `image/${photo.uri.split(".").pop()}`,
+      name: photo.name ? photo.name : photo.uri.split("/").pop(),
+      uri:
+        Platform.OS === "android"
+          ? photo.uri
+          : photo.uri.replace("file://", ""),
+    });
+    formData.append("device_id", deviceId);
+    formData.append("noIP", true);
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "multipart/form-data" },
+      body: formData,
+    };
+
+    const res = await fetch("http://canopii.net/uploadleaf", options);
+    if (res.ok) {
+      res.json().then(resJson => {
+        dispatch(setEntryID(resJson.entry_id));
+      });
+    }
+  }
 
   return (
     <>
