@@ -196,8 +196,7 @@ export const descriptions = {
   },
   "Angled Bottom": {
     text: "The bottom of the leaf is sharply angled away from the stem.",
-    //TODO: add the illustration for this
-    image: require("./images/OppositeBranching.png"),
+    image: require("./images/AngledBase.png"),
   },
   "Rounded Bottom": {
     text: "The bottom of the leaf is rounded.",

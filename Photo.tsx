@@ -44,6 +44,7 @@ const Photo = ({ route, navigation }) => {
     if (res.ok) {
       res.json().then(resJson => {
         dispatch(setEntryID(resJson.entry_id));
+        console.log(resJson);
       });
     }
   }

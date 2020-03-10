@@ -36,7 +36,6 @@ const Location = ({ navigation }) => {
 
   useEffect(() => {
     Navigation.getCurrentPosition(location => {
-      console.log("test");
       const lat = location.coords.latitude;
       const long = location.coords.longitude;
       setRegion({
@@ -144,7 +143,6 @@ const Location = ({ navigation }) => {
               }
               onPress={() => {
                 if (editable) {
-                  console.log(region);
                   dispatch(
                     setLocation({
                       latitude: region.latitude,
@@ -166,10 +164,10 @@ const Location = ({ navigation }) => {
             </TouchableHighlight>
           </View>
           <View style={locationStyles.map}>
+            {console.log("REGION:", region)}
             {region && (
               <MapView
                 style={locationStyles.map}
-                initialRegion={region}
                 region={region}
                 onRegionChangeComplete={region => setRegion(region)}
               >
@@ -255,6 +253,7 @@ const locationStyles = EStyleSheet.create({
     fontFamily: "OpenSans",
     fontSize: 16,
     paddingLeft: 15,
+    color: "#000",
   },
   inputContainer: {
     width: "80%",

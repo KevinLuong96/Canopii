@@ -71,8 +71,6 @@ const Camera = ({ route, navigation }) => {
                         color={"#fff"}
                         backgroundColor="transparent"
                         onPress={() => takePicture(camera)}
-                        containerStyle={{ backgroundColor: "red" }}
-                        // style={cameraStyles.button}
                       />
                     </View>
                   </View>
@@ -104,7 +102,12 @@ const Camera = ({ route, navigation }) => {
         }
         style={cameraStyles.imagePicker}
       >
-        <Text>Pick Image</Text>
+        <Icon
+          name="image"
+          size={30}
+          color={"#8C8C8C"}
+          backgroundColor="transparent"
+        />
       </TouchableOpacity>
     </>
   );
@@ -140,7 +143,7 @@ const cameraStyles = EStyleSheet.create({
     backgroundColor: "#fff",
     position: "absolute",
     left: 25,
-    bottom: 25,
+    bottom: 37,
   },
   preview: {
     display: "flex",
@@ -158,6 +161,7 @@ const cameraStyles = EStyleSheet.create({
   },
   heading: {
     color: "white",
+    fontSize: 16,
     marginBottom: 15,
   },
   camera: {
