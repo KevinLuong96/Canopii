@@ -88,7 +88,6 @@ const Choices = ({ route, navigation }) => {
       content={
         <Animated.ScrollView
           style={{
-            // height: "100%",
             display: "flex",
             flex: 1,
             transform: [{ translateX: slideValue }],

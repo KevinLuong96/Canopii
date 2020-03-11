@@ -12,8 +12,6 @@
 		04FA62E6274444B38BA99D18 /* LobedLeaf1.png in Resources */ = {isa = PBXBuildFile; fileRef = E8711F45B1744C29ACA1FD03 /* LobedLeaf1.png */; };
 		05BB4583C28D737790FB46C0 /* libPods-Canopii-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B3F48BBF7BDDBB90C36325 /* libPods-Canopii-tvOS.a */; };
 		06003D5533C14AC697209E8E /* pic5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3F12E5C04DD4A5B830C9E59 /* pic5.jpg */; };
-		0ABC6DE22409B0A800E1A5F7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1E6189B7A4A4889B94AFCE2 /* OpenSans-Regular.ttf */; };
-		0ABC6DE32409B0A800E1A5F7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C63A5FB344B4C0EA29593A5 /* OpenSans-Bold.ttf */; };
 		0D13EF2C387B45FEB495719E /* pic4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F91AEF10E8B74AFA82E47D95 /* pic4.jpeg */; };
 		0DCA7D0C104D489299412193 /* lab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26795B7299CA43FA80155638 /* lab.jpg */; };
 		0E43724DA3125EB7CCAC50A9 /* libPods-Canopii.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 845AC69A30F222FDE80D0580 /* libPods-Canopii.a */; };
@@ -27,13 +25,17 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* CanopiiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CanopiiTests.m */; };
+		342A6DC711DE49E294CFE99F /* Muli-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B07C3B6AF368421E9D7CFB52 /* Muli-Medium.ttf */; };
 		38584B1182AD4CB499849F7A /* EntireLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EB8E02278BD4A60B98B9348 /* EntireLeaf.png */; };
 		38D6965D9E8B449EAD205A03 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DA0C976744C3909F58C2 /* pic1.png */; };
 		4B0DB11AD1FF448A922FB73E /* pic4.png in Resources */ = {isa = PBXBuildFile; fileRef = 264C50DA8642466D9B449BBA /* pic4.png */; };
+		5384E54AE7F54BE5B679F52B /* AngledBase.png in Resources */ = {isa = PBXBuildFile; fileRef = A88F09CB90214EA6A6D98CB0 /* AngledBase.png */; };
 		68E0B7F43C0D48D59B54F3C3 /* pic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F8A4BD121B84CAC8DE90306 /* pic2.jpg */; };
 		6B0CBA35E613F600C901F2B4 /* libPods-CanopiiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E651C0D6B9F2DCE978A5593 /* libPods-CanopiiTests.a */; };
 		79BE2A18FE974F4FA913D6E7 /* pic4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79F7F3EBF8A44E91A5B7EBAF /* pic4.jpg */; };
 		886364073E484903AB5B1C18 /* OppositeBranching.png in Resources */ = {isa = PBXBuildFile; fileRef = 2968C992B21E4AF3B14D96B8 /* OppositeBranching.png */; };
+		8FD4732845C04C73AE874D1E /* lab_rounded.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31E992C0FD6A41F49ED06CDD /* lab_rounded.jpg */; };
+		9194045CEA7E4206A39F9B7A /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5187154495914C968E29E9A9 /* Muli-Bold.ttf */; };
 		95A008C80ADE444984EFA46A /* Deciduous.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FEB1D463FD541619F378B14 /* Deciduous.png */; };
 		97A680BA86C94151AB04C321 /* pic5.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F0F1818937401C9FD44844 /* pic5.png */; };
 		9FDACA576C88458B838EB2C7 /* Coniferous.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CD3DEBB2C24388A4F506FA /* Coniferous.png */; };
@@ -94,9 +96,11 @@
 		2C9160E2728B4573B88931C0 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Canopii-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canopii-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Canopii-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canopii-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E992C0FD6A41F49ED06CDD /* lab_rounded.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = lab_rounded.jpg; path = ../images/leaves/acer_rubrum/lab_rounded.jpg; sourceTree = "<group>"; };
 		34F1967CBA074945AA2E6B1B /* pic1.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic1.jpg; path = ../images/leaves/acer_ginnala/pic1.jpg; sourceTree = "<group>"; };
 		3E6DC18356A44DD0839AE809 /* lab.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = lab.png; path = ../images/leaves/acer_ginnala/lab.png; sourceTree = "<group>"; };
 		4EFE41BFD5B64B7FB53536D7 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		5187154495914C968E29E9A9 /* Muli-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Muli-Bold.ttf"; path = "../fonts/Muli-Bold.ttf"; sourceTree = "<group>"; };
 		578A81D6F1D14244B776528F /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		58502C401AAC0767D370C172 /* libPods-Canopii-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Canopii-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5904B9F5D74F4EA099E18F37 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		9A8D8E2E7E2241319091057E /* pic3.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic3.png; path = ../images/leaves/acer_ginnala/pic3.png; sourceTree = "<group>"; };
 		9C63A5FB344B4C0EA29593A5 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		A1E6189B7A4A4889B94AFCE2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		A88F09CB90214EA6A6D98CB0 /* AngledBase.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AngledBase.png; path = ../images/AngledBase.png; sourceTree = "<group>"; };
+		B07C3B6AF368421E9D7CFB52 /* Muli-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Muli-Medium.ttf"; path = "../fonts/Muli-Medium.ttf"; sourceTree = "<group>"; };
 		B51142EBAB724FE9BC457BAB /* pic2.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic2.png; path = ../images/leaves/ginkgo_biloba/pic2.png; sourceTree = "<group>"; };
 		BBE81A2F9B574491A4F6CA05 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		BFE4DFEEBB3653D0840CBC3B /* Pods-CanopiiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CanopiiTests.debug.xcconfig"; path = "Target Support Files/Pods-CanopiiTests/Pods-CanopiiTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +293,10 @@
 				B51142EBAB724FE9BC457BAB /* pic2.png */,
 				264C50DA8642466D9B449BBA /* pic4.png */,
 				20F0F1818937401C9FD44844 /* pic5.png */,
+				A88F09CB90214EA6A6D98CB0 /* AngledBase.png */,
+				31E992C0FD6A41F49ED06CDD /* lab_rounded.jpg */,
+				5187154495914C968E29E9A9 /* Muli-Bold.ttf */,
+				B07C3B6AF368421E9D7CFB52 /* Muli-Medium.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -468,8 +478,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ABC6DE22409B0A800E1A5F7 /* OpenSans-Regular.ttf in Resources */,
-				0ABC6DE32409B0A800E1A5F7 /* OpenSans-Bold.ttf in Resources */,
 				A8219AF4955E4564ADD77AD8 /* AlternateBranching.png in Resources */,
 				EFAB1AEF77EC4680A27CE359 /* CompoundLeaf.png in Resources */,
 				9FDACA576C88458B838EB2C7 /* Coniferous.png in Resources */,
@@ -498,6 +506,10 @@
 				FE79085CAD4B4218A7A37D63 /* pic2.png in Resources */,
 				4B0DB11AD1FF448A922FB73E /* pic4.png in Resources */,
 				97A680BA86C94151AB04C321 /* pic5.png in Resources */,
+				5384E54AE7F54BE5B679F52B /* AngledBase.png in Resources */,
+				8FD4732845C04C73AE874D1E /* lab_rounded.jpg in Resources */,
+				9194045CEA7E4206A39F9B7A /* Muli-Bold.ttf in Resources */,
+				342A6DC711DE49E294CFE99F /* Muli-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -256,7 +256,7 @@ const locationStyles = EStyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 10,
     height: "100%",
-    fontFamily: "OpenSans",
+    fontFamily: "Muli",
     fontSize: 16,
     paddingLeft: 15,
     color: "#000",

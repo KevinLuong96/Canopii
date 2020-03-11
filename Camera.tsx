@@ -88,8 +88,6 @@ const Camera = ({ route, navigation }) => {
       <TouchableOpacity
         onPress={() =>
           ImagePicker.launchImageLibrary({ tintColor: "#fff" }, response => {
-            console.log("Response = ", response);
-
             if (response.didCancel) {
               console.log("User cancelled image picker");
             } else if (response.error) {
@@ -101,9 +99,7 @@ const Camera = ({ route, navigation }) => {
                 offset: { x: 0, y: 0 },
                 size: { width: response.width, height: response.width },
               }).then(url => {
-                console.log(response.uri);
                 response.uri = url;
-                console.log(response.uri);
                 navigation.navigate("Photo", {
                   ...route.params,
                   photo: response,

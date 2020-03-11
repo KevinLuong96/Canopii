@@ -9,6 +9,7 @@ import Location from "./location";
 import HeaderLeftButton from "./headerLeftButton";
 import TreeType from "./treeType";
 import Review from "./review";
+import Thank from "./thank";
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,7 @@ const addTreeTab = () => {
       <Stack.Screen name="Location" component={Location}></Stack.Screen>
       <Stack.Screen name="TreeType" component={TreeType}></Stack.Screen>
       <Stack.Screen name="Review" component={Review}></Stack.Screen>
+      <Stack.Screen name="Thank" component={Thank}></Stack.Screen>
     </Stack.Navigator>
   );
 };

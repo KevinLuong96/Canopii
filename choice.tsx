@@ -36,12 +36,13 @@ const Choice = props => {
 
 const choiceStyles = EStyleSheet.create({
   title: {
-    marginBottom: 15,
+    marginBottom: 12,
   },
   image: {
     width: "30%",
     height: "100%",
     resizeMode: "contain",
+    marginLeft: 16,
   } as ImageStyle,
   container: {
     display: "flex",
@@ -53,6 +54,7 @@ const choiceStyles = EStyleSheet.create({
     flexShrink: 1,
     width: "70%",
     marginLeft: 10,
+    justifyContent: "center",
   } as ViewStyle,
   touchableStyles: {
     height: "100%",

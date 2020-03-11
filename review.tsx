@@ -41,6 +41,7 @@ const Review = ({ navigation }) => {
       },
       body: JSON.stringify(data),
     };
+    console.log(options);
     const res = await fetch("http://canopii.net/dataent", options);
     if (res.ok) {
       const resJson = await res.json();
@@ -120,6 +121,7 @@ const Review = ({ navigation }) => {
               style={reviewStyles.touchable}
               onPress={() => {
                 submitData();
+                navigation.navigate("Thank");
               }}
             >
               <Text
