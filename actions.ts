@@ -4,6 +4,7 @@ const SET_TREE_TYPE = "SET_TREE_TYPE";
 const SET_ENTRY_ID = "SET_ENTRY_ID";
 const SET_PREDICTED_TREES = "SET_PREDICTED_TREES";
 const SET_PHOTO_URI = "SET_PHOTO_URI";
+const CLEAR = "CLEAR";
 
 function setTree(treeName, ID) {
   return {
@@ -47,6 +48,11 @@ function setPhotoURI(photoURI) {
     photoURI,
   };
 }
+function clear() {
+  return {
+    type: CLEAR,
+  };
+}
 
 export {
   SET_TREE,
@@ -55,10 +61,12 @@ export {
   SET_ENTRY_ID,
   SET_PREDICTED_TREES,
   SET_PHOTO_URI,
+  CLEAR,
   setTree,
   setLocation,
   setTreeType,
   setEntryID,
   setPredictedTrees,
   setPhotoURI,
+  clear,
 };

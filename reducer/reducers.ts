@@ -5,6 +5,7 @@ import {
   SET_ENTRY_ID,
   SET_PREDICTED_TREES,
   SET_PHOTO_URI,
+  CLEAR,
 } from "../actions";
 
 const initialState = {
@@ -44,6 +45,8 @@ function rootReducer(state = initialState, action) {
       return Object.assign({}, state, {
         photoURI: action.photoURI,
       });
+    case CLEAR:
+      return initialState;
   }
   return state;
 }
