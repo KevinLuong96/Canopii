@@ -43,9 +43,7 @@ function rootReducer(state = initialState, action) {
       });
     case SET_PHOTO_URI:
       return Object.assign({}, state, {
-        photoURI: state.photoURI
-          ? [...state.photoURI, action.photoURI]
-          : [action.photoURI],
+        photoURI: action.photoURI,
       });
     case CLEAR:
       return initialState;

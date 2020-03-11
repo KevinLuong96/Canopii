@@ -24,16 +24,13 @@ const PendingView = () => (
 );
 
 const Camera = ({ route, navigation }) => {
-  const photoURI = useSelector(state => state.photoURI);
   return (
     <>
       <Header
         header={
           <>
             <Text style={[styles.title, cameraStyles.title]}>
-              {photoURI
-                ? "Take Leaf Photo (2 of 2)"
-                : "Take Leaf Photo (1 of 2)"}
+              Take Leaf Photo
             </Text>
             <Text style={[styles.heading, cameraStyles.heading]}>
               Please capture a single leaf centered below. The leaf should be

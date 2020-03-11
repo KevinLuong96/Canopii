@@ -41,8 +41,7 @@ const Photo = ({ route, navigation }) => {
   };
 
   async function sendPhoto(photo) {
-    if (useIP && photoURI) {
-      console.log("hi");
+    if (useIP) {
       setLoading(true);
     }
     const formData = new FormData();
@@ -56,7 +55,7 @@ const Photo = ({ route, navigation }) => {
     });
     formData.append("device_id", deviceId);
     formData.append("noIP", true);
-    if (treeID) formData.append("tree_id", treeID);
+    // if (treeID) formData.append("tree_id", treeID);
 
     const options = {
       method: "POST",
@@ -71,7 +70,7 @@ const Photo = ({ route, navigation }) => {
       dispatch(setPredictedTrees(resJson.pred_spec_id));
       console.log(resJson);
 
-      if (useIP && photoURI) {
+      if (useIP) {
         const leaves =
           resJson?.pred_spec_id &&
           resJson.pred_spec_id.map(id => {
@@ -110,10 +109,8 @@ const Photo = ({ route, navigation }) => {
           }
           onPress={() => {
             sendPhoto(photo);
-            const navigationTarget = photoURI ? "Choices" : "Camera";
-            const navigate = photoURI && useIP;
             dispatch(setPhotoURI(photo.uri));
-            !navigate && navigation.push(navigationTarget, route.params);
+            !useIP && navigation.push("Choices", route.params);
           }}
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>

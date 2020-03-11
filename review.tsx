@@ -1,6 +1,12 @@
 "use strict";
 import React, { useState } from "react";
-import { Text, View, Image, TouchableHighlight } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  ScrollView,
+} from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { useDispatch, useSelector } from "react-redux";
@@ -64,7 +70,7 @@ const Review = ({ navigation }) => {
         </View>
       }
       content={
-        <View style={[styles.container, reviewStyles.content]}>
+        <ScrollView style={[styles.container, reviewStyles.content]}>
           <TouchableHighlight
             style={reviewStyles.body}
             onPress={() => {
@@ -75,14 +81,13 @@ const Review = ({ navigation }) => {
             <>
               <Text style={reviewStyles.subtitle}>Image</Text>
               <View style={reviewStyles.imageContainer}>
-                {photoURI &&
-                  photoURI.map(photo => (
-                    <Image
-                      source={{ uri: photo }}
-                      key={photo}
-                      style={reviewStyles.image}
-                    ></Image>
-                  ))}
+                {photoURI && (
+                  <Image
+                    source={{ uri: photoURI }}
+                    key={photoURI}
+                    style={reviewStyles.image}
+                  ></Image>
+                )}
               </View>
             </>
           </TouchableHighlight>
@@ -137,7 +142,7 @@ const Review = ({ navigation }) => {
               </Text>
             </TouchableHighlight>
           </View>
-        </View>
+        </ScrollView>
       }
     />
   );
@@ -187,12 +192,13 @@ const reviewStyles = EStyleSheet.create({
     width: "100%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     marginTop: 5,
   },
   image: {
-    height: 175,
-    width: 175,
+    height: 350,
+    width: 350,
+    resizeMode: "contain",
   },
 });
 
