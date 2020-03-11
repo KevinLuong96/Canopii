@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setLocation } from "./actions";
 import Header from "./header";
 import Navigation from "@react-native-community/geolocation";
@@ -33,6 +33,7 @@ const Location = ({ navigation }) => {
   const [editable, setEditable] = useState(false);
 
   const dispatch = useDispatch();
+  const { treeID, treeType } = useSelector(state => state);
 
   useEffect(() => {
     Navigation.getCurrentPosition(location => {
@@ -152,7 +153,11 @@ const Location = ({ navigation }) => {
                       address,
                     })
                   );
-                  navigation.navigate("TreeType");
+                  if (treeType && treeID) {
+                    navigation.navigate("Review");
+                  } else {
+                    navigation.navigate("TreeType");
+                  }
                 }
               }}
             >
