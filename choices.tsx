@@ -4,12 +4,13 @@ import { Text, Animated } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
-import { leaves } from "./leaves";
+import leaves from "./leaves";
 import Breadcrumb from "./breadcrumb";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Header from "./header";
 import HeaderLeftButton from "./headerLeftButton";
 import { useSelector } from "react-redux";
+import Leaf from "./leaf";
 
 const Choices = ({ route, navigation }) => {
   const { treeType } = route.params;
@@ -109,24 +110,14 @@ const Choices = ({ route, navigation }) => {
             ))}
           {reachedLeaves &&
             choicesToRender.map(leaf => (
-              <Choice
-                key={leaf.sciName}
-                choice={leaf.name}
-                text={leaf.sciName}
-                height={100}
-                image={
-                  leaves?.[leaf.sciName.replace(/\s/g, "_").toLowerCase()]
-                    ?.lab ?? descriptions["Heart Bottom"].image
+              <Leaf
+                treeID={leaf.ID}
+                choices={choices}
+                key={leaf.ID}
+                navigate={(location, data) =>
+                  navigation.navigate(location, data)
                 }
-                onPress={() => {
-                  navigation.navigate("Tree", {
-                    name: leaf.name,
-                    sciName: leaf.sciName,
-                    choices: choices,
-                    ID: leaf.ID,
-                  });
-                }}
-              />
+              ></Leaf>
             ))}
         </Animated.ScrollView>
       }

@@ -1,4 +1,4 @@
-export const leaves = {
+export default {
   acer_saccharum: {
     lab: require("./images/leaves/acer_saccharum/lab.jpg"),
     pics: [

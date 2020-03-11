@@ -22,8 +22,7 @@ const Review = ({ navigation }) => {
     photoURI,
   } = useSelector(state => state);
   console.log(entryID, treeID, location, treeType, photoURI);
-  const name = treeIDMap?.[treeID]?.com_name;
-  const sciName = treeIDMap?.[treeID]?.sci_name;
+  const { name, sciName } = treeIDMap?.[treeID];
 
   async function submitData() {
     const data = {

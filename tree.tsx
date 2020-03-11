@@ -7,7 +7,7 @@ import HeaderLeftButton from "./headerLeftButton";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import { useDispatch, useSelector } from "react-redux";
 import { setTree } from "./actions";
-import { leaves } from "./leaves";
+import leaves from "./leaves";
 import { descriptions } from "./trees";
 import SideSwipe from "react-native-sideswipe";
 import Icon from "react-native-vector-icons/Entypo";

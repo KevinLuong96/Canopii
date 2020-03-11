@@ -68,7 +68,6 @@ const Photo = ({ route, navigation }) => {
           onPress={() => {
             sendPhoto(photo);
             const navigationTarget = photoURI ? "Choices" : "Camera";
-            console.log(photoURI, navigationTarget);
             dispatch(setPhotoURI(photo.uri));
             navigation.push(navigationTarget, route.params);
           }}
