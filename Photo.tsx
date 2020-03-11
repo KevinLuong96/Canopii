@@ -3,10 +3,11 @@
  */
 
 import React from "react";
-import { StyleSheet, Image, View, Platform } from "react-native";
+import { Image, View, Platform, TouchableHighlight, Text } from "react-native";
 import { setEntryID, setPredictedTrees, setPhotoURI } from "./actions";
-import { useDispatch } from "react-redux";
-import Icon from "react-native-vector-icons/AntDesign";
+import { useDispatch, useSelector } from "react-redux";
+import styles from "./styles";
+import EStyleSheet from "react-native-extended-stylesheet";
 import DeviceInfo from "react-native-device-info";
 import HeaderLeftButton from "./headerLeftButton";
 
@@ -21,6 +22,7 @@ const Photo = ({ route, navigation }) => {
   });
 
   const dispatch = useDispatch();
+  const { treeID, photoURI } = useSelector(state => state);
 
   async function sendPhoto(photo) {
     const formData = new FormData();
@@ -34,6 +36,8 @@ const Photo = ({ route, navigation }) => {
     });
     formData.append("device_id", deviceId);
     formData.append("noIP", true);
+    if (treeID) formData.append("tree_id", treeID);
+
     const options = {
       method: "POST",
       headers: { "Content-Type": "multipart/form-data" },
@@ -42,46 +46,43 @@ const Photo = ({ route, navigation }) => {
 
     const res = await fetch("http://canopii.net/uploadleaf", options);
     if (res.ok) {
-      res.json().then(resJson => {
-        dispatch(setEntryID(resJson.entry_id));
-        dispatch(setPredictedTrees(resJson.pred_spec_id));
-        console.log(resJson);
-      });
+      const resJson = await res.json();
+      dispatch(setEntryID(resJson.entry_id));
+      dispatch(setPredictedTrees(resJson.pred_spec_id));
+      console.log(resJson);
     }
   }
 
   return (
     <>
-      {/* {isPending && (
-        <View style={styles.pending}>
-          <Text>PENDING</Text>
-        </View>
-      )} */}
-      <View style={styles.container}>
+      <View style={photoStyles.container}>
         <Image
           resizeMode="contain"
           source={{ uri: photo.uri }}
-          style={styles.image}
+          style={photoStyles.image}
         />
       </View>
-      <View style={styles.next}>
-        <Icon.Button
-          name="arrowright"
-          size={48}
-          color="#000"
-          backgroundColor="transparent"
+      <View style={photoStyles.button}>
+        <TouchableHighlight
+          style={photoStyles.touchable}
           onPress={() => {
             sendPhoto(photo);
+            const navigationTarget = photoURI ? "Choices" : "Camera";
+            console.log(photoURI, navigationTarget);
             dispatch(setPhotoURI(photo.uri));
-            navigation.navigate("Choices", route.params);
+            navigation.navigate(navigationTarget, route.params);
           }}
-        ></Icon.Button>
+        >
+          <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
+            This information is correct
+          </Text>
+        </TouchableHighlight>
       </View>
     </>
   );
 };
 
-const styles = StyleSheet.create({
+const photoStyles = EStyleSheet.create({
   image: {
     flex: 1,
     width: null,
@@ -129,6 +130,23 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 50,
     bottom: 50,
+  },
+  button: {
+    width: "80%",
+    left: "10%",
+    backgroundColor: "transparent",
+    position: "absolute",
+    bottom: 50,
+    zIndex: 1,
+  },
+  touchable: {
+    backgroundColor: "$dgreen6",
+    width: "100%",
+    height: 50,
+    borderRadius: 10,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
 });
 

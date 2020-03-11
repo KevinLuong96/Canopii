@@ -6,6 +6,7 @@ import ImagePicker from "react-native-image-picker";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Header from "./header";
+import { useSelector } from "react-redux";
 import ImageEditor from "@react-native-community/image-editor";
 import EStyleSheet from "react-native-extended-stylesheet";
 
@@ -23,14 +24,16 @@ const PendingView = () => (
 );
 
 const Camera = ({ route, navigation }) => {
+  const photoURI = useSelector(state => state.photoURI);
   return (
-    // <View style={[styles.all, styles.container, cameraStyles.container]}>
     <>
       <Header
         header={
           <>
             <Text style={[styles.title, cameraStyles.title]}>
-              Take Leaf Photo
+              {photoURI
+                ? "Take Leaf Photo (2 of 2)"
+                : "Take Leaf Photo (1 of 2)"}
             </Text>
             <Text style={[styles.heading, cameraStyles.heading]}>
               Please capture a single leaf centered below. The leaf should be
@@ -123,7 +126,7 @@ const Camera = ({ route, navigation }) => {
 
   async function takePicture(camera) {
     if (camera) {
-      const options = { quality: 0.2, base64: true };
+      const options = { quality: 0.05, base64: true };
       const data = await camera.takePictureAsync(options);
       ImageEditor.cropImage(data.uri, {
         offset: { x: 0, y: 0 },

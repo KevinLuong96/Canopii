@@ -71,14 +71,13 @@ const Review = ({ navigation }) => {
             <>
               <Text style={reviewStyles.subtitle}>Image</Text>
               <View style={reviewStyles.imageContainer}>
-                <Image
-                  source={{ uri: photoURI }}
-                  style={reviewStyles.image}
-                ></Image>
-                <Image
-                  source={{ uri: photoURI }}
-                  style={reviewStyles.image}
-                ></Image>
+                {photoURI.map(photo => (
+                  <Image
+                    source={{ uri: photo }}
+                    key={photo}
+                    style={reviewStyles.image}
+                  ></Image>
+                ))}
               </View>
             </>
           </TouchableHighlight>
