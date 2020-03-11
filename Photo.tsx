@@ -4,7 +4,7 @@
 
 import React from "react";
 import { StyleSheet, Image, View, Platform } from "react-native";
-import { setEntryID, setPredictedTrees } from "./actions";
+import { setEntryID, setPredictedTrees, setPhotoURI } from "./actions";
 import { useDispatch } from "react-redux";
 import Icon from "react-native-vector-icons/AntDesign";
 import DeviceInfo from "react-native-device-info";
@@ -72,6 +72,7 @@ const Photo = ({ route, navigation }) => {
           backgroundColor="transparent"
           onPress={() => {
             sendPhoto(photo);
+            dispatch(setPhotoURI(photo.uri));
             navigation.navigate("Choices", route.params);
           }}
         ></Icon.Button>

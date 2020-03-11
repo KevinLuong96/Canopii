@@ -3,6 +3,7 @@ const SET_LOCATION = "SET_LOCATION";
 const SET_TREE_TYPE = "SET_TREE_TYPE";
 const SET_ENTRY_ID = "SET_ENTRY_ID";
 const SET_PREDICTED_TREES = "SET_PREDICTED_TREES";
+const SET_PHOTO_URI = "SET_PHOTO_URI";
 
 function setTree(treeName, ID) {
   return {
@@ -40,15 +41,24 @@ function setPredictedTrees(predictedTrees) {
   };
 }
 
+function setPhotoURI(photoURI) {
+  return {
+    type: SET_PHOTO_URI,
+    photoURI,
+  };
+}
+
 export {
   SET_TREE,
   SET_LOCATION,
   SET_TREE_TYPE,
   SET_ENTRY_ID,
   SET_PREDICTED_TREES,
+  SET_PHOTO_URI,
   setTree,
   setLocation,
   setTreeType,
   setEntryID,
   setPredictedTrees,
+  setPhotoURI,
 };

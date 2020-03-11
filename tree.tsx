@@ -5,7 +5,7 @@ import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import HeaderLeftButton from "./headerLeftButton";
 import { TouchableHighlight } from "react-native-gesture-handler";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setTree } from "./actions";
 import { leaves } from "./leaves";
 import { descriptions } from "./trees";
@@ -15,6 +15,7 @@ import Icon from "react-native-vector-icons/Entypo";
 const Tree = ({ navigation, route }) => {
   const { sciName, name, choices, ID } = route.params;
   const [index, setIndex] = useState(0);
+  const { treeType, location } = useSelector(state => state);
   const dispatch = useDispatch();
 
   navigation.setOptions({
@@ -78,7 +79,11 @@ const Tree = ({ navigation, route }) => {
             style={treeStyles.touchable}
             onPress={() => {
               dispatch(setTree(sciName, ID));
-              navigation.navigate("Location");
+              if (treeType && location) {
+                navigation.navigate("Review");
+              } else {
+                navigation.navigate("Location");
+              }
             }}
           >
             <Text

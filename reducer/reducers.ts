@@ -4,15 +4,17 @@ import {
   SET_TREE_TYPE,
   SET_ENTRY_ID,
   SET_PREDICTED_TREES,
+  SET_PHOTO_URI,
 } from "../actions";
 
 const initialState = {
-  treeName: "",
-  treeID: 0,
-  location: {},
-  treeType: "",
-  entryID: 0,
-  predictedTrees: [],
+  treeName: null,
+  treeID: null,
+  location: null,
+  treeType: null,
+  entryID: null,
+  predictedTrees: null,
+  photoURI: null,
 };
 
 function rootReducer(state = initialState, action) {
@@ -37,6 +39,10 @@ function rootReducer(state = initialState, action) {
     case SET_PREDICTED_TREES:
       return Object.assign({}, state, {
         predictedTrees: action.predictedTrees,
+      });
+    case SET_PHOTO_URI:
+      return Object.assign({}, state, {
+        photoURI: action.photoURI,
       });
   }
   return state;
