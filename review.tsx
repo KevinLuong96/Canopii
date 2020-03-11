@@ -59,10 +59,13 @@ const Review = ({ navigation }) => {
               <Text style={styles.body}>{location.address}</Text>
             </>
           </TouchableHighlight>
-          <Text style={reviewStyles.subtitle}>Type</Text>
-          <View style={reviewStyles.body}>
-            <Text style={[styles.body, reviewStyles.body]}>{treeType}</Text>
-          </View>
+          <TouchableHighlight
+            style={reviewStyles.body}
+            onPress={() => navigation.navigate("TreeType")}
+          >
+            <Text style={reviewStyles.subtitle}>Type</Text>
+            <Text style={styles.body}>{treeType}</Text>
+          </TouchableHighlight>
         </View>
       }
     />
