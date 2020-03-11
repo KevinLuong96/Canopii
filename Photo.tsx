@@ -11,6 +11,7 @@ import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import DeviceInfo from "react-native-device-info";
 import HeaderLeftButton from "./headerLeftButton";
+import jimp from "jimp";
 
 const deviceId = DeviceInfo.getUniqueId();
 
@@ -26,7 +27,6 @@ const Photo = ({ route, navigation }) => {
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
-  const { treeID, photoURI } = useSelector(state => state);
   const getData = async () => {
     try {
       const value = await AsyncStorage.getItem("IPSettings");
@@ -44,6 +44,12 @@ const Photo = ({ route, navigation }) => {
     if (useIP) {
       setLoading(true);
     }
+    // const image = await jimp.read(photo.uri);
+    // image.scaleToFit(300, 300);
+    // const uri = await image.getBase64Async(image.getMIME());
+    // image.writeAsync(photo.uri);
+    // console.log(uri);
+
     const formData = new FormData();
     formData.append("Upload", {
       type: photo.type ? photo.type : `image/${photo.uri.split(".").pop()}`,

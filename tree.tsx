@@ -61,7 +61,7 @@ const Tree = ({ navigation, route }) => {
             renderItem={({ itemIndex, currentIndex, item, animatedValue }) => (
               <Image source={item} style={treeStyles.image} />
             )}
-            useVelocityForIndex={false}
+            useVelocityForIndex={true}
           />
         </View>
         <View style={[styles.container, treeStyles.carouselDots]}>

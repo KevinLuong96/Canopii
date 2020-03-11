@@ -156,6 +156,8 @@ const reviewStyles = EStyleSheet.create({
   },
   content: {
     marginTop: 45,
+    marginBottom: 125,
+    // paddingBottom: 100,
   },
   title: {
     color: "#fff",
@@ -175,8 +177,8 @@ const reviewStyles = EStyleSheet.create({
     width: "80%",
     left: "10%",
     backgroundColor: "transparent",
-    position: "absolute",
-    bottom: -100,
+    // position: "absolute",
+    // bottom: 100,
     zIndex: 1,
   },
   touchable: {

@@ -1,5 +1,5 @@
 export const decision = {
-  Coniferous: {},
+  Coniferous: { Bundled: {}, Individual: { Scales: {}, Needles: {} } },
   Deciduous: {
     "Simple Leaf": {
       "Opposite Branching": {

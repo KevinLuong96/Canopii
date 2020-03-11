@@ -1,10 +1,11 @@
 "use strict";
 import React, { useState, useCallback } from "react";
-import { Text, View, Switch } from "react-native";
+import { Text, View, Switch, Dimensions } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Header from "./header";
+import LinearGradient from "react-native-linear-gradient";
 
 const Home = () => {
   const [useIP, setUseIP] = useState(null);

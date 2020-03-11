@@ -35,3 +35,5 @@ export default {
     nameAlt: "None",
   },
 };
+
+export const decisions = {};
