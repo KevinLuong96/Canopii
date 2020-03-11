@@ -6,6 +6,7 @@ import ImagePicker from "react-native-image-picker";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Header from "./header";
+import ImageEditor from "@react-native-community/image-editor";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 const PendingView = () => (
@@ -93,9 +94,17 @@ const Camera = ({ route, navigation }) => {
             } else if (response.customButton) {
               console.log("User tapped custom button: ", response.customButton);
             } else {
-              navigation.navigate("Photo", {
-                ...route.params,
-                photo: response,
+              ImageEditor.cropImage(response.uri, {
+                offset: { x: 0, y: 0 },
+                size: { width: response.width, height: response.width },
+              }).then(url => {
+                console.log(response.uri);
+                response.uri = url;
+                console.log(response.uri);
+                navigation.navigate("Photo", {
+                  ...route.params,
+                  photo: response,
+                });
               });
             }
           })
@@ -114,9 +123,15 @@ const Camera = ({ route, navigation }) => {
 
   async function takePicture(camera) {
     if (camera) {
-      const options = { quality: 0.5, base64: true };
+      const options = { quality: 0.2, base64: true };
       const data = await camera.takePictureAsync(options);
-      navigation.navigate("Photo", { ...route.params, photo: data });
+      ImageEditor.cropImage(data.uri, {
+        offset: { x: 0, y: 0 },
+        size: { width: data.width, height: data.width },
+      }).then(url => {
+        data.uri = url;
+        navigation.navigate("Photo", { ...route.params, photo: data });
+      });
     }
   }
 };
