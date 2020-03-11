@@ -15,6 +15,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import addTreeTab from "./addTreeTab";
+import FAQ from "./faq";
 import Icon from "react-native-vector-icons/EvilIcons";
 import rootReducer from "./reducer/reducers";
 import Geolocation from "@react-native-community/geolocation";
@@ -42,15 +43,15 @@ const App = () => {
 
               if (route.name === "Add") {
                 iconName = "camera";
-              } else if (route.name === "Settings") {
-                iconName = focused ? "ios-list-box" : "ios-list";
+              } else if (route.name === "FAQ") {
+                iconName = "question";
               }
               return <Icon name={iconName} size={48} color={color} />;
             },
           })}
           tabBarOptions={{
             activeTintColor: $dgreen6,
-            inactiveTintColor: "#fff",
+            inactiveTintColor: $gray7,
             showLabel: false,
             style: {
               paddingTop: 10,
@@ -60,6 +61,7 @@ const App = () => {
           }}
         >
           <Tab.Screen name="Add" component={addTreeTab}></Tab.Screen>
+          <Tab.Screen name="FAQ" component={FAQ}></Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>
