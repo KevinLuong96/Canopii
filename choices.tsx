@@ -13,10 +13,10 @@ import { useSelector } from "react-redux";
 import Leaf from "./leaf";
 
 const Choices = ({ route, navigation }) => {
-  const { treeType } = route.params;
+  const { treeType, leaves } = route.params;
   const [choices, setChoices] = useState([treeType]);
   const predictedTrees = useSelector(state => state.predictedTrees);
-  let reachedLeaves = false;
+  let reachedLeaves = leaves ? true : false;
 
   navigation.setOptions({
     headerStyle: {
@@ -52,7 +52,11 @@ const Choices = ({ route, navigation }) => {
   }
 
   // reached the leaves
-  if (temp.hasOwnProperty("trees")) {
+  if (leaves) {
+    for (let leaf of leaves) {
+      choicesToRender.push({ ID: leaf.ID });
+    }
+  } else if (temp.hasOwnProperty("trees")) {
     choicesToRender = temp["trees"];
     reachedLeaves = true;
   } else {

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CanopiiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CanopiiTests.m */; };
 		047FD62264FE4FE6B83D01B8 /* pic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3262D7C0FA54772AE94BFB2 /* pic3.jpg */; };
@@ -50,6 +49,7 @@
 		E5C6F82D0507481299D6F4AA /* lab.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6DC18356A44DD0839AE809 /* lab.png */; };
 		EFAB1AEF77EC4680A27CE359 /* CompoundLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D38097FCD846C2B3D2CA46 /* CompoundLeaf.png */; };
 		FE79085CAD4B4218A7A37D63 /* pic2.png in Resources */ = {isa = PBXBuildFile; fileRef = B51142EBAB724FE9BC457BAB /* pic2.png */; };
+		56ACD7B3A0FA4736AEDE3D13 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDE3CC8A14F7403E88D98B9C /* Muli-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +147,7 @@
 		F91AEF10E8B74AFA82E47D95 /* pic4.jpeg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = pic4.jpeg; path = ../images/leaves/acer_ginnala/pic4.jpeg; sourceTree = "<group>"; };
 		FC05F4B8A25E49C793F750D9 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		FDC19E1E01B24428BC5E6E2A /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		EDE3CC8A14F7403E88D98B9C /* Muli-Regular.ttf */ = {isa = PBXFileReference; name = "Muli-Regular.ttf"; path = "../fonts/Muli-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +298,7 @@
 				31E992C0FD6A41F49ED06CDD /* lab_rounded.jpg */,
 				5187154495914C968E29E9A9 /* Muli-Bold.ttf */,
 				B07C3B6AF368421E9D7CFB52 /* Muli-Medium.ttf */,
+				EDE3CC8A14F7403E88D98B9C /* Muli-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -510,6 +512,7 @@
 				8FD4732845C04C73AE874D1E /* lab_rounded.jpg in Resources */,
 				9194045CEA7E4206A39F9B7A /* Muli-Bold.ttf in Resources */,
 				342A6DC711DE49E294CFE99F /* Muli-Medium.ttf in Resources */,
+				56ACD7B3A0FA4736AEDE3D13 /* Muli-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

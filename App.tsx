@@ -16,7 +16,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import addTreeTab from "./addTreeTab";
 import FAQ from "./faq";
+import Home from "./home";
 import Icon from "react-native-vector-icons/EvilIcons";
+import Ionicon from "react-native-vector-icons/Ionicons";
 import rootReducer from "./reducer/reducers";
 import Geolocation from "@react-native-community/geolocation";
 
@@ -45,6 +47,9 @@ const App = () => {
                 iconName = "camera";
               } else if (route.name === "FAQ") {
                 iconName = "question";
+              } else if (route.name === "Home") {
+                iconName = "";
+                return <Ionicon name="ios-home" size={32} color={color} />;
               }
               return <Icon name={iconName} size={48} color={color} />;
             },
@@ -60,6 +65,7 @@ const App = () => {
             },
           }}
         >
+          <Tab.Screen name="Home" component={Home}></Tab.Screen>
           <Tab.Screen name="Add" component={addTreeTab}></Tab.Screen>
           <Tab.Screen name="FAQ" component={FAQ}></Tab.Screen>
         </Tab.Navigator>

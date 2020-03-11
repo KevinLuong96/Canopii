@@ -2,8 +2,9 @@
  * @format
  */
 
-import React from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { Image, View, Platform, TouchableHighlight, Text } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 import { setEntryID, setPredictedTrees, setPhotoURI } from "./actions";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./styles";
@@ -21,10 +22,29 @@ const Photo = ({ route, navigation }) => {
     ),
   });
 
+  const [useIP, setUseIP] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const dispatch = useDispatch();
   const { treeID, photoURI } = useSelector(state => state);
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("IPSettings");
+      if (value !== null) {
+        // value previously stored
+        console.log(value);
+        setUseIP(value == "true");
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
 
   async function sendPhoto(photo) {
+    if (useIP && photoURI) {
+      console.log("hi");
+      setLoading(true);
+    }
     const formData = new FormData();
     formData.append("Upload", {
       type: photo.type ? photo.type : `image/${photo.uri.split(".").pop()}`,
@@ -50,8 +70,27 @@ const Photo = ({ route, navigation }) => {
       dispatch(setEntryID(resJson.entry_id));
       dispatch(setPredictedTrees(resJson.pred_spec_id));
       console.log(resJson);
+
+      if (useIP && photoURI) {
+        const leaves =
+          resJson?.pred_spec_id &&
+          resJson.pred_spec_id.map(id => {
+            return { ID: id };
+          });
+
+        navigation.navigate("Choices", {
+          ...route.params,
+          leaves,
+        });
+      }
     }
+    setLoading(false);
   }
+
+  useEffect(() => {
+    getData();
+  }, []);
+  // getData();
 
   return (
     <>
@@ -64,16 +103,23 @@ const Photo = ({ route, navigation }) => {
       </View>
       <View style={photoStyles.button}>
         <TouchableHighlight
-          style={photoStyles.touchable}
+          style={
+            loading
+              ? [photoStyles.touchable, { backgroundColor: "#8c8c8c" }]
+              : [photoStyles.touchable]
+          }
           onPress={() => {
             sendPhoto(photo);
             const navigationTarget = photoURI ? "Choices" : "Camera";
+            const navigate = photoURI && useIP;
             dispatch(setPhotoURI(photo.uri));
-            navigation.push(navigationTarget, route.params);
+            !navigate && navigation.push(navigationTarget, route.params);
           }}
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
-            This information is correct
+            {loading
+              ? "Please wait, your image is being processed"
+              : "This information is correct"}
           </Text>
         </TouchableHighlight>
       </View>

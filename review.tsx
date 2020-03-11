@@ -22,7 +22,11 @@ const Review = ({ navigation }) => {
     photoURI,
   } = useSelector(state => state);
   console.log(entryID, treeID, location, treeType, photoURI);
-  const { name, sciName } = treeIDMap?.[treeID];
+  let name, sciName;
+  if (treeID) {
+    name = treeIDMap?.[treeID]?.name;
+    sciName = treeIDMap?.[treeID]?.sciName;
+  }
 
   async function submitData() {
     const data = {
@@ -95,7 +99,9 @@ const Review = ({ navigation }) => {
           >
             <>
               <Text style={reviewStyles.subtitle}>Species</Text>
-              <Text style={styles.body}>{`${name} (${sciName})`}</Text>
+              {name && sciName && (
+                <Text style={styles.body}>{`${name} (${sciName})`}</Text>
+              )}
             </>
           </TouchableHighlight>
           <TouchableHighlight
