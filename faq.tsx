@@ -1,6 +1,6 @@
 "use strict";
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Header from "./header";
@@ -77,7 +77,7 @@ const FAQ = () => {
         </Text>
       }
       content={
-        <View style={[styles.container, faqStyles.container]}>
+        <ScrollView style={[styles.container, faqStyles.container]}>
           <Accordion
             sections={sections}
             activeSections={activeSections}
@@ -88,7 +88,7 @@ const FAQ = () => {
             underlayColor={"rgba(140, 140, 140, 0.2)"}
             expandMultiple={true}
           />
-        </View>
+        </ScrollView>
       }
     />
   );
@@ -122,6 +122,7 @@ const faqStyles = EStyleSheet.create({
     marginRight: 8,
     width: "100%",
     padding: 10,
+    marginBottom: 125,
   },
 });
 

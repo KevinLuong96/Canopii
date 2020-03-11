@@ -12,9 +12,10 @@ export const decision = {
             },
             {
               ID: 225,
-              sciName: "Acer Platanoides/Acer Saccharum",
-              name: "Norway or Sugar Maple",
+              sciName: "Acer Saccharum",
+              name: "Sugar Maple",
             },
+            { ID: 219, sciName: "Acer Platanoides", name: "Norway Maple" },
             {
               ID: 222,
               sciName: "Acer Rubrum",

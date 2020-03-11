@@ -94,7 +94,7 @@ const Choices = ({ route, navigation }) => {
             transform: [{ translateX: slideValue }],
             width: "100%",
             marginBottom: 145,
-            paddingBottom: 20,
+            paddingBottom: 10,
           }}
         >
           {!reachedLeaves &&
