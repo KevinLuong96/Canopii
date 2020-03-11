@@ -133,7 +133,7 @@ const Camera = ({ route, navigation }) => {
         size: { width: data.width, height: data.width },
       }).then(url => {
         data.uri = url;
-        navigation.navigate("Photo", { ...route.params, photo: data });
+        navigation.push("Photo", { ...route.params, photo: data });
       });
     }
   }
@@ -176,6 +176,7 @@ const cameraStyles = EStyleSheet.create({
   title: {
     color: "white",
     marginBottom: 10,
+    fontSize: 28,
   },
   heading: {
     color: "white",

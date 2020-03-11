@@ -70,7 +70,7 @@ const Photo = ({ route, navigation }) => {
             const navigationTarget = photoURI ? "Choices" : "Camera";
             console.log(photoURI, navigationTarget);
             dispatch(setPhotoURI(photo.uri));
-            navigation.navigate(navigationTarget, route.params);
+            navigation.push(navigationTarget, route.params);
           }}
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
