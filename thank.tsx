@@ -1,11 +1,12 @@
 "use strict";
 import React from "react";
-import { Text, Dimensions, View } from "react-native";
+import { Text, Dimensions, View, TouchableHighlight } from "react-native";
 import EStyleSheet from "react-native-extended-stylesheet";
 import LinearGradient from "react-native-linear-gradient";
 import styles from "./styles";
+import Icon from "react-native-vector-icons/Entypo";
 
-const Thank = ({ navigate }) => {
+const Thank = ({ navigation }) => {
   return (
     <LinearGradient
       colors={["#65B876", "#87DC65"]}
@@ -27,6 +28,19 @@ const Thank = ({ navigate }) => {
           We have just added your tree to Kitchener's tree inventory! Thank you
           for helping us fight climate change. Fight together, win together!
         </Text>
+        <TouchableHighlight
+          onPress={() => navigation.navigate("TagTree")}
+          style={{ borderRadius: 10, display: "flex", alignItems: "center" }}
+        >
+          <View
+            style={[thankStyles.buttonContainer, { backgroundColor: "#fff" }]}
+          >
+            <Text style={[styles.body, thankStyles.buttonText]}>
+              Tag another tree
+            </Text>
+            <Icon name="chevron-thin-right" size={20} color={"#4b4b4b"} />
+          </View>
+        </TouchableHighlight>
       </View>
     </LinearGradient>
   );
@@ -49,6 +63,23 @@ const thankStyles = EStyleSheet.create({
     color: "#fff",
     paddingHorizontal: 12,
     textAlign: "center",
+  },
+  buttonText: {
+    color: "#4b4b4b",
+    paddingVertical: 18,
+    fontSize: 16,
+  },
+  buttonContainer: {
+    // height: "100%",
+    backgroundColor: "$dgreen6",
+    borderRadius: 15,
+    width: 300,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginVertical: 20,
+    paddingHorizontal: 20,
   },
 });
 

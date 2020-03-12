@@ -16,12 +16,14 @@ import jimp from "jimp";
 const deviceId = DeviceInfo.getUniqueId();
 
 const Photo = ({ route, navigation }) => {
-  const { photo } = route.params;
+  const { photo, treeType } = route.params;
+  console.log(route.params, photo, treeType);
   navigation.setOptions({
     headerLeft: navigation => (
       <HeaderLeftButton color="#000" onPress={navigation.onPress} />
     ),
   });
+  console.log(treeType);
 
   const [manualIdentification, setManualIdentification] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -31,9 +33,8 @@ const Photo = ({ route, navigation }) => {
     try {
       const value = await AsyncStorage.getItem("manualIdentification");
       if (value !== null) {
-        // value previously stored
-        console.log(value);
-        setManualIdentification(value == "true");
+        // IP flow only for deciduous
+        setManualIdentification(value == "true" || treeType == "Coniferous");
       }
     } catch (e) {
       // error reading value
