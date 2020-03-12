@@ -29,7 +29,7 @@ const headerStyles = EStyleSheet.create({
     backgroundColor: "$dgreen6",
   },
   body: {
-    backgroundColor: "#fff",
+    backgroundColor: "$lightGray",
   },
   container: {
     width: "90%",

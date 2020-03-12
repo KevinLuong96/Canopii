@@ -34,8 +34,8 @@ const Camera = ({ route, navigation }) => {
               Take Leaf Photo
             </Text>
             <Text style={[styles.heading, cameraStyles.heading]}>
-              Capture a single leaf centered below. The leaf should be
-              flat, and pointing downward in a natural background.
+              Capture a single leaf centered below. The leaf should be flat, and
+              pointing downward in a natural background.
             </Text>
           </>
         }
@@ -124,7 +124,10 @@ const Camera = ({ route, navigation }) => {
       const data = await camera.takePictureAsync(options);
       ImageEditor.cropImage(data.uri, {
         offset: { x: 0, y: 0 },
-        size: { width: data.width, height: data.width },
+        size: {
+          width: Math.min(data.width, data.height),
+          height: Math.min(data.width, data.height),
+        },
       }).then(url => {
         data.uri = url;
         navigation.push("Photo", { ...route.params, photo: data });
@@ -142,13 +145,13 @@ const cameraStyles = EStyleSheet.create({
   },
   buttonContainer: {
     width: "100%",
-    backgroundColor: "#fff",
+    backgroundColor: "#f9f9f9",
     height: 90,
     position: "absolute",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    bottom: 0,
+    bottom: 10,
     zIndex: 2,
   },
   imagePicker: {

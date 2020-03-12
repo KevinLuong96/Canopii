@@ -8,11 +8,13 @@ export default EStyleSheet.create({
     width: "100%",
     display: "flex",
     flexDirection: "column",
+    // backgroundColor: "#f9f9f9",
   },
   centered: {
     width: "100%",
     display: "flex",
     flexDirection: "column",
+    // backgroundColor: "#f9f9f9",
     alignItems: "center",
   },
   flex: {

@@ -45,46 +45,48 @@ const Home = ({ navigation }) => {
   }, []);
   // getData();
   return (
-    <View style={[styles.container, homeStyles.container]}>
-      <View style={homeStyles.textLogoContainer}>
-        <Image source={textLogo} style={homeStyles.textLogo}></Image>
-      </View>
-      <View style={homeStyles.statContainer}>
-        <Image source={logo} style={homeStyles.image} />
-
-        <View style={homeStyles.statTextContainer}>
-          <Text style={styles.title}>{ownTagged}</Text>
-          <Text style={styles.heading}>trees tagged by you</Text>
+    <View style={{ height: "100%", width: "100%", backgroundColor: "#f9f9f9" }}>
+      <View style={[styles.container, homeStyles.container]}>
+        <View style={homeStyles.textLogoContainer}>
+          <Image source={textLogo} style={homeStyles.textLogo}></Image>
         </View>
-      </View>
-      <View style={homeStyles.statContainer}>
-        <Image source={logoMultiple} style={homeStyles.image} />
+        <View style={homeStyles.statContainer}>
+          <Image source={logo} style={homeStyles.image} />
 
-        <View style={homeStyles.statTextContainer}>
-          <Text style={styles.title}>{totalTagged}</Text>
-          <Text style={styles.heading}>total trees mapped in Kitchener</Text>
+          <View style={homeStyles.statTextContainer}>
+            <Text style={styles.title}>{ownTagged}</Text>
+            <Text style={styles.heading}>trees tagged by you</Text>
+          </View>
         </View>
-      </View>
-      <TouchableHighlight
-        onPress={() => navigation.navigate("Settings")}
-        style={{ borderRadius: 10 }}
-      >
-        <View
-          style={[homeStyles.buttonContainer, { backgroundColor: "#9DD867" }]}
+        <View style={homeStyles.statContainer}>
+          <Image source={logoMultiple} style={homeStyles.image} />
+
+          <View style={homeStyles.statTextContainer}>
+            <Text style={styles.title}>{totalTagged}</Text>
+            <Text style={styles.heading}>total trees mapped in Kitchener</Text>
+          </View>
+        </View>
+        <TouchableHighlight
+          onPress={() => navigation.navigate("Add")}
+          style={{ borderRadius: 10 }}
         >
-          <Text style={[styles.body, homeStyles.buttonText]}>Settings</Text>
-          <Icon name="chevron-thin-right" size={20} color={"#fff"} />
-        </View>
-      </TouchableHighlight>
-      <TouchableHighlight
-        onPress={() => navigation.navigate("Add")}
-        style={{ borderRadius: 10 }}
-      >
-        <View style={homeStyles.buttonContainer}>
-          <Text style={[styles.body, homeStyles.buttonText]}>Tag a tree</Text>
-          <Icon name="chevron-thin-right" size={20} color={"#fff"} />
-        </View>
-      </TouchableHighlight>
+          <View style={homeStyles.buttonContainer}>
+            <Text style={[styles.body, homeStyles.buttonText]}>Tag a tree</Text>
+            <Icon name="chevron-thin-right" size={20} color={"#fff"} />
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => navigation.navigate("Settings")}
+          style={{ borderRadius: 10 }}
+        >
+          <View
+            style={[homeStyles.buttonContainer, { backgroundColor: "#9DD867" }]}
+          >
+            <Text style={[styles.body, homeStyles.buttonText]}>Settings</Text>
+            <Icon name="chevron-thin-right" size={20} color={"#fff"} />
+          </View>
+        </TouchableHighlight>
+      </View>
     </View>
   );
 };
@@ -109,6 +111,8 @@ const homeStyles = EStyleSheet.create({
     paddingTop: 100,
     width: "90%",
     marginLeft: "5%",
+    height: "100%",
+    // backgroundColor: "#f9f9f9",
   },
   statContainer: {
     display: "flex",

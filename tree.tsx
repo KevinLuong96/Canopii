@@ -151,7 +151,7 @@ const treeStyles = EStyleSheet.create({
   root: {
     height: "100%",
     paddingTop: 90,
-    backgroundColor: "#fff",
+    backgroundColor: "$lightGray",
   },
   name: {
     marginBottom: 5,

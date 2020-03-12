@@ -100,6 +100,7 @@ const Choices = ({ route, navigation }) => {
             width: "100%",
             marginBottom: 145,
             paddingBottom: 10,
+            backgroundColor: "transparent",
           }}
         >
           {!reachedLeaves &&

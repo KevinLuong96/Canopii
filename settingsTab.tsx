@@ -22,8 +22,8 @@ const SettingsTab = () => {
             )
           );
         },
-        headerSyle: {
-          underlayColor: "rgba(140, 140, 140, 0.25)",
+        cardStyle: {
+          backgroundColor: "#f9f9f9",
         },
       }}
     >

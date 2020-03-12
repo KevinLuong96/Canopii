@@ -11,6 +11,7 @@ const HeaderLeftButton = props => {
       onPress={() => props.onPress()}
       backgroundColor="transparent"
       underlayColor="rgba(140,140,140,0.4)"
+      style={{ paddingLeft: 20 }}
     />
   );
 };

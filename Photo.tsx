@@ -120,9 +120,7 @@ const Photo = ({ route, navigation }) => {
           }}
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
-            {loading
-              ? "Extracting species..."
-              : "Confirm photo"}
+            {loading ? "Extracting species..." : "Confirm photo"}
           </Text>
         </TouchableHighlight>
       </View>
@@ -165,7 +163,7 @@ const photoStyles = EStyleSheet.create({
     display: "flex",
     flexDirection: "row",
     height: "100%",
-    backgroundColor: "#fff",
+    backgroundColor: "#f9f9f9",
   },
   clear: {
     backgroundColor: "#fff",

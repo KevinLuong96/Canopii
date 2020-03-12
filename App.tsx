@@ -27,6 +27,7 @@ import SettingsTab from "./settingsTab";
 const Tab = createBottomTabNavigator();
 const $dgreen6 = "#65B876";
 const $gray7 = "#8C8C8C";
+const $lightGray = "#f9f9f9";
 const store = createStore(rootReducer);
 Geolocation.setRNConfiguration({
   authorizationLevel: "whenInUse",
@@ -36,6 +37,7 @@ const App = () => {
   EStyleSheet.build({
     $dgreen6,
     $gray7,
+    $lightGray,
   });
   return (
     <Provider store={store}>
@@ -62,7 +64,11 @@ const App = () => {
               paddingTop: 10,
               height: 90,
               paddingBottom: 20,
+              backgroundColor: "#f9f9f9",
             },
+          }}
+          style={{
+            backgroundColor: "#f9f9f9",
           }}
         >
           <Tab.Screen name="Home" component={Home}></Tab.Screen>
