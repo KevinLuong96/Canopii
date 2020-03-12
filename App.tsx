@@ -17,8 +17,9 @@ import { Provider } from "react-redux";
 import addTreeTab from "./addTreeTab";
 import FAQ from "./faq";
 import Home from "./home";
-import Icon from "react-native-vector-icons/EvilIcons";
-import Ionicon from "react-native-vector-icons/Ionicons";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import Material from "react-native-vector-icons/MaterialIcons";
+import Feather from "react-native-vector-icons/Feather";
 import rootReducer from "./reducer/reducers";
 import Geolocation from "@react-native-community/geolocation";
 
@@ -44,14 +45,14 @@ const App = () => {
               let iconName;
 
               if (route.name === "Add") {
-                iconName = "camera";
+                return (
+                  <Material name="add-to-photos" size={24} color={color} />
+                );
               } else if (route.name === "FAQ") {
-                iconName = "question";
+                return <Feather name="help-circle" size={24} color={color} />;
               } else if (route.name === "Home") {
-                iconName = "";
-                return <Ionicon name="ios-home" size={32} color={color} />;
+                return <AntDesign name="home" size={24} color={color} />;
               }
-              return <Icon name={iconName} size={48} color={color} />;
             },
           })}
           tabBarOptions={{
