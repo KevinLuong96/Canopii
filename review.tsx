@@ -208,8 +208,8 @@ const reviewStyles = EStyleSheet.create({
     marginTop: 5,
   },
   image: {
-    height: 350,
-    width: 350,
+    height: 300,
+    width: 300,
     resizeMode: "contain",
   },
 });

@@ -12,20 +12,21 @@ const ConiferousLeaf = ({ treeID, choices, navigate }) => {
 
   const sciName = conIDMap?.[treeID]?.sciName;
   const name = conIDMap?.[treeID]?.sciName;
+  const lab = sciName && leaves[sciName.replace(/\s/g, "_").toLowerCase()]?.lab;
 
-  return (
+  return lab ? (
     <Choice
       key={sciName}
       choice={name}
       text={sciName}
       height={100}
-      image={/*TODO: ADD IMAGE*/ ""}
+      image={lab}
       onPress={() => {
         dispatch(setTree(sciName, treeID));
         navigate("Location");
       }}
     />
-  );
+  ) : null;
 };
 
 export default ConiferousLeaf;

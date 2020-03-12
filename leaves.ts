@@ -237,4 +237,32 @@ export default {
       require("./images/leaves/ulmus_pumila/pic4.jpg"),
     ],
   },
+  pinus_sylvestris: {
+    lab: require("./images/leaves/pinus_sylvestris/lab.jpeg"),
+    pics: [],
+  },
+  pinus_strobus: {
+    lab: require("./images/leaves/pinus_strobus/lab.jpeg"),
+    pics: [],
+  },
+  pinus_nigra: {
+    lab: require("./images/leaves/pinus_nigra/lab.jpg"),
+    pics: [],
+  },
+  picea_pungens: {
+    lab: require("./images/leaves/picea_pungens/lab.jpeg"),
+    pics: [],
+  },
+  picea_glauca: {
+    lab: require("./images/leaves/picea_glauca/lab.jpg"),
+    pics: [],
+  },
+  picea_abies: {
+    lab: require("./images/leaves/picea_abies/lab.jpg"),
+    pics: [],
+  },
+  thuja_occidentalis: {
+    lab: require("./images/leaves/thuja_occidentalis/lab.jpg"),
+    pics: [],
+  },
 };
