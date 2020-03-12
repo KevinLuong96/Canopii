@@ -85,7 +85,7 @@ const Choices = ({ route, navigation }) => {
           </Text>
           <Text style={[styles.heading, choiceStyles.heading]}>
             {reachedLeaves
-              ? "Select the correct species"
+              ? "Select the correct species."
               : "Which feature best describes your tree?"}
           </Text>
         </>

@@ -112,9 +112,6 @@ const faqStyles = EStyleSheet.create({
     paddingBottom: 10,
     marginBottom: 10,
   },
-  headerText: {
-    fontFamily: "Muli-Bold",
-  },
   content: {
     flex: 1,
     marginBottom: 16,

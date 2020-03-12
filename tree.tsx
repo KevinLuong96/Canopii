@@ -89,7 +89,7 @@ const Tree = ({ navigation, route }) => {
             <Text
               style={[styles.body, { color: "white", textAlign: "center" }]}
             >
-              This is the correct tree
+              Confirm species
             </Text>
           </TouchableHighlight>
         </View>
