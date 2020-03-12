@@ -46,7 +46,8 @@ const taggingSections = [
   },
 ];
 const FAQ = () => {
-  const [activeSections, setActiveSections] = useState([]);
+  const [activeAboutSections, setActiveAboutSections] = useState([]);
+  const [tagSections, setTagSections] = useState([]);
   const _renderHeader = section => {
     return (
       <View style={faqStyles.header}>
@@ -75,10 +76,10 @@ const FAQ = () => {
           </Text>
           <Accordion
             sections={aboutSections}
-            activeSections={activeSections}
+            activeSections={activeAboutSections}
             renderHeader={section => _renderHeader(section)}
             renderContent={section => _renderContent(section)}
-            onChange={sections => setActiveSections(sections)}
+            onChange={sections => setActiveAboutSections(sections)}
             underlayColor={"rgba(140, 140, 140, 0.2)"}
             expandMultiple={true}
           />
@@ -89,10 +90,10 @@ const FAQ = () => {
           </Text>
           <Accordion
             sections={taggingSections}
-            activeSections={activeSections}
+            activeSections={tagSections}
             renderHeader={section => _renderHeader(section)}
             renderContent={section => _renderContent(section)}
-            onChange={sections => setActiveSections(sections)}
+            onChange={sections => setTagSections(sections)}
             underlayColor={"rgba(140, 140, 140, 0.2)"}
             expandMultiple={true}
           />
@@ -121,7 +122,7 @@ const faqStyles = EStyleSheet.create({
   container: {
     display: "flex",
     paddingTop: 100,
-    paddingBottom: 100,
+    paddingBottom: 80,
   },
   subTitle: {
     fontSize: 22,
