@@ -17,6 +17,7 @@ const TagTree = ({ navigation }) => {
         </Text>
         <Choice
           choice="Coniferous"
+          tagTree
           image={descriptions["Coniferous"].image}
           height={150}
           text={descriptions["Coniferous"].text}
@@ -24,6 +25,7 @@ const TagTree = ({ navigation }) => {
         ></Choice>
         <Choice
           choice="Deciduous"
+          tagTree
           image={descriptions["Deciduous"].image}
           height={150}
           text={descriptions["Deciduous"].text}

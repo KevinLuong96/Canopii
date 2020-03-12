@@ -21,12 +21,27 @@ const Choice = props => {
         underlayColor={"rgba(140, 140, 140, 0.25)"}
       >
         <View style={choiceStyles.container}>
-          <Image source={props.image} style={choiceStyles.image}></Image>
-          <View style={choiceStyles.textContainer}>
-            <Text style={[styles.heading, choiceStyles.title]}>
+          <Image
+          source={props.image}
+          style = {props.tagTree ? 
+            [choiceStyles.image, { marginLeft: 16 }]
+            : [choiceStyles.image]}
+          ></Image>
+          <View style = {props.tagTree ? 
+            [choiceStyles.textContainer, { marginLeft: 8 }]
+            : [choiceStyles.textContainer]}>
+            <Text style = {props.isSpecies
+                  ? [styles.heading, choiceStyles.title, { marginBottom: 8 }]
+                  : [styles.heading, choiceStyles.title]
+            }>
               {props.choice}
             </Text>
-            <Text style={styles.body}>{props.text}</Text>
+            <Text 
+            style={
+                props.isSpecies
+                  ? [styles.body, { color: "#8c8c8c" }]
+                  : [styles.body]
+                }>{props.text}</Text>
           </View>
         </View>
       </TouchableHighlight>
@@ -42,18 +57,21 @@ const choiceStyles = EStyleSheet.create({
     width: "30%",
     height: "100%",
     resizeMode: "contain",
-    marginLeft: 16,
+    marginLeft: 8,
   } as ImageStyle,
   container: {
     display: "flex",
     flexDirection: "row",
     height: "100%",
   } as ViewStyle,
+  text: {
+    // color: species ? "grey" : default
+  },
   textContainer: {
     display: "flex",
     flexShrink: 1,
     width: "70%",
-    marginLeft: 8,
+    marginLeft: 4,
     marginRight: 20,
     justifyContent: "center",
   } as ViewStyle,
