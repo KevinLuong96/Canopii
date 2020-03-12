@@ -39,7 +39,7 @@ const headerStyles = EStyleSheet.create({
   },
   header: {
     width: "90%",
-    marginTop: 40,
+    marginTop: 50,
     paddingBottom: 50,
   },
 });

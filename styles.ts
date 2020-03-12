@@ -21,14 +21,17 @@ export default EStyleSheet.create({
   },
   title: {
     fontFamily: "Muli",
+    color: "#4b4b4b",
     fontSize: 30,
   },
   heading: {
     fontFamily: "Muli",
+    color: "#4b4b4b",
     fontSize: 18,
   },
   body: {
     fontFamily: "Muli",
+    color: "#4b4b4b",
     fontSize: 14,
   },
 });

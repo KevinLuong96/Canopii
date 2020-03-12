@@ -30,6 +30,7 @@ const Choices = ({ route, navigation }) => {
             ? navigation.onPress()
             : setChoices(choices.slice(0, choices.length - 1));
         }}
+        underlayColor="rgba(140, 140, 140, 0.25)"
       />
     ),
   });

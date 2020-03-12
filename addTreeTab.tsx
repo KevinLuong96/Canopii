@@ -27,6 +27,9 @@ const addTreeTab = () => {
             )
           );
         },
+        headerSyle: {
+          underlayColor: "rgba(140, 140, 140, 0.25)",
+        },
       }}
     >
       <Stack.Screen name="TagTree" component={TagTree}></Stack.Screen>

@@ -54,6 +54,7 @@ const choiceStyles = EStyleSheet.create({
     flexShrink: 1,
     width: "70%",
     marginLeft: 10,
+    marginRight: 20,
     justifyContent: "center",
   } as ViewStyle,
   touchableStyles: {

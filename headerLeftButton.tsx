@@ -10,6 +10,7 @@ const HeaderLeftButton = props => {
       color={props.color}
       onPress={() => props.onPress()}
       backgroundColor="transparent"
+      underlayColor="rgba(140,140,140,0.4)"
     />
   );
 };

@@ -48,6 +48,7 @@ const thankStyles = EStyleSheet.create({
   heading: {
     color: "#fff",
     paddingHorizontal: 12,
+    textAlign: "center",
   },
 });
 

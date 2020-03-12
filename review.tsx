@@ -77,6 +77,7 @@ const Review = ({ navigation }) => {
               dispatch(clear());
               navigation.navigate("Camera");
             }}
+            underlayColor={"rgba(140, 140, 140, 0.25)"}
           >
             <>
               <Text style={reviewStyles.subtitle}>Image</Text>
@@ -101,6 +102,7 @@ const Review = ({ navigation }) => {
                 ID: treeID,
               })
             }
+            underlayColor={"rgba(140, 140, 140, 0.25)"}
           >
             <>
               <Text style={reviewStyles.subtitle}>Species</Text>
@@ -112,6 +114,7 @@ const Review = ({ navigation }) => {
           <TouchableHighlight
             style={reviewStyles.body}
             onPress={() => navigation.navigate("Location")}
+            underlayColor={"rgba(140, 140, 140, 0.25)"}
           >
             <>
               <Text style={reviewStyles.subtitle}>Location</Text>
@@ -121,6 +124,7 @@ const Review = ({ navigation }) => {
           <TouchableHighlight
             style={reviewStyles.body}
             onPress={() => navigation.navigate("TreeType")}
+            underlayColor={"rgba(140, 140, 140, 0.5)"}
           >
             <>
               <Text style={reviewStyles.subtitle}>Type</Text>
@@ -134,6 +138,7 @@ const Review = ({ navigation }) => {
                 submitData();
                 navigation.navigate("Thank");
               }}
+              underlayColor={"rgba(140, 140, 140, 0.25)"}
             >
               <Text
                 style={[styles.body, { color: "white", textAlign: "center" }]}

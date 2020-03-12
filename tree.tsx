@@ -68,7 +68,7 @@ const Tree = ({ navigation, route }) => {
           {images.map((_, idx) => (
             <Icon
               name="dot-single"
-              size={20}
+              size={32}
               color={index == idx ? "#8C8C8C" : "#d3d3d3"}
               key={idx}
             />
@@ -145,7 +145,7 @@ const treeStyles = EStyleSheet.create({
     display: "flex",
     width: "70%",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "center",
     paddingLeft: 10,
   },
   root: {
@@ -154,7 +154,7 @@ const treeStyles = EStyleSheet.create({
     backgroundColor: "#fff",
   },
   name: {
-    marginBottom: 10,
+    marginBottom: 5,
   },
   sciName: {
     color: "$gray7",

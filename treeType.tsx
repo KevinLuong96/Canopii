@@ -1,5 +1,5 @@
 "use strict";
-import React, { useState } from "react";
+import React from "react";
 import { Text, View, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import EStyleSheet from "react-native-extended-stylesheet";
@@ -9,7 +9,6 @@ import Card from "./card";
 import { setTreeType } from "./actions";
 
 const TreeType = ({ navigation }) => {
-  const [selected, setSelected] = useState(null);
   const dispatch = useDispatch();
 
   return (
@@ -26,20 +25,14 @@ const TreeType = ({ navigation }) => {
         <>
           <Card>
             <TouchableHighlight
-              onPress={() => setSelected("RESIDENTIAL")}
+              onPress={() => {
+                dispatch(setTreeType("RESIDENTIAL"));
+                navigation.navigate("Review");
+              }}
               underlayColor="rgba(140,140,140,0.4)"
               style={{ borderRadius: 10 }}
             >
-              <View
-                style={
-                  selected === "RESIDENTIAL"
-                    ? [
-                        treeTypeStyles.cardContainer,
-                        { backgroundColor: "rgba(140,140,140,0.4)" },
-                      ]
-                    : [treeTypeStyles.cardContainer]
-                }
-              >
+              <View style={[treeTypeStyles.cardContainer]}>
                 <Text style={[styles.heading, treeTypeStyles.cardText]}>
                   Residential
                 </Text>
@@ -48,20 +41,14 @@ const TreeType = ({ navigation }) => {
           </Card>
           <Card>
             <TouchableHighlight
-              onPress={() => setSelected("PARK")}
+              onPress={() => {
+                dispatch(setTreeType("PARK"));
+                navigation.navigate("Review");
+              }}
               underlayColor="rgba(140,140,140,0.4)"
               style={{ borderRadius: 10 }}
             >
-              <View
-                style={
-                  selected === "PARK"
-                    ? [
-                        treeTypeStyles.cardContainer,
-                        { backgroundColor: "rgba(140,140,140,0.4)" },
-                      ]
-                    : [treeTypeStyles.cardContainer]
-                }
-              >
+              <View style={[treeTypeStyles.cardContainer]}>
                 <Text style={[styles.heading, treeTypeStyles.cardText]}>
                   Park
                 </Text>
@@ -70,20 +57,14 @@ const TreeType = ({ navigation }) => {
           </Card>
           <Card>
             <TouchableHighlight
-              onPress={() => setSelected("STREET")}
+              onPress={() => {
+                dispatch(setTreeType("STREET"));
+                navigation.navigate("Review");
+              }}
               underlayColor="rgba(140,140,140,0.4)"
               style={{ borderRadius: 10 }}
             >
-              <View
-                style={
-                  selected === "STREET"
-                    ? [
-                        treeTypeStyles.cardContainer,
-                        { backgroundColor: "rgba(140,140,140,0.4)" },
-                      ]
-                    : [treeTypeStyles.cardContainer]
-                }
-              >
+              <View style={[treeTypeStyles.cardContainer]}>
                 <Text style={[styles.heading, treeTypeStyles.cardText]}>
                   Street
                 </Text>
@@ -92,49 +73,22 @@ const TreeType = ({ navigation }) => {
           </Card>
           <Card>
             <TouchableHighlight
-              onPress={() => setSelected("CEMETERY")}
+              onPress={() => {
+                dispatch(setTreeType("CEMETERY"));
+                navigation.navigate("Review");
+              }}
               underlayColor="rgba(140,140,140,0.4)"
               style={{ borderRadius: 10 }}
             >
-              <View
-                style={
-                  selected === "CEMETERY"
-                    ? [
-                        treeTypeStyles.cardContainer,
-                        { backgroundColor: "rgba(140,140,140,0.4)" },
-                      ]
-                    : [treeTypeStyles.cardContainer]
-                }
-              >
+              <View style={[treeTypeStyles.cardContainer]}>
                 <Text style={[styles.heading, treeTypeStyles.cardText]}>
                   Cemetery
                 </Text>
               </View>
             </TouchableHighlight>
           </Card>
-          <View style={treeTypeStyles.button}>
-            <TouchableHighlight
-              style={
-                selected != null
-                  ? [treeTypeStyles.touchable]
-                  : [treeTypeStyles.touchable, { backgroundColor: "#8C8C8C" }]
-              }
-              onPress={() => {
-                if (selected != null) {
-                  dispatch(setTreeType(selected));
-                  navigation.navigate("Review");
-                }
-              }}
-            >
-              <Text
-                style={[styles.body, { color: "white", textAlign: "center" }]}
-              >
-                {selected != null
-                  ? "This is the right tree type"
-                  : "Please select a tree type"}
-              </Text>
-            </TouchableHighlight>
-          </View>
+          {/* dispatch(setTreeType(selected)); */}
+          {/* navigation.navigate("Review"); */}
         </>
       }
     />
