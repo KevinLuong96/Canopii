@@ -6,12 +6,21 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import Header from "./header";
 import Accordion from "react-native-collapsible/Accordion";
 
-const sections = [
+const aboutSections = [
   {
     title: "How will adding my tree help fight climate change?",
     content:
       "The city needs to know what trees it currently has to better decide which types of trees to plant and make sure every tree stays as healthy as possible. By adding your tree, you're providing crucial information for the city's sustainability planning! We can fight climate change, but only together!",
   },
+
+  {
+    title: "What is my data being used for?",
+    content:
+      "The city wants to make the best plan to fight climate change it can. With your information, the city knows where trees in the city are located and what species they are.",
+  },
+];
+
+const taggingSections = [
   {
     title:
       "What if my leaf doesn't look like any of the leaves returned by the automatic species recognition?",
@@ -35,22 +44,9 @@ const sections = [
     content:
       "Two images will increase the chances of the image recognition getting your species correct. ",
   },
-  {
-    title: "What is my data being used for?",
-    content:
-      "The city wants to make the best plan to fight climate change it can. With your information, the city knows where trees in the city are located and what species they are.",
-  },
 ];
 const FAQ = () => {
   const [activeSections, setActiveSections] = useState([]);
-  const _renderSectionTitle = section => {
-    return (
-      <View style={faqStyles.title}>
-        <Text style={[styles.heading, faqStyles.title]}>{section.title}</Text>
-      </View>
-    );
-  };
-
   const _renderHeader = section => {
     return (
       <View style={faqStyles.header}>
@@ -72,45 +68,42 @@ const FAQ = () => {
   return (
     <View style={[styles.container, faqStyles.container]}>
       <Text style={[styles.title, faqStyles.title]}>FAQs</Text>
-      <ScrollView style={[styles.container, faqStyles.container]}>
-        <Accordion
-          sections={sections}
-          activeSections={activeSections}
-          renderSectionTitle={section => _renderSectionTitle(section)}
-          renderHeader={section => _renderHeader(section)}
-          renderContent={section => _renderContent(section)}
-          onChange={sections => setActiveSections(sections)}
-          underlayColor={"rgba(140, 140, 140, 0.2)"}
-          expandMultiple={true}
-        />
+      <ScrollView style={[styles.container, faqStyles.scrollContainer]}>
+        <View style={faqStyles.accordion}>
+          <Text style={[styles.heading, faqStyles.subTitle]}>
+            About Canopii
+          </Text>
+          <Accordion
+            sections={aboutSections}
+            activeSections={activeSections}
+            renderHeader={section => _renderHeader(section)}
+            renderContent={section => _renderContent(section)}
+            onChange={sections => setActiveSections(sections)}
+            underlayColor={"rgba(140, 140, 140, 0.2)"}
+            expandMultiple={true}
+          />
+        </View>
+        <View style={faqStyles.accordion}>
+          <Text style={[styles.heading, faqStyles.subTitle]}>
+            Tagging a Tree
+          </Text>
+          <Accordion
+            sections={taggingSections}
+            activeSections={activeSections}
+            renderHeader={section => _renderHeader(section)}
+            renderContent={section => _renderContent(section)}
+            onChange={sections => setActiveSections(sections)}
+            underlayColor={"rgba(140, 140, 140, 0.2)"}
+            expandMultiple={true}
+          />
+        </View>
       </ScrollView>
-
-      {/* <View style={[styles.container, settingStyles.contentContainer]}>
-        <Text style={[styles.heading, settingStyles.padded]}>
-          Manual Identification
-        </Text>
-        <Switch
-          onValueChange={value => updateManualSettings(value)}
-          value={manualIdentification}
-          trackColor={{ false: "rgb(140,140,140)", true: "#65B876" }}
-          style={settingStyles.padded}
-        ></Switch>
-      </View> */}
     </View>
-    // <Header
-    //   header={
-    //     <Text style={[styles.title, faqStyles.title]}>
-    //       Frequently Asked Questions
-    //     </Text>
-    //   }
-    //   content={
-    //         //   }
-    // />
   );
 };
 const faqStyles = EStyleSheet.create({
-  heading: {
-    color: "#4b4b4b",
+  accordion: {
+    paddingBottom: 32,
   },
   header: {
     borderBottomColor: "rgba(140,140,140,0.3)",
@@ -118,16 +111,28 @@ const faqStyles = EStyleSheet.create({
     paddingBottom: 10,
     marginBottom: 10,
   },
+  headerText: {
+    fontFamily: "Muli-Bold",
+  },
   content: {
     flex: 1,
-    marginBottom: 10,
+    marginBottom: 16,
   },
   container: {
     display: "flex",
     paddingTop: 100,
+    paddingBottom: 100,
+  },
+  subTitle: {
+    fontSize: 22,
+    color: "$dgreen6",
+    marginBottom: 16,
+  },
+  scrollContainer: {
+    paddingHorizontal: "5%",
   },
   title: {
-    marginBottom: 20,
+    marginBottom: 24,
     paddingLeft: "5%",
   },
   padded: {
