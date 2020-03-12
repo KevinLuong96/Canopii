@@ -47,6 +47,22 @@ const Settings = ({ navigation }) => {
           ></Switch>
         </View>
       </View>
+      {/* <TouchableHighlight
+        underlayColor="rgba(140,140,140,0.08)"
+        onPress={() => navigation.navigate("FAQ")}
+      >
+        <View style={[styles.container, settingStyles.contentContainer]}>
+          <Text style={[styles.heading, settingStyles.leftPadded]}>
+            Location
+          </Text>
+          <Icon
+              name="chevron-thin-right"
+              size={24}
+              color={"#8c8c8c"}
+              style={settingStyles.rightPadded}
+            />
+        </View>
+      </TouchableHighlight> */}
       <TouchableHighlight
         underlayColor="rgba(140,140,140,0.08)"
         onPress={() => navigation.navigate("FAQ")}

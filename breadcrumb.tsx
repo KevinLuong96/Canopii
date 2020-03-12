@@ -29,7 +29,7 @@ const Breadcrumb = props => {
           key={i}
           style={{ color: "#fff" }}
         >
-          {props.crumb[i]}
+          {props.crumb[i].split(' ')[0]}
         </Text>
       );
     }

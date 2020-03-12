@@ -11,7 +11,7 @@ const Leaf = ({ treeID, choices, navigate }) => {
   const dispatch = useDispatch();
 
   const sciName = treeIDMap?.[treeID]?.sciName;
-  const name = treeIDMap?.[treeID]?.sciName;
+  const name = treeIDMap?.[treeID]?.name;
   const coniferous = conIDMap?.[treeID];
   if (coniferous) {
     console.log(coniferous?.sciName, treeID);
@@ -25,6 +25,7 @@ const Leaf = ({ treeID, choices, navigate }) => {
       key={sciName}
       choice={name}
       text={sciName}
+      isSpecies={true}
       height={100}
       image={lab ?? ""}
       onPress={() => {

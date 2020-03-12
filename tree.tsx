@@ -45,7 +45,7 @@ const Tree = ({ navigation, route }) => {
           <Text>
             {choices.map(choice => (
               <Text style={styles.body} key={choice}>
-                {`${choice}   `}
+                {`${choice.split(' ')[0]}     `}
               </Text>
             ))}
           </Text>
@@ -123,7 +123,7 @@ const treeStyles = EStyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
+    width: "25%",
   },
   cancel: {
     color: "$dgreen6",
