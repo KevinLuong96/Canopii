@@ -43,13 +43,13 @@ const sections = [
 ];
 const FAQ = () => {
   const [activeSections, setActiveSections] = useState([]);
-  // const _renderSectionTitle = section => {
-  //   return (
-  //     <View style={faqStyles.title}>
-  //       <Text style={[styles.heading,faqStyles.title]}>{section.title}</Text>
-  //     </View>
-  //   );
-  // };
+  const _renderSectionTitle = section => {
+    return (
+      <View style={faqStyles.title}>
+        <Text style={[styles.heading, faqStyles.title]}>{section.title}</Text>
+      </View>
+    );
+  };
 
   const _renderHeader = section => {
     return (
@@ -70,35 +70,47 @@ const FAQ = () => {
   };
 
   return (
-    <Header
-      header={
-        <Text style={[styles.title, faqStyles.title]}>
-          Frequently Asked Questions
+    <View style={[styles.container, faqStyles.container]}>
+      <Text style={[styles.title, faqStyles.title]}>FAQs</Text>
+      <ScrollView style={[styles.container, faqStyles.container]}>
+        <Accordion
+          sections={sections}
+          activeSections={activeSections}
+          renderSectionTitle={section => _renderSectionTitle(section)}
+          renderHeader={section => _renderHeader(section)}
+          renderContent={section => _renderContent(section)}
+          onChange={sections => setActiveSections(sections)}
+          underlayColor={"rgba(140, 140, 140, 0.2)"}
+          expandMultiple={true}
+        />
+      </ScrollView>
+
+      {/* <View style={[styles.container, settingStyles.contentContainer]}>
+        <Text style={[styles.heading, settingStyles.padded]}>
+          Manual Identification
         </Text>
-      }
-      content={
-        <ScrollView style={[styles.container, faqStyles.container]}>
-          <Accordion
-            sections={sections}
-            activeSections={activeSections}
-            // renderSectionTitle={section => _renderSectionTitle(section)}
-            renderHeader={section => _renderHeader(section)}
-            renderContent={section => _renderContent(section)}
-            onChange={sections => setActiveSections(sections)}
-            underlayColor={"rgba(140, 140, 140, 0.2)"}
-            expandMultiple={true}
-          />
-        </ScrollView>
-      }
-    />
+        <Switch
+          onValueChange={value => updateManualSettings(value)}
+          value={manualIdentification}
+          trackColor={{ false: "rgb(140,140,140)", true: "#65B876" }}
+          style={settingStyles.padded}
+        ></Switch>
+      </View> */}
+    </View>
+    // <Header
+    //   header={
+    //     <Text style={[styles.title, faqStyles.title]}>
+    //       Frequently Asked Questions
+    //     </Text>
+    //   }
+    //   content={
+    //         //   }
+    // />
   );
 };
 const faqStyles = EStyleSheet.create({
   heading: {
-    color: "#fff",
-  },
-  title: {
-    color: "#fff",
+    color: "#4b4b4b",
   },
   header: {
     borderBottomColor: "rgba(140,140,140,0.3)",
@@ -111,18 +123,24 @@ const faqStyles = EStyleSheet.create({
     marginBottom: 10,
   },
   container: {
-    backgroundColor: "white",
-    borderRadius: 10,
-    shadowOffset: { height: 3, width: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    shadowColor: "black",
-    marginTop: 10,
-    marginLeft: 8,
-    marginRight: 8,
-    width: "100%",
-    padding: 10,
-    marginBottom: 125,
+    display: "flex",
+    paddingTop: 100,
+  },
+  title: {
+    marginBottom: 20,
+    paddingLeft: "5%",
+  },
+  padded: {
+    paddingHorizontal: "10%",
+  },
+  contentContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottomColor: "rgba(140,140,140,0.25)",
+    borderBottomWidth: 1,
+    paddingVertical: 20,
   },
 });
 

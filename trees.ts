@@ -1,5 +1,73 @@
 export const decision = {
-  Coniferous: { Bundled: {}, Individual: { Scales: {}, Needles: {} } },
+  Coniferous: { 
+    "Bundled Needles": {
+      "2 - 3 Needles in Each Bundle" : {
+        "2-3 Inch Long Needles" : {
+          trees: [
+            {
+              ID: 124,
+              sciName: "Pinus Sylvestris",
+              name: "Scots Pine",
+            },
+          ],
+        },
+        "3-5 Inch Long Needles" : {
+          trees: [
+            {
+              ID: 107,
+              sciName: "Pinus Nigra",
+              name: "European Black Pine",
+            },
+          ],
+        },
+      },
+      "5 Needles in Each Bundle" : {
+        trees: [
+          {
+            ID: 123,
+            sciName: "Pinus Strobus",
+            name: "Eastern White Pine",
+          },
+        ],
+      },
+    }, 
+    "Individual Needles": {
+        Needles: {
+          "3.5-6.75 Inch Long Cones" : {
+            trees: [
+              {
+                ID: 74,
+                sciName: "Picea Abies",
+                name: "Norway Spruce",
+              },
+            ],
+          },
+          "1-4 Inch Long Cones" : {
+            trees: [
+              {
+                ID: 80,
+                sciName: "Picea Pungens",
+                name: "Blue Spruce",
+              },
+              {
+                ID: 77,
+                sciName: "Picea Glauca",
+                name: "White Spruce",
+              },
+            ],
+          }
+        },  
+        Scales: {
+          trees: [
+          {
+            ID: 48,
+            sciName: "Thuja Occidentalis",
+            name: "Eastern Aborvitae",
+          },
+        ],
+      }, 
+    },
+  },
   Deciduous: {
     "Simple Leaf": {
       "Opposite Branching": {
@@ -231,4 +299,5 @@ export const descriptions = {
     text: "Your tree has needle or scale-like leaves. ",
     image: require("./images/Coniferous.png"),
   },
+
 };

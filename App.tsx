@@ -15,13 +15,14 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import addTreeTab from "./addTreeTab";
-import FAQ from "./faq";
+import Settings from "./settings";
 import Home from "./home";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Material from "react-native-vector-icons/MaterialIcons";
 import Feather from "react-native-vector-icons/Feather";
 import rootReducer from "./reducer/reducers";
 import Geolocation from "@react-native-community/geolocation";
+import SettingsTab from "./settingsTab";
 
 const Tab = createBottomTabNavigator();
 const $dgreen6 = "#65B876";
@@ -45,11 +46,9 @@ const App = () => {
               let iconName;
 
               if (route.name === "Add") {
-                return (
-                  <Material name="add-to-photos" size={24} color={color} />
-                );
-              } else if (route.name === "FAQ") {
-                return <Feather name="help-circle" size={24} color={color} />;
+                return <Feather name="plus-circle" size={24} color={color} />;
+              } else if (route.name === "Settings") {
+                return <Feather name="settings" size={24} color={color} />;
               } else if (route.name === "Home") {
                 return <AntDesign name="home" size={24} color={color} />;
               }
@@ -61,14 +60,14 @@ const App = () => {
             showLabel: false,
             style: {
               paddingTop: 10,
-              height: 70,
+              height: 90,
               paddingBottom: 20,
             },
           }}
         >
           <Tab.Screen name="Home" component={Home}></Tab.Screen>
           <Tab.Screen name="Add" component={addTreeTab}></Tab.Screen>
-          <Tab.Screen name="FAQ" component={FAQ}></Tab.Screen>
+          <Tab.Screen name="Settings" component={SettingsTab}></Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>

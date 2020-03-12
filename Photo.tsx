@@ -23,17 +23,17 @@ const Photo = ({ route, navigation }) => {
     ),
   });
 
-  const [useIP, setUseIP] = useState(false);
+  const [manualIdentification, setManualIdentification] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const getData = async () => {
     try {
-      const value = await AsyncStorage.getItem("IPSettings");
+      const value = await AsyncStorage.getItem("manualIdentification");
       if (value !== null) {
         // value previously stored
         console.log(value);
-        setUseIP(value == "true");
+        setManualIdentification(value == "true");
       }
     } catch (e) {
       // error reading value
@@ -41,7 +41,7 @@ const Photo = ({ route, navigation }) => {
   };
 
   async function sendPhoto(photo) {
-    if (useIP) {
+    if (manualIdentification) {
       setLoading(true);
     }
     // const image = await jimp.read(photo.uri);
@@ -76,7 +76,7 @@ const Photo = ({ route, navigation }) => {
       dispatch(setPredictedTrees(resJson.pred_spec_id));
       console.log(resJson);
 
-      if (useIP) {
+      if (manualIdentification) {
         const leaves =
           resJson?.pred_spec_id &&
           resJson.pred_spec_id.map(id => {
@@ -116,7 +116,7 @@ const Photo = ({ route, navigation }) => {
           onPress={() => {
             sendPhoto(photo);
             dispatch(setPhotoURI(photo.uri));
-            !useIP && navigation.push("Choices", route.params);
+            !manualIdentification && navigation.push("Choices", route.params);
           }}
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
