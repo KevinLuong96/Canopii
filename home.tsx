@@ -1,51 +1,91 @@
 "use strict";
-import React, { useState, useCallback } from "react";
-import { Text, View, Switch, Dimensions } from "react-native";
-import AsyncStorage from "@react-native-community/async-storage";
+import React, { useState, useCallback, useEffect } from "react";
+import {
+  Text,
+  View,
+  Switch,
+  Dimensions,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 import styles from "./styles";
+import Icon from "react-native-vector-icons/Entypo";
 import EStyleSheet from "react-native-extended-stylesheet";
-import Header from "./header";
-import LinearGradient from "react-native-linear-gradient";
+import DeviceInfo from "react-native-device-info";
 
-const Home = () => {
+const deviceId = DeviceInfo.getUniqueId();
+const logo = require("./images/Logo.png");
+const logoMultiple = require("./images/LogoMultiple.png");
+const textLogo = require("./images/LogoText.png");
+
+const Home = ({ navigation }) => {
   const [useIP, setUseIP] = useState(null);
-  const updateIPSettings = async value => {
-    try {
-      console.log(useIP);
-      setUseIP(value);
-      await AsyncStorage.setItem("IPSettings", value.toString());
-    } catch (e) {
-      console.log(e);
-      // saving error
-    }
-  };
-  const getData = async () => {
-    try {
-      const ipSettings = await AsyncStorage.getItem("IPSettings");
-      setUseIP(ipSettings == "true");
-      console.log(ipSettings);
-    } catch (e) {
-      console.log(e);
-      // error reading value
+  const [ownTagged, setOwnTagged] = useState(0);
+  const [totalTagged, setTotalTagged] = useState(0);
+
+  const fetchStatistics = async () => {
+    console.log("test");
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ device_id: deviceId }),
+    };
+    const res = await fetch("http://canopii.net/getent", options);
+    if (res.ok) {
+      const resJson = await res.json();
+      setOwnTagged(resJson.your_count);
+      setTotalTagged(resJson.total_count);
     }
   };
 
-  useCallback(() => getData(), []);
+  useEffect(() => {
+    fetchStatistics();
+  }, []);
   // getData();
   return (
-    <Header
-      header={<Text style={[styles.title, homeStyles.title]}>Home</Text>}
-      content={
-        <View>
-          <Switch
-            onValueChange={value => updateIPSettings(value)}
-            value={useIP}
-          ></Switch>
-          <Text style={styles.heading}>IP!</Text>
-          <Switch onValueChange={getData}></Switch>
+    <View style={[styles.container, homeStyles.container]}>
+      <View style={homeStyles.textLogoContainer}>
+        <Image source={textLogo} style={homeStyles.textLogo}></Image>
+      </View>
+      <View style={homeStyles.statContainer}>
+        <Image source={logo} style={homeStyles.image} />
+
+        <View style={homeStyles.statTextContainer}>
+          <Text style={styles.title}>{ownTagged}</Text>
+          <Text style={styles.heading}>trees tagged by you</Text>
         </View>
-      }
-    />
+      </View>
+      <View style={homeStyles.statContainer}>
+        <Image source={logoMultiple} style={homeStyles.image} />
+
+        <View style={homeStyles.statTextContainer}>
+          <Text style={styles.title}>{totalTagged}</Text>
+          <Text style={styles.heading}>total trees mapped in Kitchener</Text>
+        </View>
+      </View>
+      <TouchableHighlight
+        onPress={() => navigation.navigate("Settings")}
+        style={{ borderRadius: 10 }}
+      >
+        <View
+          style={[homeStyles.buttonContainer, { backgroundColor: "#9DD867" }]}
+        >
+          <Text style={[styles.body, homeStyles.buttonText]}>Settings</Text>
+          <Icon name="chevron-thin-right" size={20} color={"#fff"} />
+        </View>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate("Add")}
+        style={{ borderRadius: 10 }}
+      >
+        <View style={homeStyles.buttonContainer}>
+          <Text style={[styles.body, homeStyles.buttonText]}>Tag a tree</Text>
+          <Icon name="chevron-thin-right" size={20} color={"#fff"} />
+        </View>
+      </TouchableHighlight>
+    </View>
   );
 };
 const homeStyles = EStyleSheet.create({
@@ -66,18 +106,50 @@ const homeStyles = EStyleSheet.create({
     marginBottom: 10,
   },
   container: {
-    backgroundColor: "white",
-    borderRadius: 10,
-    shadowOffset: { height: 3, width: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    shadowColor: "black",
-    marginTop: 10,
-    marginLeft: 8,
-    marginRight: 8,
+    paddingTop: 100,
+    width: "90%",
+    marginLeft: "5%",
+  },
+  statContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingBottom: 30,
+    alignItems: "center",
+  },
+  statTextContainer: {
+    width: "75%",
+  },
+  image: {
+    width: "20%",
+    height: "100%",
+    resizeMode: "contain",
+  },
+  textLogo: { width: "35%", height: 36, resizeMode: "contain" },
+  textLogoContainer: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingBottom: 36,
     width: "100%",
-    padding: 10,
-    marginBottom: 125,
+  },
+  buttonText: {
+    color: "#fff",
+    paddingVertical: 18,
+    fontSize: 16,
+  },
+  buttonContainer: {
+    // height: "100%",
+    backgroundColor: "$dgreen6",
+    borderRadius: 15,
+    width: "100%",
+    paddingHorizontal: "10%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
   },
 });
 
