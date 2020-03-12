@@ -11,6 +11,7 @@ import Header from "./header";
 import HeaderLeftButton from "./headerLeftButton";
 import { useSelector } from "react-redux";
 import Leaf from "./leaf";
+import ConiferousLeaf from "./coniferousLeaf";
 
 const Choices = ({ route, navigation }) => {
   const { treeType, leaves } = route.params;
@@ -113,16 +114,31 @@ const Choices = ({ route, navigation }) => {
               ></Choice>
             ))}
           {reachedLeaves &&
-            choicesToRender.map(leaf => (
-              <Leaf
-                treeID={leaf.ID}
-                choices={choices}
-                key={leaf.ID}
-                navigate={(location, data) =>
-                  navigation.navigate(location, data)
-                }
-              ></Leaf>
-            ))}
+            choicesToRender.map(leaf => {
+              if (choices[0] == "Coniferous") {
+                return (
+                  <ConiferousLeaf
+                    treeID={leaf.ID}
+                    key={leaf.ID}
+                    choices={choices}
+                    navigate={(location, data) =>
+                      navigation.navigate(location, data)
+                    }
+                  ></ConiferousLeaf>
+                );
+              } else {
+                return (
+                  <Leaf
+                    treeID={leaf.ID}
+                    choices={choices}
+                    key={leaf.ID}
+                    navigate={(location, data) =>
+                      navigation.navigate(location, data)
+                    }
+                  ></Leaf>
+                );
+              }
+            })}
         </Animated.ScrollView>
       }
     />

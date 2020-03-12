@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Header from "./header";
 import DeviceInfo from "react-native-device-info";
 import treeIDMap from "./dec_dat";
+import conIDMap from "./con_dat";
 import { clear } from "./actions";
 
 const deviceId = DeviceInfo.getUniqueId();
@@ -32,6 +33,10 @@ const Review = ({ navigation }) => {
   if (treeID) {
     name = treeIDMap?.[treeID]?.name;
     sciName = treeIDMap?.[treeID]?.sciName;
+  }
+  if (!name && !sciName) {
+    name = conIDMap?.[treeID]?.name;
+    sciName = conIDMap?.[treeID]?.sciName;
   }
 
   async function submitData() {

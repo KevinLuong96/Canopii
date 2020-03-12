@@ -1,12 +1,25 @@
 "use strict";
 import React from "react";
+import { useDispatch } from "react-redux";
 import Choice from "./choice";
 import leaves from "./leaves";
 import treeIDMap from "./dec_dat";
+import conIDMap from "./con_dat";
+import { setTree } from "./actions";
 
 const Leaf = ({ treeID, choices, navigate }) => {
-  const { sciName, name } = treeIDMap?.[treeID];
-  const lab = leaves[sciName.replace(/\s/g, "_").toLowerCase()]?.lab;
+  const dispatch = useDispatch();
+
+  const sciName = treeIDMap?.[treeID]?.sciName;
+  const name = treeIDMap?.[treeID]?.sciName;
+  const coniferous = conIDMap?.[treeID];
+  if (coniferous) {
+    console.log(coniferous?.sciName, treeID);
+    dispatch(setTree(coniferous?.sciName, treeID));
+    navigate("Location");
+  }
+  const lab = sciName && leaves[sciName.replace(/\s/g, "_").toLowerCase()]?.lab;
+
   return lab && sciName ? (
     <Choice
       key={sciName}
@@ -14,14 +27,14 @@ const Leaf = ({ treeID, choices, navigate }) => {
       text={sciName}
       height={100}
       image={lab ?? ""}
-      onPress={() =>
+      onPress={() => {
         navigate("Tree", {
           name: name,
           sciName: sciName,
           choices: choices,
           ID: treeID,
-        })
-      }
+        });
+      }}
     />
   ) : null;
 };

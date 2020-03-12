@@ -1,8 +1,8 @@
 export const decision = {
-  Coniferous: { 
+  Coniferous: {
     "Bundled Needles": {
-      "2 - 3 Needles in Each Bundle" : {
-        "2-3 Inch Long Needles" : {
+      "2 - 3 Needles in Each Bundle": {
+        "Pinus Sylvestris": {
           trees: [
             {
               ID: 124,
@@ -11,7 +11,7 @@ export const decision = {
             },
           ],
         },
-        "3-5 Inch Long Needles" : {
+        "Pinus Nigra": {
           trees: [
             {
               ID: 107,
@@ -21,7 +21,7 @@ export const decision = {
           ],
         },
       },
-      "5 Needles in Each Bundle" : {
+      "5 Needles in Each Bundle": {
         trees: [
           {
             ID: 123,
@@ -30,42 +30,42 @@ export const decision = {
           },
         ],
       },
-    }, 
+    },
     "Individual Needles": {
-        Needles: {
-          "3.5-6.75 Inch Long Cones" : {
-            trees: [
-              {
-                ID: 74,
-                sciName: "Picea Abies",
-                name: "Norway Spruce",
-              },
-            ],
-          },
-          "1-4 Inch Long Cones" : {
-            trees: [
-              {
-                ID: 80,
-                sciName: "Picea Pungens",
-                name: "Blue Spruce",
-              },
-              {
-                ID: 77,
-                sciName: "Picea Glauca",
-                name: "White Spruce",
-              },
-            ],
-          }
-        },  
-        Scales: {
+      Needles: {
+        "3.5-6.75 Inch Long Cones": {
           trees: [
+            {
+              ID: 74,
+              sciName: "Picea Abies",
+              name: "Norway Spruce",
+            },
+          ],
+        },
+        "1-4 Inch Long Cones": {
+          trees: [
+            {
+              ID: 80,
+              sciName: "Picea Pungens",
+              name: "Blue Spruce",
+            },
+            {
+              ID: 77,
+              sciName: "Picea Glauca",
+              name: "White Spruce",
+            },
+          ],
+        },
+      },
+      Scales: {
+        trees: [
           {
             ID: 48,
             sciName: "Thuja Occidentalis",
             name: "Eastern Aborvitae",
           },
         ],
-      }, 
+      },
     },
   },
   Deciduous: {
@@ -296,8 +296,47 @@ export const descriptions = {
     image: require("./images/Deciduous.png"),
   },
   Coniferous: {
-    text: "Your tree has needle or scale-like leaves. ",
+    text: "Your tree has needle or scale-like leaves.",
     image: require("./images/Coniferous.png"),
   },
-
+  "Bundled Needles": {
+    text: "The needles come in groups out of the stems.",
+    image: require("./images/BundledNeedles.png"),
+  },
+  "2 - 3 Needles in Each Bundle": {
+    text: "There are 2 or 3 needles in each bundle.",
+    image: require("./images/TwoOrThreeBundleNeedles.png"),
+  },
+  "Pinus Sylvestris": {
+    text: "The needles on the tree are 2-3 inches long.",
+    image: require("./images/Coniferous.png"),
+  },
+  "Pinus Nigra": {
+    text: "The needles on the tree are 3-5 inches long.",
+    image: require("./images/Coniferous.png"),
+  },
+  "5 Needles in Each Bundle": {
+    text: "There are 5 needles in each bundle.",
+    image: require("./images/FiveBundleNeedles.png"),
+  },
+  Needles: {
+    text: "Your tree has needles.",
+    image: require("./images/Needles.png"),
+  },
+  "Individual Needles": {
+    text: "Individual needles come out of the stem.",
+    image: require("./images/IndividualNeedles.png"),
+  },
+  "3.5-6.75 Inch Long Cones": {
+    text: "The cones on the tree are 3.5 to 6.75 inches long.",
+    image: require("./images/Coniferous.png"),
+  },
+  "1-4 Inch Long Cones": {
+    text: "The cones on the tree are 1-4 inches long and no longer.",
+    image: require("./images/Coniferous.png"),
+  },
+  Scales: {
+    text: "Your tree has scale-like leaves. ",
+    image: require("./images/Scales.png"),
+  },
 };

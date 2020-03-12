@@ -41,7 +41,7 @@ const Photo = ({ route, navigation }) => {
   };
 
   async function sendPhoto(photo) {
-    if (manualIdentification) {
+    if (!manualIdentification) {
       setLoading(true);
     }
     // const image = await jimp.read(photo.uri);
@@ -76,7 +76,7 @@ const Photo = ({ route, navigation }) => {
       dispatch(setPredictedTrees(resJson.pred_spec_id));
       console.log(resJson);
 
-      if (manualIdentification) {
+      if (!manualIdentification) {
         const leaves =
           resJson?.pred_spec_id &&
           resJson.pred_spec_id.map(id => {
@@ -116,7 +116,7 @@ const Photo = ({ route, navigation }) => {
           onPress={() => {
             sendPhoto(photo);
             dispatch(setPhotoURI(photo.uri));
-            !manualIdentification && navigation.push("Choices", route.params);
+            manualIdentification && navigation.push("Choices", route.params);
           }}
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
