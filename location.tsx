@@ -164,9 +164,7 @@ const Location = ({ navigation }) => {
               <Text
                 style={[styles.body, { color: "white", textAlign: "center" }]}
               >
-                {editable
-                  ? "This is the right location"
-                  : "Loading location..."}
+                {editable ? "Confirm location" : "Loading maps..."}
               </Text>
             </TouchableHighlight>
           </View>

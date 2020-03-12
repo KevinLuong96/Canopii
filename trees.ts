@@ -1,7 +1,7 @@
 export const decision = {
   Coniferous: {
     "Bundled Needles": {
-      "2 - 3 Needles in Each Bundle": {
+      "Two-Three Needles": {
         "Pinus Sylvestris": {
           trees: [
             {
@@ -21,7 +21,7 @@ export const decision = {
           ],
         },
       },
-      "5 Needles in Each Bundle": {
+      "Five Needles": {
         trees: [
           {
             ID: 123,
@@ -303,7 +303,7 @@ export const descriptions = {
     text: "The needles come in groups out of the stems.",
     image: require("./images/BundledNeedles.png"),
   },
-  "2 - 3 Needles in Each Bundle": {
+  "Two-Three Needles": {
     text: "There are 2 or 3 needles in each bundle.",
     image: require("./images/TwoOrThreeBundleNeedles.png"),
   },
@@ -315,7 +315,7 @@ export const descriptions = {
     text: "The needles on the tree are 3-5 inches long.",
     image: require("./images/Coniferous.png"),
   },
-  "5 Needles in Each Bundle": {
+  "Five Needles": {
     text: "There are 5 needles in each bundle.",
     image: require("./images/FiveBundleNeedles.png"),
   },

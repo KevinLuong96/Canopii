@@ -77,7 +77,7 @@ const Review = ({ navigation }) => {
       content={
         <ScrollView style={[styles.container, reviewStyles.content]}>
           <TouchableHighlight
-            style={reviewStyles.body}
+            style={[reviewStyles.body, { borderBottomWidth: 0 }]}
             onPress={() => {
               dispatch(clear());
               navigation.navigate("Camera");
@@ -112,7 +112,9 @@ const Review = ({ navigation }) => {
             <>
               <Text style={reviewStyles.subtitle}>Species</Text>
               {name && sciName && (
-                <Text style={styles.body}>{`${name} (${sciName})`}</Text>
+                <Text
+                  style={[styles.body, reviewStyles.bodyText]}
+                >{`${name} (${sciName})`}</Text>
               )}
             </>
           </TouchableHighlight>
@@ -123,7 +125,9 @@ const Review = ({ navigation }) => {
           >
             <>
               <Text style={reviewStyles.subtitle}>Location</Text>
-              <Text style={styles.body}>{location?.address}</Text>
+              <Text style={[styles.body, reviewStyles.bodyText]}>
+                {location?.address}
+              </Text>
             </>
           </TouchableHighlight>
           <TouchableHighlight
@@ -133,7 +137,9 @@ const Review = ({ navigation }) => {
           >
             <>
               <Text style={reviewStyles.subtitle}>Type</Text>
-              <Text style={styles.body}>{treeType}</Text>
+              <Text style={[styles.body, reviewStyles.bodyText]}>
+                {treeType}
+              </Text>
             </>
           </TouchableHighlight>
           <View style={reviewStyles.button}>
@@ -148,7 +154,7 @@ const Review = ({ navigation }) => {
               <Text
                 style={[styles.body, { color: "white", textAlign: "center" }]}
               >
-                This information is correct
+                Tag tree
               </Text>
             </TouchableHighlight>
           </View>
@@ -176,9 +182,10 @@ const reviewStyles = EStyleSheet.create({
   subtitle: {
     color: "$gray7",
     fontSize: 16,
+    fontFamily: "Muli",
   },
   body: {
-    borderBottomColor: "$gray7",
+    borderBottomColor: "rgba(140,140,140,0.25)",
     borderBottomWidth: 1,
     paddingBottom: 10,
     marginBottom: 10,
@@ -211,6 +218,11 @@ const reviewStyles = EStyleSheet.create({
     height: 300,
     width: 300,
     resizeMode: "contain",
+  },
+  bodyText: {
+    fontFamily: "Muli",
+    fontSize: 16,
+    paddingTop: 4,
   },
 });
 
