@@ -53,7 +53,7 @@ const choiceStyles = EStyleSheet.create({
     display: "flex",
     flexShrink: 1,
     width: "70%",
-    marginLeft: 10,
+    marginLeft: 8,
     marginRight: 20,
     justifyContent: "center",
   } as ViewStyle,

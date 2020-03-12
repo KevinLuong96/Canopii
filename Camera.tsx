@@ -5,6 +5,7 @@ import { RNCamera } from "react-native-camera";
 import ImagePicker from "react-native-image-picker";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
+import AntIcon from "react-native-vector-icons/AntDesign";
 import Header from "./header";
 import { useSelector } from "react-redux";
 import ImageEditor from "@react-native-community/image-editor";
@@ -33,8 +34,8 @@ const Camera = ({ route, navigation }) => {
               Take Leaf Photo
             </Text>
             <Text style={[styles.heading, cameraStyles.heading]}>
-              Please capture a single leaf centered below. The leaf should be
-              flat, and pointing downward with a natural background
+              Capture a single leaf centered below. The leaf should be
+              flat, and pointing downward in a natural background.
             </Text>
           </>
         }
@@ -107,9 +108,9 @@ const Camera = ({ route, navigation }) => {
         }
         style={cameraStyles.imagePicker}
       >
-        <Icon
-          name="image"
-          size={30}
+        <AntIcon
+          name="upload"
+          size={24}
           color={"#8C8C8C"}
           backgroundColor="transparent"
         />
@@ -153,8 +154,8 @@ const cameraStyles = EStyleSheet.create({
   imagePicker: {
     backgroundColor: "#fff",
     position: "absolute",
-    left: 25,
-    bottom: 37,
+    left: 48,
+    bottom: 24,
   },
   preview: {
     display: "flex",
@@ -168,12 +169,12 @@ const cameraStyles = EStyleSheet.create({
   },
   title: {
     color: "white",
-    marginBottom: 10,
+    marginBottom: 16,
     fontSize: 28,
   },
   heading: {
     color: "white",
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 15,
   },
   camera: {

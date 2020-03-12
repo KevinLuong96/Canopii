@@ -35,7 +35,7 @@ const Breadcrumb = props => {
     }
   }
   return (
-    <Text style={breadcrumbStyles.container}>
+    <Text style={[styles.body, breadcrumbStyles.container, { paddingBottom: 4 }]}>
       {elementsToRender.map(element => element)}
     </Text>
   );

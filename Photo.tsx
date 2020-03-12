@@ -121,8 +121,8 @@ const Photo = ({ route, navigation }) => {
         >
           <Text style={[styles.body, { color: "white", textAlign: "center" }]}>
             {loading
-              ? "Please wait, your image is being processed"
-              : "This information is correct"}
+              ? "Extracting species..."
+              : "Confirm photo"}
           </Text>
         </TouchableHighlight>
       </View>
