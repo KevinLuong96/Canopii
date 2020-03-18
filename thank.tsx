@@ -38,7 +38,6 @@ const Thank = ({ navigation }) => {
             <Text style={[styles.body, thankStyles.buttonText]}>
               Tag another tree
             </Text>
-            <Icon name="chevron-thin-right" size={20} color={"#4b4b4b"} />
           </View>
         </TouchableHighlight>
       </View>
@@ -68,6 +67,8 @@ const thankStyles = EStyleSheet.create({
     color: "#4b4b4b",
     paddingVertical: 18,
     fontSize: 16,
+    textAlign: "center",
+    width: "100%",
   },
   buttonContainer: {
     // height: "100%",

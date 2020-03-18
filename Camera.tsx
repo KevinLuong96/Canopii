@@ -164,7 +164,7 @@ const cameraStyles = EStyleSheet.create({
     display: "flex",
     flex: 1,
     width: "100%",
-    marginBottom: 160,
+    marginBottom: 155,
     position: "relative",
   },
   container: {

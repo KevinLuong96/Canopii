@@ -147,6 +147,7 @@ const Review = ({ navigation }) => {
               style={reviewStyles.touchable}
               onPress={() => {
                 submitData();
+                dispatch(clear());
                 navigation.navigate("Thank");
               }}
               underlayColor={"rgba(140, 140, 140, 0.25)"}
