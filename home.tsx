@@ -41,8 +41,9 @@ const Home = ({ navigation }) => {
   };
 
   useEffect(() => {
+    console.log("used effect");
     fetchStatistics();
-  }, []);
+  });
   // getData();
   return (
     <View style={{ height: "100%", width: "100%", backgroundColor: "#f9f9f9" }}>

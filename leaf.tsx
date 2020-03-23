@@ -27,7 +27,7 @@ const Leaf = ({ treeID, choices, navigate }) => {
       text={sciName}
       isSpecies={true}
       height={100}
-      image={lab ?? ""}
+      image={lab}
       onPress={() => {
         navigate("Tree", {
           name: name,

@@ -43,11 +43,12 @@ const Tree = ({ navigation, route }) => {
         </View>
         <View style={[styles.container, treeStyles.container]}>
           <Text>
-            {choices.map(choice => (
-              <Text style={styles.body} key={choice}>
-                {`${choice.split(' ')[0]}     `}
-              </Text>
-            ))}
+            {choices &&
+              choices.map(choice => (
+                <Text style={styles.body} key={choice}>
+                  {`${choice.split(" ")[0]}     `}
+                </Text>
+              ))}
           </Text>
         </View>
         <View style={[styles.container, treeStyles.container]}>

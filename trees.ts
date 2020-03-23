@@ -1,38 +1,43 @@
 export const decision = {
   Coniferous: {
-    "Bundled Needles": {
-      "Two-Three Needles": {
-        "Pinus Sylvestris": {
-          trees: [
-            {
-              ID: 124,
-              sciName: "Pinus Sylvestris",
-              name: "Scots Pine",
-            },
-          ],
-        },
-        "Pinus Nigra": {
-          trees: [
-            {
-              ID: 107,
-              sciName: "Pinus Nigra",
-              name: "European Black Pine",
-            },
-          ],
-        },
-      },
-      "Five Needles": {
-        trees: [
-          {
-            ID: 123,
-            sciName: "Pinus Strobus",
-            name: "Eastern White Pine",
+    Question: "What shape are your leaves in?",
+    Needles: {
+      Question: "Do multiple needles share the same root?",
+      "Bundled Needles": {
+        Question: "How many needles share the same root?",
+        "Two-Three Needles": {
+          Question: "How long are the needles?",
+          "Two-Three Inch Long Needles": {
+            trees: [
+              {
+                ID: 124,
+                sciName: "Pinus Sylvestris",
+                name: "Scots Pine",
+              },
+            ],
           },
-        ],
+          "Three-Five Inch Long Needles": {
+            trees: [
+              {
+                ID: 107,
+                sciName: "Pinus Nigra",
+                name: "European Black Pine",
+              },
+            ],
+          },
+        },
+        "Five Needles": {
+          trees: [
+            {
+              ID: 123,
+              sciName: "Pinus Strobus",
+              name: "Eastern White Pine",
+            },
+          ],
+        },
       },
-    },
-    "Individual Needles": {
-      Needles: {
+      "Individual Needles": {
+        Question: "How long are the cones of the tree?",
         "3.5-6.75 Inch Long Cones": {
           trees: [
             {
@@ -57,20 +62,23 @@ export const decision = {
           ],
         },
       },
-      Scales: {
-        trees: [
-          {
-            ID: 48,
-            sciName: "Thuja Occidentalis",
-            name: "Eastern Aborvitae",
-          },
-        ],
-      },
+    },
+    Scales: {
+      trees: [
+        {
+          ID: 48,
+          sciName: "Thuja Occidentalis",
+          name: "Eastern Aborvitae",
+        },
+      ],
     },
   },
   Deciduous: {
+    Question: "How are leaves arranged on your branch",
     "Simple Leaf": {
+      Question: "How are the branches arranged?",
       "Opposite Branching": {
+        Question: "What does your leaf look like at the stem?",
         "Angled Bottom": {
           trees: [
             {
@@ -117,6 +125,7 @@ export const decision = {
         },
       },
       "Alternate Branching": {
+        Question: "Does your leaf have distinct lobes?",
         "Lobed Leaf": {
           trees: [
             {
@@ -142,6 +151,7 @@ export const decision = {
           ],
         },
         "Entire Leaf": {
+          Question: "What does your leaf look like at the stem?",
           "Rounded Bottom": {
             trees: [
               {
@@ -208,6 +218,7 @@ export const decision = {
       },
     },
     "Compound Leaf": {
+      Question: "How are the branches arranged?",
       "Opposite Branching": {
         trees: [
           {
@@ -309,11 +320,9 @@ export const descriptions = {
   },
   "Pinus Sylvestris": {
     text: "The needles on the tree are 2-3 inches long.",
-    image: require("./images/Coniferous.png"),
   },
   "Pinus Nigra": {
     text: "The needles on the tree are 3-5 inches long.",
-    image: require("./images/Coniferous.png"),
   },
   "Five Needles": {
     text: "There are 5 needles in each bundle.",
@@ -329,14 +338,18 @@ export const descriptions = {
   },
   "3.5-6.75 Inch Long Cones": {
     text: "The cones on the tree are 3.5 to 6.75 inches long.",
-    image: require("./images/Coniferous.png"),
   },
   "1-4 Inch Long Cones": {
     text: "The cones on the tree are 1-4 inches long and no longer.",
-    image: require("./images/Coniferous.png"),
   },
   Scales: {
     text: "Your tree has scale-like leaves. ",
     image: require("./images/Scales.png"),
+  },
+  "Two-Three Inch Long Needles": {
+    text: "",
+  },
+  "Three-Five Inch Long Needles": {
+    text: "",
   },
 };

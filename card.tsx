@@ -12,7 +12,7 @@ const Card = props => {
 
 const cardStyles = {
   card: {
-    height: 150,
+    height: 100,
     backgroundColor: "white",
     borderRadius: 10,
     shadowOffset: { height: 0, width: 0 },

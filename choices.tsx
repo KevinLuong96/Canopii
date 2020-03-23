@@ -16,8 +16,10 @@ import ConiferousLeaf from "./coniferousLeaf";
 const Choices = ({ route, navigation }) => {
   const { treeType, leaves } = route.params;
   const [choices, setChoices] = useState([treeType]);
+  // const [question, setQuestion] = useState("");
   const predictedTrees = useSelector(state => state.predictedTrees);
   let reachedLeaves = leaves ? true : false;
+  let question = "";
 
   navigation.setOptions({
     headerStyle: {
@@ -63,7 +65,12 @@ const Choices = ({ route, navigation }) => {
     reachedLeaves = true;
   } else {
     for (let key in temp) {
-      choicesToRender.push(key);
+      if (key == "Question") {
+        // setQuestion(key);
+        question = temp[key];
+      } else {
+        choicesToRender.push(key);
+      }
     }
   }
 
@@ -85,9 +92,11 @@ const Choices = ({ route, navigation }) => {
             Identify Species
           </Text>
           <Text style={[styles.heading, choiceStyles.heading]}>
-            {reachedLeaves
-              ? "Select the correct species."
-              : "Which feature best describes your tree?"}
+            {question && question}
+            {!question &&
+              (reachedLeaves
+                ? "Click to view more information about each species."
+                : "Which feature best describes your tree?")}
           </Text>
         </>
       }
@@ -109,8 +118,8 @@ const Choices = ({ route, navigation }) => {
                 key={choice}
                 choice={choice}
                 height={150}
-                image={descriptions[choice].image}
-                text={descriptions[choice].text}
+                image={descriptions?.[choice]?.image}
+                text={descriptions?.[choice]?.text}
                 onPress={() => animate(choice)}
               ></Choice>
             ))}
