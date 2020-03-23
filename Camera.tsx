@@ -93,9 +93,16 @@ const Camera = ({ route, navigation }) => {
             } else if (response.customButton) {
               console.log("User tapped custom button: ", response.customButton);
             } else {
+              console.log(response);
               ImageEditor.cropImage(response.uri, {
-                offset: { x: 0, y: 0 },
-                size: { width: response.width, height: response.width },
+                offset: {
+                  x: Math.max(0, (response.width - response.height) / 2),
+                  y: Math.max(0, (response.height - response.width) / 2),
+                },
+                size: {
+                  width: Math.min(response.width, response.height),
+                  height: Math.min(response.width, response.height),
+                },
               }).then(url => {
                 response.uri = url;
                 navigation.navigate("Photo", {
