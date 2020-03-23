@@ -63,7 +63,7 @@ const Camera = ({ route, navigation }) => {
               captureAudio={false}
             >
               {({ camera, status, recordAudioPermissionStatus }) => {
-                if (status !== "READY") return <PendingView />;
+                // if (status !== "READY") return <PendingView />;
                 return (
                   <View style={cameraStyles.buttonContainer}>
                     <View style={cameraStyles.button}>

@@ -10,6 +10,7 @@ import HeaderLeftButton from "./headerLeftButton";
 import TreeType from "./treeType";
 import Review from "./review";
 import Thank from "./thank";
+import Search from "./search";
 
 const Stack = createStackNavigator();
 
@@ -41,6 +42,7 @@ const addTreeTab = () => {
       <Stack.Screen name="TreeType" component={TreeType}></Stack.Screen>
       <Stack.Screen name="Review" component={Review}></Stack.Screen>
       <Stack.Screen name="Thank" component={Thank}></Stack.Screen>
+      <Stack.Screen name="Search" component={Search}></Stack.Screen>
     </Stack.Navigator>
   );
 };

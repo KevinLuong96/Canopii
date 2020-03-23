@@ -1,6 +1,6 @@
 "use strict";
 import React, { useState, useEffect } from "react";
-import { Text, Animated } from "react-native";
+import { Text, Animated, TouchableHighlight, View } from "react-native";
 import styles from "./styles";
 import Choice from "./choice";
 import { decision, descriptions } from "./trees";
@@ -84,74 +84,99 @@ const Choices = ({ route, navigation }) => {
   };
 
   return (
-    <Header
-      header={
-        <>
-          <Breadcrumb crumb={choices} onPress={setChoices} />
-          <Text style={[styles.title, choiceStyles.title]}>
-            Identify Species
-          </Text>
-          <Text style={[styles.heading, choiceStyles.heading]}>
-            {question && question}
-            {!question &&
-              (reachedLeaves
-                ? "Click to view more information about each species."
-                : "Which feature best describes your tree?")}
-          </Text>
-        </>
-      }
-      content={
-        <Animated.ScrollView
-          style={{
-            display: "flex",
-            flex: 1,
-            transform: [{ translateX: slideValue }],
-            width: "100%",
-            marginBottom: 145,
-            paddingBottom: 10,
-            backgroundColor: "transparent",
-          }}
-        >
-          {!reachedLeaves &&
-            choicesToRender.map(choice => (
-              <Choice
-                key={choice}
-                choice={choice}
-                height={150}
-                image={descriptions?.[choice]?.image}
-                text={descriptions?.[choice]?.text}
-                onPress={() => animate(choice)}
-              ></Choice>
-            ))}
-          {reachedLeaves &&
-            choicesToRender.map(leaf => {
-              if (choices[0] == "Coniferous") {
-                return (
-                  <ConiferousLeaf
-                    treeID={leaf.ID}
-                    key={leaf.ID}
-                    choices={choices}
-                    navigate={(location, data) =>
-                      navigation.navigate(location, data)
+    <>
+      <View style={{ width: "100%", height: "100%", marginBottom: 200 }}>
+        <Header
+          header={
+            <>
+              <Breadcrumb crumb={choices} onPress={setChoices} />
+              <Text style={[styles.title, choiceStyles.title]}>
+                Identify Species
+              </Text>
+              <Text style={[styles.heading, choiceStyles.heading]}>
+                {question && question}
+                {!question &&
+                  (reachedLeaves
+                    ? "Click to view more information about each species."
+                    : "Which feature best describes your tree?")}
+              </Text>
+            </>
+          }
+          content={
+            <View
+              style={{
+                marginBottom: 200,
+                marginHorizontal: "5%",
+              }}
+            >
+              <Animated.ScrollView
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  marginHorizontal: "10%",
+                  flex: 1,
+                  transform: [{ translateX: slideValue }],
+                  paddingBottom: 10,
+                  backgroundColor: "transparent",
+                }}
+              >
+                {!reachedLeaves &&
+                  choicesToRender.map(choice => (
+                    <Choice
+                      key={choice}
+                      choice={choice}
+                      height={150}
+                      image={descriptions?.[choice]?.image}
+                      text={descriptions?.[choice]?.text}
+                      onPress={() => animate(choice)}
+                    ></Choice>
+                  ))}
+                {reachedLeaves &&
+                  choicesToRender.map(leaf => {
+                    if (choices[0] == "Coniferous") {
+                      return (
+                        <ConiferousLeaf
+                          treeID={leaf.ID}
+                          key={leaf.ID}
+                          choices={choices}
+                          navigate={(location, data) =>
+                            navigation.navigate(location, data)
+                          }
+                        ></ConiferousLeaf>
+                      );
+                    } else {
+                      return (
+                        <Leaf
+                          treeID={leaf.ID}
+                          choices={choices}
+                          key={leaf.ID}
+                          navigate={(location, data) =>
+                            navigation.navigate(location, data)
+                          }
+                        ></Leaf>
+                      );
                     }
-                  ></ConiferousLeaf>
-                );
-              } else {
-                return (
-                  <Leaf
-                    treeID={leaf.ID}
-                    choices={choices}
-                    key={leaf.ID}
-                    navigate={(location, data) =>
-                      navigation.navigate(location, data)
-                    }
-                  ></Leaf>
-                );
-              }
-            })}
-        </Animated.ScrollView>
-      }
-    />
+                  })}
+              </Animated.ScrollView>
+              {/* <TouchableHighlight></TouchableHighlight> */}
+            </View>
+          }
+        />
+      </View>
+      <TouchableHighlight
+        onPress={() => {
+          navigation.navigate("Search");
+        }}
+        style={{ width: "100%", position: "absolute", bottom: 10 }}
+        underlayColor={"rgba(140,140,140,0.6)"}
+      >
+        <Text style={choiceStyles.search}>
+          {reachedLeaves
+            ? "Search for species instead"
+            : "Search for tree species"}
+        </Text>
+      </TouchableHighlight>
+    </>
   );
 };
 const choiceStyles = EStyleSheet.create({
@@ -161,6 +186,10 @@ const choiceStyles = EStyleSheet.create({
   title: {
     color: "#fff",
     marginBottom: 10,
+  },
+  search: {
+    color: "$dgreen6",
+    textAlign: "center",
   },
 });
 
