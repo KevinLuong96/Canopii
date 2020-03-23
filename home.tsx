@@ -24,7 +24,6 @@ const Home = ({ navigation }) => {
   const [totalTagged, setTotalTagged] = useState(0);
 
   const fetchStatistics = async () => {
-    console.log("test");
     const options = {
       method: "POST",
       headers: {
@@ -41,7 +40,6 @@ const Home = ({ navigation }) => {
   };
 
   useEffect(() => {
-    console.log("used effect");
     fetchStatistics();
   });
   // getData();

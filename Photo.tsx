@@ -17,7 +17,6 @@ const deviceId = DeviceInfo.getUniqueId();
 
 const Photo = ({ route, navigation }) => {
   const { photo, treeType } = route.params;
-  console.log(route.params, photo, treeType);
   navigation.setOptions({
     headerLeft: navigation => (
       <HeaderLeftButton color="#000" onPress={navigation.onPress} />
