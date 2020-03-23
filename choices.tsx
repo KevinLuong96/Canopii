@@ -105,7 +105,7 @@ const Choices = ({ route, navigation }) => {
           content={
             <View
               style={{
-                marginBottom: 200,
+                marginBottom: 180,
                 marginHorizontal: "5%",
               }}
             >
@@ -125,7 +125,7 @@ const Choices = ({ route, navigation }) => {
                     <Choice
                       key={choice}
                       choice={choice}
-                      height={150}
+                      height={descriptions?.[choice]?.image ? 150 : 80}
                       image={descriptions?.[choice]?.image}
                       text={descriptions?.[choice]?.text}
                       onPress={() => animate(choice)}
@@ -157,25 +157,24 @@ const Choices = ({ route, navigation }) => {
                       );
                     }
                   })}
+                <TouchableHighlight
+                  onPress={() => {
+                    navigation.navigate("Search");
+                  }}
+                  style={{ width: "100%", marginTop: 20, marginBottom: 10 }}
+                  underlayColor={"rgba(140,140,140,0.6)"}
+                >
+                  <Text style={[styles.body, choiceStyles.search]}>
+                    {reachedLeaves
+                      ? "Search for species instead"
+                      : "Search for tree species"}
+                  </Text>
+                </TouchableHighlight>
               </Animated.ScrollView>
-              {/* <TouchableHighlight></TouchableHighlight> */}
             </View>
           }
         />
       </View>
-      <TouchableHighlight
-        onPress={() => {
-          navigation.navigate("Search");
-        }}
-        style={{ width: "100%", position: "absolute", bottom: 10 }}
-        underlayColor={"rgba(140,140,140,0.6)"}
-      >
-        <Text style={choiceStyles.search}>
-          {reachedLeaves
-            ? "Search for species instead"
-            : "Search for tree species"}
-        </Text>
-      </TouchableHighlight>
     </>
   );
 };
